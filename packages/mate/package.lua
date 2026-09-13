@@ -7,7 +7,7 @@ return {
     -- Install start-mate session launcher (handles dbus + XDG vars)
     local bin_dir = p.install_root .. "/usr/bin"
     p:run("mkdir -p " .. bin_dir)
-    p:run("cat > " .. bin_dir .. "/start-mate <<'STARTEOF'\n#!/bin/sh\n# MATE session launcher for Heliade OS\n# Launches dbus session bus if needed, sets XDG vars, starts mate-session\n\nif [ -z \"$XDG_DATA_DIRS\" ]; then\n  export XDG_DATA_DIRS=\"/usr/local/share:/usr/share\"\nfi\n\nif [ -z \"$XDG_CONFIG_DIRS\" ]; then\n  export XDG_CONFIG_DIRS=\"/etc/xdg\"\nfi\n\nif [ -z \"$DBUS_SESSION_BUS_ADDRESS\" ]; then\n  if [ -z \"$XDG_RUNTIME_DIR\" ] || ! [ -S \"$XDG_RUNTIME_DIR/bus\" ] || ! [ -O \"$XDG_RUNTIME_DIR/bus\" ]; then\n    eval \"$(dbus-launch --sh-syntax --exit-with-session)\"\n  fi\nfi\n\nexport XDG_CURRENT_DESKTOP=MATE\nexport XDG_MENU_PREFIX=mate-\n\nexec mate-session\nSTARTEOF")
+    p:run("cat > " .. bin_dir .. "/start-mate <<'STARTEOF'\n#!/bin/sh\n# MATE session launcher for Haliade OS\n# Launches dbus session bus if needed, sets XDG vars, starts mate-session\n\nif [ -z \"$XDG_DATA_DIRS\" ]; then\n  export XDG_DATA_DIRS=\"/usr/local/share:/usr/share\"\nfi\n\nif [ -z \"$XDG_CONFIG_DIRS\" ]; then\n  export XDG_CONFIG_DIRS=\"/etc/xdg\"\nfi\n\nif [ -z \"$DBUS_SESSION_BUS_ADDRESS\" ]; then\n  if [ -z \"$XDG_RUNTIME_DIR\" ] || ! [ -S \"$XDG_RUNTIME_DIR/bus\" ] || ! [ -O \"$XDG_RUNTIME_DIR/bus\" ]; then\n    eval \"$(dbus-launch --sh-syntax --exit-with-session)\"\n  fi\nfi\n\nexport XDG_CURRENT_DESKTOP=MATE\nexport XDG_MENU_PREFIX=mate-\n\nexec mate-session\nSTARTEOF")
     p:run("chmod +x " .. bin_dir .. "/start-mate")
 
     -- Install session file for display managers / xinit
