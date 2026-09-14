@@ -2,7 +2,7 @@ return {
   name    = "libreoffice",
   version = "26.2.5.2",
   summary = "LibreOffice office suite (single binary .deb package)",
-  url     = "https://github.com/gretagen/zeta-deliverance/releases/download/libreoffice-26.2.5.2/libreoffice-26.2.5.2.deb",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-deliverance/releases/download/libreoffice-26.2.5.2/libreoffice-26.2.5.2.deb",
   sha256  = "e38377322e9153d503f7e6505ef6a5304f41ecb24385983d257b6fe50bffe4f2",
   deps    = { "glibc" },
   archive = { strip = 1 },
