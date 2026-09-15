@@ -279,7 +279,7 @@ return {
   { name = "libvorbis", version = "3.3.8", summary = "Vorbis audio codec" },
   { name = "libvpx", version = "12.0.0", summary = "VP8/VP9 video codec" },
   { name = "libwacom", version = "2.19.0", summary = "Wacom tablet database and library" },
-  { name = "libwebp", version = "1.5.0", summary = "WebP image codec library" },
+  { name = "libwebp", version = "1.6.0", summary = "WebP image codec library (shared libs, libwebp.so.7)" },
   { name = "libwnck3", version = "43.3", summary = "Window Navigator Construction Kit (GTK3)" },
   { name = "libxcb", version = "1.17.0", summary = "X C Binding library (X11 protocol client library)" },
   { name = "libxcb-xrm", version = "1.3", summary = "X resource manager extension" },
