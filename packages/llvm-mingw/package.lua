@@ -9,7 +9,7 @@ return {
   install = function(p)
     p:install(".", "/opt/llvm-mingw")
     p:run("mkdir -p " .. p.install_root .. "/usr/bin")
-    p:run("for tool in " .. p.install_root .. "/opt/llvm-mingw/bin/i686-w64-mingw32-* " .. p.install_root .. "/opt/llvm-mingw/bin/x86_64-w64-mingw32-*; do ln -s /opt/llvm-mingw/bin/$(basename \"$tool\") " .. p.install_root .. "/usr/bin/$(basename \"$tool\"); done")
+    p:run("bash -c 'for tool in " .. p.install_root .. "/opt/llvm-mingw/bin/i686-w64-mingw32-* " .. p.install_root .. "/opt/llvm-mingw/bin/x86_64-w64-mingw32-*; do ln -s /opt/llvm-mingw/bin/$(basename \"$tool\") " .. p.install_root .. "/usr/bin/$(basename \"$tool\"); done'")
   end,
   test    = function(p)
     p:run(p.install_root .. "/opt/llvm-mingw/bin/i686-w64-mingw32-clang --version")
