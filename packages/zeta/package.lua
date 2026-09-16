@@ -1,9 +1,9 @@
 return {
   name    = "zeta",
-  version = "1.0.23",
+  version = "1.0.24",
   summary = "Zeta package manager for Haliade OS",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/zeta/zeta-1.0.23.tar.gz",
-  sha256  = "c6797d860efae886306331f8cdf9062c97e24660fac9945d8811ad1648d35054",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/zeta/zeta-1.0.24.tar.gz",
+  sha256  = "09e49cdadbec29767d5bca83622275ca00416ddaaeadf07b70ffb89d0b8f6ee8",
   deps    = { "lua" },
   archive = { strip = 1 },
   test    = function(p)
