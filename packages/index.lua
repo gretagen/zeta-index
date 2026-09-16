@@ -455,7 +455,7 @@ return {
   { name = "spdlog", version = "1.15.3", summary = "Fast C++ logging library" },
   { name = "speex", version = "1.5.2", summary = "Speex audio codec" },
   { name = "spirv-tools", version = "2026.2.1", summary = "API for SPIR-V bytecode processing (libSPIRV-Tools)" },
-  { name = "spotify", version = "1.2.96", summary = "Spotify streaming music client" },
+  { name = "spotify-client", version = "1.2.96", summary = "Spotify streaming music client" },
   { name = "sqlite", version = "3.53.4", summary = "Self-contained, embeddable SQL database engine" },
   { name = "squashfs-tools", version = "4.7.5", summary = "Tools for creating and extracting squashfs filesystems (mksquashfs, unsquashfs)" },
   { name = "startup-notification", version = "0.12", summary = "X11 application startup notification library" },
