@@ -1,4 +1,4 @@
-# packages for the package manager zeta for HaliadeOS
+# index of packages for the package manager zeta for HaliadeOS
 
 This is the **central registry** for Zeta packages. It contains all `package.lua` definitions
 and the `index.lua` index. Tarball artifacts are stored here; other artifact types live in
