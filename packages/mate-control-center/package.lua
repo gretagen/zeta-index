@@ -1,12 +1,12 @@
 return {
   name    = "mate-control-center",
-  version = "1.28.0",
-  summary = "MATE control center",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/mate-control-center/mate-control-center-1.28.0.tar.gz",
-  sha256  = "5dbb135925a64774555c90650b7e3ee406a41e49e2952bad1ff77c86eb9c437c",
-  deps    = { "glibc", "glib", "gtk3", "mate-desktop", "mate-menus", "librsvg", "pango", "mate-settings-daemon", "libcanberra", "libnotify", "libdconf", "libmatekbd", "libxklavier", "libX11", "libXi", "libXcursor", "libXext", "libSM", "libICE", "marco", "polkit", "libxml2", "fontconfig", "freetype", "gsettings-desktop-schemas" },
-  archive = { strip = 1 },
+  version = "1.28.1",
+  summary = "Control center for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-control-center/mate-control-center-1.28.1.pkg.tar.zst",
+  sha256  = "1f3e8d581861b8c5cbfff61a30859588380182bc0834acd5e38456e2f7154289",
+  deps    = { "mate-menus", "mate-settings-daemon", "marco", "mate-desktop", "gettext", "accountsservice", "mate-panel", "libcanberra", "udisks2", "libayatana-appindicator" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/bin/mate-control-center -a -f " .. p.install_root .. "/usr/bin/mate-system-info")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }

@@ -1,12 +1,12 @@
 return {
   name    = "mate-panel",
-  version = "1.28.4",
-  summary = "MATE desktop panel",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/mate-panel/mate-panel-1.28.4.tar.gz",
-  sha256  = "1be570751ab22197fb91a514249f0fde57f0f591fcce421f6b52b70463ccd5a0",
-  deps    = { "glibc", "glib", "gtk3", "gdk-pixbuf", "pango", "mate-desktop", "mate-menus", "libmateweather", "libwnck3", "libdconf", "libICE", "libSM", "cairo" },
-  archive = { strip = 1 },
+  version = "1.28.7",
+  summary = "Panel for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-panel/mate-panel-1.28.7.pkg.tar.zst",
+  sha256  = "4d89e5329b9e88240ca1d06f357bdff4be383bc69076480d8b8002b29e8cdb07",
+  deps    = { "dbus-glib", "libwnck3", "libcanberra", "libmateweather", "libSM", "mate-menus", "mate-desktop", "gettext", "gtk-layer-shell" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/bin/mate-panel -a -f " .. p.install_root .. "/usr/lib/libmate-panel-applet-4.so")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }

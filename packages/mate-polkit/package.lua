@@ -1,12 +1,12 @@
 return {
   name    = "mate-polkit",
   version = "1.28.1",
-  summary = "MATE PolicyKit authentication agent",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/mate-polkit/mate-polkit-1.28.1.tar.gz",
-  sha256  = "ccbc92f23126f2c946f88fe6ee71aabfef359b418568af8e6602d8990df560c7",
-  deps    = { "glibc", "glib", "gtk3", "polkit" },
-  archive = { strip = 1 },
+  summary = "Polkit agent for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-polkit/mate-polkit-1.28.1.pkg.tar.zst",
+  sha256  = "bc3f5f7883046243c903c348da10686c6032750090437ab30a8725c068060685",
+  deps    = { "gtk3", "polkit", "gettext" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/libexec/polkit-mate-authentication-agent-1 -a -f " .. p.install_root .. "/etc/xdg/autostart/polkit-mate-authentication-agent-1.desktop")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }

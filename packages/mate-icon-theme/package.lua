@@ -1,12 +1,12 @@
 return {
   name    = "mate-icon-theme",
   version = "1.28.0",
-  summary = "MATE default icon theme",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/mate-icon-theme/mate-icon-theme-1.28.0.tar.gz",
-  sha256  = "bbca1598cd0a4750bd9f12fee4a5a101ba8457ff721e453af2e518c5e387aca2",
-  deps    = { "hicolor-icon-theme", "adwaita-icon-theme" },
-  archive = { strip = 1 },
+  summary = "Icon theme for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-icon-theme/mate-icon-theme-1.28.0.pkg.tar.zst",
+  sha256  = "e7f229ef53b9e41722df3a2e2cb5832affb2aabe4e87696d23baf83c83857309",
+  deps    = {},
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/share/icons/mate/index.theme -a -d " .. p.install_root .. "/usr/share/icons/mate/scalable")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }

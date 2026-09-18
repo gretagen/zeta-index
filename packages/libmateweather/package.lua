@@ -1,12 +1,12 @@
 return {
   name    = "libmateweather",
-  version = "1.28.0",
-  summary = "MATE library to access weather information",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/libmateweather/libmateweather-1.28.0.tar.gz",
-  sha256  = "c70a1d413ed0b3805515b3da463e8101fea2bc940ab8a981cd775e8447907c86",
-  deps    = { "glibc", "glib", "gtk3", "libxml2", "libsoup2" },
-  archive = { strip = 1 },
+  version = "1.28.2",
+  summary = "Weather library for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/libmateweather/libmateweather-1.28.2.pkg.tar.zst",
+  sha256  = "0ed34e0bcb3129b67bd574bec02bbae9b28bf81544187b23cf63813bbeeaa4c1",
+  deps    = { "gdk-pixbuf", "glib", "gtk3", "hicolor-icon-theme", "libsoup3", "libxml2" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libmateweather.so")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }

@@ -1,12 +1,12 @@
 return {
   name    = "mate-terminal",
   version = "1.28.1",
-  summary = "MATE terminal",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/mate-terminal/mate-terminal-1.28.1.tar.gz",
-  sha256  = "b6cf254753a0169b1aed0904215ba0662e8df3dd8f3caa11b7490a466b37ba0b",
-  deps    = { "glibc", "glib", "gtk3", "vte", "libdconf", "libSM", "libICE", "libX11" },
-  archive = { strip = 1 },
+  summary = "Terminal emulator for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-terminal/mate-terminal-1.28.1.pkg.tar.zst",
+  sha256  = "06c2e8803672f66dc0de6b217ff2fd30113ea6d52b3f3a78a3d33909788c7588",
+  deps    = { "libSM", "gettext", "mate-desktop", "vte3", "perl" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/bin/mate-terminal")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }

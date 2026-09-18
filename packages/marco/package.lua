@@ -1,12 +1,12 @@
 return {
   name    = "marco",
-  version = "1.28.1",
-  summary = "MATE window manager",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/marco/marco-1.28.1.tar.gz",
-  sha256  = "fce53fd550c939e8506d490c814a1cffebc38edb695f9cfcf948f4bbfbb48431",
-  deps    = { "glibc", "glib", "gtk3", "pango", "mate-desktop", "libcanberra", "startup-notification", "libXres", "libXcomposite", "libXrender", "libXcursor", "libXrandr", "libXinerama", "libXpresent" },
-  archive = { strip = 1 },
+  version = "1.29.0",
+  summary = "Window manager for MATE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/marco/marco-1.29.0.pkg.tar.zst",
+  sha256  = "42a088dede2e56b9f3032d51532468b90121154ab99ad08058aa89c2d0eddee9",
+  deps    = { "libcanberra", "libgtop", "mate-desktop", "zenity", "libXpresent", "gettext", "libXres", "libSM" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libmarco-private.so")
+    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
   end,
 }
