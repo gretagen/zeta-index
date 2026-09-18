@@ -2,7 +2,7 @@ return {
   name    = "nix",
   version = "2.35.2",
   summary = "Nix package manager (official prebuilt binary, /nix store layout)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/nix/nix-2.35.2.tar.xz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nix/nix-2.35.2.tar.xz",
   sha256  = "82b01be0a8d07eb25780e58637b7dddecd727e122c082f946dee1d250d406584",
   deps    = {},
   archive = { strip = 1 },

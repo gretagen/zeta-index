@@ -2,7 +2,7 @@ return {
   name    = "adwaita-icon-theme",
   version = "50.0",
   summary = "Adwaita icon theme",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/adwaita-icon-theme/adwaita-icon-theme-50.0.tar.gz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/adwaita-icon-theme/adwaita-icon-theme-50.0.tar.gz",
   sha256  = "e953a40ee5c4838715d8258135c1dd36041d0bfa1b07a9e96271003f1b195b37",
   deps    = { "hicolor-icon-theme", "glib" },
   archive = { strip = 1 },

@@ -2,7 +2,7 @@ return {
   name    = "xkbcommon",
   version = "1.13.2",
   summary = "Keyboard keymap compiler and support library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/xkbcommon/xkbcommon-1.13.2.tar.gz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/xkbcommon/xkbcommon-1.13.2.tar.gz",
   sha256  = "5d0183aa619dce00b453c2cbaea3eacf462c42dba38b0caef1df03bae7105383",
   deps    = { "glibc", "libxcb", "libxml2" },
   archive = { strip = 1 },

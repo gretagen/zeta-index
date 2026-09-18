@@ -2,7 +2,7 @@ return {
   name    = "libffi",
   version = "3.4.6",
   summary = "Portable Foreign Function Interface library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/libffi/libffi-3.4.6.tar.gz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libffi/libffi-3.4.6.tar.gz",
   sha256  = "479feee3910d6a1296dd4c7f501b851800e18108b23324220b0587b9e7f3e6ef",
   deps    = { "glibc" },
   archive = { strip = 1 },
