@@ -2,7 +2,7 @@ return {
   name    = "mate",
   version = "1.29",
   summary = "MATE desktop group (meta-package)",
-  deps    = { "caja", "marco", "mate-session-manager", "mate-settings-daemon", "mate-control-center", "mate-power-manager", "mate-polkit", "mate-menus", "mate-desktop", "mate-notification-daemon", "mate-terminal", "mate-backgrounds", "mate-calc", "mate-utils", "eom", "pluma", "libmatekbd", "libmateweather", "libgtop", "libpeas", "gsettings-desktop-schemas", "gtk3", "mate-icon-theme", "adwaita-icon-theme", "mate-media", "mate-netbook", "mate-screensaver", "mate-sensors-applet", "mate-themes", "mate-user-share", "mozo", "engrampa", "atril" },
+  deps    = { "caja", "marco", "mate-panel", "mate-session-manager", "mate-settings-daemon", "mate-control-center", "mate-power-manager", "mate-polkit", "mate-menus", "mate-desktop", "mate-notification-daemon", "mate-terminal", "mate-backgrounds", "mate-calc", "mate-utils", "eom", "pluma", "libmatekbd", "libmateweather", "libgtop", "libpeas", "gsettings-desktop-schemas", "gtk3", "mate-icon-theme", "adwaita-icon-theme", "mate-applets", "mate-media", "mate-netbook", "mate-screensaver", "mate-sensors-applet", "mate-themes", "mate-user-share", "mozo", "engrampa", "atril" },
   install = function(p)
     -- Install start-mate session launcher (handles dbus + XDG vars)
     local bin_dir = p.install_root .. "/usr/bin"
