@@ -505,7 +505,7 @@ return {
   { name = "squashfs-tools", version = "4.7.5", summary = "Tools for creating and extracting squashfs filesystems (mksquashfs, unsquashfs)" },
   { name = "startup-notification", version = "0.12", summary = "X11 application startup notification library" },
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
-  { name = "subspace-scripts", version = "1.1.1", summary = "Haliade OS subspace management scripts" },
+  { name = "subspace-scripts", version = "1.2.0", summary = "Haliade OS subspace management scripts" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
   { name = "systemd-libs", version = "257", summary = "systemd libraries (libsystemd, libudev)" },
   { name = "taglib", version = "2.3.0", summary = "Audio metadata tag library" },
