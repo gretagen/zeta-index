@@ -4,8 +4,8 @@ return {
   summary = "Full MATE desktop with all components + deps",
   deps    = {
     "mate",
-    "mate-applets", "mate-media", "mate-netbook", "mate-screensaver",
-    "mate-sensors-applet", "mate-themes", "mate-user-share", "mozo",
+    "mate-media", "mate-netbook", "mate-screensaver",
+    "mate-themes", "mate-user-share", "mozo",
     "engrampa", "atril",
     "gvfs", "accountsservice", "udisks2", "vte3", "webkit2gtk-4.1",
     "gstreamer", "gst-plugins-base-libs", "gst-plugins-bad-libs",
