@@ -22,6 +22,7 @@ return {
   { name = "bat", version = "0.26.1", summary = "A cat clone with wings" },
   { name = "binutils", version = "2.47", summary = "GNU Binutils - assembler, linker and binary tools (as, ld, objdump, nm, ar, strip)" },
   { name = "bitstreamvera", version = "1.10", summary = "Bitstream Vera TrueType fonts" },
+  { name = "brightnessctl", version = "0.5.1", summary = "Lightweight brightness control tool (Arch binary)" },
   { name = "brotli", version = "1.2.0", summary = "Brotli compression library" },
   { name = "btop", version = "1.4.7", summary = "Resource monitor (bpytop ported to C++)" },
   { name = "btrfs-progs", version = "7.1", summary = "Btrfs filesystem utilities (mkfs.btrfs, btrfs, btrfsck, btrfstune)" },
