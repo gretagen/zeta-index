@@ -8,8 +8,7 @@ dedicated repos.
 
 | Repository | Artifact format | Example URL |
 |---|---|---|
-| [zeta-packages](https://github.com/gretagen/zeta-packages) | Open-source tarballs | `https://raw.githubusercontent.com/gretagen/zeta-packages/refs/heads/main/packages/<pkg>/<file>` |
+| [zeta-constructs](https://github.com/gretagen/zeta-constructs) | Open-source tarballs (built and verified by HaliadeOS package maintenance) | `https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/<pkg>/<file>` |
 | [zeta-deliverance](https://github.com/gretagen/zeta-deliverance) | Open-source `.deb` | `https://raw.githubusercontent.com/gretagen/zeta-deliverance/refs/heads/main/<pkg>/<file>` |
 | [zeta-providence](https://github.com/gretagen/zeta-providence) | Proprietary (any format) | same raw path or GitHub Releases for large files |
-| [zeta-nemesis](https://github.com/gretagen/zeta-nemesis) | PKGBuilds | placeholder |
-| [zeta-compliance](https://github.com/gretagen/zeta-compliance) | Ebuilds | placeholder |
+| [zeta-nemesis](https://github.com/gretagen/zeta-nemesis) | Open source pkg.tar.zst | `https://raw.githubusercontent.com/gretagen/zeta-nemesis/refs/heads/main/<pkg>/<file>` | |
