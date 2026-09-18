@@ -1,16 +1,11 @@
 return {
   name    = "wine",
-  version = "11.0",
-  summary = "Compatibility layer for running Windows applications",
-  url     = "https://dl.winehq.org/wine/source/11.0/wine-11.0.tar.xz",
-  sha256  = "c07a6857933c1fc60dff5448d79f39c92481c1e9db5aa628db9d0358446e0701",
-  arch    = "x86_64",
-  deps    = { "glibc", "alsa-lib", "dbus", "fontconfig", "freetype", "gnutls", "libX11", "libXcomposite", "libXcursor", "libXext", "libXfixes", "libXi", "libXinerama", "libXrandr", "libXrender", "libxcb", "llvm-mingw", "make", "pulseaudio", "sdl2", "vulkan-loader", "wayland", "xkbcommon" },
-  build   = function(p)
-    p:run("./configure --prefix=/usr --enable-archs=i386,x86_64 --without-oss")
-    p:make()
-    p:make("install", "DESTDIR=" .. p.install_root)
-  end,
+  version = "11.17",
+  summary = "Compatibility layer for running Windows applications (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/wine/wine-11.17.pkg.tar.zst",
+  sha256  = "d251b09f2c7a46b5c434b3b3830c8e0632aeadfff4de9ce7aa0ea0a887f89285",
+  deps    = { "glibc", "fontconfig", "freetype", "libX11", "libXcursor", "libXext", "libXi", "libXrandr", "vulkan-loader" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
     p:run(p.install_root .. "/usr/bin/wine --version")
   end,
