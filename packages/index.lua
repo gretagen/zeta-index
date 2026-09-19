@@ -364,7 +364,7 @@ return {
   { name = "luv", version = "1.52.1-0", summary = "libuv bindings for LuaJIT" },
   { name = "lxappearance", version = "0.6.4", summary = "LXDE GTK theme switcher" },
   { name = "lxappearance-obconf", version = "0.2.4", summary = "Openbox theme plugin for lxappearance (Arch binary)" },
-  { name = "lxde", version = "0.2.0", summary = "LXDE desktop environment (meta-package)" },
+  { name = "lxde", version = "0.2.1", summary = "LXDE desktop environment (meta-package)" },
   { name = "lxde-common", version = "0.99.4", summary = "LXDE common files and default configs (Arch binary)" },
   { name = "lxhotkey", version = "0.1.2", summary = "LXDE keyboard shortcuts configurator (Arch binary)" },
   { name = "lxinput", version = "0.3.6", summary = "LXDE keyboard and mouse settings (Arch binary)" },

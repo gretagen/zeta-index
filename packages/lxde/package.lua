@@ -1,12 +1,14 @@
 return {
   name    = "lxde",
-  version = "0.2.0",
+  version = "0.2.1",
   summary = "LXDE desktop environment (meta-package)",
   deps    = {
     "openbox", "pcmanfm", "lxpanel", "lxsession", "lxappearance",
     "lxmenu-data", "libfm", "libfm-gtk3", "libfm-extra", "libwnck3",
     "lxde-common", "lxtask", "lxinput", "lxhotkey",
     "libkeybinder3", "menu-cache",
+    "dbus", "xorg-server", "xinit",
+    "shared-mime-info", "hicolor-icon-theme", "adwaita-icon-theme",
     "curl", "gtk3", "polkit",
   },
   install = function(p)
