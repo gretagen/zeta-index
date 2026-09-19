@@ -603,7 +603,7 @@ return {
   { name = "xz-utils", version = "5.6.4", summary = "XZ/LZMA compression (xz, lzma, liblzma)" },
   { name = "yajl", version = "2.1.0", summary = "Yet Another JSON Library" },
   { name = "zenity", version = "4.2.2", summary = "GTK dialog utility (Arch binary)" },
-  { name = "zeta", version = "1.0.33", summary = "Zeta package manager for Haliade OS" },
+  { name = "zeta", version = "1.0.34", summary = "Zeta package manager for Haliade OS" },
   { name = "zeta-toolchain", version = "1.0.0", summary = "Zeta build toolchain (zeta-makepkg, zeta-cli)" },
   { name = "zig", version = "0.16.0", summary = "Zig compiler and toolchain (LLVM 21 backend, all features)" },
   { name = "zip", version = "3.0", summary = "InfoZIP archiver" },
