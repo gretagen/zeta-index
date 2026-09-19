@@ -309,6 +309,7 @@ return {
   { name = "libtirpc", version = "1.3.6", summary = "Transport Independent RPC library" },
   { name = "libunistring", version = "5.2.1", summary = "Unicode string library" },
   { name = "libusb", version = "1.0.30", summary = "Cross-platform USB access library (libusb-1.0)" },
+  { name = "libutempter", version = "1.2.3", summary = "Library for recording utmp entries (Arch binary)" },
   { name = "libuuid", version = "2.42.1", summary = "UUID library (from util-linux)" },
   { name = "libva", version = "2.2300.0", summary = "Video Acceleration API" },
   { name = "libva-intel-driver", version = "2.4.1", summary = "Intel VA-API driver for i965 (pre-Broadwell legacy driver)" },
