@@ -1,11 +1,11 @@
 return {
   name    = "lxpanel",
-  version = "0.10.1",
-  summary = "LXDE desktop panel",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/lxpanel/lxpanel-0.10.1.tar.gz",
-  sha256  = "4a8df2a030aaa3a106a25cadf98046e35575bbbae8806c20742d8109a75f4dc6",
-  deps    = { "glibc", "libfm-gtk3", "gtk3", "menu-cache", "lxmenu-data", "alsa-lib", "curl", "libwnck3" },
-  archive = { strip = 1 },
+  version = "0.11.1",
+  summary = "LXDE desktop panel (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/lxpanel/lxpanel-0.11.1-4-x86_64.pkg.tar.zst",
+  sha256  = "6ce06a5ae70206546b99e4f58b1881ff4f581b00993a015556df40ac01281b4c",
+  deps    = { "alsa-lib", "cairo", "curl", "gdk-pixbuf", "glib", "gtk3", "libfm", "libfm-gtk3", "libkeybinder3", "libwnck3", "libX11", "libxml2", "lxmenu-data", "menu-cache", "pango" },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
     p:run("test -x " .. p.install_root .. "/usr/bin/lxpanel")
   end,

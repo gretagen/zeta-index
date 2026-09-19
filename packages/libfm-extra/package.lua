@@ -1,12 +1,12 @@
 return {
   name    = "libfm-extra",
-  version = "1.3.2",
-  summary = "File-manager helper library (libfm-extra)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libfm-extra/libfm-extra-1.3.2.tar.gz",
-  sha256  = "29bcabce01554729f62705101821649905b5ee03b5d8b7cf525da84118e8fa0d",
-  deps    = { "glibc" },
-  archive = { strip = 1 },
+  version = "1.4.1",
+  summary = "File-manager helper library (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/libfm-extra/libfm-extra-1.4.1-1-x86_64.pkg.tar.zst",
+  sha256  = "a2be248b57beb81d32d50a8335f2b39f0a2f1efb6de7ed64f7e41e31e3838112",
+  deps    = {},
+  archive = { extract_arch_pkg = true },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libfm-extra.so.4")
+    p:run("ls " .. p.install_root .. "/usr/lib/libfm-extra*.so*")
   end,
 }

@@ -1,16 +1,19 @@
 return {
   name    = "lxde",
-  version = "0.1.0",
+  version = "0.2.0",
   summary = "LXDE desktop environment (meta-package)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/lxde/lxde-0.1.0.tar.gz",
-  sha256  = "a7ceb11a21533d029f49015fdb90619a58e0369ee303ce07a1dbf215ef6f296b",
   deps    = {
     "openbox", "pcmanfm", "lxpanel", "lxsession", "lxappearance",
-    "lxmenu-data", "libfm", "libfm-gtk3", "libwnck3", "curl",
-    "gtk3", "polkit",
+    "lxmenu-data", "libfm", "libfm-gtk3", "libfm-extra", "libwnck3",
+    "lxde-common", "lxtask", "lxinput", "lxhotkey",
+    "libkeybinder3", "menu-cache",
+    "curl", "gtk3", "polkit",
   },
-  archive = { strip = 1 },
-  test    = function(p)
-    p:run("test -d " .. p.install_root)
+  install = function(p)
+    p:run("mkdir -p " .. p.install_root .. "/usr/share/xsessions")
+    p:run("cat > " .. p.install_root .. "/usr/share/xsessions/lxde.desktop <<'EOF'\n[Desktop Entry]\nName=LXDE\nComment=Lightweight X11 Desktop Environment\nExec=startlxde\nType=Application\nDesktopNames=LXDE\nEOF")
+  end,
+  test = function(p)
+    p:run("test -d " .. p.install_root .. "/usr/share/xsessions")
   end,
 }

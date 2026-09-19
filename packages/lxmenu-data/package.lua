@@ -1,11 +1,11 @@
 return {
   name    = "lxmenu-data",
-  version = "0.1.5",
-  summary = "Freedesktop menu definitions for LXDE",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/lxmenu-data/lxmenu-data-0.1.5.tar.gz",
-  sha256  = "d0bd8f1c8a5e2f9a4f288235dc73914172b679c03368463382bd64c49affbd6b",
+  version = "0.1.7",
+  summary = "Freedesktop menu definitions for LXDE (Arch binary)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/lxmenu-data/lxmenu-data-0.1.7-1-any.pkg.tar.zst",
+  sha256  = "285a8388cd149dbc984589daf7881f37184890fb4a7f62d531acf1fe1dda2609",
   deps    = {},
-  archive = { strip = 1 },
+  archive = { extract_arch_pkg = true },
   test    = function(p)
     p:run("test -d " .. p.install_root .. "/usr/share/desktop-directories")
   end,
