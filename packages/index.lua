@@ -630,6 +630,7 @@ return {
   { name = "procps-ng", version = "4.0.7rc1", summary = "libproc2 process information library" },
   { name = "pugixml", version = "1.15", summary = "Lightweight C++ XML processing library" },
   { name = "pulseaudio", version = "17.0", summary = "Network-capable sound server and client library" },
+  { name = "python", version = "3.14.7", summary = "The Python programming language" },
   { name = "qt5", version = "5.15.19", summary = "Qt 5 runtime libraries (Core/Gui/Widgets/Svg/X11Extras/XcbQpa + plugins)" },
   { name = "qtbase", version = "6.8.2", summary = "Qt 6 base libraries" },
   { name = "qtdeclarative", version = "6.8.2", summary = "Qt6 QML/Quick modules" },
