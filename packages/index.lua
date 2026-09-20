@@ -458,7 +458,6 @@ return {
   { name = "libxfce4windowing", version = "4.20.6", summary = "X11 and Wayland windowing library for Xfce" },
   { name = "libxfixes", version = "6.0.2", summary = "X11 miscellaneous 'fixes' extension library" },
   { name = "libxinerama", version = "1.1.6", summary = "Xinerama extension library" },
-  { name = "libxkbcommon", version = "1.13.2", summary = "Keyboard handling library" },
   { name = "libxklavier", version = "5.4", summary = "X Keyboard Extension querying/manipulation library" },
   { name = "libxml2", version = "2.15.3", summary = "XML C parser and toolkit" },
   { name = "libxmlb", version = "0.3.23", summary = "Library to help create and query binary XML blobs" },
