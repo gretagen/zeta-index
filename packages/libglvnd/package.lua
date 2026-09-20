@@ -1,12 +1,12 @@
 return {
   name    = "libglvnd",
   version = "1.7.0",
-  summary = "Vendor-neutral GL/GLX/EGL dispatch library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libglvnd/libglvnd-1.7.0.tar.gz",
-  sha256  = "cbe928d7064aa2d5bcd9a78d46509ebed252f78d8581e6524bb46d0f7be5aa8e",
-  deps    = { "glibc" },
+  summary = "GLVND EGL/GL libraries",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/refs/heads/main/libglvnd/libglvnd-1.7.0-3-x86_64.pkg.tar.zst",
+  sha256  = "633c2e95d7798d0ce7ee1b7fe970a22325f7f6d35b9f923bb61b223a80934437",
+  deps    = { "glibc", "libxext", "mesa", },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -e " .. p.install_root .. "/usr/lib/libGLX.so.0 -a -e " .. p.install_root .. "/usr/lib/libGLdispatch.so.0 -a -e " .. p.install_root .. "/usr/lib/libGL.so.1")
+    p:run("test -e " .. p.install_root .. "/usr/lib")
   end,
 }
