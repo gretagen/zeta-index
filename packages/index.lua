@@ -449,6 +449,7 @@ return {
   { name = "libxcb", version = "1.17.0", summary = "X C Binding library (X11 protocol client library)" },
   { name = "libxcb-xrm", version = "1.3", summary = "X resource manager extension" },
   { name = "libxcrypt", version = "4.4.36", summary = "Extended crypt library for password hashing (libcrypt.so.2)" },
+  { name = "libxcrypt-compat", version = "4.5.2", summary = "Legacy API functions for libxcrypt (crypt.h backward compat)" },
   { name = "libxcvt", version = "0.1.3", summary = "Library for VESA CVT standard timing modelines" },
   { name = "libxdmcp", version = "1.1.5", summary = "X11 Display Manager Control Protocol library" },
   { name = "libxext", version = "1.3.6", summary = "X11 miscellaneous extensions" },
