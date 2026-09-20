@@ -790,7 +790,6 @@ return {
   { name = "zig", version = "0.16.0", summary = "Zig compiler and toolchain (LLVM 21 backend, all features)" },
   { name = "zimg", version = "3.0.6", summary = "Image processing library" },
   { name = "zip", version = "3.0", summary = "InfoZIP archiver" },
-  { name = "zlib", version = "1.3.1", summary = "Compression library" },
   { name = "zsh", version = "5.9.2", summary = "Powerful shell with scripting and tab completion" },
   { name = "zstd", version = "1.5.7", summary = "Zstandard compression library" },
   { name = "zstrappa", version = "2.4", summary = "Install Haliade OS from the live ISO to a target device" },
