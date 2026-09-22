@@ -1,9 +1,9 @@
 return {
   name    = "thesh",
-  version = "0.2.4",
+  version = "0.2.5",
   summary = "Custom standalone POSIX shell for Haliade OS (default shell, replaces bash)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/thesh/thesh-0.2.4.tar.gz",
-  sha256  = "4e6776ef1a84ff2a7deb77ab4da16d847a9ad5619e69e3d26476a88ff25864ab",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/thesh/thesh-0.2.5.tar.gz",
+  sha256  = "19777b9bb57287fa0a01f06a644111157b6c4acb79f67566943618eb387dc6d2",
   deps    = { "glibc" },
   archive = { strip = 1 },
   test    = function(p)
