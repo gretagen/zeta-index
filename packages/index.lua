@@ -853,5 +853,5 @@ return {
   { name = "zita-resampler", version = "1.11.2", summary = "A C++ library for resampling audio signals" },
   { name = "zsh", version = "5.9.2", summary = "Powerful shell with scripting and tab completion" },
   { name = "zstd", version = "1.5.7", summary = "Zstandard compression library" },
-  { name = "zstrappa", version = "2.5", summary = "Install Haliade OS from the live ISO to a target device" },
+  { name = "zstrappa", version = "2.6", summary = "Install Haliade OS from the live ISO to a target device" },
 }
