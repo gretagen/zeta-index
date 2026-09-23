@@ -2,7 +2,7 @@ return {
   name    = "wmaker",
   version = "0.96.0",
   summary = "X11 window manager with a NeXTSTEP look and feel",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/blob/main/packages/wmaker/wmaker-0.96.0.tar.gz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/tree/main/packages/wmaker/wmaker-0.96.0.tar.gz",
   sha256  = "880c7098458d61f70bb32ed035cf16b91b852510a3ecffab1188074b2f976183",
   deps    = { "bash", "fontconfig", "giflib", "glibc", "libexif", "libjpeg-turbo", "libpng", "libtiff", "libwebp", "libX11", "libXext", "libXft", "libXinerama", "libXmu", "libXpm", "libXrandr", "pango" },
   archive = { strip = 1 },
