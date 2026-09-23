@@ -65,6 +65,7 @@ return {
   { name = "desktop-file-utils", version = "0.28", summary = "Command line utilities for working with desktop entries" },
   { name = "device-mapper", version = "2.03.42", summary = "Device mapper userspace library and tools (libdevmapper, dmsetup, dmeventd)" },
   { name = "dhcpcd", version = "10.2.2", summary = "DHCP client daemon" },
+  { name = "dinit", version = "0.22.1", summary = "The dinit init/service manager (dinit, dinitctl, shutdown tools)" },
   { name = "discord", version = "1.0.157", summary = "Discord (stable Electron client)" },
   { name = "djvulibre", version = "3.5.30.1", summary = "DjVu library and tools (Arch binary)" },
   { name = "dkms", version = "3.4.3", summary = "Dynamic Kernel Module Support framework" },
