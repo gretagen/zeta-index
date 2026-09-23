@@ -1,9 +1,9 @@
 return {
   name    = "runit",
   version = "2.3.1",
-  summary = "runit init system (runit-init, runsv, runsvdir, sv, svlogd, chpst)",
+  summary = "The runit init system (init, runsvdir service supervision)",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/runit/runit-2.3.1.tar.gz",
-  sha256  = "7d34dbc9431073fdf5a892a752c5fccb44c0479d1cedebea3df07bade5687b7b",
+  sha256  = "3ad992754868319b4c790bdd0062610c6e4bf4b7b8a3305526b55de55c2e701e",
   deps    = {},
   archive = { strip = 1 },
   test    = function(p)
