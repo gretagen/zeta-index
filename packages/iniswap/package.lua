@@ -1,9 +1,9 @@
 return {
   name    = "iniswap",
-  version = "1.2.0",
-  summary = "Swap init systems (openrc/runit) on next boot for Haliade OS",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/iniswap/iniswap-1.2.0.tar.gz",
-  sha256  = "d922be5dfd8055fbae0ff17febff2d8a9459eedf234f3ac81afc1eabb3f5a4cd",
+  version = "1.3.0",
+  summary = "Swap init systems (openrc/runit/dinit) on next boot for Haliade OS",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/iniswap/iniswap-1.3.0.tar.gz",
+  sha256  = "9b213df9baed404351602787bd49b9a762f0a262fc747b01d5217d66c2c43421",
   deps    = { "chronos" },
   archive = { strip = 1 },
   test    = function(p)
