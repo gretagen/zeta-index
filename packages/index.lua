@@ -699,6 +699,7 @@ return {
   { name = "rsync", version = "3.5.0", summary = "Remote file sync with ACL/xattr support" },
   { name = "rtw89", version = "0.20260825", summary = "Realtek RTW89 wifi firmware blobs" },
   { name = "rubberband", version = "4.0.0", summary = "Audio time-stretching library" },
+  { name = "runit", version = "2.3.1", summary = "runit init system (runit-init, runsv, runsvdir, sv, svlogd, chpst)" },
   { name = "rust", version = "1.98.0", summary = "Systems programming language (rustc, cargo, rustfmt, clippy, rustdoc)" },
   { name = "scenefx", version = "0.5", summary = "Wayland compositor effects library (window animation/effects)" },
   { name = "sdbus-cpp", version = "2.3.1", summary = "C++ wrapper library for sd-bus (libsystemd D-Bus client)" },
