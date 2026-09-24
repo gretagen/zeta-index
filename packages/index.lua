@@ -190,7 +190,7 @@ return {
   { name = "imlib2", version = "1.12.6", summary = "Image loading and rendering library" },
   { name = "impala", version = "0.9.0", summary = "TUI for managing wifi on Linux (iwd client)" },
   { name = "iniparser", version = "4.2.6", summary = "Standalone ini-file parsing library" },
-  { name = "iniswap", version = "1.3.0", summary = "Swap init systems (openrc/runit/dinit) on next boot for Haliade OS" },
+  { name = "iniswap", version = "1.4.0", summary = "Swap init systems (openrc/runit/dinit) on next boot for Haliade OS" },
   { name = "intel-full", version = "1.0", summary = "Complete Intel GPU graphics stack (VA-API iHD/i965, X11 DDX driver, Mesa)" },
   { name = "intel-gmmlib", version = "22.10.1", summary = "Intel Graphics Memory Management Library" },
   { name = "intel-media-driver", version = "26.2.4", summary = "Intel Media Driver for VA-API (iHD) — hardware video decode/encode for Gen8+" },
