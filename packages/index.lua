@@ -169,7 +169,7 @@ return {
   { name = "hello", version = "1.0", summary = "A tiny demonstration package for Zeta" },
   { name = "hicolor-icon-theme", version = "0.18", summary = "Default fallback icon theme for XDG icon themes" },
   { name = "hidapi", version = "0.15.0", summary = "Simple library for communicating with USB and Bluetooth HID devices" },
-  { name = "house-handlers", version = "1.1.0", summary = "Haliade OS home/dotfile configuration handlers (house-synchronize)" },
+  { name = "house-handlers", version = "1.2.0", summary = "Haliade OS home/dotfile configuration handlers (house-synchronize)" },
   { name = "htop", version = "3.5.2", summary = "Interactive process viewer" },
   { name = "hwdata", version = "0.389", summary = "Hardware identification databases (pci.ids, usb.ids)" },
   { name = "hyphen", version = "2.8.9", summary = "Hyphenation library (Arch binary)" },
