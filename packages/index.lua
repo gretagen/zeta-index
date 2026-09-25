@@ -737,7 +737,7 @@ return {
   { name = "tar", version = "1.35", summary = "GNU tar: file archiver" },
   { name = "telegram-desktop", version = "7.2.8", summary = "Telegram Desktop messaging client (official static build)" },
   { name = "terminfo", version = "1.0", summary = "Terminfo database (compiled from ncurses 6.6)" },
-  { name = "thesh", version = "0.3.1", summary = "Custom standalone POSIX shell for Haliade OS (default shell, replaces bash)" },
+  { name = "thesh", version = "0.4.0", summary = "Custom standalone POSIX shell for Haliade OS (default shell, replaces bash)" },
   { name = "thunar", version = "4.20.9", summary = "File manager for Xfce" },
   { name = "tllist", version = "1.1.0", summary = "Typed Linked List C header library" },
   { name = "tmux", version = "3.7_c", summary = "Terminal multiplexer (Arch binary)" },
