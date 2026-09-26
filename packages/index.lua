@@ -759,6 +759,7 @@ return {
   { name = "util-linux", version = "2.42", summary = "Essential Linux system utilities (mount, losetup, fdisk, blkid, agetty, lsblk, etc.)" },
   { name = "util-linux-libs", version = "2.42", summary = "Util-linux shared libraries (libblkid, libmount)" },
   { name = "util-macros", version = "1.20.2", summary = "X.Org Autoconf macros (build-time dependency)" },
+  { name = "uutils-coreutils", version = "0.13.0", summary = "Rust reimplementation of the GNU coreutils (multicall binary)" },
   { name = "v4l-utils", version = "1.32.0", summary = "Video4Linux utilities" },
   { name = "vapoursynth", version = "79", summary = "Video processing framework" },
   { name = "vid.stab", version = "1.1.2", summary = "Video stabilization library" },
