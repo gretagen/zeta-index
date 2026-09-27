@@ -729,7 +729,7 @@ return {
   { name = "startup-notification", version = "0.12", summary = "X11 application startup notification library" },
   { name = "steam", version = "1.0.0.87", summary = "Steam - Valve's digital game distribution platform" },
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
-  { name = "subspace-scripts", version = "1.4.0", summary = "Haliade OS subspace management scripts" },
+  { name = "subspace-scripts", version = "1.5.0", summary = "Haliade OS subspace management scripts" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
   { name = "systemd-libs", version = "257", summary = "systemd libraries (libsystemd, libudev)" },
