@@ -37,7 +37,7 @@ return {
   { name = "caja", version = "1.28.0", summary = "File manager for MATE (Arch binary)" },
   { name = "cava", version = "1.0.0", summary = "Console-based audio visualizer for ALSA, PulseAudio and PipeWire" },
   { name = "cfdisk", version = "2.42", summary = "Curses-based disk partition table editor (from util-linux)" },
-  { name = "chronos", version = "1.3", summary = "btrfs generation manager for Haliade OS (Limine boot entries)" },
+  { name = "chronos", version = "1.4", summary = "btrfs generation manager for Haliade OS (Limine boot entries)" },
   { name = "cjson", version = "1.7.19", summary = "Ultralightweight JSON parser for C (used by mango)" },
   { name = "clang21", version = "21.1.8", summary = "C language family frontend for LLVM 21 (clang and libclang-cpp)" },
   { name = "cmake", version = "3.31.6", summary = "Cross-platform build system generator" },
@@ -857,5 +857,5 @@ return {
   { name = "zita-resampler", version = "1.11.2", summary = "A C++ library for resampling audio signals" },
   { name = "zsh", version = "5.9.2", summary = "Powerful shell with scripting and tab completion" },
   { name = "zstd", version = "1.5.7", summary = "Zstandard compression library" },
-  { name = "zstrappa", version = "2.8", summary = "Install Haliade OS from the live ISO to a target device" },
+  { name = "zstrappa", version = "2.9", summary = "Install Haliade OS from the live ISO to a target device" },
 }
