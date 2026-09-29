@@ -124,7 +124,7 @@ return {
   { name = "gdbm", version = "1.26", summary = "GNU database library" },
   { name = "gdk-pixbuf", version = "2.42.12", summary = "Image loading and scaling library" },
   { name = "gdk-pixbuf2", version = "2.44.7", summary = "Image loading library" },
-  { name = "genkernel", version = "2", summary = "Haliade OS kernel generation script" },
+  { name = "genkernel", version = "3", summary = "Haliade OS kernel generation script" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
   { name = "giflib", version = "6.1.3", summary = "Library for reading and writing gif images" },
