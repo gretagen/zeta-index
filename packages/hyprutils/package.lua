@@ -7,6 +7,6 @@ return {
   deps    = { "glibc", "pixman" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libhyprutils.so.13")
+    p:run("test -f " .. p.install_root .. "/usr/lib/libhyprutils.so.13 && test -f " .. p.install_root .. "/usr/lib/libhyprutils.so.12")
   end,
 }
