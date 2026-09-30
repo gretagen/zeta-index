@@ -167,6 +167,7 @@ return {
   { name = "haliade-utils", version = "1.0", summary = "Haliade OS utility scripts (metapackage)" },
   { name = "harfbuzz", version = "11.1.0", summary = "Text shaping library" },
   { name = "harfbuzz-icu", version = "14.4.0", summary = "HarfBuzz ICU integration (Arch binary)" },
+  { name = "helix", version = "25.07.1", summary = "Post-modern modal text editor with grammar-based syntax highlighting (Arch binary)" },
   { name = "hello", version = "1.0", summary = "A tiny demonstration package for Zeta" },
   { name = "hicolor-icon-theme", version = "0.18", summary = "Default fallback icon theme for XDG icon themes" },
   { name = "hidapi", version = "0.15.0", summary = "Simple library for communicating with USB and Bluetooth HID devices" },
