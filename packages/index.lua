@@ -30,7 +30,7 @@ return {
   { name = "btop", version = "1.4.7", summary = "Resource monitor (bpytop ported to C++)" },
   { name = "btrfs-progs", version = "7.1", summary = "Btrfs filesystem utilities (mkfs.btrfs, btrfs, btrfsck, btrfstune)" },
   { name = "bubblewrap", version = "0.11.2", summary = "Low-level unprivileged sandboxing tool (used by Flatpak)" },
-  { name = "busybox", version = "1.37.0-2", summary = "Swiss army knife of embedded Linux" },
+  { name = "busybox-init", version = "1.37.0", summary = "Busybox boot essentials: PID1 init, ash shell, mdev, and the applets the boot chain needs (nothing else)" },
   { name = "bzip2", version = "1.0.8", summary = "bzip2 compression library" },
   { name = "cairo", version = "1.18.4", summary = "2D graphics library with Xlib/XCB surfaces" },
   { name = "cairomm", version = "1.15.4", summary = "C++ bindings for the Cairo graphics library" },
