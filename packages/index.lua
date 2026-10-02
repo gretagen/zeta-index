@@ -196,7 +196,7 @@ return {
   { name = "intel-full", version = "1.0", summary = "Complete Intel GPU graphics stack (VA-API iHD/i965, X11 DDX driver, Mesa)" },
   { name = "intel-gmmlib", version = "22.10.1", summary = "Intel Graphics Memory Management Library" },
   { name = "intel-media-driver", version = "26.2.4", summary = "Intel Media Driver for VA-API (iHD) — hardware video decode/encode for Gen8+" },
-  { name = "iproute2", version = "7.2.0-2", summary = "Advanced IP routing and network tools (ip, ss, tc, bridge, devlink)" },
+  { name = "iproute2", version = "7.2.0-3", summary = "Advanced IP routing and network tools (ip, ss, tc, bridge, devlink)" },
   { name = "iptables", version = "1.8.13", summary = "Packet filtering and NAT toolset (iptables/ip6tables, libxtables)" },
   { name = "iputils", version = "20200821", summary = "Network monitoring tools (ping, tracepath, clockdiff)" },
   { name = "iso-codes", version = "4.18.0", summary = "ISO language, region, script and currency code lists" },
