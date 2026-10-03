@@ -1,9 +1,9 @@
 return {
   name    = "subspace-scripts",
-  version = "1.6.0",
+  version = "1.7.0",
   summary = "Haliade OS subspace management scripts",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/subspace-scripts/subspace-scripts-1.6.0.tar.gz",
-  sha256  = "25a295f0dd1835bb9e5892340448db52e57060d89d9e3b90621aa18841635272",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/subspace-scripts/subspace-scripts-1.7.0.tar.gz",
+  sha256  = "e4c793c692730778637ad05a45d1002446320cee4bce1ac90f1fe30c94f62b5a",
   deps    = { "bash", "bubblewrap", "chronos" },
   archive = { strip = 1 },
   test    = function(p)
