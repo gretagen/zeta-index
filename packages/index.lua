@@ -577,6 +577,7 @@ return {
   { name = "maim", version = "5.8.2", summary = "Screenshot utility that takes a shot of the screen X11 (maim = make image magick)" },
   { name = "make", version = "4.4.1", summary = "GNU Make — build automation tool" },
   { name = "mango", version = "0.15.6", summary = "MangoWM: lightweight dwl-based Wayland compositor" },
+  { name = "manual", version = "1.0", summary = "Haliade OS manual as a command (manual)" },
   { name = "marco", version = "1.29.0", summary = "Window manager for MATE (Arch binary)" },
   { name = "mate", version = "1.29", summary = "MATE desktop group (meta-package)" },
   { name = "mate-applets", version = "1.28.1", summary = "Panel applets for MATE (Arch binary)" },
