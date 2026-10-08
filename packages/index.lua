@@ -446,6 +446,7 @@ return {
   { name = "libpulse", version = "17.0+r98+gb096704c0", summary = "PulseAudio client library (Arch binary)" },
   { name = "libqtxdg", version = "4.1.0", summary = "Qt6 XDG integration library" },
   { name = "libquadmath", version = "16.2.1+r23+gd564253eb6c8", summary = "GCC __float128 library" },
+  { name = "libraqm", version = "0.11.0", summary = "Complex text layout for RTL scripts (HarfBuzz/FriBidi/FreeType glue)" },
   { name = "libraw1394", version = "2.1.2", summary = "IEEE 1394 raw access library" },
   { name = "libreoffice", version = "26.2.5.2", summary = "LibreOffice office suite (single binary .deb package)" },
   { name = "librsvg", version = "2.60.0", summary = "SVG rendering library (rsvg)" },
