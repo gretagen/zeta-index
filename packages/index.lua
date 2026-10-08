@@ -789,7 +789,7 @@ return {
   { name = "wireless_tools", version = "30.pre9-5-x86_64", summary = "Wireless tools (Arch binary)" },
   { name = "wlr-protocols", version = "1.14.0", summary = "wlr Wayland protocol definitions" },
   { name = "wlroots", version = "0.20.2", summary = "Modular Wayland compositor library" },
-  { name = "wmaker", version = "0.96.0", summary = "X11 window manager with a NeXTSTEP look and feel" },
+  { name = "wmaker", version = "0.96.0-2", summary = "X11 window manager with a NeXTSTEP look and feel" },
   { name = "woff2", version = "1.0.2-6-x86_64", summary = "Web Open Font Format 2 (Arch binary)" },
   { name = "wofi", version = "1.5.3", summary = "Wayland-native launcher (rofi-style)" },
   { name = "wpa_supplicant", version = "2.12", summary = "WPA/WPA2/WPA3 supplicant for Wi-Fi" },
