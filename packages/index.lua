@@ -409,6 +409,7 @@ return {
   { name = "libksba", version = "1.8.0", summary = "Library for X.509 and CMS data structures" },
   { name = "liblangtag", version = "0.6.8", summary = "interface library to access/deal with tags for identifying languages" },
   { name = "libldap", version = "2.7.1", summary = "Lightweight Directory Access Protocol (LDAP) client libraries" },
+  { name = "liblqr", version = "0.4.3", summary = "Liquid Rescale content-aware image resizing (liblqr-1.so.0)" },
   { name = "liblxqt", version = "2.1.0", summary = "Core LXQt library" },
   { name = "libmanette", version = "0.2.13-2-x86_64", summary = "Gamepad input library (Arch binary)" },
   { name = "libmatekbd", version = "1.28.0", summary = "Keyboard library for MATE (Arch binary)" },
