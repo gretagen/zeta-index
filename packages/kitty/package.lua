@@ -7,7 +7,7 @@ return {
   deps    = {
     "glibc",
     "fontconfig",
-    "libXcursor", "libXrandr", "libXi", "libXinerama", "libglvnd",
+    "libXcursor", "libXrandr", "libXi", "libXinerama", "egl",
     "libX11", "libxcb", "dbus",
   },
   archive = { strip = 1 },

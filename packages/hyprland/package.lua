@@ -14,7 +14,7 @@ return {
     "muparser", "pango", "pixman", "re2", "seatd",
     "systemd-libs", "tomlplusplus", "util-linux-libs",
     "wayland", "wayland-protocols", "xkbcommon",
-    "libglvnd", "mesa-drivers",
+    "egl", "mesa-drivers",
   },
   archive = { strip = 1 },
   test = function(p)

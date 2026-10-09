@@ -10,13 +10,13 @@ return {
     -- DRM userspace
     "libdrm",
     -- Vulkan
-    "vulkan-loader",
+    "mesa-drivers",
     "vulkan-headers",
     "spirv-tools",
     -- VA-API
     "libva",
     -- GL dispatch
-    "libglvnd",
+    "egl",
     "egl",
     -- X11 core
     "libX11",
