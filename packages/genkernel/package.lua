@@ -4,7 +4,9 @@ return {
   summary = "Haliade OS kernel generation script",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/genkernel/genkernel-2.1.tar.gz",
   sha256  = "e0dd92103712f8d01f504967b3affc6af9d88d4cfe66b0258c2d5c54e5d6f257",
-  deps    = { "bash", "curl" },
+  -- kernel-build toolchain (manifest-only edit: the genkernel-2.1 tarball is
+  -- byte-identical, so this is metadata, not a rebuild)
+  deps    = { "bash", "curl", "make", "binutils", "gcc-minimal", "bc", "libelf" },
   archive = { strip = 1 },
   test    = function(p)
     p:run("test -x " .. p.install_root .. "/usr/bin/genkernel")
