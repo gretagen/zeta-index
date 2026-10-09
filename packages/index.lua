@@ -118,7 +118,7 @@ return {
   { name = "gcc", version = "16.2.0", summary = "GNU Compiler Collection (C and C++ front ends, libstdc++)" },
   { name = "gcr-4", version = "4.4.1", summary = "GCR certificate library (Arch binary)" },
   { name = "gdbm", version = "1.26", summary = "GNU database library" },
-  { name = "gdk-pixbuf", version = "2.42.12", summary = "Image loading and scaling library" },
+  { name = "gdk-pixbuf", version = "2.42.12-2", summary = "Image loading and scaling library (with png/jpeg/gif loader modules + loaders.cache)" },
   { name = "genkernel", version = "2.1", summary = "Haliade OS kernel generation script" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
