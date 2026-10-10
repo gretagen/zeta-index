@@ -59,7 +59,7 @@ return {
   { name = "dbus", version = "1.16.2", summary = "D-Bus message bus system" },
   { name = "dbus-glib", version = "0.112", summary = "GLib integration for the freedesktop D-Bus message bus" },
   { name = "dconf-editor", version = "49.0", summary = "GSettings editor for GNOME" },
-  { name = "declaration", version = "1.6.0", summary = "Haliade OS declarative system configuration (haliade-synchronize)" },
+  { name = "declaration", version = "1.6.1", summary = "Haliade OS declarative system configuration (haliade-synchronize)" },
   { name = "default-cursors", version = "3", summary = "Default cursor set" },
   { name = "dejavusans", version = "2.37", summary = "DejaVu Sans/Serif/Mono TrueType fonts" },
   { name = "desktop-file-utils", version = "0.28", summary = "Command line utilities for working with desktop entries" },
