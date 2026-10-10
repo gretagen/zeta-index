@@ -56,7 +56,7 @@ return {
   { name = "curl", version = "8.14.1", summary = "URL retrieval tool" },
   { name = "dav1d", version = "1.5.4", summary = "AV1 cross-platform decoder library" },
   { name = "db5.3", version = "5.3.28", summary = "Berkeley DB library" },
-  { name = "dbus", version = "1.16.2", summary = "D-Bus message bus system" },
+  { name = "dbus", version = "1.16.2-2", summary = "D-Bus message bus system" },
   { name = "dbus-glib", version = "0.112", summary = "GLib integration for the freedesktop D-Bus message bus" },
   { name = "dconf-editor", version = "49.0", summary = "GSettings editor for GNOME" },
   { name = "declaration", version = "1.6.1", summary = "Haliade OS declarative system configuration (haliade-synchronize)" },

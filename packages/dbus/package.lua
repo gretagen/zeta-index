@@ -1,9 +1,9 @@
 return {
   name    = "dbus",
-  version = "1.16.2",
+  version = "1.16.2-2",
   summary = "D-Bus message bus system",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/dbus/dbus-1.16.2.tar.xz",
-  sha256  = "aef47e85d86c1d9d5417f2049387106a0850f2c59354a22a2abe2f3d134af330",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/dbus/dbus-1.16.2-2.tar.xz",
+  sha256  = "5ba1f57e9c1c0d743b061a5ce375af50bb76e2ebca964ef5ae93341d1e05c291",
   deps    = { "glibc", "audit" },
   archive = { strip = 1 },
   test    = function(p)
