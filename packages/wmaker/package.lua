@@ -4,7 +4,7 @@ return {
   summary = "X11 window manager with a NeXTSTEP look and feel",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/wmaker/wmaker-0.96.0-3.tar.gz",
   sha256  = "fc978a32bbb27001b53d52341e9c68439cd4055cb72e4dd39a0bac11bccd2191",
-  deps    = { "glibc", "libX11", "libXext", "libXft", "libXmu", "libXpm", "libXinerama", "libXrandr", "libpng", "libjpeg-turbo", "libtiff", "giflib", "libwebp", "fontconfig", "freetype", "pango", "libexif", "perl", "mesa-drivers" },
+  deps    = { "glibc", "libX11", "libXext", "libXft", "libXmu", "libXpm", "libXinerama", "libXrandr", "libpng", "libjpeg-turbo", "libtiff", "giflib", "libwebp", "fontconfig", "freetype", "pango", "libexif", "mesa-drivers" },
   archive = { strip = 1 },
   test    = function(p)
     p:run("test -x " .. p.install_root .. "/usr/bin/wmaker && test -f " .. p.install_root .. "/usr/share/xsessions/wmaker.desktop")
