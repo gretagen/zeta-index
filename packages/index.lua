@@ -807,6 +807,7 @@ return {
   { name = "xfdesktop", version = "4.20.2", summary = "Xfce desktop background and icons manager" },
   { name = "xfwm4", version = "4.20.0", summary = "Xfce window manager with compositor" },
   { name = "xgamma", version = "1.0.8", summary = "Alter a monitor's gamma correction through the X server" },
+  { name = "xhost", version = "1.0.10", summary = "X server access control program" },
   { name = "xinit", version = "1.4.4", summary = "X11 server startup tool (startx/xinit)" },
   { name = "xkbcommon", version = "1.13.2", summary = "Keyboard keymap compiler and support library" },
   { name = "xkbcomp", version = "1.4.7", summary = "X keyboard description compiler" },
