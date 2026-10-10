@@ -381,6 +381,7 @@ return {
   { name = "libgcrypt", version = "1.12.2", summary = "GNU Cryptographic Library" },
   { name = "libgepub", version = "0.7.3-2-x86_64", summary = "EPUB library (Arch binary)" },
   { name = "libgit2", version = "1.9.7", summary = "Library implementing Git core methods (used by cargo)" },
+  { name = "libglvnd", version = "1.7.0", summary = "The GL Vendor-Neutral Dispatch library" },
   { name = "libgomp", version = "16.2.1+r23+gd564253eb6c8", summary = "OpenMP library shipped by GCC" },
   { name = "libgpg-error", version = "1.61", summary = "Library defining common GnuPG error values" },
   { name = "libgtop", version = "2.41.3", summary = "Library for system information via /proc (libgtop-2.0)" },
