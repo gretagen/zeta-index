@@ -9,6 +9,7 @@ return {
   { name = "alacritty", version = "0.15.1", summary = "GPU-accelerated terminal emulator" },
   { name = "alsa-lib", version = "1.2.14", summary = "ALSA sound library (libasound)" },
   { name = "alsa-plugins", version = "1:1.2.12", summary = "Additional ALSA plugins" },
+  { name = "anipaper", version = "2022.11.07", summary = "X11+SDL2 animated wallpaper setter and video player" },
   { name = "aom", version = "3.15.0", summary = "AV1 codec library" },
   { name = "aquamarine", version = "0.12.0", summary = "Lightweight Wayland compositor library" },
   { name = "at-spi2-core", version = "2.56.1", summary = "Assistive Technology Service Provider Interface (includes ATK)" },
