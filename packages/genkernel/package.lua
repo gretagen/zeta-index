@@ -1,11 +1,9 @@
 return {
   name    = "genkernel",
-  version = "2.1",
+  version = "2.2",
   summary = "Haliade OS kernel generation script",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/genkernel/genkernel-2.1.tar.gz",
-  sha256  = "e0dd92103712f8d01f504967b3affc6af9d88d4cfe66b0258c2d5c54e5d6f257",
-  -- kernel-build toolchain (manifest-only edit: the genkernel-2.1 tarball is
-  -- byte-identical, so this is metadata, not a rebuild)
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/genkernel/genkernel-2.2.tar.gz",
+  sha256  = "1f44f68140e7aa79eced94b6c986f743ea7eab260a2b85bc45b21a873e0cd805",
   deps    = { "bash", "curl", "make", "binutils", "gcc-minimal", "bc", "libelf" },
   archive = { strip = 1 },
   test    = function(p)
