@@ -619,7 +619,7 @@ return {
   { name = "newt", version = "0.52.25", summary = "Library for text mode user interfaces (libnewt)" },
   { name = "nghttp2", version = "1.70.0", summary = "HTTP/2 framing layer C library" },
   { name = "nix", version = "2.35.2-3", summary = "Nix package manager (official prebuilt binary, /nix store layout)" },
-  { name = "nix-declarative-helper", version = "1.3", summary = "Declare nixpkgs packages from definition.lua (extra generator for declaration)" },
+  { name = "nix-declarative-helper", version = "1.4", summary = "Declare nixpkgs packages from definition.lua (extra generator for declaration)" },
   { name = "nmap", version = "7.991", summary = "Network exploration and security auditing tool (includes ncat, nping)" },
   { name = "nnn", version = "5.3", summary = "Terminal file manager" },
   { name = "notepad++", version = "8.9.8", summary = "Notepad++ text editor for Windows (via Wine)" },
