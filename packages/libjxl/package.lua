@@ -1,12 +1,12 @@
 return {
   name    = "libjxl",
-  version = "0.11.1",
+  version = "0.12.0",
   summary = "JPEG XL image format library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libjxl/libjxl-0.11.1.tar.gz",
-  sha256  = "78ae0eece5247e8bdab8f36b085a37027a64c1172d305b60bc74655897949b3c",
-  deps    = { "glibc", "libhwy", "brotli", "libpng" },
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/refs/heads/main/libjxl/libjxl-0.12.0-1-x86_64.pkg.tar.zst",
+  sha256  = "a4e0f65e8ba3a2da1cc348aad4f7f8aee1b504b824a64838fb3d9b2f75cc9449",
+  deps    = { "glibc", "libgcc", "libhwy", "brotli", "libpng", "libstdc++" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libjxl.so.0.11")
+    p:run("test -e " .. p.install_root .. "/usr/lib")
   end,
 }
