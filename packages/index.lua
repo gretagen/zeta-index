@@ -661,7 +661,7 @@ return {
   { name = "pcre2", version = "10.47", summary = "Perl-compatible regular expression library v2" },
   { name = "perl", version = "5.42.3", summary = "Perl interpreter" },
   { name = "pinentry", version = "1.3.3", summary = "PIN or passphrase entry dialog for GnuPG" },
-  { name = "pipewire", version = "1.6.8", summary = "Multimedia processing graph and audio/video daemon" },
+  { name = "pipewire", version = "1.6.8-2", summary = "Multimedia processing graph and audio/video daemon" },
   { name = "pixman", version = "0.46.4", summary = "Pixel manipulation library (low-level rendering primitives)" },
   { name = "plasma-wayland-protocols", version = "1.17.0", summary = "KDE Wayland protocol XML (build-dep of kidletime)" },
   { name = "pluma", version = "1.28.1", summary = "Text editor for MATE (Arch binary)" },
