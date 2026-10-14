@@ -800,7 +800,7 @@ return {
   { name = "xcb-util-wm", version = "0.4.2", summary = "XCB EWMH and ICCCM utilities" },
   { name = "xclip", version = "0.13", summary = "Command line interface to the X11 clipboard" },
   { name = "xdg-dbus-proxy", version = "0.1.8", summary = "D-Bus proxy sandboxing (Arch binary)" },
-  { name = "xdg-desktop-portal", version = "1.22.1", summary = "Desktop integration portal frontend (D-Bus)" },
+  { name = "xdg-desktop-portal", version = "1.22.1-2", summary = "Desktop integration portal frontend (D-Bus)" },
   { name = "xdg-desktop-portal-hyprland", version = "1.4.1", summary = "Hyprland backend for xdg-desktop-portal (screen sharing, file picker, screencast)" },
   { name = "xdg-user-dirs", version = "0.18", summary = "XDG user dirs management tool" },
   { name = "xdpyinfo", version = "1.2.0", summary = "Display information utility for X" },
