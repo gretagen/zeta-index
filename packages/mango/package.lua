@@ -4,7 +4,7 @@ return {
   summary = "MangoWM: lightweight dwl-based Wayland compositor",
   url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mango/mango-0.15.6.tar.gz",
   sha256 = "092c3c83103c5d22284d6f33208fdeefc32cb3ac32be72429863b4ffd4169bbe",
-  deps = { "glibc", "cairo", "cjson", "pango", "pixman", "scenefx", "wayland", "wlroots", "xkbcommon" },
+  deps    = { "glibc", "glib", "cairo", "cjson", "pango", "pixman", "scenefx", "wayland", "wlroots", "xkbcommon", "libinput", "pcre2" },
   archive = { strip = 1 },
   test = function(p)
     p:run("test -x '" .. p.install_root .. "'/usr/bin/mango")
