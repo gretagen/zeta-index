@@ -1,12 +1,16 @@
 return {
   name    = "systemd-libs",
-  version = "257",
+  version = "262",
   summary = "systemd libraries (libsystemd, libudev)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd-libs/systemd-libs-257.tar.gz",
-  sha256  = "7cb3f65300754e012e768c7fbcffda9ca18e3ab139d71a9454e600c93ad83dd8",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd-libs/systemd-libs-262.tar.gz",
+  sha256  = "21206e60d8c42a8b141906254d6541cb382ac1ad39ef36d83ad1ff13dd09a842",
   deps    = { "glibc" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libsystemd.so.0")
+    local r = p.install_root
+    p:run("test -e " .. r .. "/usr/lib/libsystemd.so.0"
+      .. " && test -e " .. r .. "/usr/lib/libudev.so.1"
+      .. " && test -e " .. r .. "/usr/lib/pkgconfig/libsystemd.pc"
+      .. " && ! test -e " .. r .. "/usr/bin/systemctl")
   end,
 }
