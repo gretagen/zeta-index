@@ -848,7 +848,7 @@ return {
   { name = "zenity", version = "4.2.2", summary = "GTK dialog utility (Arch binary)" },
   { name = "zeromq", version = "4.3.5", summary = "High-performance messaging library" },
   { name = "zeta", version = "1.0.56", summary = "Zeta package manager for Haliade OS" },
-  { name = "zeta-toolchain", version = "1.0.4", summary = "Zeta build toolchain (zeta-makepkg, zeta-cli)" },
+  { name = "zeta-toolchain", version = "1.0.2", summary = "Zeta build toolchain (zeta-makepkg, zeta-cli)" },
   { name = "zig", version = "0.16.0", summary = "Zig compiler and toolchain (LLVM 21 backend, all features)" },
   { name = "zimg", version = "3.0.6", summary = "Image processing library" },
   { name = "zip", version = "3.0", summary = "InfoZIP archiver" },
