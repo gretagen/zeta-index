@@ -1,9 +1,9 @@
 return {
   name    = "declaration",
-  version = "1.7.0",
+  version = "1.7.1",
   summary = "Haliade OS declarative system configuration (haliade-synchronize)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/declaration/declaration-1.7.0.tar.gz",
-  sha256  = "b915d378cea6e2c4afb7216517d628b39df5e59ac6710bf5cf113fa7c4e0ce01",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/declaration/declaration-1.7.1.tar.gz",
+  sha256  = "a3f4a44f0e99a3c76aa85d308cc317c5c1a4bc37e6fc0afd816eff86dbbbaf28",
   deps    = { "lua", "chronos" },
   archive = { strip = 1 },
   test    = function(p)
