@@ -1,14 +1,14 @@
 return {
   name    = "declaration",
-  version = "1.6.1",
+  version = "1.7.0",
   summary = "Haliade OS declarative system configuration (haliade-synchronize)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/declaration/declaration-1.6.1.tar.gz",
-  sha256  = "3348cfe746ada7dd5f0a062371bc5452ee5227be52400e05d84a1b977ae20d24",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/declaration/declaration-1.7.0.tar.gz",
+  sha256  = "b915d378cea6e2c4afb7216517d628b39df5e59ac6710bf5cf113fa7c4e0ce01",
   deps    = { "lua", "chronos" },
   archive = { strip = 1 },
   test    = function(p)
     local r = p.install_root
-    p:run("test -x " .. r .. "/usr/bin/haliade-synchronize && test -f " .. r .. "/usr/lib/declaration/sync.lua && test -f " .. r .. "/usr/lib/declaration/plugins.lua && test -d " .. r .. "/usr/lib/declaration/generators && test -f " .. r .. "/usr/lib/declaration/iniswap/dinit.sh")
+    p:run("test -x " .. r .. "/usr/bin/haliade-synchronize && test -f " .. r .. "/usr/lib/declaration/sync.lua && test -f " .. r .. "/usr/lib/declaration/plugins.lua && test -d " .. r .. "/usr/lib/declaration/generators && test -f " .. r .. "/usr/lib/declaration/iniswap/dinit.sh && test -f " .. r .. "/usr/lib/declaration/iniswap/systemd.sh && test -f " .. r .. "/usr/lib/declaration/generators/sysmd-services.lua")
     -- plugins.lua: missing enable file → built-in fallback list
     p:run("lua -e 'package.path=\"" .. r .. "/usr/lib/declaration/?.lua;\" .. package.path; local p=require(\"plugins\"); local l=p.enabled_generators(\"/nonexistent/enabled_modules.lua\"); assert(type(l)==\"table\" and #l>=20)'")
     -- plugins.lua: user enable file using the no-return local form (cwd = work dir)
