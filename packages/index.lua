@@ -601,7 +601,7 @@ return {
   { name = "md4c", version = "0.5.3", summary = "C Markdown parser library" },
   { name = "mdadm", version = "4.6", summary = "A tool for managing/monitoring Linux md device arrays, also known as Software RAID" },
   { name = "menu-cache", version = "1.1.1", summary = "LXDE menu cache library" },
-  { name = "mesa-drivers", version = "26.1.8", summary = "Mesa 3D drivers (radeonsi, i915, lavapipe, etc.)" },
+  { name = "mesa-drivers", version = "26.1.8-2", summary = "Mesa 3D drivers (radeonsi, iris, nouveau, lavapipe, etc.)" },
   { name = "mesa-full", version = "1.0", summary = "Complete Mesa graphics stack (OpenGL, EGL, GBM, DRI drivers, VA-API, Vulkan loader)" },
   { name = "meson", version = "1.12.1-2", summary = "Fast and user friendly build system" },
   { name = "micro", version = "2.0.15", summary = "Modern and intuitive terminal-based text editor" },
