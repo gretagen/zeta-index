@@ -1,9 +1,9 @@
 return {
   name    = "systemd",
-  version = "262",
+  version = "262-2",
   summary = "System and service manager (init) with full service activation machinery",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd/systemd-262.tar.gz",
-  sha256  = "a34f8e66cd7927cd4ea79fd93d66b17ae35f655e04ae9f59225d43d2ad4be7c2",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd/systemd-262-2.tar.gz",
+  sha256  = "7f13d21455713a595dfba803367a291647ed102dbba1dfe9932d78815dff3822",
   deps    = { "glibc", "systemd-libs" },
   archive = { strip = 1 },
   test    = function(p)
@@ -12,6 +12,7 @@ return {
       .. " && LD_LIBRARY_PATH=" .. r .. "/usr/lib/systemd " .. r .. "/usr/bin/systemctl --version >/dev/null"
       .. " && test -x " .. r .. "/usr/lib/systemd/systemd"
       .. " && test -x " .. r .. "/usr/lib/systemd/udevadm"
+      .. " && test -x " .. r .. "/usr/sbin/systemd"
       .. " && ! test -e " .. r .. "/usr/bin/udevadm"
       .. " && test -e " .. r .. "/usr/lib/systemd/system/dbus.service"
       .. " && ! test -e " .. r .. "/usr/bin/loginctl"
