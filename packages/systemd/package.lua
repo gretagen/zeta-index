@@ -20,5 +20,22 @@ return {
       .. " && ! test -e " .. r .. "/usr/sbin/reboot"
       .. " && ! test -e " .. r .. "/etc/ssh/sshd_config.d/20-systemd-userdb.conf"
       .. " && ! test -e " .. r .. "/usr/lib/libsystemd.so.0")
+    -- Boot chain: the entry point is a symlink — its target must be present
+    -- AND non-empty, or the initramfs boots into "does not exist" (seen in
+    -- the field after a half-finished install left the link dangling).
+    p:run("test -s " .. r .. "/usr/lib/systemd/systemd"
+      .. " && test -s " .. r .. "/usr/sbin/systemd")
+    -- D-Bus policy files must carry real XML: an interrupted install once
+    -- left all ten empty and dbus-daemon refused every policy in the dir.
+    p:run("test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.systemd1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.hostname1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.locale1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.machine1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.network1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.oom1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.portable1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.resolve1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.timedate1.conf"
+      .. " && test -s " .. r .. "/usr/share/dbus-1/system.d/org.freedesktop.timesync1.conf")
   end,
 }
