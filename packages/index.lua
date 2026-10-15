@@ -735,7 +735,7 @@ return {
   { name = "subspace-scripts", version = "1.7.0", summary = "Haliade OS subspace management scripts" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
-  { name = "systemd", version = "262-2", summary = "System and service manager (init) with full service activation machinery" },
+  { name = "systemd", version = "262-3", summary = "System and service manager (init) with full service activation machinery" },
   { name = "systemd-libs", version = "262", summary = "systemd libraries (libsystemd, libudev)" },
   { name = "taglib", version = "2.3.0", summary = "Audio metadata tag library" },
   { name = "tango-icon-theme", version = "0.8.90", summary = "Tango icon theme" },

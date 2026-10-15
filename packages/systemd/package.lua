@@ -1,9 +1,9 @@
 return {
   name    = "systemd",
-  version = "262-2",
+  version = "262-3",
   summary = "System and service manager (init) with full service activation machinery",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd/systemd-262-2.tar.gz",
-  sha256  = "7f13d21455713a595dfba803367a291647ed102dbba1dfe9932d78815dff3822",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd/systemd-262-3.tar.gz",
+  sha256  = "b20e7d56fc54b1114c25d5917ce6c8f043e10c944fe7878fc19c07837fce555b",
   deps    = { "glibc", "systemd-libs" },
   archive = { strip = 1 },
   test    = function(p)
