@@ -4,7 +4,7 @@ return {
   summary = "Video4Linux utilities",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/refs/heads/main/v4l-utils/v4l-utils-1.32.0-2-x86_64.pkg.tar.zst",
   sha256  = "0a316d96bb8c73f0f047458d2d652971137d27de826e10f386ea933860ae885d",
-  deps    = { "glibc", "libjpeg-turbo", "hicolor-icon-theme", "alsa-lib", "gcc", "json-c", "libbpf", "libelf", "libgcc", "libglvnd", "libstdc++", "systemd-libs" },
+  deps    = { "glibc", "libjpeg-turbo", "hicolor-icon-theme", "alsa-lib", "gcc", "json-c", "libbpf", "libelf", "libgcc", "libglvnd", "libstdc++", "systemd-libs", "qtbase" },
   archive = { strip = 1 },
   test    = function(p)
     p:run("test -e " .. p.install_root .. "/usr/lib")
