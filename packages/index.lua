@@ -739,6 +739,7 @@ return {
   { name = "sqlite", version = "3.53.4", summary = "Self-contained, embeddable SQL database engine" },
   { name = "squashfs-tools", version = "4.7.5", summary = "Tools for creating and extracting squashfs filesystems (mksquashfs, unsquashfs)" },
   { name = "srt", version = "1.5.7", summary = "Secure Reliable Transport" },
+  { name = "st", version = "0.9.3", summary = "Suckless simple terminal (X11)" },
   { name = "startup-notification", version = "0.12", summary = "X11 application startup notification library" },
   { name = "steam", version = "1.0.0.87", summary = "Steam - Valve's digital game distribution platform" },
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
