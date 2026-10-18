@@ -4,7 +4,7 @@ return {
   summary = "Perl interpreter",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/perl/perl-5.42.3-2.tar.xz",
   sha256  = "7c6387c77037ae150b6a73cf5bedf891d82ad2a2814be446b9bf8b5b174498b5",
-  deps    = { "glibc", "libxcrypt" },
+  deps    = { "glibc", "libxcrypt", "gdbm" },
   archive = { strip = 1 },
   test    = function(p)
     p:run("test -x " .. p.install_root .. "/usr/bin/perl")

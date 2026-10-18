@@ -4,7 +4,7 @@ return {
   summary = "System and service manager (init) with full service activation machinery",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/systemd/systemd-262-4.tar.gz",
   sha256  = "53992cb01358432598cdfdd190695a95edda0537e288ad52885a7b7250aaabd8",
-  deps    = { "glibc", "systemd-libs" },
+  deps    = { "glibc", "systemd-libs", "gcc", "libgcc" },
   archive = { strip = 1 },
   test    = function(p)
     local r = p.install_root

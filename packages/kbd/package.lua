@@ -4,7 +4,7 @@ return {
   summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/kbd/kbd-2.10.0-2.tar.gz",
   sha256  = "f3e56601a74feadfcdbb49e7fd2fba55152c2f73591874aebd194c44c4c6bd9a",
-  deps    = { "glibc" },
+  deps    = { "glibc", "pam", "xkbcommon" },
   archive = { strip = 1 },
   test    = function(p)
     p:run("test -x " .. p.install_root .. "/usr/bin/loadkeys && test -x " .. p.install_root .. "/usr/bin/setfont")

@@ -4,7 +4,7 @@ return {
   summary = "Execute commands as another user (portable OpenBSD doas)",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/doas/doas-6.8.2.tar.gz",
   sha256  = "6313a5e26ec179d7c527bbfbcc209c519e707cc2731aef8f5f3343dbac361051",
-  deps    = { "glibc" },
+  deps    = { "glibc", "pam" },
   archive = { strip = 1 },
   test    = function(p)
     p:run("test -x " .. p.install_root .. "/usr/bin/doas")
