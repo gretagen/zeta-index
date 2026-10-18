@@ -1,9 +1,9 @@
 return {
   name    = "mesa-drivers",
-  version = "26.1.8-2",
+  version = "26.1.8-3",
   summary = "Mesa 3D drivers (radeonsi, iris, nouveau, lavapipe, etc.)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mesa-drivers/mesa-drivers-26.1.8-2.tar.gz",
-  sha256  = "ee8190634d3fe32aa75711501a0ec5b8b3d3af52811ad62fc962d83e92c3d414",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mesa-drivers/mesa-drivers-26.1.8-3.tar.xz",
+  sha256  = "87a0123e6053db4d6d8f2bda74525ff59f424a2520d44224ffd905c030d0ff5b",
   deps    = { "glibc", "llvm-libs", "egl", "libX11", "libxcb", "wayland", "libdrm", "libpciaccess", "libXxf86vm", "libxshmfence", "systemd-libs", "vulkan-loader", "libdisplay-info", "libelf", "expat", "xcb-util-keysyms", "libzstd", "lm-sensors" },
   archive = { strip = 1 },
   test    = function(p)
