@@ -761,6 +761,7 @@ return {
   { name = "tree-sitter", version = "0.26.9", summary = "Incremental parsing system for programming tools" },
   { name = "tslib", version = "1.24", summary = "Touchscreen input library (libts), used by Qt 5 touch plugins" },
   { name = "ttf-liberation", version = "2.0.0", summary = "Liberation TrueType fonts" },
+  { name = "ttf-nerdfonts", version = "3.5.1", summary = "Nerd Fonts icon glyphs + patched mono fonts (waybar/terminal)" },
   { name = "twolame", version = "0.0.0", summary = "MPEG-2 AAC encoder library" },
   { name = "tzdata", version = "2026c", summary = "IANA timezone database (zoneinfo)" },
   { name = "uchardet", version = "0.0.8", summary = "Encoding detector library ported from Mozilla" },
