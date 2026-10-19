@@ -1,9 +1,9 @@
 return {
   name    = "house-handlers",
-  version = "1.3.0",
-  summary = "Haliade OS home/dotfile configuration handlers (house-synchronize)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/house-handlers/house-handlers-1.3.0.tar.gz",
-  sha256  = "3cb7811da15a94c95159b9a161d4e3c6978357b97f9629afe81a17c40f446f9c",
+  version = "1.3.1",
+  summary = "Haliade system home/dotfile configuration handlers (house-synchronize)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/house-handlers/house-handlers-1.3.1.tar.gz",
+  sha256  = "3d9ce3345da84b6e9bd2482a476fd2dd66b8d823999c9b1016e8427c6537a70b",
   deps    = { "lua", "chronos" },
   archive = { strip = 1 },
   test    = function(p)

@@ -1,9 +1,9 @@
 return {
   name    = "manual",
-  version = "1.0",
-  summary = "Haliade OS manual as a command (manual)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/manual/manual-1.0.tar.gz",
-  sha256  = "0cf36a020e124bb4ce93b7fe3080e5297f50741f1e32abda2c153eeed32b2c33",
+  version = "1.0.1",
+  summary = "Haliade system manual as a command (manual)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/manual/manual-1.0.1.tar.gz",
+  sha256  = "0577ecff1620cb28698f740e7a57f78b683afc3d1082f8ec7bb0c2ac0a5f5a15",
   deps    = { "bash", "ncurses", "uutils-coreutils" },
   archive = { strip = 1 },
   test    = function(p)
