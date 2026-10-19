@@ -27,6 +27,7 @@ return {
   { name = "bc", version = "1.08.2", summary = "GNU bc arbitrary precision calculator (the kernel build needs it to generate timeconst.h)" },
   { name = "binutils", version = "2.47", summary = "GNU Binutils - assembler, linker and binary tools (as, ld, objdump, nm, ar, strip)" },
   { name = "bitstreamvera", version = "1.10", summary = "Bitstream Vera TrueType fonts" },
+  { name = "bluez", version = "5.87", summary = "Bluetooth protocol stack (bluetoothd, bluetoothctl, and libraries)" },
   { name = "brightnessctl", version = "0.5.1", summary = "Lightweight brightness control tool (Arch binary)" },
   { name = "brotli", version = "1.2.0", summary = "Brotli compression library" },
   { name = "btop", version = "1.4.7", summary = "Resource monitor (bpytop ported to C++)" },
