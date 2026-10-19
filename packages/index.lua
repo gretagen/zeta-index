@@ -788,7 +788,7 @@ return {
   { name = "vte-common", version = "0.84.1", summary = "Virtual Terminal Emulator widget (common files)" },
   { name = "vulkan-headers", version = "1.4.357", summary = "Vulkan API headers" },
   { name = "vulkan-loader", version = "1.4.357", summary = "Vulkan loader library" },
-  { name = "waybar", version = "0.15.0", summary = "Highly customizable Wayland bar (Sway/Waybar)" },
+  { name = "waybar", version = "0.15.0-2", summary = "Highly customizable Wayland bar (Sway/Waybar)" },
   { name = "wayland", version = "1.26.0", summary = "Wayland display server protocol" },
   { name = "wayland-protocols", version = "1.49", summary = "Wayland protocol XML definitions (build-time data for compositors and clients)" },
   { name = "waypaper", version = "2.9", summary = "GUI wallpaper setter for Wayland and Xorg window managers" },
