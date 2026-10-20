@@ -728,7 +728,7 @@ return {
   { name = "sbc", version = "2.2", summary = "Sub Band Coding (SBC) codec library for Bluetooth audio" },
   { name = "scenefx", version = "0.5", summary = "Wayland compositor effects library (window animation/effects)" },
   { name = "scrot", version = "2.0.0-1", summary = "Take a screenshot in X" },
-  { name = "sdbus-cpp", version = "2.3.1", summary = "C++ wrapper library for sd-bus (libsystemd D-Bus client)" },
+  { name = "sdbus-cpp", version = "2.3.1-2", summary = "C++ wrapper library for sd-bus (libsystemd D-Bus client)" },
   { name = "sdl2", version = "2.32.10", summary = "Simple DirectMedia Layer 2 (low-level multimedia library)" },
   { name = "seatd", version = "0.9.3", summary = "Seat management daemon and library" },
   { name = "sed", version = "4.10", summary = "GNU stream editor" },
