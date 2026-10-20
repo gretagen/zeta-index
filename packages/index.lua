@@ -746,6 +746,7 @@ return {
   { name = "st", version = "0.9.3", summary = "Suckless simple terminal (X11)" },
   { name = "startup-notification", version = "0.12", summary = "X11 application startup notification library" },
   { name = "steam", version = "1.0.0.87", summary = "Steam - Valve's digital game distribution platform" },
+  { name = "steam-devices", version = "20260625", summary = "Steam and SteamVR device permissions (udev rules for flatpak Steam)" },
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
   { name = "subspace-scripts", version = "1.7.1", summary = "Haliade system subspace management scripts" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
