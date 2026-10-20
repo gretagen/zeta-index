@@ -1,9 +1,9 @@
 return {
   name    = "nix",
-  version = "2.35.2-4",
+  version = "2.35.2-5",
   summary = "Nix package manager (official prebuilt binary, /nix store layout)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nix/nix-2.35.2-4.tar.xz",
-  sha256  = "8f35529f5eaa503d0f22c0fe211bc42d183e4f8202b3a3a279aadc6bc9557e8f",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nix/nix-2.35.2-5.tar.xz",
+  sha256  = "2a441dd0fbb28914d5fc3f7e256b99a9014a5c3b3a2f9ea99c60df94b01e73e7",
   deps    = { "gcc", "glibc", "libgcc", "libstdc++" },
   archive = { strip = 1 },
   test    = function(p)
