@@ -1,9 +1,9 @@
 return {
   name    = "spirv-tools",
-  version = "2026.4.1",
+  version = "2026.4.1-2",
   summary = "Khronos SPIR-V tools (validator, linker, optimizer)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/spirv-tools/spirv-tools-2026.4.1.tar.gz",
-  sha256  = "98adc2f6f7a16a43aa2b4cf59b66855d36396092453508db5b3adff0b2df6241",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/spirv-tools/spirv-tools-2026.4.1-2.tar.gz",
+  sha256  = "181cbde0a3a29b2e2ec9647089022552a8d550701c2cb25569634c3cba4670d7",
   deps    = { "glibc", "libstdc++", "gcc" },
   archive = { strip = 1 },
   test    = function(p)

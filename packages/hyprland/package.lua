@@ -1,9 +1,9 @@
 return {
   name = "hyprland",
-  version = "0.56.2",
+  version = "0.56.2-2",
   summary = "Dynamic tiling Wayland compositor",
-  url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/hyprland/hyprland-0.56.2.tar.gz",
-  sha256 = "e42923d0e8264f63ac52f40f502f119840c433170867e84309f18e9cc3706c41",
+  url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/hyprland/hyprland-0.56.2-2.tar.gz",
+  sha256 = "80f7a9656cf7cb565032022d4aaa298a63b4cb14b78adff9fdd3939ab2a2061e",
   deps = {
     "glibc",
     "abseil-cpp", "aquamarine", "cairo", "gcc", "glslang",
