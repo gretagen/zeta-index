@@ -445,6 +445,7 @@ return {
   { name = "libplacebo", version = "7.360.1", summary = "GPU-accelerated video rendering" },
   { name = "libpng", version = "1.6.47", summary = "PNG image format library" },
   { name = "libpsl", version = "0.21.5", summary = "Public Suffix List library" },
+  { name = "libqalculate", version = "5.13.2", summary = "Multi-purpose calculation engine library and qalc CLI" },
   { name = "libqtxdg", version = "4.1.0", summary = "Qt6 XDG integration library" },
   { name = "libquadmath", version = "16.2.1+r23+gd564253eb6c8", summary = "GCC __float128 library" },
   { name = "libraqm", version = "0.11.0", summary = "Complex text layout for RTL scripts (HarfBuzz/FriBidi/FreeType glue)" },
