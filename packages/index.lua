@@ -639,6 +639,7 @@ return {
   { name = "nlohmann-json", version = "3.12.0-2", summary = "JSON for Modern C++ (nlohmann/json single-header library)" },
   { name = "nmap", version = "7.991", summary = "Network exploration and security auditing tool (includes ncat, nping)" },
   { name = "nnn", version = "5.3", summary = "Terminal file manager" },
+  { name = "noctalia", version = "5.3.0", summary = "A sleek, customizable desktop shell crafted for Wayland." },
   { name = "notepad++", version = "8.9.8", summary = "Notepad++ text editor for Windows (via Wine)" },
   { name = "npth", version = "1.8", summary = "New Portable Threads library" },
   { name = "nscde", version = "2.3", summary = "Not so Common Desktop Environment: retro CDE-like desktop on FVWM" },
