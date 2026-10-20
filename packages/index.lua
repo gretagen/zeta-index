@@ -478,6 +478,7 @@ return {
   { name = "libtiff", version = "4.7.2", summary = "TIFF library" },
   { name = "libtinfo", version = "6.6", summary = "Terminfo database and terminal capability library" },
   { name = "libtirpc", version = "1.3.6", summary = "Transport Independent RPC library" },
+  { name = "libtool", version = "2.6.2", summary = "Generic library support script (m4 macros and libtoolize)" },
   { name = "libudev-headers", version = "257", summary = "libudev development files (header + pkg-config)" },
   { name = "libunibreak", version = "7.0", summary = "An implementation of the line breaking algorithm as described in Unicode 5.2.0 S" },
   { name = "libunistring", version = "5.2.1", summary = "Unicode string library" },
