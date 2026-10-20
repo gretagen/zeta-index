@@ -1,12 +1,12 @@
 return {
   name    = "gmp",
-  version = "10.5.0",
+  version = "10.5.0-2",
   summary = "GNU multiple precision arithmetic",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/gmp/gmp-10.5.0.tar.gz",
-  sha256  = "ac922e0534f4c054359338c605aa0eef21058d012e12ca138bc62dea39895939",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/gmp/gmp-10.5.0-2.tar.gz",
+  sha256  = "8b2196b3dc07a38a41899daaecd58c46ea600d1fa351bee096c109e1d01d615a",
   deps    = { "glibc" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libgmp.so.10")
+    p:run("test -f " .. p.install_root .. "/usr/include/gmp.h && test -f " .. p.install_root .. "/usr/lib/pkgconfig/gmp.pc && test -f " .. p.install_root .. "/usr/lib/libgmp.so.10")
   end,
 }
