@@ -725,7 +725,7 @@ return {
   { name = "qtdeclarative", version = "6.8.2", summary = "Qt6 QML/Quick modules" },
   { name = "qterminal", version = "2.1.0", summary = "LXQt terminal emulator (Qt6, QTermWidget)" },
   { name = "qtermwidget", version = "2.1.0", summary = "QTermWidget terminal emulator widget library (Qt6)" },
-  { name = "qtshadertools", version = "6.8.2", summary = "Qt6 shader tools module" },
+  { name = "qtshadertools", version = "6.8.2", summary = "Qt 6 ShaderTools libraries" },
   { name = "qtsvg", version = "6.8.2", summary = "Qt 6 SVG module" },
   { name = "qttools", version = "6.8.2", summary = "Qt 6 tools (linguist, qdbus, qtpaths)" },
   { name = "qtwayland", version = "6.8.2", summary = "Qt6 Wayland platform plugin" },
