@@ -222,6 +222,7 @@ return {
   { name = "kcolorscheme", version = "6.13.0", summary = "KDE: Classes to read and interact with KColorScheme" },
   { name = "kcompletion", version = "6.13.0", summary = "KDE: KCompletion" },
   { name = "kconfig", version = "6.13.0", summary = "KDE: KConfig" },
+  { name = "kconfigwidgets", version = "6.13.0", summary = "KDE: Widgets for KConfig" },
   { name = "kcoreaddons", version = "6.13.0", summary = "KDE: KCoreAddons" },
   { name = "kcrash", version = "6.13.0", summary = "KDE: KCrash" },
   { name = "kdbusaddons", version = "6.13.0", summary = "KDE: KDBusAddons" },
