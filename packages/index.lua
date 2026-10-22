@@ -224,7 +224,7 @@ return {
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
   { name = "kwidgetsaddons", version = "6.13.0", summary = "KDE: KWidgetsAddons" },
-  { name = "kwindowsystem", version = "6.13.0", summary = "KDE Frameworks 6 window system library" },
+  { name = "kwindowsystem", version = "6.13.0", summary = "KDE: KWindowSystem" },
   { name = "labwc", version = "0.20.1", summary = "wlroots-based Wayland compositor inspired by Openbox" },
   { name = "lame", version = "4.0", summary = "LAME MP3 encoder" },
   { name = "larp", version = "1.0.0", summary = "A simple script that displays a larp ASCII image" },
