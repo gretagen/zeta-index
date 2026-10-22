@@ -1,24 +1,24 @@
 return {
-  name    = "nix-declarative-helper",
-  version = "1.5",
+  name    = "nix-generator",
+  version = "1.6",
   summary = "Declare nixpkgs packages from definition.lua (extra generator for nacelle)",
-  url     = "https://raw.githubusercontent.com/gretagen/declarative-plugins/refs/heads/main/packages/nix-declarative-helper/nix-declarative-helper-1.5.tar.gz",
-  sha256  = "aa6ada87c2b97765022bf3ba8f410ef7248383bdca82c4158ff99befa5b893b9",
+  url     = "https://raw.githubusercontent.com/gretagen/declarative-plugins/refs/heads/main/packages/nix-generator/nix-generator-1.6.tar.gz",
+  sha256  = "d7bf139fe973f218b10305898d1297d79dd5bb6a945881f357bf25383d809228",
   deps    = { "nacelle" },
   archive = { strip = 1 },
   test    = function(p)
     local r = p.install_root
-    p:run("test -x " .. r .. "/usr/bin/nix-declarative-helper")
+    p:run("test -x " .. r .. "/usr/bin/nix-generator")
     p:run("test -f " .. r .. "/usr/lib/nacelle/generators/nixpkgs.lua")
     p:run("grep -q /nix/var/nix/profiles/default " .. r .. "/usr/lib/nacelle/generators/nixpkgs.lua")
     -- plugin-config ships and registers the section when run in config.lua's env
     p:run("test -f " .. r .. "/etc/nacelle/plugin-configs/nixpkgs.lua")
     p:run("lua -e 'local fd=assert(io.open(\"" .. r .. "/etc/nacelle/plugin-configs/nixpkgs.lua\")); local src=fd:read(\"*a\"); fd:close(); local d,s={},{}; local env=setmetatable({defaults=d,schema=s},{__index=_G}); local fn=assert(load(src,\"@nixpkgs\",\"t\",env)); fn(); assert(d[\"nixpkgs\"]~=nil and s[\"nixpkgs\"]==\"table\")'")
     -- help documents the new enable path (no --genconfig anymore)
-    p:run(r .. "/usr/bin/nix-declarative-helper --help >/dev/null")
-    p:run(r .. "/usr/bin/nix-declarative-helper --help | grep -q enabled_modules.lua")
-    p:run("test \"$(" .. r .. "/usr/bin/nix-declarative-helper --help | grep -c genconfig)\" -eq 0")
-    p:run(r .. "/usr/bin/nix-declarative-helper --verifynix || :")
+    p:run(r .. "/usr/bin/nix-generator --help >/dev/null")
+    p:run(r .. "/usr/bin/nix-generator --help | grep -q enabled_modules.lua")
+    p:run("test \"$(" .. r .. "/usr/bin/nix-generator --help | grep -c genconfig)\" -eq 0")
+    p:run(r .. "/usr/bin/nix-generator --verifynix || :")
     -- generator: an installed kdePackages.* element (Name != attr tail) is not
     -- re-planned, and removals target the ELEMENT name (fake shell_output /
     -- read_file / change — no real nix involved)
