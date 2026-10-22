@@ -232,6 +232,7 @@ return {
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "knotifications", version = "6.13.0", summary = "KDE: KNotifications" },
   { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
+  { name = "kservice", version = "6.13.0", summary = "KDE: KService" },
   { name = "kwidgetsaddons", version = "6.13.0", summary = "KDE: KWidgetsAddons" },
   { name = "kwindowsystem", version = "6.13.0", summary = "KDE: KWindowSystem" },
   { name = "labwc", version = "0.20.1", summary = "wlroots-based Wayland compositor inspired by Openbox" },
