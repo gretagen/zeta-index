@@ -232,6 +232,7 @@ return {
   { name = "kiconthemes", version = "6.13.0", summary = "KDE: KIconThemes" },
   { name = "kidletime", version = "6.14.0", summary = "KF6 idle time detection (KF6IdleTime)" },
   { name = "kio", version = "6.13.0", summary = "KDE: KIO" },
+  { name = "kirigami", version = "6.13.0", summary = "KDE: A QtQuick based components set" },
   { name = "kitemviews", version = "6.13.0", summary = "KDE: KItemViews" },
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kjobwidgets", version = "6.13.0", summary = "KDE: KJobWidgets" },
