@@ -814,7 +814,7 @@ return {
   { name = "wireless_tools", version = "30.pre9-5-x86_64", summary = "Wireless tools (Arch binary)" },
   { name = "wireplumber", version = "0.5.15", summary = "Session / policy manager for PipeWire (bundled with libwireplumber)" },
   { name = "wlr-protocols", version = "1.14.0", summary = "wlr Wayland protocol definitions" },
-  { name = "wlroots", version = "0.20.2", summary = "Modular Wayland compositor library" },
+  { name = "wlroots", version = "0.20.2-2", summary = "Modular Wayland compositor library" },
   { name = "wmaker", version = "0.96.0-3", summary = "X11 window manager with a NeXTSTEP look and feel" },
   { name = "woff2", version = "1.0.2-6-x86_64", summary = "Web Open Font Format 2 (Arch binary)" },
   { name = "wofi", version = "1.5.3", summary = "Wayland-native launcher (rofi-style)" },
