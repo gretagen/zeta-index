@@ -212,6 +212,7 @@ return {
   { name = "jsoncpp", version = "1.9.6", summary = "C++ JSON reader/writer" },
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
+  { name = "ki18n", version = "6.24.0", summary = "KDE: Ki18n" },
   { name = "kidletime", version = "6.14.0", summary = "KF6 idle time detection (KF6IdleTime)" },
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
