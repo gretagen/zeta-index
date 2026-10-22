@@ -213,7 +213,7 @@ return {
   { name = "karchive", version = "6.24.0", summary = "KDE: Qt addon providing access to numerous types of archives" },
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
   { name = "kconfig", version = "6.13.0", summary = "KDE: KConfig" },
-  { name = "kcoreaddons", version = "6.24.0", summary = "KDE: KCoreAddons" },
+  { name = "kcoreaddons", version = "6.13.0", summary = "KDE: KCoreAddons" },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
   { name = "ki18n", version = "6.13.0", summary = "KDE: Ki18n" },
   { name = "kidletime", version = "6.14.0", summary = "KF6 idle time detection (KF6IdleTime)" },
