@@ -893,6 +893,6 @@ return {
   { name = "zita-alsa-pcmi", version = "0.6.1", summary = "The successor of clalsadrv, provides easy access to ALSA PCM devices." },
   { name = "zita-resampler", version = "1.11.2", summary = "A C++ library for resampling audio signals" },
   { name = "zsh", version = "5.9.2", summary = "Powerful shell with scripting and tab completion" },
-  { name = "zstd", version = "1.5.7", summary = "Zstandard compression library" },
+  { name = "zstd", version = "1.5.7-2", summary = "Zstandard compression library (shared + static + cmake config)" },
   { name = "zstrappa", version = "2.13", summary = "Install HaliadeSYS from the live ISO to a target device" },
 }
