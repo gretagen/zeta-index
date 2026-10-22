@@ -1,9 +1,9 @@
 return {
   name    = "ki18n",
-  version = "6.24.0",
+  version = "6.13.0",
   summary = "KDE: Ki18n",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/ki18n/ki18n-6.24.0.tar.gz",
-  sha256  = "4a630ea6b793e46f6ff7743b408dac9879ae0200f347a9a5011b2084319f9bb1",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/ki18n/ki18n-6.13.0.tar.gz",
+  sha256  = "c647eab42edec41ff3e377ddcb21bbee3ba40db701c36ca4b785ac547498032b",
   deps    = { "glibc", "qtbase", "gcc", "qtdeclarative" },
   archive = { strip = 1 },
   test    = function(p)
