@@ -3,7 +3,7 @@ return {
   version = "6.8.2",
   summary = "Qt 6 SVG libraries",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/qtsvg/qtsvg-6.8.2.tar.gz",
-  sha256  = "0980ebae060b88cc097e03bd8cc203826bc943af65f04f324c3a366a10dff828",
+  sha256  = "a3747e12d2e2e2aa10824e643956660447f216028cc5cee9c6cdaf26b616b89a",
   deps    = { "glibc", "libz", "qtbase", "xkbcommon" },
   archive = { strip = 1 },
   test    = function(p)
