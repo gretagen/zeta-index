@@ -722,7 +722,7 @@ return {
   { name = "python-yaml", version = "6.0.3", summary = "PyYAML: YAML parser and emitter for Python 3" },
   { name = "qt5", version = "5.15.19", summary = "Qt 5 runtime libraries (Core/Gui/Widgets/Svg/X11Extras/XcbQpa + plugins)" },
   { name = "qtbase", version = "6.8.2-3", summary = "Qt 6 base libraries" },
-  { name = "qtdeclarative", version = "6.8.2", summary = "Qt6 QML/Quick modules" },
+  { name = "qtdeclarative", version = "6.8.2", summary = "Qt 6 declarative (QML) libraries" },
   { name = "qterminal", version = "2.1.0", summary = "LXQt terminal emulator (Qt6, QTermWidget)" },
   { name = "qtermwidget", version = "2.1.0", summary = "QTermWidget terminal emulator widget library (Qt6)" },
   { name = "qtshadertools", version = "6.8.2", summary = "Qt 6 ShaderTools libraries" },
