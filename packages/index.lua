@@ -247,6 +247,7 @@ return {
   { name = "kwayland", version = "6.3.6", summary = "KDE: KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries." },
   { name = "kwidgetsaddons", version = "6.13.0", summary = "KDE: KWidgetsAddons" },
   { name = "kwindowsystem", version = "6.13.0", summary = "KDE: KWindowSystem" },
+  { name = "kxmlgui", version = "6.13.0", summary = "KDE: KXMLGUI" },
   { name = "labwc", version = "0.20.1", summary = "wlroots-based Wayland compositor inspired by Openbox" },
   { name = "lame", version = "4.0", summary = "LAME MP3 encoder" },
   { name = "larp", version = "1.0.0", summary = "A simple script that displays a larp ASCII image" },
