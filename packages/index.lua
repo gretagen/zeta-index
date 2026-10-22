@@ -230,6 +230,7 @@ return {
   { name = "kidletime", version = "6.14.0", summary = "KF6 idle time detection (KF6IdleTime)" },
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
+  { name = "knotifications", version = "6.13.0", summary = "KDE: KNotifications" },
   { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
   { name = "kwidgetsaddons", version = "6.13.0", summary = "KDE: KWidgetsAddons" },
   { name = "kwindowsystem", version = "6.13.0", summary = "KDE: KWindowSystem" },
