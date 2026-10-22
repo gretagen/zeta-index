@@ -212,6 +212,7 @@ return {
   { name = "jsoncpp", version = "1.9.6", summary = "C++ JSON reader/writer" },
   { name = "karchive", version = "6.13.0", summary = "KDE: Qt addon providing access to numerous types of archives" },
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
+  { name = "kcodecs", version = "6.13.0", summary = "KDE: KCodecs provide a collection of methods to manipulate strings using various encodings" },
   { name = "kconfig", version = "6.13.0", summary = "KDE: KConfig" },
   { name = "kcoreaddons", version = "6.13.0", summary = "KDE: KCoreAddons" },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
