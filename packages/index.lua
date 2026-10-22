@@ -90,7 +90,7 @@ return {
   { name = "exempi", version = "2.6.6", summary = "XMP metadata library (Arch binary)" },
   { name = "exo", version = "4.20.0", summary = "Application development library for Xfce" },
   { name = "expat", version = "2.8.1", summary = "XML parsing C library" },
-  { name = "extra-cmake-modules", version = "6.14.0", summary = "Extra CMake modules for KF6/LXQt builds" },
+  { name = "extra-cmake-modules", version = "6.31.0", summary = "KDE: Extra modules and scripts for CMake." },
   { name = "eza", version = "0.23.5", summary = "Modern, maintained replacement for ls (exa fork)" },
   { name = "faad2", version = "2.11.2", summary = "AAC decoder library" },
   { name = "fastfetch", version = "2.68.1", summary = "Fast, feature-rich system information fetcher (neofetch successor)" },

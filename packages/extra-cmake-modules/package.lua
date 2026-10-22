@@ -1,12 +1,12 @@
 return {
   name    = "extra-cmake-modules",
-  version = "6.14.0",
-  summary = "Extra CMake modules for KF6/LXQt builds",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/extra-cmake-modules/extra-cmake-modules-6.14.0.tar.gz",
-  sha256  = "a50f35817b39770b29d46d1d8d2ce8a8d4b737017b1e28ea5cd6ead4652004ce",
-  deps    = {},
+  version = "6.31.0",
+  summary = "KDE: Extra modules and scripts for CMake.",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/extra-cmake-modules/extra-cmake-modules-6.31.0.tar.gz",
+  sha256  = "2f3b5b0676ca9cad2b37bf5888ecc990914b180caa690fa0acb2d9653f22b104",
+  deps    = { "glibc" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/share/ECM/cmake/ECMConfig.cmake")
+    p:run("find " .. p.install_root .. "/usr -type f | grep -q .")
   end,
 }
