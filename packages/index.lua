@@ -219,6 +219,7 @@ return {
   { name = "kcolorscheme", version = "6.13.0", summary = "KDE: Classes to read and interact with KColorScheme" },
   { name = "kconfig", version = "6.13.0", summary = "KDE: KConfig" },
   { name = "kcoreaddons", version = "6.13.0", summary = "KDE: KCoreAddons" },
+  { name = "kcrash", version = "6.13.0", summary = "KDE: KCrash" },
   { name = "kdoctools", version = "6.13.0", summary = "KDE: KDocTools" },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
   { name = "kguiaddons", version = "6.13.0", summary = "KDE: KGuiAddons" },
