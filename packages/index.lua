@@ -706,6 +706,7 @@ return {
   { name = "python-pillow", version = "13.0.0", summary = "Python Imaging Library (Pillow)" },
   { name = "python-platformdirs", version = "4.13.4", summary = "Python module for platform-specific user directory locations" },
   { name = "python-screeninfo", version = "0.8.1", summary = "Python module to fetch monitor information (resolution, position)" },
+  { name = "python-yaml", version = "6.0.3", summary = "PyYAML: YAML parser and emitter for Python 3" },
   { name = "qt5", version = "5.15.19", summary = "Qt 5 runtime libraries (Core/Gui/Widgets/Svg/X11Extras/XcbQpa + plugins)" },
   { name = "qtbase", version = "6.8.2", summary = "Qt 6 base libraries" },
   { name = "qtdeclarative", version = "6.8.2", summary = "Qt6 QML/Quick modules" },
