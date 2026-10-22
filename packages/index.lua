@@ -217,6 +217,7 @@ return {
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
   { name = "kcodecs", version = "6.13.0", summary = "KDE: KCodecs provide a collection of methods to manipulate strings using various encodings" },
   { name = "kcolorscheme", version = "6.13.0", summary = "KDE: Classes to read and interact with KColorScheme" },
+  { name = "kcompletion", version = "6.13.0", summary = "KDE: KCompletion" },
   { name = "kconfig", version = "6.13.0", summary = "KDE: KConfig" },
   { name = "kcoreaddons", version = "6.13.0", summary = "KDE: KCoreAddons" },
   { name = "kcrash", version = "6.13.0", summary = "KDE: KCrash" },
