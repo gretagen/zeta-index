@@ -220,6 +220,7 @@ return {
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
+  { name = "kwidgetsaddons", version = "6.24.0", summary = "KDE: KWidgetsAddons" },
   { name = "kwindowsystem", version = "6.13.0", summary = "KDE Frameworks 6 window system library" },
   { name = "labwc", version = "0.20.1", summary = "wlroots-based Wayland compositor inspired by Openbox" },
   { name = "lame", version = "4.0", summary = "LAME MP3 encoder" },
