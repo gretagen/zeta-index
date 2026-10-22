@@ -176,6 +176,7 @@ return {
   { name = "hicolor-icon-theme", version = "0.18", summary = "Default fallback icon theme for XDG icon themes" },
   { name = "hidapi", version = "0.15.0", summary = "Simple library for communicating with USB and Bluetooth HID devices" },
   { name = "htop", version = "3.5.2", summary = "Interactive process viewer" },
+  { name = "hunspell", version = "1.7.5", summary = "Hunspell spell-checker library and CLI" },
   { name = "hwdata", version = "0.389", summary = "Hardware identification databases (pci.ids, usb.ids)" },
   { name = "hyphen", version = "2.8.9", summary = "Hyphenation library (Arch binary)" },
   { name = "hyprcursor", version = "0.1.13", summary = "Library and toolkit for the Hyprland cursor format" },
