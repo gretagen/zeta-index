@@ -228,6 +228,7 @@ return {
   { name = "ki18n", version = "6.13.0", summary = "KDE: Ki18n" },
   { name = "kiconthemes", version = "6.13.0", summary = "KDE: KIconThemes" },
   { name = "kidletime", version = "6.14.0", summary = "KF6 idle time detection (KF6IdleTime)" },
+  { name = "kitemviews", version = "6.13.0", summary = "KDE: KItemViews" },
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "knotifications", version = "6.13.0", summary = "KDE: KNotifications" },
