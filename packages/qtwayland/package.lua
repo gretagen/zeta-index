@@ -1,12 +1,12 @@
 return {
   name    = "qtwayland",
   version = "6.8.2",
-  summary = "Qt6 Wayland platform plugin",
+  summary = "Qt 6 Wayland client libraries",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/qtwayland/qtwayland-6.8.2.tar.gz",
-  sha256  = "bc4e0d77d9471adab73298dbd4ab14f60f96e57f03f9cf0f64236132717d5469",
-  deps    = { "glibc", "qtbase", "qtsvg", "wayland", "xkbcommon" },
+  sha256  = "86b6cdb1dc4cf479fcd42f089433e48efb8d0957d053917d99ba7f281f1b4af6",
+  deps    = { "glibc", "qtbase", "qtsvg", "qtdeclarative", "wayland", "xkbcommon" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -d " .. p.install_root .. "/usr/lib/cmake/Qt6WaylandClient")
+    p:run("test -e " .. p.install_root .. "/usr/lib/libQt6WaylandClient.so.6")
   end,
 }
