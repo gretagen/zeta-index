@@ -240,6 +240,7 @@ return {
   { name = "kjobwidgets", version = "6.13.0", summary = "KDE: KJobWidgets" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "knotifications", version = "6.13.0", summary = "KDE: KNotifications" },
+  { name = "kpackage", version = "6.13.0", summary = "KDE: This framework lets applications to manage user installable packages of non-binary assets" },
   { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
   { name = "kservice", version = "6.13.0", summary = "KDE: KService" },
   { name = "ktextwidgets", version = "6.13.0", summary = "KDE: KTextWidgets" },
