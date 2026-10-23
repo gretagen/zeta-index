@@ -460,6 +460,7 @@ return {
   { name = "libjpeg-turbo", version = "3.2.0", summary = "MMX/SSE2/SMID accelerated library for JPEG images (libjpeg.so.8 ABI)" },
   { name = "libjson-glib", version = "1.10.0", summary = "GLib-based JSON serialization library" },
   { name = "libjxl", version = "0.12.0", summary = "JPEG XL image format library" },
+  { name = "libkexiv2", version = "26.08.2", summary = "KDE: Wrapper around Exiv2 library to manipulate picture metadata as EXIF and XMP" },
   { name = "libkeybinder3", version = "0.3.2", summary = "Library for global keyboard shortcuts (Arch binary)" },
   { name = "libksba", version = "1.8.0", summary = "Library for X.509 and CMS data structures" },
   { name = "libkscreen", version = "6.3.6", summary = "KDE: KDE's screen management software" },
