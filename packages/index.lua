@@ -220,6 +220,7 @@ return {
   { name = "kauth", version = "6.13.0", summary = "KDE: KAuth" },
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
   { name = "kbookmarks", version = "6.13.0", summary = "KDE: KBookmarks" },
+  { name = "kcmutils", version = "6.13.0", summary = "KDE: Utilities for interacting with KCModules" },
   { name = "kcodecs", version = "6.13.0", summary = "KDE: KCodecs provide a collection of methods to manipulate strings using various encodings" },
   { name = "kcolorscheme", version = "6.13.0", summary = "KDE: Classes to read and interact with KColorScheme" },
   { name = "kcompletion", version = "6.13.0", summary = "KDE: KCompletion" },
