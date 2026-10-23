@@ -238,6 +238,7 @@ return {
   { name = "kdbusaddons", version = "6.13.0", summary = "KDE: KDBusAddons" },
   { name = "kdeclarative", version = "6.13.0", summary = "KDE: KDeclarative" },
   { name = "kdecoration", version = "6.3.6", summary = "KDE: Plugin-based library to create window decorations" },
+  { name = "kded", version = "6.13.0", summary = "KDE: KDE Daemon" },
   { name = "kdnssd", version = "6.13.0", summary = "KDE: KDNSSD Framework" },
   { name = "kdoctools", version = "6.13.0", summary = "KDE: KDocTools" },
   { name = "kdsoap", version = "2.3.0", summary = "Qt-based SOAP client/server library (Qt6)" },
