@@ -199,7 +199,7 @@ return {
   { name = "hyprwayland-scanner", version = "0.4.6", summary = "Hyprland Wayland protocol code generator" },
   { name = "hyprwire", version = "0.3.1", summary = "Wire format library for the Hypr ecosystem" },
   { name = "i3", version = "4.25.1", summary = "Improved tiling window manager for X11" },
-  { name = "icu", version = "78.3", summary = "International Components for Unicode (libicui18n/libicuuc/libicudata), required by Qt 5" },
+  { name = "icu", version = "79.1", summary = "International Components for Unicode (headers + tools)" },
   { name = "imagemagick", version = "7.1.2.31", summary = "Image manipulation software and libraries" },
   { name = "imlib2", version = "1.12.6", summary = "Image loading and rendering library" },
   { name = "imlib2-loaders", version = "1.12.6", summary = "Image format loaders for imlib2 (png, jpeg, gif, bmp, webp, ...)" },

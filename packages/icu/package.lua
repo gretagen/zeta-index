@@ -1,12 +1,12 @@
 return {
   name    = "icu",
-  version = "78.3",
-  summary = "International Components for Unicode (libicui18n/libicuuc/libicudata), required by Qt 5",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/icu/icu-78.3.tar.gz",
-  sha256  = "0b6665cac04ddd4b93ca1d2e7e7821d61eb6b3e637a3a9eb735ca51972bb1125",
+  version = "79.1",
+  summary = "International Components for Unicode (headers + tools)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/icu/icu-79.1.tar.gz",
+  sha256  = "33b0b963190c7446dd6decf98b1acaa43b4caae5e6871cfcf6875f5239800833",
   deps    = { "glibc", "gcc", "libgcc", "libstdc++" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libicui18n.so.78")
+    p:run("test -f " .. p.install_root .. "/usr/include/unicode/ucnv.h && (test -f " .. p.install_root .. "/usr/lib/pkgconfig/icu-uc.pc -o -f " .. p.install_root .. "/usr/lib64/pkgconfig/icu-uc.pc)")
   end,
 }
