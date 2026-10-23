@@ -53,6 +53,7 @@ return {
   { name = "composefs", version = "1.0.8", summary = "Composable, immutable, content-addressed filesystem (and library)" },
   { name = "connman", version = "2.0", summary = "Network connection manager for embedded Linux (ConnMan)" },
   { name = "coreutils", version = "9.11", summary = "Basic file, shell and text manipulation utilities" },
+  { name = "corrosion", version = "0.6.1", summary = "CMake/Cargo integration module (Corrosion)" },
   { name = "cowsay", version = "3.8.4", summary = "Cow says things" },
   { name = "cpio", version = "2.15", summary = "GNU cpio: a program to manage archives of files" },
   { name = "cpupower", version = "7.2.6", summary = "CPU power management tools (Arch binary)" },
