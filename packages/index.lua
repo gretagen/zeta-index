@@ -116,6 +116,7 @@ return {
   { name = "flatpak-generator", version = "1.2", summary = "Declare flatpak apps from definition.lua (extra generator for nacelle)" },
   { name = "fmt", version = "11.1.4", summary = "Modern C++ formatting library" },
   { name = "fontconfig", version = "2.18.2", summary = "Font configuration and customization library" },
+  { name = "frameworkintegration", version = "6.13.0", summary = "KDE: Framework providing components to allow applications to integrate with a KDE Workspace" },
   { name = "freetype", version = "2.14.3", summary = "FreeType font engine library" },
   { name = "fribidi", version = "1.0.16", summary = "Bidirectional text algorithm library" },
   { name = "fuse-common", version = "3.18.3", summary = "Common files for fuse2/3 packages" },
