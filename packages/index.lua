@@ -15,6 +15,7 @@ return {
   { name = "at-spi2-core", version = "2.56.1", summary = "Assistive Technology Service Provider Interface (includes ATK)" },
   { name = "atkmm", version = "2.36.4", summary = "C++ bindings for ATK accessibility toolkit" },
   { name = "atril", version = "1.28.7", summary = "Document viewer for MATE (Arch binary)" },
+  { name = "attica", version = "6.13.0", summary = "KDE: Attica is a Qt library that implements the Open Collaboration Services API." },
   { name = "attr", version = "2.5.2", summary = "Extended attribute support library for ACL support" },
   { name = "audit", version = "4.2.1", summary = "Linux audit userspace library (libaudit)" },
   { name = "autoconf", version = "2.73", summary = "GNU Autoconf - generate configure scripts (autoconf, autoreconf, autoheader, autom4te)" },
