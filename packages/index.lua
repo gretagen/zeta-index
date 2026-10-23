@@ -240,6 +240,7 @@ return {
   { name = "kdsoap", version = "2.3.0", summary = "Qt-based SOAP client/server library (Qt6)" },
   { name = "kdsoap-ws-discovery-client", version = "0.4.0", summary = "KDE: Library for finding WS-Discovery devices in the network using Qt5 and KDSoap." },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
+  { name = "kfilemetadata", version = "6.13.0", summary = "KDE: A library for extracting file metadata" },
   { name = "kglobalaccel", version = "6.13.0", summary = "KDE: KGlobalAccel" },
   { name = "kguiaddons", version = "6.13.0", summary = "KDE: KGuiAddons" },
   { name = "kholidays", version = "6.13.0", summary = "KDE: KHolidays: Library to assist determining when holidays occur" },
