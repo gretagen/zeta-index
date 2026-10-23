@@ -280,6 +280,7 @@ return {
   { name = "kwallet", version = "6.13.0", summary = "KDE: KWallet: Credential Storage" },
   { name = "kwayland", version = "6.3.6", summary = "KDE: KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries." },
   { name = "kwidgetsaddons", version = "6.13.0", summary = "KDE: KWidgetsAddons" },
+  { name = "kwin", version = "6.3.6", summary = "KDE Wayland compositor (kwin_wayland) and its KWin libs" },
   { name = "kwindowsystem", version = "6.13.0", summary = "KDE: KWindowSystem" },
   { name = "kxmlgui", version = "6.13.0", summary = "KDE: KXMLGUI" },
   { name = "labwc", version = "0.20.1", summary = "wlroots-based Wayland compositor inspired by Openbox" },
