@@ -860,6 +860,7 @@ return {
   { name = "systemd", version = "262-4", summary = "System and service manager (init) with full service activation machinery" },
   { name = "systemd-headers", version = "262", summary = "Systemd/libsystemd public API headers (sd-bus, sd-event, ...)" },
   { name = "systemd-libs", version = "262", summary = "systemd libraries (libsystemd, libudev)" },
+  { name = "systemsettings", version = "6.3.6", summary = "KDE System Settings control center (systemsettings KCM shell)" },
   { name = "taglib", version = "2.3.0", summary = "Audio metadata tag library" },
   { name = "tango-icon-theme", version = "0.8.90", summary = "Tango icon theme" },
   { name = "tar", version = "1.35", summary = "GNU tar: file archiver" },
