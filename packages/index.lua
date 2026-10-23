@@ -271,6 +271,7 @@ return {
   { name = "krunner", version = "6.13.0", summary = "KDE: Framework for providing different actions given a string query." },
   { name = "kscreenlocker", version = "6.3.6", summary = "KDE: Library and components for secure lock screen architecture" },
   { name = "kservice", version = "6.13.0", summary = "KDE: KService" },
+  { name = "kstatusnotifieritem", version = "6.13.0", summary = "KDE: Implementation of Status Notifier Items" },
   { name = "ksvg", version = "6.13.0", summary = "KDE: Components for handling SVGs" },
   { name = "ktextwidgets", version = "6.13.0", summary = "KDE: KTextWidgets" },
   { name = "kwallet", version = "6.13.0", summary = "KDE: KWallet: Credential Storage" },
