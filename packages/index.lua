@@ -718,6 +718,7 @@ return {
   { name = "pipewire", version = "1.6.8-3", summary = "Multimedia processing graph and audio/video daemon" },
   { name = "pixman", version = "0.46.4", summary = "Pixel manipulation library (low-level rendering primitives)" },
   { name = "pkgconf", version = "3.0.10", summary = "pkg-config implementation for querying build/library metadata" },
+  { name = "plasma-activities", version = "6.3.6", summary = "KDE: Core components for the KDE's Activities System" },
   { name = "plasma-wayland-protocols", version = "1.23.0", summary = "KDE: Plasma-specific protocols for Wayland" },
   { name = "pluma", version = "1.28.1", summary = "Text editor for MATE (Arch binary)" },
   { name = "polkit", version = "127", summary = "Authorization framework for privileged actions" },
