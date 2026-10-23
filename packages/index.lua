@@ -236,6 +236,7 @@ return {
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
   { name = "kglobalaccel", version = "6.13.0", summary = "KDE: KGlobalAccel" },
   { name = "kguiaddons", version = "6.13.0", summary = "KDE: KGuiAddons" },
+  { name = "kholidays", version = "6.13.0", summary = "KDE: KHolidays: Library to assist determining when holidays occur" },
   { name = "ki18n", version = "6.13.0", summary = "KDE: Ki18n" },
   { name = "kiconthemes", version = "6.13.0", summary = "KDE: KIconThemes" },
   { name = "kidletime", version = "6.13.0", summary = "KDE: KIdleTime" },
