@@ -877,6 +877,7 @@ return {
   { name = "udisks2", version = "2.11.2", summary = "Disk management service (Arch binary)" },
   { name = "unibilium", version = "2.1.2", summary = "Library to parse terminal information (terminfo)" },
   { name = "unimatrix", version = "master", summary = "Matrix-style digital rain for the terminal" },
+  { name = "unitconversion", version = "6.13.0", summary = "KDE Framework 6: measurement unit conversion (kunitconversion)" },
   { name = "unzip", version = "6.0", summary = "InfoZIP extractor" },
   { name = "upower", version = "1.90.10", summary = "Power management daemon and tools" },
   { name = "usbutils", version = "019", summary = "USB utilities (lsusb, usb-devices, usbhid-dump)" },
