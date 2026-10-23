@@ -263,6 +263,7 @@ return {
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "knewstuff", version = "6.13.0", summary = "KDE: KNewStuff" },
   { name = "knotifications", version = "6.13.0", summary = "KDE: KNotifications" },
+  { name = "knotifyconfig", version = "6.13.0", summary = "KDE Framework 6: notification configuration settings" },
   { name = "kpackage", version = "6.13.0", summary = "KDE: This framework lets applications to manage user installable packages of non-binary assets" },
   { name = "kparts", version = "6.13.0", summary = "KDE: KParts" },
   { name = "kpipewire", version = "6.3.6", summary = "KDE: Components relating to Flatpak 'pipewire' use in Plasma." },
