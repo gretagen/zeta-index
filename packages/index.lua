@@ -706,6 +706,7 @@ return {
   { name = "opsec", version = "1.0.0", summary = "opsec" },
   { name = "opus", version = "0.11.1", summary = "Opus audio codec" },
   { name = "orc", version = "0.4.44", summary = "Optimized Inner Loop Runtime Compiler" },
+  { name = "oxygen-icons", version = "6.31.0", summary = "KDE: Oxygen icon theme" },
   { name = "p11-kit", version = "0.4.8", summary = "PKCS#11 module loading library" },
   { name = "pam", version = "1.7.2", summary = "Pluggable Authentication Modules (linux-pam)" },
   { name = "pango", version = "1.56.3", summary = "Text layout and rendering library" },
