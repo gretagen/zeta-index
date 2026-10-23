@@ -503,6 +503,7 @@ return {
   { name = "libplacebo", version = "7.360.1", summary = "GPU-accelerated video rendering" },
   { name = "libplasma", version = "6.3.6", summary = "KDE: Plasma library and runtime components" },
   { name = "libpng", version = "1.6.47", summary = "PNG image format library" },
+  { name = "libproxy", version = "0.5.0", summary = "Proxy configuration lookup library" },
   { name = "libpsl", version = "0.21.5", summary = "Public Suffix List library" },
   { name = "libqaccessibilityclient", version = "0.6.0", summary = "KDE: Accessibilty tools helper library, used e.g. by screen readers" },
   { name = "libqalculate", version = "5.13.2", summary = "Multi-purpose calculation engine library and qalc CLI" },
