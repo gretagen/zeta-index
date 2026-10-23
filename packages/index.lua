@@ -230,6 +230,7 @@ return {
   { name = "kcoreaddons", version = "6.13.0", summary = "KDE: KCoreAddons" },
   { name = "kcrash", version = "6.13.0", summary = "KDE: KCrash" },
   { name = "kdbusaddons", version = "6.13.0", summary = "KDE: KDBusAddons" },
+  { name = "kdeclarative", version = "6.13.0", summary = "KDE: KDeclarative" },
   { name = "kdecoration", version = "6.3.6", summary = "KDE: Plugin-based library to create window decorations" },
   { name = "kdoctools", version = "6.13.0", summary = "KDE: KDocTools" },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
