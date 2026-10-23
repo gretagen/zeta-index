@@ -788,6 +788,7 @@ return {
   { name = "qtsvg", version = "6.8.2", summary = "Qt 6 SVG libraries" },
   { name = "qttools", version = "6.8.2", summary = "Qt 6 tools (linguist, qdbus, qtpaths)" },
   { name = "qtwayland", version = "6.8.2", summary = "Qt 6 Wayland client libraries" },
+  { name = "qtwebsockets", version = "6.8.2", summary = "Qt 6 WebSockets module" },
   { name = "rav1e", version = "0.8.1", summary = "AV1 encoder" },
   { name = "re2", version = "2025.11.05", summary = "Efficient regular expression library (Google)" },
   { name = "readline", version = "8.3", summary = "GNU Readline library for line editing and history" },
