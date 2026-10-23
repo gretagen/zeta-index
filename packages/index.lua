@@ -414,7 +414,7 @@ return {
   { name = "libedit", version = "20260512_3.1", summary = "Command line editor library providing generic line editing, history, and tokenization functions" },
   { name = "libei", version = "1.6.0", summary = "Library for Emulated Input (libei + libeis)" },
   { name = "libelf", version = "0.196", summary = "Handle ELF object files and DWARF debugging information (libraries)" },
-  { name = "libepoxy", version = "1.5.10", summary = "Thin wrapper around modern GL/EGL dispatch" },
+  { name = "libepoxy", version = "1.5.10", summary = "OpenGL/EGL function pointer resolution library" },
   { name = "libev", version = "4.33", summary = "High-performance event loop library" },
   { name = "libevdev", version = "1.13.6", summary = "Wrapper library for evdev devices" },
   { name = "libevent", version = "2.1.12", summary = "Event notification library" },
