@@ -255,6 +255,7 @@ return {
   { name = "kio", version = "6.13.0", summary = "KDE: KIO" },
   { name = "kio-extras", version = "26.08.2", summary = "KDE: Additional components to increase the functionality of KIO" },
   { name = "kirigami", version = "6.13.0", summary = "KDE: A QtQuick based components set" },
+  { name = "kirigami-addons", version = "1.9.0", summary = "KDE: Add-ons for the Kirigami framework" },
   { name = "kitemmodels", version = "6.13.0", summary = "KDE: KItemModels" },
   { name = "kitemviews", version = "6.13.0", summary = "KDE: KItemViews" },
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
