@@ -776,6 +776,7 @@ return {
   { name = "python-screeninfo", version = "0.8.1", summary = "Python module to fetch monitor information (resolution, position)" },
   { name = "python-yaml", version = "6.0.3", summary = "PyYAML: YAML parser and emitter for Python 3" },
   { name = "qca", version = "2.3.12", summary = "KDE: Qt Cryptographic Architecture - straightforward cross-platform crypto API" },
+  { name = "qcoro", version = "0.13.0", summary = "Qt coroutine helpers library (QCoro)" },
   { name = "qt5", version = "5.15.19", summary = "Qt 5 runtime libraries (Core/Gui/Widgets/Svg/X11Extras/XcbQpa + plugins)" },
   { name = "qt5compat", version = "6.8.2", summary = "Qt 5 compatibility libraries for Qt 6" },
   { name = "qtbase", version = "6.8.2-3", summary = "Qt 6 base libraries" },
