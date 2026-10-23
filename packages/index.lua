@@ -30,6 +30,7 @@ return {
   { name = "bitstreamvera", version = "1.10", summary = "Bitstream Vera TrueType fonts" },
   { name = "bluez", version = "5.87-2", summary = "Bluetooth protocol stack (bluetoothd, bluetoothctl, and libraries)" },
   { name = "boost", version = "1.92.0", summary = "Boost C++ libraries (headers)" },
+  { name = "breeze", version = "6.3.6", summary = "KDE: Artwork, styles and assets for the Breeze visual style for the Plasma Desktop" },
   { name = "breeze-icons", version = "6.13.0", summary = "KDE: Breeze icon theme." },
   { name = "brightnessctl", version = "0.5.1", summary = "Lightweight brightness control tool (Arch binary)" },
   { name = "brotli", version = "1.2.0", summary = "Brotli compression library" },
