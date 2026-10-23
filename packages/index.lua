@@ -217,6 +217,7 @@ return {
   { name = "jq", version = "1.8.2", summary = "Command-line JSON processor" },
   { name = "json-c", version = "0.18.0", summary = "JSON library" },
   { name = "jsoncpp", version = "1.9.6", summary = "C++ JSON reader/writer" },
+  { name = "kactivitymanagerd", version = "6.3.6", summary = "KDE: System service to manage user's activities, track the usage patterns etc." },
   { name = "karchive", version = "6.13.0", summary = "KDE: Qt addon providing access to numerous types of archives" },
   { name = "kauth", version = "6.13.0", summary = "KDE: KAuth" },
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
