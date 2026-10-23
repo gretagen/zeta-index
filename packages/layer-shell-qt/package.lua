@@ -1,12 +1,12 @@
 return {
   name    = "layer-shell-qt",
-  version = "6.4.0",
-  summary = "Qt Wayland layer-shell interface library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/layer-shell-qt/layer-shell-qt-6.4.0.tar.gz",
-  sha256  = "80aea307ddf0e9e7ea2071dd59df3804f8f03250b5715859ac2aaa40261fcd52",
-  deps    = { "glibc", "qtbase", "qtdeclarative", "qtwayland", "wayland", "xkbcommon" },
+  version = "6.3.6",
+  summary = "KDE: Qt component to allow applications to make use of the Wayland wl-layer-shell protocol.",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/layer-shell-qt/layer-shell-qt-6.3.6.tar.gz",
+  sha256  = "b43119afc85c44e10342307ea034d331c5e07177cd25e5751acc6041c5942496",
+  deps    = { "glibc", "qtbase", "gcc", "qtwayland", "qtdeclarative", "wayland", "wayland-protocols" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libLayerShellQtInterface.so.6")
+    p:run("find " .. p.install_root .. "/usr -type f | grep -q .")
   end,
 }

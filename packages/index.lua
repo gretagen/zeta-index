@@ -266,7 +266,7 @@ return {
   { name = "labwc", version = "0.20.1", summary = "wlroots-based Wayland compositor inspired by Openbox" },
   { name = "lame", version = "4.0", summary = "LAME MP3 encoder" },
   { name = "larp", version = "1.0.0", summary = "A simple script that displays a larp ASCII image" },
-  { name = "layer-shell-qt", version = "6.4.0", summary = "Qt Wayland layer-shell interface library" },
+  { name = "layer-shell-qt", version = "6.3.6", summary = "KDE: Qt component to allow applications to make use of the Wayland wl-layer-shell protocol." },
   { name = "lcms2", version = "2.17", summary = "Little CMS 2 — color management library" },
   { name = "leancrypto", version = "1.0", summary = "Lean cryptography library" },
   { name = "less", version = "704", summary = "GNU less pager" },
