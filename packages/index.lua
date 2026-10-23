@@ -95,6 +95,7 @@ return {
   { name = "eom", version = "1.28.1", summary = "Image viewer for MATE (Arch binary)" },
   { name = "equibop", version = "3.2.2", summary = "Discord client mod (Equicord, Electron app)" },
   { name = "exempi", version = "2.6.6", summary = "XMP metadata library (Arch binary)" },
+  { name = "exiv2", version = "0.28.9", summary = "Image metadata (EXIF/IPTC/XMP) library and CLI" },
   { name = "exo", version = "4.20.0", summary = "Application development library for Xfce" },
   { name = "expat", version = "2.8.1", summary = "XML parsing C library" },
   { name = "extra-cmake-modules", version = "6.31.0", summary = "KDE: Extra modules and scripts for CMake." },
