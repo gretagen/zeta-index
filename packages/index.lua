@@ -238,6 +238,7 @@ return {
   { name = "kdnssd", version = "6.13.0", summary = "KDE: KDNSSD Framework" },
   { name = "kdoctools", version = "6.13.0", summary = "KDE: KDocTools" },
   { name = "kdsoap", version = "2.3.0", summary = "Qt-based SOAP client/server library (Qt6)" },
+  { name = "kdsoap-ws-discovery-client", version = "0.4.0", summary = "KDE: Library for finding WS-Discovery devices in the network using Qt5 and KDSoap." },
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
   { name = "kglobalaccel", version = "6.13.0", summary = "KDE: KGlobalAccel" },
   { name = "kguiaddons", version = "6.13.0", summary = "KDE: KGuiAddons" },
