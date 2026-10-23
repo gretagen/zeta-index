@@ -768,6 +768,7 @@ return {
   { name = "poppler-glib", version = "26.08.0", summary = "GLib wrapper for poppler (Arch binary)" },
   { name = "popt", version = "1.19", summary = "A commandline option parser" },
   { name = "portaudio", version = "19.7.0", summary = "Cross-platform audio I/O library" },
+  { name = "prison", version = "6.13.0", summary = "KDE: prison is a barcode api currently offering a nice Qt api to produce QRCode barcodes and Da" },
   { name = "procps-ng", version = "4.0.7rc1", summary = "libproc2 process information library" },
   { name = "pugixml", version = "1.15", summary = "Lightweight C++ XML processing library" },
   { name = "pulseaudio", version = "17.0", summary = "Network-capable sound server and client library" },
