@@ -242,6 +242,7 @@ return {
   { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kjobwidgets", version = "6.13.0", summary = "KDE: KJobWidgets" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
+  { name = "knewstuff", version = "6.13.0", summary = "KDE: KNewStuff" },
   { name = "knotifications", version = "6.13.0", summary = "KDE: KNotifications" },
   { name = "kpackage", version = "6.13.0", summary = "KDE: This framework lets applications to manage user installable packages of non-binary assets" },
   { name = "kparts", version = "6.13.0", summary = "KDE: KParts" },
