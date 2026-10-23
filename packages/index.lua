@@ -244,6 +244,7 @@ return {
   { name = "keyutils", version = "1.6.3", summary = "Linux Key Management Utilities" },
   { name = "kfilemetadata", version = "6.13.0", summary = "KDE: A library for extracting file metadata" },
   { name = "kglobalaccel", version = "6.13.0", summary = "KDE: KGlobalAccel" },
+  { name = "kglobalacceld", version = "6.3.6", summary = "KDE: Daemon providing Global Keyboard Shortcut (Accelerator) functionality" },
   { name = "kguiaddons", version = "6.13.0", summary = "KDE: KGuiAddons" },
   { name = "kholidays", version = "6.13.0", summary = "KDE: KHolidays: Library to assist determining when holidays occur" },
   { name = "ki18n", version = "6.13.0", summary = "KDE: Ki18n" },
