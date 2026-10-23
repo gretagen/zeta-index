@@ -455,6 +455,7 @@ return {
   { name = "libjxl", version = "0.12.0", summary = "JPEG XL image format library" },
   { name = "libkeybinder3", version = "0.3.2", summary = "Library for global keyboard shortcuts (Arch binary)" },
   { name = "libksba", version = "1.8.0", summary = "Library for X.509 and CMS data structures" },
+  { name = "libkscreen", version = "6.3.6", summary = "KDE: KDE's screen management software" },
   { name = "liblangtag", version = "0.6.8", summary = "interface library to access/deal with tags for identifying languages" },
   { name = "libldap", version = "2.7.1", summary = "Lightweight Directory Access Protocol (LDAP) client libraries" },
   { name = "libliftoff", version = "0.5.0", summary = "KMS plane allocation library" },
