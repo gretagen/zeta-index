@@ -754,6 +754,7 @@ return {
   { name = "peaclock", version = "0.4.3", summary = "Responsive and customizable clock, timer, and stopwatch for the terminal" },
   { name = "perl", version = "5.42.3-2", summary = "Perl interpreter" },
   { name = "perl-uri", version = "5.40", summary = "Perl URI module family (URI::Escape and friends)" },
+  { name = "phonon", version = "4.12.0", summary = "Phonon media abstraction framework (Qt6)" },
   { name = "pinentry", version = "1.3.3", summary = "PIN or passphrase entry dialog for GnuPG" },
   { name = "pipes.sh", version = "1.3.0", summary = "Animated pipes terminal screensaver" },
   { name = "pipewire", version = "1.6.8-3", summary = "Multimedia processing graph and audio/video daemon" },
