@@ -745,7 +745,7 @@ return {
   { name = "pluma", version = "1.28.1", summary = "Text editor for MATE (Arch binary)" },
   { name = "polkit", version = "127", summary = "Authorization framework for privileged actions" },
   { name = "polkit-qt-1", version = "0.200.0", summary = "Qt6 polkit wrapper library" },
-  { name = "poppler", version = "26.08.0", summary = "PDF rendering library (Arch binary)" },
+  { name = "poppler", version = "26.08.0-2", summary = "PDF rendering library (with Qt6 wrapper)" },
   { name = "poppler-data", version = "0.4.12", summary = "Encoding data for the poppler PDF rendering library" },
   { name = "poppler-glib", version = "26.08.0", summary = "GLib wrapper for poppler (Arch binary)" },
   { name = "popt", version = "1.19", summary = "A commandline option parser" },
