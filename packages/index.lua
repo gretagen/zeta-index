@@ -246,6 +246,7 @@ return {
   { name = "kparts", version = "6.13.0", summary = "KDE: KParts" },
   { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
   { name = "kservice", version = "6.13.0", summary = "KDE: KService" },
+  { name = "ksvg", version = "6.13.0", summary = "KDE: Components for handling SVGs" },
   { name = "ktextwidgets", version = "6.13.0", summary = "KDE: KTextWidgets" },
   { name = "kwallet", version = "6.13.0", summary = "KDE: KWallet: Credential Storage" },
   { name = "kwayland", version = "6.3.6", summary = "KDE: KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries." },
