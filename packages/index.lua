@@ -762,6 +762,7 @@ return {
   { name = "pkgconf", version = "3.0.10", summary = "pkg-config implementation for querying build/library metadata" },
   { name = "plasma-activities", version = "6.3.6", summary = "KDE: Core components for the KDE's Activities System" },
   { name = "plasma-activities-stats", version = "6.3.6", summary = "KDE: A library for accessing the usage data collected by the activities system." },
+  { name = "plasma-desktop", version = "6.3.6", summary = "Plasma desktop containments, applets and KCMs" },
   { name = "plasma-nano", version = "6.3.6", summary = "KDE: A minimal Plasma shell package" },
   { name = "plasma-wayland-protocols", version = "1.23.0", summary = "KDE: Plasma-specific protocols for Wayland" },
   { name = "plasma-workspace", version = "6.3.6", summary = "Plasma workspace: the Plasma 6 desktop shell (plasmashell)" },
