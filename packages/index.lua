@@ -475,6 +475,7 @@ return {
   { name = "libkeybinder3", version = "0.3.2", summary = "Library for global keyboard shortcuts (Arch binary)" },
   { name = "libksba", version = "1.8.0", summary = "Library for X.509 and CMS data structures" },
   { name = "libkscreen", version = "6.3.6", summary = "KDE: KDE's screen management software" },
+  { name = "libksysguard", version = "6.3.6", summary = "KDE: Library to retrieve information on the current status of computer hardware" },
   { name = "liblangtag", version = "0.6.8", summary = "interface library to access/deal with tags for identifying languages" },
   { name = "libldap", version = "2.7.1", summary = "Lightweight Directory Access Protocol (LDAP) client libraries" },
   { name = "libliftoff", version = "0.5.0", summary = "KMS plane allocation library" },
