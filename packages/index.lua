@@ -804,6 +804,7 @@ return {
   { name = "sudo", version = "1.9.17p2-1", summary = "Execute commands as another user with limited superuser privileges" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
+  { name = "syndication", version = "6.13.0", summary = "KDE: Syndication Library" },
   { name = "systemd", version = "262-4", summary = "System and service manager (init) with full service activation machinery" },
   { name = "systemd-headers", version = "262", summary = "Systemd/libsystemd public API headers (sd-bus, sd-event, ...)" },
   { name = "systemd-libs", version = "262", summary = "systemd libraries (libsystemd, libudev)" },
