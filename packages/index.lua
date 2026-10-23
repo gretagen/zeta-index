@@ -801,6 +801,7 @@ return {
   { name = "qtermwidget", version = "2.1.0", summary = "QTermWidget terminal emulator widget library (Qt6)" },
   { name = "qtmultimedia", version = "6.8.2", summary = "Qt 6 multimedia (audio/video) module" },
   { name = "qtpositioning", version = "6.8.2", summary = "Qt 6 positioning (location/geoclue) module" },
+  { name = "qtsensors", version = "6.8.2", summary = "Qt 6 sensors (accelerometer/gyroscope...) module" },
   { name = "qtshadertools", version = "6.8.2", summary = "Qt 6 ShaderTools libraries" },
   { name = "qtspeech", version = "6.8.2", summary = "Qt 6 text-to-speech module" },
   { name = "qtsvg", version = "6.8.2", summary = "Qt 6 SVG libraries" },
