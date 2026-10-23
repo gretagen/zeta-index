@@ -275,6 +275,7 @@ return {
   { name = "ksvg", version = "6.13.0", summary = "KDE: Components for handling SVGs" },
   { name = "ktexteditor", version = "6.13.0", summary = "KDE: KTextEditor Framework" },
   { name = "ktextwidgets", version = "6.13.0", summary = "KDE: KTextWidgets" },
+  { name = "kuserfeedback", version = "6.13.0", summary = "KDE: Framework for collecting user feedback for apps via telemetry and surveys" },
   { name = "kwallet", version = "6.13.0", summary = "KDE: KWallet: Credential Storage" },
   { name = "kwayland", version = "6.3.6", summary = "KDE: KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries." },
   { name = "kwidgetsaddons", version = "6.13.0", summary = "KDE: KWidgetsAddons" },
