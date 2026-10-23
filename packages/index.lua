@@ -253,6 +253,7 @@ return {
   { name = "kiconthemes", version = "6.13.0", summary = "KDE: KIconThemes" },
   { name = "kidletime", version = "6.13.0", summary = "KDE: KIdleTime" },
   { name = "kio", version = "6.13.0", summary = "KDE: KIO" },
+  { name = "kio-extras", version = "26.08.2", summary = "KDE: Additional components to increase the functionality of KIO" },
   { name = "kirigami", version = "6.13.0", summary = "KDE: A QtQuick based components set" },
   { name = "kitemmodels", version = "6.13.0", summary = "KDE: KItemModels" },
   { name = "kitemviews", version = "6.13.0", summary = "KDE: KItemViews" },
