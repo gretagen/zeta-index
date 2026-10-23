@@ -775,7 +775,7 @@ return {
   { name = "prison", version = "6.13.0", summary = "KDE: prison is a barcode api currently offering a nice Qt api to produce QRCode barcodes and Da" },
   { name = "procps-ng", version = "4.0.7rc1", summary = "libproc2 process information library" },
   { name = "pugixml", version = "1.15", summary = "Lightweight C++ XML processing library" },
-  { name = "pulseaudio", version = "17.0", summary = "Network-capable sound server and client library" },
+  { name = "pulseaudio", version = "17.0-2", summary = "Network-capable sound server and client library" },
   { name = "python", version = "3.14.7", summary = "The Python programming language" },
   { name = "python-gobject", version = "3.56.3", summary = "Python bindings for GLib/GObject/GIO/GTK" },
   { name = "python-imageio", version = "2.38.1", summary = "Python library for reading and writing image data" },
