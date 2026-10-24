@@ -753,6 +753,7 @@ return {
   { name = "parted", version = "3.7", summary = "A program for creating, destroying, resizing, checking and copying partitions" },
   { name = "patchelf", version = "0.18.0", summary = "Utility to modify the dynamic linker and RPATH of ELF binaries" },
   { name = "pavucontrol", version = "1:6.2", summary = "PulseAudio and PipeWire volume control (GTK4)" },
+  { name = "pcaudiolib", version = "1.3", summary = "Portable C audio playback library (ALSA)" },
   { name = "pciutils", version = "3.15.0", summary = "PCI bus utilities (lspci, setpci, update-pciids)" },
   { name = "pcmanfm", version = "2.1.0", summary = "Lightweight GTK3 file manager" },
   { name = "pcmanfm-qt", version = "2.1.0", summary = "LXQt component (pcmanfm-qt)" },
