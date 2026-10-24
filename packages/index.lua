@@ -449,6 +449,7 @@ return {
   { name = "libfontenc", version = "1.1.9", summary = "X11 font encoding library" },
   { name = "libfuse3", version = "3.18.2", summary = "Filesystem in Userspace library (FUSE 3)" },
   { name = "libfyaml", version = "0.9", summary = "Fully featured YAML 1.2 parser and emitter" },
+  { name = "libgc", version = "8.2.12", summary = "Boehm-Demers-Weiser conservative garbage collector (bdwgc)" },
   { name = "libgcc", version = "16.2.1", summary = "GCC runtime (libgcc_s.so.1 unwind support)" },
   { name = "libgcrypt", version = "1.12.2", summary = "GNU Cryptographic Library" },
   { name = "libgepub", version = "0.7.3-2-x86_64", summary = "EPUB library (Arch binary)" },
