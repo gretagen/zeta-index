@@ -1,9 +1,9 @@
 return {
   name    = "nacelle",
-  version = "3.1.0",
+  version = "3.1.1",
   summary = "Haliade declarative definition system and house management (nacelle)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nacelle/nacelle-3.1.0.tar.gz",
-  sha256  = "116dffe37d8c99057cc7e752ce7c77069ec7e722c3fa37db4cafd7191d87533d",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nacelle/nacelle-3.1.1.tar.gz",
+  sha256  = "036cf9eaf574bf07d14c464ccdd5739cb09012c1317590dcb6ff60067b5519a0",
   deps    = { "lua", "bash", "chronos" },
   archive = { strip = 1 },
   test    = function(p)
