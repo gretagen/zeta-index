@@ -172,6 +172,7 @@ return {
   { name = "gtkmm3", version = "3.24.7", summary = "C++ bindings for GTK+ 3" },
   { name = "gtkmm4", version = "4.14.0", summary = "C++ bindings for GTK+ 4" },
   { name = "gtksourceview4", version = "4.8.4", summary = "GTK3 source code highlighting widget library" },
+  { name = "guile", version = "3.0.11", summary = "GNU Scheme interpreter and library (GNU Guile)" },
   { name = "gupnp", version = "0.14.5", summary = "Library to ease handling and implementation of UPnP A/V profiles" },
   { name = "gupnp-igd", version = "1.6.0", summary = "Library to handle UPnP IGD port mapping" },
   { name = "gvfs", version = "1.60.3", summary = "Virtual filesystem for GNOME (Arch binary)" },
