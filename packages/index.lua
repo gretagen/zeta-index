@@ -111,6 +111,7 @@ return {
   { name = "fetch", version = "2.3.0-1", summary = "Animated 3D fetch tool for your terminal" },
   { name = "ffmpeg", version = "9.0.1", summary = "Multimedia framework" },
   { name = "fftw3", version = "3.3.11", summary = "Fastest Fourier Transform in the West (double precision)" },
+  { name = "fibers", version = "1.3.1", summary = "Concurrent ML-like concurrency library for Guile Scheme" },
   { name = "file", version = "5.46", summary = "File type identification library (libmagic)" },
   { name = "filesystem", version = "1.0", summary = "Haliade system base filesystem hierarchy (FHS)" },
   { name = "findutils", version = "4.10.0", summary = "GNU find, xargs, locate, and updatedb utilities" },
