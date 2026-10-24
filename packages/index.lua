@@ -209,7 +209,7 @@ return {
   { name = "impala", version = "0.9.0", summary = "TUI for managing wifi on Linux (iwd client)" },
   { name = "inih", version = "r62", summary = "Simple .INI file parser library" },
   { name = "iniparser", version = "4.2.6", summary = "Standalone ini-file parsing library" },
-  { name = "iniswap", version = "1.10.0", summary = "Swap init systems (openrc/runit/dinit/systemd/shepherd) on next boot for Haliade system" },
+  { name = "iniswap", version = "1.10.1", summary = "Swap init systems (openrc/runit/dinit/systemd/shepherd) on next boot for Haliade system" },
   { name = "intel-full", version = "1.0", summary = "Complete Intel GPU graphics stack (VA-API iHD/i965, X11 DDX driver, Mesa)" },
   { name = "intel-gmmlib", version = "22.10.1", summary = "Intel Graphics Memory Management Library" },
   { name = "intel-media-driver", version = "26.2.4", summary = "Intel Media Driver for VA-API (iHD) — hardware video decode/encode for Gen8+" },

@@ -1,9 +1,9 @@
 return {
   name    = "iniswap",
-  version = "1.10.0",
+  version = "1.10.1",
   summary = "Swap init systems (openrc/runit/dinit/systemd/shepherd) on next boot for Haliade system",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/iniswap/iniswap-1.10.0.tar.gz",
-  sha256  = "4613541529ca6c574006e23517a43cc6ad1b120700e1bb7fc16439f40f8158e8",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/iniswap/iniswap-1.10.1.tar.gz",
+  sha256  = "b7d7d715158694a1ba41e300d5581d2d10cc7717272fb5b56f0b4256a5964c72",
   deps    = { "bash", "chronos", "nacelle" },
   archive = { strip = 1 },
   test    = function(p)
