@@ -70,6 +70,7 @@ return {
   { name = "dconf-editor", version = "49.0", summary = "GSettings editor for GNOME" },
   { name = "default-cursors", version = "3", summary = "Default cursor set" },
   { name = "dejavusans", version = "2.37", summary = "DejaVu Sans/Serif/Mono TrueType fonts" },
+  { name = "dell-thrower", version = "1.0", summary = "Dell Thrower - Qt6 stickman Dell-throwing clicker game" },
   { name = "desktop-file-utils", version = "0.28", summary = "Command line utilities for working with desktop entries" },
   { name = "device-mapper", version = "2.03.42", summary = "Device mapper userspace library and tools (libdevmapper, dmsetup, dmeventd)" },
   { name = "dhcpcd", version = "10.2.2", summary = "DHCP client daemon" },
