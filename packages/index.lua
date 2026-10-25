@@ -189,7 +189,7 @@ return {
   { name = "guile-sqlite3", version = "0.1.3", summary = "Guile bindings for SQLite (required by Guix)" },
   { name = "guile-ssh", version = "0.18.0", summary = "Guile bindings for libssh (required by Guix)" },
   { name = "guile-zlib", version = "0.2.2", summary = "Guile bindings to zlib (required by Guix)" },
-  { name = "guix", version = "1.5.0", summary = "GNU Guix package manager (official prebuilt binary, /gnu/store layout)" },
+  { name = "guix", version = "1.5.0", summary = "GNU Guile-based functional package manager" },
   { name = "gupnp", version = "0.14.5", summary = "Library to ease handling and implementation of UPnP A/V profiles" },
   { name = "gupnp-igd", version = "1.6.0", summary = "Library to handle UPnP IGD port mapping" },
   { name = "gvfs", version = "1.60.3", summary = "Virtual filesystem for GNOME (Arch binary)" },
