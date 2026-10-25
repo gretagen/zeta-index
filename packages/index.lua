@@ -183,7 +183,7 @@ return {
   { name = "guile-gcrypt", version = "0.5.0", summary = "Guile bindings for libgcrypt (required by Guix)" },
   { name = "guile-git", version = "0.10.0", summary = "Guile bindings for git (required by Guix)" },
   { name = "guile-gnutls", version = "5.0.1", summary = "Guile bindings for the GnuTLS library" },
-  { name = "guile-json", version = "1.3.2", summary = "JSON bindings for Guile (required by Guix)" },
+  { name = "guile-json", version = "4.3.2", summary = "JSON bindings for Guile (required by Guix, >=4.3 API)" },
   { name = "guile-lzlib", version = "0.3.0", summary = "Guile bindings to lzlib (required by Guix)" },
   { name = "guile-semver", version = "0.2.0", summary = "Semantic versioning helpers for Guile (required by Guix)" },
   { name = "guile-sqlite3", version = "0.1.3", summary = "Guile bindings for SQLite (required by Guix)" },
