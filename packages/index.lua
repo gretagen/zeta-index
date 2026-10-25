@@ -156,7 +156,7 @@ return {
   { name = "glycin-loaders", version = "2.1.5", summary = "Image loader/editor modules for glycin (image-rs + svg)" },
   { name = "gmp", version = "10.5.0-2", summary = "GNU multiple precision arithmetic" },
   { name = "gnupg", version = "2.5.21", summary = "The GNU Privacy Guard — GnuPG encryption and signing tool" },
-  { name = "gnutls", version = "30.42.0", summary = "TLS library" },
+  { name = "gnutls", version = "30.42.0-2", summary = "TLS library" },
   { name = "gobject-introspection", version = "1.86.0", summary = "GObject introspection data and tooling" },
   { name = "gobject-introspection-runtime", version = "1.86.0", summary = "Introspection system for GObject-based libraries - runtime" },
   { name = "gpgme", version = "2.1.0", summary = "Library providing access to GnuPG crypto functions" },
