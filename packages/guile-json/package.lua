@@ -1,9 +1,9 @@
 return {
   name    = "guile-json",
-  version = "4.3.2",
+  version = "4.7.3",
   summary = "JSON bindings for Guile (required by Guix, >=4.3 API)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/guile-json/guile-json-4.3.2.tar.gz",
-  sha256  = "dec537923116f3cecbbdec8f24218fee0a8ea53a122720c0d45e214fc2b81466",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/guile-json/guile-json-4.7.3.tar.gz",
+  sha256  = "47bdd4fe1e6f1b88499f0735591ed24d2e49671a44bc2b91b43197542c98bd57",
   deps    = { "glibc", "guile" },
   archive = { strip = 1 },
   test    = function(p)
