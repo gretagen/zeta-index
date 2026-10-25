@@ -474,7 +474,7 @@ return {
   { name = "libhwy", version = "1.2.0", summary = "Google Highway SIMD library" },
   { name = "libical", version = "4.0.7", summary = "iCalendar (RFC 5545) implementation library" },
   { name = "libidn", version = "1.44", summary = "Implementation of the Stringprep, Punycode and IDNA specifications" },
-  { name = "libidn2", version = "0.4.0", summary = "Internationalized domain names" },
+  { name = "libidn2", version = "0.4.0-2", summary = "Implementation of IDNA2008 and TR46 (IDNA2008 for TLS)" },
   { name = "libiec61883", version = "1.2.0", summary = "IEEE 1394 media transport library" },
   { name = "libigdgmm", version = "22.5.0", summary = "Intel Graphics Memory Management Library" },
   { name = "libinput", version = "1.31.3", summary = "Input device and event processing library" },
