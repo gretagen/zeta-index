@@ -6,10 +6,10 @@ dedicated repos.
 
 ## CONTRIBUTION GUIDELINES
 
--- ALWAYS test your packages.
--- Packages must be INIT-AGNOSTIC (not depend on any init).
--- If you do a PR to the index, also do one in the selected repository, such as constructs or nemesis.
--- AI use is permitted to contribute to package-ports
+- ALWAYS test your packages.
+- Packages must be INIT-AGNOSTIC (not depend on any init).
+- If you do a PR to the index, also do one in the selected repository, such as constructs or nemesis.
+- AI use is permitted to contribute to package-ports
 
 ## Repository scheme
 
