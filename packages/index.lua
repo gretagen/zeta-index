@@ -1015,6 +1015,5 @@ return {
   { name = "zsh", version = "5.9.2", summary = "Powerful shell with scripting and tab completion" },
   { name = "zstd", version = "1.5.7-2", summary = "Zstandard compression library (shared + static + cmake config)" },
   { name = "zstrappa", version = "2.14", summary = "Install HaliadeSYS from the live ISO to a target device" },
-  { name = "starship", version = "1.23.0", summary = "Cross-shell prompt" },
   { name = "gnome-desktop", version = "44.5", summary = "Libgnome-desktop library and data files" },
 }
