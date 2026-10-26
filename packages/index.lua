@@ -92,7 +92,6 @@ return {
   { name = "duktape", version = "2.7.0", summary = "Embeddable JavaScript engine (used by polkit)" },
   { name = "dunst", version = "1.13.2", summary = "Lightweight and customizable notification daemon" },
   { name = "dust", version = "1.2.6", summary = "More intuitive version of du in Rust" },
-  { name = "dwm", version = "6.5", summary = "Suckless dynamic window manager for X11" },
   { name = "e2fsprogs", version = "1.47.4", summary = "ext2/ext3/ext4 filesystem utilities (mkfs.ext4, e2fsck, tune2fs, resize2fs)" },
   { name = "egl", version = "1.5-3", summary = "EGL interface library (stub pkgconfig for libglvnd EGL)" },
   { name = "ell", version = "0.83", summary = "Embedded Linux Library (used by iwd)" },
