@@ -2,8 +2,8 @@ return {
   name = "delta",
   version = "0.20.1",
   summary = "Syntax highlighting pager for git and diff",
-  url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/delta/delta-0.20.1.tar.gz",
-  sha256 = "f08e27c0349ec752e61004171fdbb6c56460e4b862c88d8a85cf5aaa26b46718",
+  url = "https://github.com/dandavison/delta/releases/download/0.20.1/delta-0.20.1-x86_64-unknown-linux-gnu.tar.gz",
+  sha256 = "50f08c879f84c81ceb220e476491a7f492d2c9c671e79918cc44badf961a6240",
   deps = { "glibc" },
   archive = { strip = 1 },
   test = function(p)

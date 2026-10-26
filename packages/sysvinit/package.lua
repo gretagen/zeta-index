@@ -2,8 +2,8 @@ return {
   name = "sysvinit",
   version = "3.14",
   summary = "System V init (init, halt, shutdown, runlevel, etc)",
-  url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/sysvinit/sysvinit-3.14.tar.gz",
-  sha256 = "e0f2b8c459aec398d269a840281348c39a4373e4a346d696c5257ee80de7e824",
+  url = "https://github.com/slicer69/sysvinit/releases/download/3.14/sysvinit-3.14.tar.xz",
+  sha256 = "c90874b8c054a35991fb8c4d30c443ed1e9b1815ff6165c7b483f558be4e4b53",
   deps = { "glibc" },
   archive = { strip = 1 },
   test = function(p)

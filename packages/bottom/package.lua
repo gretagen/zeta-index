@@ -2,8 +2,8 @@ return {
   name = "bottom",
   version = "0.14.9",
   summary = "Cross platform graphical process and system monitor",
-  url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/bottom/bottom-0.14.9.tar.gz",
-  sha256 = "a4dba68d63e92b550805587fe9abd86c88de28806c1081235f47d8282b75a30e",
+  url = "https://github.com/ClementTsang/bottom/releases/download/0.14.9/bottom_x86_64-unknown-linux-musl.tar.gz",
+  sha256 = "b4bee5b193e7d3f6e090ac14f0ca15acec2e7fe4ef64988e0bfc492e16c28c9a",
   deps = { "glibc" },
   archive = { strip = 1 },
   test = function(p)

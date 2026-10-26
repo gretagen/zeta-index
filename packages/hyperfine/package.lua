@@ -2,8 +2,8 @@ return {
   name = "hyperfine",
   version = "2.0.0",
   summary = "Command line benchmarking tool",
-  url = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/hyperfine/hyperfine-2.0.0.tar.gz",
-  sha256 = "f8d5840637c76f745a9c6d826861c55770d40ea83b3ff5dae64ff415867a4a3b",
+  url = "https://github.com/sharkdp/hyperfine/releases/download/v2.0.0/hyperfine-v2.0.0-x86_64-unknown-linux-gnu.tar.gz",
+  sha256 = "ae2beda2ac99c098427e4f755244552daf20e514422889cca6d44421e2d93c87",
   deps = { "glibc" },
   archive = { strip = 1 },
   test = function(p)
