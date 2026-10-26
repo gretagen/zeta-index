@@ -1,0 +1,12 @@
+# s6.recipe — skarnet process supervision suite (init-agnostic services)
+return {
+  name         = "s6",
+  version      = "2.15.1.1",
+  summary      = "Skarnet process supervision suite and init system",
+  url          = "https://github.com/skarnet/s6/archive/refs/tags/v2.15.1.1.tar.gz",
+  sha256       = "8ef6eeb6243d1c372ff8f830607a2a1870d36cf1b640599f3a614dece249e4c4",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/s6-svscan",
+}

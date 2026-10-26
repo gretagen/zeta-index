@@ -1,0 +1,10 @@
+return {
+  name         = "yazi",
+  version      = "25.5.31",
+  summary      = "Blazing fast terminal file manager written in Rust",
+  url          = "https://github.com/sxyazi/yazi/archive/refs/tags/v25.5.31.tar.gz",
+  sha256       = "4d005e7c3f32b5574d51ab105597f3da3a4be2f7b5cd1bcb284143ad38253ed4",
+  deps         = { "glibc" },
+  build_system = "cargo",
+  test         = "test -x ${DESTDIR}/usr/bin/yazi",
+}
