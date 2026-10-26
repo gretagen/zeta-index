@@ -1,12 +1,12 @@
 return {
   name    = "shepherd",
-  version = "1.0.9",
+  version = "1.0.9-2",
   summary = "GNU init system and service manager written in Scheme",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/shepherd/shepherd-1.0.9.tar.gz",
-  sha256  = "43e28bb0e83c71a0894fff2f8deefa4b81ab0b80835cda624387a28ae7907f8b",
-  deps    = { "glibc", "guile", "fibers" },
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/shepherd/shepherd-1.0.9-2.tar.gz",
+  sha256  = "1ebbb9988bd347a4119d0de0cc92d786e555019f6dad82f007622af1c0d873a9",
+  deps    = { "glibc", "guile" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -x " .. p.install_root .. "/sbin/shepherd && test -x " .. p.install_root .. "/usr/bin/herd && test -f " .. p.install_root .. "/usr/share/guile/site/3.0/shepherd.scm")
+    p:run("test -x " .. p.install_root .. "/usr/bin/shepherd && test -x " .. p.install_root .. "/usr/bin/herd && test -f " .. p.install_root .. "/usr/share/guile/site/3.0/shepherd.scm && grep -q '(define %sysconfdir \"/etc\")' " .. p.install_root .. "/usr/share/guile/site/3.0/shepherd/config.scm")
   end,
 }
