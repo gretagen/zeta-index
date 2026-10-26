@@ -895,6 +895,7 @@ return {
   { name = "systemd-headers", version = "262", summary = "Systemd/libsystemd public API headers (sd-bus, sd-event, ...)" },
   { name = "systemd-libs", version = "262", summary = "systemd libraries (libsystemd, libudev)" },
   { name = "systemsettings", version = "6.3.6", summary = "KDE System Settings control center (systemsettings KCM shell)" },
+  { name = "sysvinit", version = "3.14", summary = "System V init (init, halt, shutdown, runlevel, etc)" },
   { name = "taglib", version = "2.3.0", summary = "Audio metadata tag library" },
   { name = "tango-icon-theme", version = "0.8.90", summary = "Tango icon theme" },
   { name = "tar", version = "1.35", summary = "GNU tar: file archiver" },
