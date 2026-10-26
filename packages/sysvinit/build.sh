@@ -2,8 +2,8 @@
 # build.sh — build sysvinit and normalise the stage into usr/{bin,sbin}.
 # Runs inside the extracted sysvinit source directory.
 set -eu
-make
-make install DESTDIR="$DESTDIR"
+make LDFLAGS="-lcrypt"
+make LDFLAGS="-lcrypt" install DESTDIR="$DESTDIR"
 
 STAGE="$DESTDIR"
 
