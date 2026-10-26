@@ -1,0 +1,12 @@
+return {
+  name = "zoxide",
+  version = "0.10.0",
+  summary = "Smarter cd command for your terminal",
+  url = "https://github.com/ajeetdsouza/zoxide/releases/download/v0.10.0/zoxide-0.10.0-x86_64-unknown-linux-musl.tar.gz",
+  sha256 = "2d93385b99f3e82cf2701609a1bffcad863fbeb75aa3fe7eb6be4d29be68b1ae",
+  deps = { "glibc" },
+  archive = { strip = 1 },
+  test = function(p)
+    p:run("'" .. p.install_root .. "'/usr/bin/zoxide --version")
+  end,
+}
