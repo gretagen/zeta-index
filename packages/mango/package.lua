@@ -1,9 +1,9 @@
 return {
   name    = "mango",
-  version = "0.18.2",
+  version = "0.18.3",
   summary = "MangoWM: lightweight dwl-based Wayland compositor",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mango/mango-0.18.2.tar.gz",
-  sha256  = "f13cd2bd9a02199d443fb74f8c7d719ddba0252c4622ce721eaba830d1c23375",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mango/mango-0.18.3.tar.gz",
+  sha256  = "39927dea9484fee9fce5346a57bdaa643d3973f8345224509d64c3ba586bcbd9",
   deps    = { "glibc", "glib", "cairo", "cjson", "pango", "pixman", "scenefx", "wayland", "wlroots", "xkbcommon", "libinput", "pcre2", "libxcb", "xcb-util-wm" },
   archive = { strip = 1 },
   test    = function(p)
