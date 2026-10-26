@@ -962,6 +962,7 @@ return {
   { name = "xdg-desktop-portal-hyprland", version = "1.4.1-2", summary = "Hyprland backend for xdg-desktop-portal (screen sharing, file picker, screencast)" },
   { name = "xdg-desktop-portal-wlr", version = "0.8.4", summary = "xdg-desktop-portal backend for wlroots (screencast, screenshot)" },
   { name = "xdg-user-dirs", version = "0.18", summary = "XDG user dirs management tool" },
+  { name = "xdg-utils", version = "1.2.1", summary = "freedesktop.org command-line tools for desktop integration (xdg-open, xdg-mime, xdg-settings)" },
   { name = "xdpyinfo", version = "1.2.0", summary = "Display information utility for X" },
   { name = "xf86-input-libinput", version = "1.5.0", summary = "X.Org input driver based on libinput" },
   { name = "xf86-video-intel", version = "2.99.917", summary = "X.Org Intel DDX video driver" },
