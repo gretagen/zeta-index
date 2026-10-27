@@ -781,6 +781,7 @@ return {
   { name = "perl-uri", version = "5.40", summary = "Perl URI module family (URI::Escape and friends)" },
   { name = "phonon", version = "4.12.0", summary = "Phonon media abstraction framework (Qt6)" },
   { name = "pinentry", version = "1.3.3", summary = "PIN or passphrase entry dialog for GnuPG" },
+  { name = "pip", version = "26.2.2", summary = "The PyPA package installer (pip)" },
   { name = "pipes.sh", version = "1.3.0", summary = "Animated pipes terminal screensaver" },
   { name = "pipewire", version = "1.6.8-3", summary = "Multimedia processing graph and audio/video daemon" },
   { name = "pixman", version = "0.46.4", summary = "Pixel manipulation library (low-level rendering primitives)" },
