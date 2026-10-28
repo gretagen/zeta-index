@@ -1,12 +1,12 @@
 return {
   name    = "mate-menus",
-  version = "1.28.1",
-  summary = "Menu system for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-menus/mate-menus-1.28.1.pkg.tar.zst",
-  sha256  = "3e73f1946533ca723c7395b2dadf5000a2384d90e47556c7b1419f035e2ac757",
-  deps    = { "glib" },
-  archive = { extract_arch_pkg = true },
+  version = "1.28.0",
+  summary = "Menu system for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-menus/mate-menus-1.28.0.tar.gz",
+  sha256  = "9de0d694a097b08fd752cfb801f1e042a59c8ddf19a5f65c6689e624d028e655",
+  deps    = { "glibc", "glib", "gtk3", "glib" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\"")
   end,
 }
