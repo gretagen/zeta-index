@@ -784,6 +784,7 @@ return {
   { name = "peaclock", version = "0.4.3", summary = "Responsive and customizable clock, timer, and stopwatch for the terminal" },
   { name = "perl", version = "5.42.3-3", summary = "Perl interpreter" },
   { name = "perl-uri", version = "5.40", summary = "Perl URI module family (URI::Escape and friends)" },
+  { name = "perl-xml-parser", version = "2.47", summary = "Perl XML::Parser module (expat bindings)" },
   { name = "phonon", version = "4.12.0", summary = "Phonon media abstraction framework (Qt6)" },
   { name = "pinentry", version = "1.3.3", summary = "PIN or passphrase entry dialog for GnuPG" },
   { name = "pip", version = "26.2.2", summary = "The PyPA package installer (pip)" },
