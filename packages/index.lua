@@ -782,7 +782,7 @@ return {
   { name = "pcmanfm-qt", version = "2.1.0", summary = "LXQt component (pcmanfm-qt)" },
   { name = "pcre2", version = "10.47", summary = "Perl-compatible regular expression library v2" },
   { name = "peaclock", version = "0.4.3", summary = "Responsive and customizable clock, timer, and stopwatch for the terminal" },
-  { name = "perl", version = "5.42.3-2", summary = "Perl interpreter" },
+  { name = "perl", version = "5.42.3-3", summary = "Perl interpreter" },
   { name = "perl-uri", version = "5.40", summary = "Perl URI module family (URI::Escape and friends)" },
   { name = "phonon", version = "4.12.0", summary = "Phonon media abstraction framework (Qt6)" },
   { name = "pinentry", version = "1.3.3", summary = "PIN or passphrase entry dialog for GnuPG" },
