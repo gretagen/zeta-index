@@ -862,6 +862,7 @@ return {
   { name = "sdl2", version = "2.32.10", summary = "Simple DirectMedia Layer 2 (low-level multimedia library)" },
   { name = "seatd", version = "0.9.3-2", summary = "Seat management daemon and library" },
   { name = "sed", version = "4.10", summary = "GNU stream editor" },
+  { name = "setuptools", version = "84.2.1", summary = "Python build system and distutils shim (setuptools)" },
   { name = "setxkbmap", version = "1.3.2", summary = "Set the keyboard using the X Keyboard Extension" },
   { name = "sh", version = "1.0", summary = "POSIX shell (provided by bash)" },
   { name = "shaderc", version = "2026.3", summary = "Collection of tools, libraries and tests for shader compilation" },
