@@ -12,7 +12,7 @@ return {
     "pixman",
     "harfbuzz",
     "egl",
-    "libx11",
+    "libX11",
     "libxcb",
     "wayland",
     "gtk4",
