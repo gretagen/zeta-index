@@ -1,12 +1,12 @@
 return {
   name    = "mate-screensaver",
   version = "1.28.0",
-  summary = "Screen saver for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-screensaver/mate-screensaver-1.28.0.pkg.tar.zst",
-  sha256  = "c3142d3c8dd932c0ea0185ff7a07cb9d71a5add4c1aa75636771c168b89cd762",
-  deps    = { "mate-panel", "libmatekbd", "gettext", "libnotify", "mate-desktop", "mate-menus", "mate-session-manager" },
-  archive = { extract_arch_pkg = true },
+  summary = "Screen saver for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-screensaver/mate-screensaver-1.28.0.tar.gz",
+  sha256  = "17113f91c47e11a770305cfbd1f9640276aa0eb2fe159cc9e32db6f8faeaf76b",
+  deps    = { "libxss", "libXxf86vm", "glibc", "glib", "gtk3", "mate-panel", "libmatekbd", "gettext", "libnotify", "mate-desktop", "mate-menus", "mate-session-manager" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/bin/mate-screensaver")
   end,
 }

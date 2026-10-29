@@ -1,12 +1,12 @@
 return {
   name    = "mate-settings-daemon",
   version = "1.28.0",
-  summary = "Settings daemon for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-settings-daemon/mate-settings-daemon-1.28.0.pkg.tar.zst",
-  sha256  = "0cce66e59b004140925cb18a6913c4321a8f392f2ef1a7d703194dd6ee79afde",
-  deps    = { "dbus-glib", "libcanberra", "libmatekbd", "libmatemixer", "libnotify", "mate-desktop", "nss", "polkit", "gettext" },
-  archive = { extract_arch_pkg = true },
+  summary = "Settings daemon for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-settings-daemon/mate-settings-daemon-1.28.0.tar.gz",
+  sha256  = "37d97404acd2fdec53c02be43c1030f5e71eb644883dff508b7ab164b0a6aeab",
+  deps    = { "libxklavier", "startup-notification", "libdconf", "libSM", "libICE", "glibc", "glib", "gtk3", "dbus-glib", "libcanberra", "libmatekbd", "libmatemixer", "libnotify", "mate-desktop", "nss", "polkit", "gettext" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/libexec/mate-settings-daemon")
   end,
 }

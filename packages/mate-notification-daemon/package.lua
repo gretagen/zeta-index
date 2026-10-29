@@ -1,12 +1,12 @@
 return {
   name    = "mate-notification-daemon",
-  version = "1.29.0",
-  summary = "Notification daemon for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-notification-daemon/mate-notification-daemon-1.29.0.pkg.tar.zst",
-  sha256  = "db109f8b8f27b059961e92e16dfefa44475a20b7b731581bc927560815a9b4f7",
-  deps    = { "libcanberra", "libwnck3", "libnotify", "gettext", "mate-panel" },
-  archive = { extract_arch_pkg = true },
+  version = "1.28.3",
+  summary = "Notification daemon for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-notification-daemon/mate-notification-daemon-1.28.3.tar.gz",
+  sha256  = "09f1cccb1ef0b9255700a69759cafaa57fc6bf6441238f1fb4004eb10ce5a53f",
+  deps    = { "glibc", "glib", "gtk3", "libcanberra", "libwnck3", "libnotify", "gettext", "mate-panel" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/libexec/mate-notification-daemon")
   end,
 }

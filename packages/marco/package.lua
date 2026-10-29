@@ -1,12 +1,12 @@
 return {
   name    = "marco",
-  version = "1.29.0",
-  summary = "Window manager for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/marco/marco-1.29.0.pkg.tar.zst",
-  sha256  = "42a088dede2e56b9f3032d51532468b90121154ab99ad08058aa89c2d0eddee9",
-  deps    = { "libcanberra", "libgtop", "mate-desktop", "zenity", "libXpresent", "gettext", "libXres", "libSM" },
-  archive = { extract_arch_pkg = true },
+  version = "1.28.1",
+  summary = "Window manager for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/marco/marco-1.28.1.tar.gz",
+  sha256  = "7ea924562d4f2f79e5327bdde44ecd83823fade9ffd1f8512303903359163b19",
+  deps    = { "libdconf", "startup-notification", "glibc", "glib", "gtk3", "libcanberra", "libgtop", "mate-desktop", "zenity", "libXpresent", "gettext", "libXres", "libSM" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/bin/marco")
   end,
 }
