@@ -1,12 +1,12 @@
 return {
   name    = "mate-media",
   version = "1.28.1",
-  summary = "Media manager for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-media/mate-media-1.28.1.pkg.tar.zst",
-  sha256  = "7563eb48b0115088677ded834df5d8b96ee63e453d329ae25175d83e809e8055",
-  deps    = { "libcanberra", "libmatemixer", "mate-desktop", "mate-panel", "gettext" },
-  archive = { extract_arch_pkg = true },
+  summary = "Media manager for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-media/mate-media-1.28.1.tar.gz",
+  sha256  = "a5aff7c02e42180873f3cfc21fae43999492a6eccfbb052ef7e9d48b707a9168",
+  deps    = { "glibc", "glib", "gtk3", "libcanberra", "libmatemixer", "mate-desktop", "mate-panel", "gettext" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\"")
   end,
 }

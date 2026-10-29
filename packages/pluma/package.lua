@@ -1,12 +1,12 @@
 return {
   name    = "pluma",
-  version = "1.28.1",
-  summary = "Text editor for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/pluma/pluma-1.28.1.pkg.tar.zst",
-  sha256  = "52992741002f0bbf3a6886eb646ea425e286b5dd3637ed9c37f726ceea0b01ea",
-  deps    = { "iso-codes", "mate-desktop", "zenity", "gtksourceview4", "libpeas", "gettext", "enchant", "libSM" },
-  archive = { extract_arch_pkg = true },
+  version = "1.28.0",
+  summary = "Text editor for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/pluma/pluma-1.28.0.tar.gz",
+  sha256  = "d29dd0a24db6489f0508598f72e0817fa84aac86c9eaab46be5e88632697a17f",
+  deps    = { "glibc", "glib", "gtk3", "iso-codes", "mate-desktop", "zenity", "gtksourceview4", "libpeas", "gettext", "enchant", "libSM" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/bin/pluma")
   end,
 }

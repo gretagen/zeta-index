@@ -1,12 +1,12 @@
 return {
   name    = "engrampa",
-  version = "1.28.5",
-  summary = "File archiver for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/engrampa/engrampa-1.28.5.pkg.tar.zst",
-  sha256  = "773f6e30616fe38c071e8dc3c937b363c5d0ec52ca2d9e74ba1f1da478cfeb93",
-  deps    = { "gtk3", "gzip", "gettext", "libarchive", "tar", "unzip", "zip" },
-  archive = { extract_arch_pkg = true },
+  version = "1.28.2",
+  summary = "File archiver for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/engrampa/engrampa-1.28.2.tar.gz",
+  sha256  = "6f244aa0e62fed9d1f40ef79cae23a2ae1d6cc178cfe25a4015ef97e5d42825e",
+  deps    = { "libjson-glib", "caja", "libSM", "libICE", "glibc", "gtk3", "gzip", "gettext", "libarchive", "tar", "unzip", "zip" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/bin/engrampa")
   end,
 }

@@ -1,12 +1,12 @@
 return {
   name    = "mate-backgrounds",
   version = "1.28.0",
-  summary = "Background images for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-backgrounds/mate-backgrounds-1.28.0.pkg.tar.zst",
-  sha256  = "0a72a476318e9e998b82a03f6af434a970d6a3e7d96ea70fdcb9ab4f119ddfe1",
-  deps    = {},
-  archive = { extract_arch_pkg = true },
+  summary = "Background images for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-backgrounds/mate-backgrounds-1.28.0.tar.gz",
+  sha256  = "dded8cfc5bab4dee5f80cc82e41e1d678a17e83833ae170db0ef5bba25def9b4",
+  deps    = { "glibc" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\"")
   end,
 }

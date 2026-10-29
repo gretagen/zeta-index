@@ -1,12 +1,12 @@
 return {
   name    = "mate-calc",
   version = "1.28.0",
-  summary = "Calculator for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-calc/mate-calc-1.28.0.pkg.tar.zst",
-  sha256  = "71f509b98fcdfc7b6649fa7dfb1c64090a7fc3da8d9d8bdfd2341eb45359b270",
-  deps    = { "gtk3", "gettext" },
-  archive = { extract_arch_pkg = true },
+  summary = "Calculator for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-calc/mate-calc-1.28.0.tar.gz",
+  sha256  = "a4c87d690cf45cb1148c71ba4a4d7d4b8189e01b0dcd01e0b13e1234feddcca5",
+  deps    = { "mpfr", "libmpc", "glibc", "gtk3", "gettext" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/bin/mate-calc")
   end,
 }
