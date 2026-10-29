@@ -1,12 +1,12 @@
 return {
   name    = "mate-user-share",
   version = "1.28.0",
-  summary = "User file sharing for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-user-share/mate-user-share-1.28.0.pkg.tar.zst",
-  sha256  = "6adddf7431190af6273bbd65487e76560b818471d9ba4b7bb79e43b3bf5830fc",
-  deps    = { "gtk3", "gettext" },
-  archive = { extract_arch_pkg = true },
+  summary = "User file sharing for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-user-share/mate-user-share-1.28.0.tar.gz",
+  sha256  = "8db27fdc6dd8f9bccdfa64be511c7586eefa43075a4b97d09cd965a914718be3",
+  deps    = { "caja", "libnotify", "dbus-glib", "libcanberra", "libSM", "libICE", "glibc", "gtk3", "gettext" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\"")
   end,
 }

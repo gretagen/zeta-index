@@ -1,12 +1,12 @@
 return {
   name    = "mate-control-center",
-  version = "1.28.1",
-  summary = "Control center for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-control-center/mate-control-center-1.28.1.pkg.tar.zst",
-  sha256  = "1f3e8d581861b8c5cbfff61a30859588380182bc0834acd5e38456e2f7154289",
-  deps    = { "mate-menus", "mate-settings-daemon", "marco", "mate-desktop", "gettext", "accountsservice", "mate-panel", "libcanberra", "udisks2", "libayatana-appindicator" },
-  archive = { extract_arch_pkg = true },
+  version = "1.28.0",
+  summary = "Control center for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-control-center/mate-control-center-1.28.0.tar.gz",
+  sha256  = "1b5cf7c9ac95345902c5679c4a56991f72329211165a78f418d065d62bb6fce6",
+  deps    = { "libdbusmenu-glib", "libxss", "glibc", "glib", "gtk3", "mate-menus", "mate-settings-daemon", "marco", "mate-desktop", "gettext", "accountsservice", "mate-panel", "libcanberra", "udisks2", "libayatana-appindicator" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\" && test -x " .. p.install_root .. "/usr/bin/mate-control-center")
   end,
 }
