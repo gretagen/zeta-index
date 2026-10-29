@@ -180,6 +180,7 @@ return {
   { name = "gtk4", version = "4.14.5-2", summary = "GTK+ 4 toolkit (X11 + Wayland)" },
   { name = "gtkmm3", version = "3.24.7", summary = "C++ bindings for GTK+ 3" },
   { name = "gtkmm4", version = "4.14.0", summary = "C++ bindings for GTK+ 4" },
+  { name = "gtksourceview", version = "3.24.11", summary = "Text editor widget with syntax highlighting (GTK3)" },
   { name = "gtksourceview4", version = "4.8.4", summary = "GTK3 source code highlighting widget library" },
   { name = "guile", version = "3.0.11", summary = "GNU Scheme interpreter and library (GNU Guile)" },
   { name = "guile-bytestructures", version = "1.0.10", summary = "Structured bytevector access for Guile (needed by guile-git)" },
