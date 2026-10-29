@@ -1026,7 +1026,7 @@ return {
   { name = "yq", version = "4.47.1", summary = "Command-line YAML/JSON/XML processor" },
   { name = "zenity", version = "4.2.2", summary = "GTK dialog utility (Arch binary)" },
   { name = "zeromq", version = "4.3.5", summary = "High-performance messaging library" },
-  { name = "zeta", version = "1.0.65", summary = "Zeta package manager for Haliade system" },
+  { name = "zeta", version = "1.0.66", summary = "Zeta package manager for Haliade system" },
   { name = "zeta-toolchain", version = "1.0.2", summary = "Zeta build toolchain (zeta-makepkg, zeta-cli)" },
   { name = "zig", version = "0.16.0", summary = "Zig compiler and toolchain (LLVM 21 backend, all features)" },
   { name = "zimg", version = "3.0.6", summary = "Image processing library" },
