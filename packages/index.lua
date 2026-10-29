@@ -454,7 +454,7 @@ return {
   { name = "libdbusmenu-glib", version = "18.10.20180917", summary = "Library for passing menus over DBus" },
   { name = "libdbusmenu-gtk3", version = "18.10.20180917", summary = "Library for passing menus over DBus (GTK+ 3 library)" },
   { name = "libdbusmenu-lxqt", version = "0.2.0", summary = "LXQt dbusmenu library" },
-  { name = "libdconf", version = "0.40.0", summary = "GSettings configuration backend" },
+  { name = "libdconf", version = "0.40.0-2", summary = "GSettings configuration backend (with DBus service)" },
   { name = "libdeflate", version = "1.26", summary = "Fast compression/decompression library" },
   { name = "libdisplay-info", version = "0.3.0", summary = "EDID and DisplayID library" },
   { name = "libdovi", version = "3.4.0", summary = "Library to read and write Dolby Vision metadata" },
