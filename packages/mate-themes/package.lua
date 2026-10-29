@@ -1,12 +1,12 @@
 return {
   name    = "mate-themes",
   version = "3.22.26",
-  summary = "Themes for MATE (Arch binary)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-nemesis/main/mate-themes/mate-themes-3.22.26.pkg.tar.zst",
-  sha256  = "559beff3e761e3c9e615af5583e66275c3f1d1c58416480ace7528747969724d",
-  deps    = {},
-  archive = { extract_arch_pkg = true },
+  summary = "Themes for MATE",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mate-themes/mate-themes-3.22.26.tar.gz",
+  sha256  = "ccae145d7c5b315c9e10249d4a01595a08eb48a7f3aedce95a3299966e39d70b",
+  deps    = { "glibc" },
+  archive = { strip = 1 },
   test    = function(p)
-    p:run("ls " .. p.install_root .. "/usr/lib/ 2>/dev/null || ls " .. p.install_root .. "/usr/share/ 2>/dev/null")
+    p:run("test -n \"$(find " .. p.install_root .. "/usr -mindepth 1 -type f | head -1)\"")
   end,
 }
