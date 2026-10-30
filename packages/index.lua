@@ -748,7 +748,7 @@ return {
   { name = "nacelle", version = "3.1.3", summary = "Haliade declarative definition system and house management (nacelle)" },
   { name = "nano", version = "9.2", summary = "Simple text editor" },
   { name = "ncdu", version = "2.9.2", summary = "NCurses disk usage viewer" },
-  { name = "ncurses", version = "6.6", summary = "System V Release 4.0 curses library and utilities" },
+  { name = "ncurses", version = "6.6-2", summary = "System V Release 4.0 curses library and utilities" },
   { name = "neovim", version = "0.12.4", summary = "Vim-fork focused on extensibility and usability" },
   { name = "nettle", version = "1.0-2", summary = "Cryptographic library" },
   { name = "networkmanager", version = "1.51.4", summary = "Network management daemon (wifi iwd+wpa_supplicant, dnsmasq, dhcpcd)" },
