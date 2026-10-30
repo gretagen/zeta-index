@@ -144,6 +144,7 @@ return {
   { name = "genkernel", version = "2.2.1", summary = "Haliade system kernel generation script" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
+  { name = "ghostty", version = "1.4.0", summary = "fast, feature-rich, and cross-platform terminal emulator" },
   { name = "giflib", version = "6.1.3", summary = "Library for reading and writing gif images" },
   { name = "git", version = "2.50.0", summary = "Distributed version control system" },
   { name = "glew", version = "2.3.1", summary = "The OpenGL Extension Wrangler Library (shared lib only)" },
