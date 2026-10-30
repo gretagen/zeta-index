@@ -971,6 +971,7 @@ return {
   { name = "wayland-protocols", version = "1.49", summary = "Wayland protocol XML definitions (build-time data for compositors and clients)" },
   { name = "waypaper", version = "2.9", summary = "GUI wallpaper setter for Wayland and Xorg window managers" },
   { name = "webkit2gtk-4.1", version = "2.52.6", summary = "Web browser engine library (Arch binary)" },
+  { name = "weechat", version = "4.10.1", summary = "Extensible chat client (IRC, Matrix, …) for the terminal" },
   { name = "wget", version = "1.25.0", summary = "Network downloader" },
   { name = "which", version = "2.21", summary = "Locate a command in the PATH" },
   { name = "wine", version = "11.17", summary = "Compatibility layer for running Windows applications (Arch binary)" },
