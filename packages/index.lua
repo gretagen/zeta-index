@@ -803,6 +803,7 @@ return {
   { name = "pcmanfm", version = "2.1.0", summary = "Lightweight GTK3 file manager" },
   { name = "pcmanfm-qt", version = "2.1.0", summary = "LXQt component (pcmanfm-qt)" },
   { name = "pcre2", version = "10.47", summary = "Perl-compatible regular expression library v2" },
+  { name = "pdfgrep", version = "2.2.0-6-x86_64", summary = "Search text in PDF files (Arch binary)" },
   { name = "peaclock", version = "0.4.3", summary = "Responsive and customizable clock, timer, and stopwatch for the terminal" },
   { name = "perl", version = "5.42.3-3", summary = "Perl interpreter" },
   { name = "perl-uri", version = "5.40", summary = "Perl URI module family (URI::Escape and friends)" },
