@@ -90,6 +90,7 @@ return {
   { name = "dosfstools", version = "4.2-2", summary = "DOS/FAT filesystem tools (mkfs.fat, fsck.fat, fatlabel)" },
   { name = "double-conversion", version = "3.4.0", summary = "IEEE-754 binary/decimal conversion library" },
   { name = "driftwm", version = "0.17.3", summary = "Trackpad-first infinite canvas Wayland compositor (smithay)" },
+  { name = "duckdb", version = "2.0.0", summary = "In-process SQL OLAP database command line client (C++ binary)" },
   { name = "duf", version = "0.9.1", summary = "Simple disk usage/free utility (Go binary)" },
   { name = "duktape", version = "2.7.0", summary = "Embeddable JavaScript engine (used by polkit)" },
   { name = "dunst", version = "1.13.2", summary = "Lightweight and customizable notification daemon" },
