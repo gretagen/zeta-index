@@ -530,6 +530,7 @@ return {
   { name = "libmateweather", version = "1.28.0", summary = "Weather library for MATE (Arch binary)" },
   { name = "libmatroska", version = "7.0.0", summary = "Matroska container library" },
   { name = "libmd", version = "1.1.0", summary = "Message Digest library (provides BSD hash functions)" },
+  { name = "libmms", version = "0.6.4-6-x86_64", summary = "MMS stream protocol library (Arch binary)" },
   { name = "libmnl", version = "1.0.5", summary = "Minimalistic user-space library oriented to Netlink developers (Arch binary)" },
   { name = "libmodplug", version = "0.8.9.0", summary = "Modplug library" },
   { name = "libmpc", version = "1.3.1", summary = "GNU Multiple Precision Complex Library" },
