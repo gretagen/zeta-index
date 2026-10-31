@@ -143,6 +143,7 @@ return {
   { name = "gcc", version = "16.2.0", summary = "GNU Compiler Collection (C and C++ front ends, libstdc++)" },
   { name = "gcc-minimal", version = "16.2.0", summary = "C-only GCC for building the kernel: driver, cc1, collect2, headers and link support (no C++, LTO or sanitizers)" },
   { name = "gcr-4", version = "4.4.1", summary = "GCR certificate library (Arch binary)" },
+  { name = "gd", version = "2.3.3-9-x86_64", summary = "Library for dynamic image creation (libgd) (Arch binary)" },
   { name = "gdbm", version = "1.26", summary = "GNU database library" },
   { name = "gdk-pixbuf", version = "2.42.12-3", summary = "Image loading library (gir-enabled rebuild)" },
   { name = "gdkmm", version = "3.24.11", summary = "C++ bindings for GDK (gdkmm, from the gtkmm suite)" },
