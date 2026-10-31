@@ -1058,6 +1058,7 @@ return {
   { name = "zip", version = "3.0", summary = "InfoZIP archiver" },
   { name = "zita-alsa-pcmi", version = "0.6.1", summary = "The successor of clalsadrv, provides easy access to ALSA PCM devices." },
   { name = "zita-resampler", version = "1.11.2", summary = "A C++ library for resampling audio signals" },
+  { name = "zola", version = "0.23.6", summary = "Fast static site generator in a single binary (Rust binary)" },
   { name = "zoxide", version = "0.10.0", summary = "Smarter cd command for your terminal" },
   { name = "zsh", version = "5.9.2", summary = "Powerful shell with scripting and tab completion" },
   { name = "zstd", version = "1.5.7-2", summary = "Zstandard compression library (shared + static + cmake config)" },
