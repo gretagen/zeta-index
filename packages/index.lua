@@ -835,6 +835,7 @@ return {
   { name = "power-profiles-daemon", version = "0.30", summary = "Makes power profiles management available over D-Bus (laptops)" },
   { name = "prison", version = "6.13.0", summary = "KDE: prison is a barcode api currently offering a nice Qt api to produce QRCode barcodes and Da" },
   { name = "procps-ng", version = "4.0.7rc1", summary = "libproc2 process information library" },
+  { name = "procs", version = "0.14.12", summary = "Modern replacement for ps written in Rust (Rust binary)" },
   { name = "pugixml", version = "1.15", summary = "Lightweight C++ XML processing library" },
   { name = "pulseaudio", version = "17.0-2", summary = "Network-capable sound server and client library" },
   { name = "python", version = "3.14.7", summary = "The Python programming language" },
