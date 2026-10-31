@@ -1049,6 +1049,7 @@ return {
   { name = "yajl", version = "2.1.0", summary = "Yet Another JSON Library" },
   { name = "yazi", version = "25.5.31", summary = "Blazing fast terminal file manager written in Rust" },
   { name = "yq", version = "4.47.1", summary = "Command-line YAML/JSON/XML processor" },
+  { name = "yt-dlp", version = "2026.10.26", summary = "Feature-rich command-line audio/video downloader (standalone binary)" },
   { name = "zenity", version = "4.2.2", summary = "GTK dialog utility (Arch binary)" },
   { name = "zeromq", version = "4.3.5", summary = "High-performance messaging library" },
   { name = "zeta", version = "1.0.67", summary = "Zeta package manager for Haliade system" },
