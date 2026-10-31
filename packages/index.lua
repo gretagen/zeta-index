@@ -966,6 +966,7 @@ return {
   { name = "vulkan-headers", version = "1.4.357", summary = "Vulkan API headers" },
   { name = "vulkan-loader", version = "1.4.357", summary = "Vulkan loader library" },
   { name = "vulkan-tools", version = "1.4.363.0-1-x86_64", summary = "Vulkan tools (vulkaninfo, vkcube)" },
+  { name = "watchexec", version = "2.8.0", summary = "Execute commands when files change (Rust binary)" },
   { name = "waybar", version = "0.15.0-2", summary = "Highly customizable Wayland bar (Sway/Waybar)" },
   { name = "wayland", version = "1.26.0", summary = "Wayland display server protocol" },
   { name = "wayland-protocols", version = "1.49", summary = "Wayland protocol XML definitions (build-time data for compositors and clients)" },
