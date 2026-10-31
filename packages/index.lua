@@ -842,6 +842,7 @@ return {
   { name = "python-imageio", version = "2.38.1", summary = "Python library for reading and writing image data" },
   { name = "python-imageio-ffmpeg", version = "0.6.0", summary = "FFMPEG wrapper for imageio (uses system ffmpeg)" },
   { name = "python-jinja2", version = "3.1.6", summary = "Fast and easy to use template engine (Python module)" },
+  { name = "python-markdown-it-py", version = "4.2.0", summary = "Markdown parser in Python (markdown-it-py)" },
   { name = "python-markupsafe", version = "3.0.4", summary = "Safe string handling for Jinja2 (Python module)" },
   { name = "python-numpy", version = "2.5.4", summary = "Fundamental package for array computing in Python" },
   { name = "python-pillow", version = "13.0.0", summary = "Python Imaging Library (Pillow)" },
