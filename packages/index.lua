@@ -6,6 +6,7 @@ return {
   { name = "acl", version = "2.4.0", summary = "Access control list library and utilities" },
   { name = "adwaita-icon-theme", version = "50.0", summary = "Adwaita icon theme" },
   { name = "adwaita-icon-theme-legacy", version = "46.2", summary = "Full-color legacy icons for the Adwaita icon theme" },
+  { name = "aerc", version = "0.22.0-1-x86_64", summary = "Terminal email client (Arch binary)" },
   { name = "alacritty", version = "0.15.1-2", summary = "GPU-accelerated terminal emulator" },
   { name = "alsa-lib", version = "1.2.14", summary = "ALSA sound library (libasound)" },
   { name = "alsa-plugins", version = "1:1.2.12", summary = "Additional ALSA plugins" },
