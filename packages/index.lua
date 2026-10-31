@@ -888,6 +888,7 @@ return {
   { name = "sed", version = "4.10", summary = "GNU stream editor" },
   { name = "setuptools", version = "84.2.1", summary = "Python build system and distutils shim (setuptools)" },
   { name = "setxkbmap", version = "1.3.2", summary = "Set the keyboard using the X Keyboard Extension" },
+  { name = "sfsexp", version = "1.4.1-2-x86_64", summary = "Small fast S-expression library (Arch binary)" },
   { name = "sh", version = "1.0", summary = "POSIX shell (provided by bash)" },
   { name = "shaderc", version = "2026.3", summary = "Collection of tools, libraries and tests for shader compilation" },
   { name = "shadow", version = "4.20.2", summary = "Password and user management utilities (passwd, login, su, useradd, etc.)" },
