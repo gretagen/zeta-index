@@ -985,6 +985,7 @@ return {
   { name = "wpa_supplicant", version = "2.12", summary = "WPA/WPA2/WPA3 supplicant for Wi-Fi" },
   { name = "x264", version = "0.165.r3222", summary = "H.264/AVC encoder" },
   { name = "x265", version = "4.3", summary = "H.265/HEVC encoder" },
+  { name = "xapian-core", version = "2.1.0-1-x86_64", summary = "Search engine library (Xapian) (Arch binary)" },
   { name = "xauth", version = "1.1.5", summary = "X authority file utility (X11)" },
   { name = "xcb-proto", version = "1.17.0", summary = "XCB protocol descriptions (build-time dependency)" },
   { name = "xcb-util", version = "0.4.1", summary = "Base utilities library for XCB" },
