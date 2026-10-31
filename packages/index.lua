@@ -795,6 +795,7 @@ return {
   { name = "pango", version = "1.56.3-2", summary = "Text rendering and layout (gir-enabled rebuild)" },
   { name = "pangomm", version = "2.54.0", summary = "C++ bindings for Pango" },
   { name = "parted", version = "3.7", summary = "A program for creating, destroying, resizing, checking and copying partitions" },
+  { name = "pass", version = "1.7.4-7-any", summary = "Standard unix password manager (Arch binary)" },
   { name = "patch", version = "2.8.1", summary = "Patching utility (GNU patch)" },
   { name = "patchelf", version = "0.18.0", summary = "Utility to modify the dynamic linker and RPATH of ELF binaries" },
   { name = "pavucontrol", version = "1:6.2", summary = "PulseAudio and PipeWire volume control (GTK4)" },
