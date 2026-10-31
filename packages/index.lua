@@ -252,6 +252,7 @@ return {
   { name = "jack2", version = "1.9.22", summary = "JACK audio connection kit" },
   { name = "jansson", version = "2.15.1-1-x86_64", summary = "Jansson JSON C library (Arch binary)" },
   { name = "jbigkit", version = "2.1", summary = "JBIG encoding/decoding library" },
+  { name = "jc", version = "1.26.1-1-any", summary = "CLI tool to convert command output to JSON (Arch binary)" },
   { name = "jemalloc", version = "5.4.0", summary = "Scalable malloc implementation" },
   { name = "jq", version = "1.8.2", summary = "Command-line JSON processor" },
   { name = "json-c", version = "0.18.0", summary = "JSON library" },
