@@ -529,6 +529,7 @@ return {
   { name = "libmatemixer", version = "1.28.0", summary = "Mixer library for MATE (Arch binary)" },
   { name = "libmateweather", version = "1.28.0", summary = "Weather library for MATE (Arch binary)" },
   { name = "libmatroska", version = "7.0.0", summary = "Matroska container library" },
+  { name = "libmaxminddb", version = "1.14.1-1-x86_64", summary = "MaxMind DB reader library (Arch binary)" },
   { name = "libmd", version = "1.1.0", summary = "Message Digest library (provides BSD hash functions)" },
   { name = "libmnl", version = "1.0.5", summary = "Minimalistic user-space library oriented to Netlink developers (Arch binary)" },
   { name = "libmodplug", version = "0.8.9.0", summary = "Modplug library" },
