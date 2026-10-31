@@ -600,6 +600,7 @@ return {
   { name = "libusb", version = "1.0.30", summary = "Cross-platform USB access library (libusb-1.0)" },
   { name = "libutempter", version = "1.2.3", summary = "Library for recording utmp entries (Arch binary)" },
   { name = "libuuid", version = "2.42.1", summary = "UUID library (from util-linux)" },
+  { name = "libuv", version = "1.53.0-1-x86_64", summary = "Multi-platform asynchronous I/O library (Arch binary)" },
   { name = "libva", version = "2.2300.0-2", summary = "Video Acceleration API (VA-API) library" },
   { name = "libva-intel-driver", version = "2.4.1", summary = "Intel VA-API driver for i965 (pre-Broadwell legacy driver)" },
   { name = "libva-utils", version = "2.24.0-1-x86_64", summary = "VA-API utilities (vainfo and encode demos)" },
