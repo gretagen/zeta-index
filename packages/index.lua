@@ -893,6 +893,7 @@ return {
   { name = "shadow", version = "4.20.2", summary = "Password and user management utilities (passwd, login, su, useradd, etc.)" },
   { name = "shared-mime-info", version = "2.5.1-2", summary = "shared MIME type database and update tool" },
   { name = "shepherd", version = "1.0.9-3", summary = "GNU init system and service manager written in Scheme" },
+  { name = "skim", version = "5.9.0", summary = "Fuzzy finder for the terminal (Rust binary)" },
   { name = "slang", version = "2.3.3", summary = "S-Lang programming library (terminal handling, screen management)" },
   { name = "slop", version = "7.7", summary = "Select a region of the screen with a mouse (X11), maim's selection backend" },
   { name = "slurp", version = "1.5.0", summary = "Select a region in a Wayland compositor" },
