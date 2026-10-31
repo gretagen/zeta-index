@@ -747,6 +747,7 @@ return {
   { name = "muparser", version = "2.3.5", summary = "Fast math expression parser library" },
   { name = "nacelle", version = "3.1.3", summary = "Haliade declarative definition system and house management (nacelle)" },
   { name = "nano", version = "9.2", summary = "Simple text editor" },
+  { name = "navi", version = "2.24.0", summary = "Interactive cheatsheet tool for the command line (Rust binary)" },
   { name = "ncdu", version = "2.9.2", summary = "NCurses disk usage viewer" },
   { name = "ncurses", version = "6.6-2", summary = "System V Release 4.0 curses library and utilities" },
   { name = "neovim", version = "0.12.4", summary = "Vim-fork focused on extensibility and usability" },
