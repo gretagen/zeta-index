@@ -175,6 +175,7 @@ return {
   { name = "grim", version = "1.5.0", summary = "Screenshot utility for Wayland compositors (wlroots)" },
   { name = "grub", version = "2.14-1", summary = "GNU GRand Unified Bootloader (BIOS + EFI)" },
   { name = "gsettings-desktop-schemas", version = "50.1", summary = "GSettings schemas for the GNOME/MATE desktop" },
+  { name = "gsfonts", version = "20200910-6-any", summary = "Ghostscript standard fonts (Arch binary)" },
   { name = "gsm", version = "1.0.24", summary = "GSM audio codec" },
   { name = "gst-plugins-bad-libs", version = "1.28.7", summary = "GStreamer bad plugin libraries (Arch binary)" },
   { name = "gst-plugins-base-libs", version = "1.28.7", summary = "GStreamer base plugin libraries (Arch binary)" },
