@@ -101,6 +101,7 @@ return {
   { name = "emacs", version = "30.2", summary = "Extensible, customizable, self-documenting text editor" },
   { name = "enchant", version = "2.8.21", summary = "Spell-checking library (Arch binary)" },
   { name = "engrampa", version = "1.28.2", summary = "File archiver for MATE" },
+  { name = "entr", version = "5.9-1-x86_64", summary = "Run commands when files change (Arch binary)" },
   { name = "eom", version = "1.28.0", summary = "Image viewer for MATE" },
   { name = "equibop", version = "3.2.2", summary = "Discord client mod (Equicord, Electron app)" },
   { name = "espeak-ng", version = "1.52.0", summary = "Speech synthesizer for over 100 languages (espeak-ng with espeak compat CLI)" },
