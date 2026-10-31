@@ -253,6 +253,7 @@ return {
   { name = "jansson", version = "2.15.1-1-x86_64", summary = "Jansson JSON C library (Arch binary)" },
   { name = "jbigkit", version = "2.1", summary = "JBIG encoding/decoding library" },
   { name = "jemalloc", version = "5.4.0", summary = "Scalable malloc implementation" },
+  { name = "jless", version = "0.9.0", summary = "JSON viewer with pager for the terminal (Rust binary)" },
   { name = "jq", version = "1.8.2", summary = "Command-line JSON processor" },
   { name = "json-c", version = "0.18.0", summary = "JSON library" },
   { name = "jsoncpp", version = "1.9.6", summary = "C++ JSON reader/writer" },
