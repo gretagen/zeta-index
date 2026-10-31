@@ -732,6 +732,7 @@ return {
   { name = "mesa-utils", version = "9.0.0-7-x86_64", summary = "Mesa OpenGL/EGL utilities and demos (glxinfo, glxgears, eglinfo)" },
   { name = "meson", version = "1.12.1-2", summary = "Fast and user friendly build system" },
   { name = "micro", version = "2.0.15", summary = "Modern and intuitive terminal-based text editor" },
+  { name = "miller", version = "6.22.0", summary = "Process CSV, JSON and other tabular data (Go binary)" },
   { name = "milou", version = "6.3.6", summary = "KDE: A dedicated search application built on top of Baloo" },
   { name = "ministream", version = "0.99.1-1-x86_64", summary = "In-memory stream abstraction for lists (Arch binary)" },
   { name = "mkinitcpio", version = "41", summary = "Initramfs generation tool" },
