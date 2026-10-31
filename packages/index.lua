@@ -869,6 +869,7 @@ return {
   { name = "rav1e", version = "0.8.1", summary = "AV1 encoder" },
   { name = "re2", version = "2025.11.05", summary = "Efficient regular expression library (Google)" },
   { name = "readline", version = "8.3", summary = "GNU Readline library for line editing and history" },
+  { name = "reflector", version = "2023-5-any", summary = "Retrieve and filter Arch Linux mirrorlist (Arch binary)" },
   { name = "remenos", version = "0.1.0-2", summary = "Simon-inspired memory game rendered in big FIGlet ASCII letters" },
   { name = "ripgrep", version = "15.2.0", summary = "Recursive grep alternative" },
   { name = "rofi", version = "2.0.0", summary = "Window switcher, application launcher and dmenu replacement" },
