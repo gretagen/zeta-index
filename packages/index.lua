@@ -479,6 +479,7 @@ return {
   { name = "libevdev", version = "1.13.6", summary = "Wrapper library for evdev devices" },
   { name = "libevent", version = "2.1.12", summary = "Event notification library" },
   { name = "libexif", version = "0.6.24", summary = "EXIF parsing library" },
+  { name = "libfabric", version = "2.7.0-1-x86_64", summary = "Open Fabric Interfaces library (libfabric) (Arch binary)" },
   { name = "libfakekey", version = "0.3-4-x86_64", summary = "Fake keyboard input library (Arch binary)" },
   { name = "libffi", version = "3.4.6", summary = "Portable Foreign Function Interface library" },
   { name = "libfm", version = "1.4.1", summary = "File manager library" },
