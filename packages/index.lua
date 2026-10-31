@@ -786,6 +786,7 @@ return {
   { name = "openrc", version = "0.63.3-1", summary = "OpenRC init system and service manager for Haliade system" },
   { name = "openssh", version = "10.3p1", summary = "OpenSSH protocol implementation for remote login, command execution and file transfer" },
   { name = "openssl", version = "3.6.3-2", summary = "OpenSSL 3 crypto and TLS libraries (libcrypto/libssl)" },
+  { name = "openucx", version = "1.20.1-3-x86_64", summary = "Optimized communication layer for MPI (OpenUCX) (Arch binary)" },
   { name = "opsec", version = "1.0.0", summary = "opsec" },
   { name = "opus", version = "0.11.1", summary = "Opus audio codec" },
   { name = "orc", version = "0.4.44", summary = "Optimized Inner Loop Runtime Compiler" },
