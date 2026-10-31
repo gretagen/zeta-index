@@ -974,6 +974,7 @@ return {
   { name = "weechat", version = "4.10.1", summary = "Extensible chat client (IRC, Matrix, …) for the terminal" },
   { name = "wget", version = "1.25.0", summary = "Network downloader" },
   { name = "which", version = "2.21", summary = "Locate a command in the PATH" },
+  { name = "whois", version = "5.6.6-1-x86_64", summary = "Intelligent WHOIS client (Arch binary)" },
   { name = "wine", version = "11.17", summary = "Compatibility layer for running Windows applications (Arch binary)" },
   { name = "wireless_tools", version = "30.pre9-5-x86_64", summary = "Wireless tools (Arch binary)" },
   { name = "wireplumber", version = "0.5.15", summary = "Session / policy manager for PipeWire (bundled with libwireplumber)" },
