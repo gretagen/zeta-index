@@ -162,6 +162,7 @@ return {
   { name = "glu", version = "9.0.3", summary = "Mesa OpenGL utility library" },
   { name = "glycin", version = "2.1.5", summary = "Sandboxed and extendable image decoding" },
   { name = "glycin-loaders", version = "2.1.5", summary = "Image loader/editor modules for glycin (image-rs + svg)" },
+  { name = "gmime3", version = "3.2.15-2-x86_64", summary = "MIME message parser library (GMime 3) (Arch binary)" },
   { name = "gmp", version = "10.5.0-2", summary = "GNU multiple precision arithmetic" },
   { name = "gnupg", version = "2.5.21", summary = "The GNU Privacy Guard — GnuPG encryption and signing tool" },
   { name = "gnutls", version = "30.42.0-2", summary = "TLS library" },
