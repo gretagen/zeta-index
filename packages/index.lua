@@ -596,6 +596,7 @@ return {
   { name = "libunibreak", version = "7.0", summary = "An implementation of the line breaking algorithm as described in Unicode 5.2.0 S" },
   { name = "libunistring", version = "5.2.1", summary = "Unicode string library" },
   { name = "libunwind", version = "1.8.3", summary = "Determine and manipulate the call-chain of a program" },
+  { name = "liburcu", version = "0.15.7-1-x86_64", summary = "Userspace RCU library (Arch binary)" },
   { name = "liburing", version = "2.15", summary = "Linux-native io_uring I/O access library" },
   { name = "libusb", version = "1.0.30", summary = "Cross-platform USB access library (libusb-1.0)" },
   { name = "libutempter", version = "1.2.3", summary = "Library for recording utmp entries (Arch binary)" },
