@@ -138,6 +138,7 @@ return {
   { name = "fuse3", version = "3.18.3", summary = "FUSE3 userspace tools (fusermount3, mount.fuse3)" },
   { name = "fvwm3", version = "1.1.5", summary = "Virtual window manager for the X Window System" },
   { name = "fzf", version = "0.74.4", summary = "Fuzzy finder for the command line" },
+  { name = "fzy", version = "1.1-1-x86_64", summary = "A simple fuzzy text selector for the terminal (Arch binary)" },
   { name = "garcon", version = "4.20.0", summary = "Freedesktop.org menu library for Xfce" },
   { name = "gawk", version = "5.4.1", summary = "GNU awk - pattern scanning and processing language" },
   { name = "gcc", version = "16.2.0", summary = "GNU Compiler Collection (C and C++ front ends, libstdc++)" },
