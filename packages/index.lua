@@ -35,6 +35,7 @@ return {
   { name = "breeze", version = "6.3.6", summary = "KDE: Artwork, styles and assets for the Breeze visual style for the Plasma Desktop" },
   { name = "breeze-icons", version = "6.13.0", summary = "KDE: Breeze icon theme." },
   { name = "brightnessctl", version = "0.5.1", summary = "Lightweight brightness control tool (Arch binary)" },
+  { name = "broot", version = "1.61.0", summary = "Interactive tree file manager (Rust binary)" },
   { name = "brotli", version = "1.2.0", summary = "Brotli compression library" },
   { name = "btop", version = "1.4.7", summary = "Resource monitor (bpytop ported to C++)" },
   { name = "btrfs-progs", version = "7.1", summary = "Btrfs filesystem utilities (mkfs.btrfs, btrfs, btrfsck, btrfstune)" },
