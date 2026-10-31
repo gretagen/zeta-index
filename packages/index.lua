@@ -254,6 +254,7 @@ return {
   { name = "jbigkit", version = "2.1", summary = "JBIG encoding/decoding library" },
   { name = "jemalloc", version = "5.4.0", summary = "Scalable malloc implementation" },
   { name = "jq", version = "1.8.2", summary = "Command-line JSON processor" },
+  { name = "jqp", version = "0.8.0", summary = "Interactive jq playground for the terminal (Go binary)" },
   { name = "json-c", version = "0.18.0", summary = "JSON library" },
   { name = "jsoncpp", version = "1.9.6", summary = "C++ JSON reader/writer" },
   { name = "just", version = "1.59.0", summary = "Just a command runner" },
