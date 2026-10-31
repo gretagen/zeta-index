@@ -779,6 +779,7 @@ return {
   { name = "oniguruma", version = "6.9.10", summary = "Regular expressions library" },
   { name = "openal", version = "1.25.2", summary = "Cross-platform 3D audio library, software implementation" },
   { name = "openbox", version = "3.6.1", summary = "Openbox X11 window manager (LXQt default WM)" },
+  { name = "openbsd-netcat", version = "1.239_1-1-x86_64", summary = "TCP/IP swiss army knife (nc) (Arch binary)" },
   { name = "opencode", version = "1.18.18", summary = "AI-powered CLI coding agent" },
   { name = "opencore-amr", version = "0.1.6", summary = "OpenCORE AMR codec" },
   { name = "opengl-driver", version = "1.0", summary = "OpenGL driver (provided by mesa)" },
