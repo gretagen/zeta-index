@@ -694,6 +694,7 @@ return {
   { name = "lzlib", version = "1.12", summary = "LZ-compression library (lzip runtime)" },
   { name = "lzo", version = "2.10", summary = "Portable lossless data compression library (liblzo2)" },
   { name = "m4", version = "1.4.21", summary = "GNU M4 macro processor (runtime dep of autoconf/automake)" },
+  { name = "magic-wormhole", version = "0.24.0-1-any", summary = "Securely transfer data between computers (Arch binary)" },
   { name = "maim", version = "5.8.2", summary = "Screenshot utility that takes a shot of the screen X11 (maim = make image magick)" },
   { name = "make", version = "4.4.1", summary = "GNU Make — build automation tool" },
   { name = "mako", version = "1.11.0", summary = "Lightweight Wayland notification daemon" },
