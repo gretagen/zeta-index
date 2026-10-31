@@ -774,6 +774,7 @@ return {
   { name = "nvidia-optix", version = "595.71.05", summary = "NVIDIA official driver OptiX runtime (libnvoptix, rtcore)" },
   { name = "nvidia-settings", version = "615.78.08-1-x86_64", summary = "NVIDIA driver settings tool (nvidia-settings)" },
   { name = "nvidia-utils", version = "610.57.04", summary = "NVIDIA driver userspace (vendor GL/EGL/GLES/Vulkan libs, tools, Xorg modules)" },
+  { name = "nvtop", version = "3.3.2-1-x86_64", summary = "GPU process monitor for NVIDIA/AMD/Intel (Arch binary)" },
   { name = "ocl-icd", version = "2.3.5", summary = "OpenCL ICD loader" },
   { name = "onefetch", version = "3.1.0", summary = "Git repository summary on the terminal (Rust binary)" },
   { name = "oniguruma", version = "6.9.10", summary = "Regular expressions library" },
