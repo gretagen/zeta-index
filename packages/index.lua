@@ -958,6 +958,7 @@ return {
   { name = "vapoursynth", version = "79", summary = "Video processing framework" },
   { name = "vid.stab", version = "1.1.2", summary = "Video stabilization library" },
   { name = "vim", version = "9.2.0920", summary = "Modal text editor" },
+  { name = "viu", version = "1.6.1", summary = "Terminal image viewer using ANSI escape codes (Rust binary)" },
   { name = "vlc", version = "3.0.23", summary = "VLC media player" },
   { name = "vmaf", version = "3.2.1", summary = "Video quality assessment" },
   { name = "volume_key", version = "0.3.12", summary = "A library for manipulating storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases" },
