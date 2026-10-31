@@ -915,6 +915,7 @@ return {
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
   { name = "subspace-scripts", version = "1.7.1", summary = "Haliade system subspace management scripts" },
   { name = "sudo", version = "1.9.17p2-1", summary = "Execute commands as another user with limited superuser privileges" },
+  { name = "superfile", version = "1.6.0", summary = "Pretty fancy and modern terminal file manager (Go binary)" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
   { name = "syndication", version = "6.13.0", summary = "KDE: Syndication Library" },
