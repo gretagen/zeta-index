@@ -631,6 +631,7 @@ return {
   { name = "libyaml", version = "0.2.5", summary = "YAML 1.1 parser and emitter library" },
   { name = "libyuv", version = "r2921+644251f25", summary = "Library for YUV scaling" },
   { name = "libz", version = "1.3.2", summary = "Zlib compression library" },
+  { name = "libzen", version = "0.4.41-3-x86_64", summary = "Shared library for MediaInfo (ZenLib) (Arch binary)" },
   { name = "libzip", version = "1.11.4", summary = "C library for reading, creating, and modifying zip archives" },
   { name = "libzstd", version = "1.5.7", summary = "Zstandard - Fast real-time compression algorithm" },
   { name = "limine", version = "12.6.1", summary = "Limine multiprotocol bootloader (UEFI, BIOS, PXE)" },
