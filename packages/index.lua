@@ -214,6 +214,7 @@ return {
   { name = "hicolor-icon-theme", version = "0.18", summary = "Default fallback icon theme for XDG icon themes" },
   { name = "hidapi", version = "0.15.0", summary = "Simple library for communicating with USB and Bluetooth HID devices" },
   { name = "htop", version = "3.5.2", summary = "Interactive process viewer" },
+  { name = "hugo", version = "0.169.0", summary = "Fast static site generator (extended, Go binary)" },
   { name = "hunspell", version = "1.7.5", summary = "Hunspell spell-checker library and CLI" },
   { name = "hwdata", version = "0.389", summary = "Hardware identification databases (pci.ids, usb.ids)" },
   { name = "hyperfine", version = "2.0.0", summary = "Command line benchmarking tool" },
