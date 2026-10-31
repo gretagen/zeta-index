@@ -87,6 +87,7 @@ return {
   { name = "doas", version = "6.8.2", summary = "Execute commands as another user (portable OpenBSD doas)" },
   { name = "docbook-xml", version = "4.5", summary = "DocBook 4.5 XML DTDs" },
   { name = "docbook-xsl", version = "1.79.2", summary = "DocBook XSL stylesheets" },
+  { name = "doggo", version = "1.4.2", summary = "Modern command-line DNS client (Go binary)" },
   { name = "dosfstools", version = "4.2-2", summary = "DOS/FAT filesystem tools (mkfs.fat, fsck.fat, fatlabel)" },
   { name = "double-conversion", version = "3.4.0", summary = "IEEE-754 binary/decimal conversion library" },
   { name = "driftwm", version = "0.17.3", summary = "Trackpad-first infinite canvas Wayland compositor (smithay)" },
