@@ -792,6 +792,7 @@ return {
   { name = "oxygen-icons", version = "6.31.0", summary = "KDE: Oxygen icon theme" },
   { name = "p11-kit", version = "0.4.8-2", summary = "PKCS#11 module loading library" },
   { name = "pam", version = "1.7.2", summary = "Pluggable Authentication Modules (linux-pam)" },
+  { name = "pandoc", version = "3.13", summary = "Universal document converter (standalone binary)" },
   { name = "pango", version = "1.56.3-2", summary = "Text rendering and layout (gir-enabled rebuild)" },
   { name = "pangomm", version = "2.54.0", summary = "C++ bindings for Pango" },
   { name = "parted", version = "3.7", summary = "A program for creating, destroying, resizing, checking and copying partitions" },
