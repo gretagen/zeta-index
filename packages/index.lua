@@ -95,6 +95,7 @@ return {
   { name = "dunst", version = "1.13.2", summary = "Lightweight and customizable notification daemon" },
   { name = "dust", version = "1.2.6", summary = "More intuitive version of du in Rust" },
   { name = "e2fsprogs", version = "1.47.4", summary = "ext2/ext3/ext4 filesystem utilities (mkfs.ext4, e2fsck, tune2fs, resize2fs)" },
+  { name = "efivar", version = "39-2-x86_64", summary = "Tools and library for manipulating EFI variables (Arch binary)" },
   { name = "egl", version = "1.5-3", summary = "EGL interface library (stub pkgconfig for libglvnd EGL)" },
   { name = "ell", version = "0.83", summary = "Embedded Linux Library (used by iwd)" },
   { name = "elogind", version = "257.16", summary = "Standalone logind implementation for non-systemd systems" },
