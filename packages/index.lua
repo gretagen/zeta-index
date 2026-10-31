@@ -105,6 +105,7 @@ return {
   { name = "equibop", version = "3.2.2", summary = "Discord client mod (Equicord, Electron app)" },
   { name = "espeak-ng", version = "1.52.0", summary = "Speech synthesizer for over 100 languages (espeak-ng with espeak compat CLI)" },
   { name = "exempi", version = "2.6.6", summary = "XMP metadata library (Arch binary)" },
+  { name = "exiftool", version = "13.55-1-any", summary = "Read and write image/video metadata (Arch binary)" },
   { name = "exiv2", version = "0.28.9", summary = "Image metadata (EXIF/IPTC/XMP) library and CLI" },
   { name = "exo", version = "4.20.0", summary = "Application development library for Xfce" },
   { name = "expat", version = "2.8.1", summary = "XML parsing C library" },
