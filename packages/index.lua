@@ -960,6 +960,7 @@ return {
   { name = "vim", version = "9.2.0920", summary = "Modal text editor" },
   { name = "vlc", version = "3.0.23", summary = "VLC media player" },
   { name = "vmaf", version = "3.2.1", summary = "Video quality assessment" },
+  { name = "vnstat", version = "2.13-2-x86_64", summary = "Console-based network traffic monitor (Arch binary)" },
   { name = "volume_key", version = "0.3.12", summary = "A library for manipulating storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases" },
   { name = "vte", version = "0.76.6", summary = "Terminal emulator widget library (GTK3)" },
   { name = "vte-common", version = "0.84.1", summary = "Virtual Terminal Emulator widget (common files)" },
