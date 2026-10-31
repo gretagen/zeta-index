@@ -169,6 +169,7 @@ return {
   { name = "gobject-introspection-runtime", version = "1.86.0", summary = "Introspection system for GObject-based libraries - runtime" },
   { name = "gpgme", version = "2.1.0", summary = "Library providing access to GnuPG crypto functions" },
   { name = "gpgmepp", version = "2.2.0", summary = "C++ bindings for GPGME" },
+  { name = "gpm", version = "1.20.7.r38.ge82d1a6-7-x86_64", summary = "General purpose mouse daemon and library (Arch binary)" },
   { name = "graphene", version = "1.10.8-2", summary = "Thin layer of math types for graphic libraries (required by GTK4)" },
   { name = "graphite2", version = "1.3.14", summary = "Graphite2 font rendering engine" },
   { name = "grep", version = "3.12", summary = "GNU grep, egrep and fgrep (with -z support for initramfs tools)" },
