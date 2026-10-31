@@ -232,6 +232,7 @@ return {
   { name = "i3", version = "4.25.1", summary = "Improved tiling window manager for X11" },
   { name = "icon-naming-utils", version = "0.8.90", summary = "Icon naming utilities and reference for icon themes" },
   { name = "icu", version = "79.1", summary = "International Components for Unicode (headers + tools)" },
+  { name = "iftop", version = "1.0pre4-6-x86_64", summary = "Display bandwidth usage on an interface (Arch binary)" },
   { name = "imagemagick", version = "7.1.2.31", summary = "Image manipulation software and libraries" },
   { name = "imlib2", version = "1.12.6", summary = "Image loading and rendering library" },
   { name = "imlib2-loaders", version = "1.12.6", summary = "Image format loaders for imlib2 (png, jpeg, gif, bmp, webp, ...)" },
