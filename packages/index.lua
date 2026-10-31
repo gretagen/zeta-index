@@ -957,6 +957,7 @@ return {
   { name = "v4l-utils", version = "1.32.0", summary = "Video4Linux utilities" },
   { name = "vapoursynth", version = "79", summary = "Video processing framework" },
   { name = "vid.stab", version = "1.1.2", summary = "Video stabilization library" },
+  { name = "vifm", version = "0.14.4-1-x86_64", summary = "Ncurses-based file manager with vi keybindings (Arch binary)" },
   { name = "vim", version = "9.2.0920", summary = "Modal text editor" },
   { name = "vlc", version = "3.0.23", summary = "VLC media player" },
   { name = "vmaf", version = "3.2.1", summary = "Video quality assessment" },
