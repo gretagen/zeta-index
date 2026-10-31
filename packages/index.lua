@@ -17,6 +17,7 @@ return {
   { name = "atril", version = "1.28.1", summary = "Document viewer for MATE" },
   { name = "attica", version = "6.13.0", summary = "KDE: Attica is a Qt library that implements the Open Collaboration Services API." },
   { name = "attr", version = "2.5.2", summary = "Extended attribute support library for ACL support" },
+  { name = "atuin", version = "18.24.4", summary = "Magical shell history (Rust binary)" },
   { name = "audit", version = "4.2.1", summary = "Linux audit userspace library (libaudit)" },
   { name = "autoconf", version = "2.73", summary = "GNU Autoconf - generate configure scripts (autoconf, autoreconf, autoheader, autom4te)" },
   { name = "automake", version = "1.18.1", summary = "GNU Automake - generates Makefile.in from Makefile.am (automake, aclocal)" },
