@@ -130,6 +130,7 @@ return {
   { name = "flatpak", version = "1.18.0-2", summary = "Linux application sandboxing and distribution framework" },
   { name = "flatpak-generator", version = "1.2", summary = "Declare flatpak apps from definition.lua (extra generator for nacelle)" },
   { name = "fmt", version = "11.1.4", summary = "Modern C++ formatting library" },
+  { name = "fnm", version = "1.39.0", summary = "Fast and simple Node.js version manager (Rust binary)" },
   { name = "fontconfig", version = "2.18.2", summary = "Font configuration and customization library" },
   { name = "frameworkintegration", version = "6.13.0", summary = "KDE: Framework providing components to allow applications to integrate with a KDE Workspace" },
   { name = "freetype", version = "2.14.3", summary = "FreeType font engine library" },
