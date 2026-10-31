@@ -499,6 +499,7 @@ return {
   { name = "libgpg-error", version = "1.61", summary = "Library defining common GnuPG error values" },
   { name = "libgtop", version = "2.41.3", summary = "Library for system information via /proc (libgtop-2.0)" },
   { name = "libgudev", version = "238", summary = "GObject bindings for libudev" },
+  { name = "libgusb", version = "0.4.9-2-x86_64", summary = "GObject wrapper for libusb (Arch binary)" },
   { name = "libgxps", version = "0.3.2-5-x86_64", summary = "XPS document library (Arch binary)" },
   { name = "libhandy", version = "1.8.3", summary = "GTK 3 UI elements for mobile devices" },
   { name = "libhwy", version = "1.2.0", summary = "Google Highway SIMD library" },
