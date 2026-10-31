@@ -912,6 +912,7 @@ return {
   { name = "stb", version = "20261019", summary = "Single-file public domain C/C++ libraries (stb headers)" },
   { name = "steam", version = "1.0.0.87", summary = "Steam - Valve's digital game distribution platform" },
   { name = "steam-devices", version = "20260625", summary = "Steam and SteamVR device permissions (udev rules for flatpak Steam)" },
+  { name = "stfl", version = "0.24-6-x86_64", summary = "Library for building text-based interfaces (Arch binary)" },
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
   { name = "subspace-scripts", version = "1.7.1", summary = "Haliade system subspace management scripts" },
   { name = "sudo", version = "1.9.17p2-1", summary = "Execute commands as another user with limited superuser privileges" },
