@@ -794,6 +794,7 @@ return {
   { name = "pam", version = "1.7.2", summary = "Pluggable Authentication Modules (linux-pam)" },
   { name = "pango", version = "1.56.3-2", summary = "Text rendering and layout (gir-enabled rebuild)" },
   { name = "pangomm", version = "2.54.0", summary = "C++ bindings for Pango" },
+  { name = "parallel", version = "20260922-1-any", summary = "GNU parallel: execute jobs in parallel (Arch binary)" },
   { name = "parted", version = "3.7", summary = "A program for creating, destroying, resizing, checking and copying partitions" },
   { name = "patch", version = "2.8.1", summary = "Patching utility (GNU patch)" },
   { name = "patchelf", version = "0.18.0", summary = "Utility to modify the dynamic linker and RPATH of ELF binaries" },
