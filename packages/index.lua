@@ -243,6 +243,7 @@ return {
   { name = "intel-gmmlib", version = "22.10.1", summary = "Intel Graphics Memory Management Library" },
   { name = "intel-media-driver", version = "26.2.4", summary = "Intel Media Driver for VA-API (iHD) — hardware video decode/encode for Gen8+" },
   { name = "intltool", version = "0.51.0", summary = "Universal gettext i18n tool converter (build glue)" },
+  { name = "iperf3", version = "3.22-1-x86_64", summary = "TCP/UDP/SCTP bandwidth measurement tool (Arch binary)" },
   { name = "iproute2", version = "7.2.0-3", summary = "Advanced IP routing and network tools (ip, ss, tc, bridge, devlink)" },
   { name = "iptables", version = "1.8.13", summary = "Packet filtering and NAT toolset (iptables/ip6tables, libxtables)" },
   { name = "iputils", version = "20200821", summary = "Network monitoring tools (ping, tracepath, clockdiff)" },
