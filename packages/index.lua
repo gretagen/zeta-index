@@ -625,6 +625,7 @@ return {
   { name = "libxml2", version = "2.15.3", summary = "XML C parser and toolkit" },
   { name = "libxmlb", version = "0.3.23", summary = "Library to help create and query binary XML blobs" },
   { name = "libxnvctrl", version = "615.71.09", summary = "NVIDIA NV-CONTROL X extension" },
+  { name = "libxpm", version = "3.5.20-1-x86_64", summary = "X PixMap image library (Arch binary)" },
   { name = "libxshmfence", version = "1.3.3-2", summary = "X shared-memory fence sync primitives" },
   { name = "libxslt", version = "1.1.45-2-x86_64", summary = "XSLT library (Arch binary)" },
   { name = "libxss", version = "1.2.3", summary = "X11 Screen Saver extension library" },
