@@ -908,6 +908,7 @@ return {
   { name = "squashfs-tools", version = "4.7.5", summary = "Tools for creating and extracting squashfs filesystems (mksquashfs, unsquashfs)" },
   { name = "srt", version = "1.5.7", summary = "Secure Reliable Transport" },
   { name = "st", version = "0.9.3", summary = "Suckless simple terminal (X11)" },
+  { name = "starship", version = "1.27.0", summary = "cross-shell prompt for any shell" },
   { name = "startup-notification", version = "0.12", summary = "X11 application startup notification library" },
   { name = "stb", version = "20261019", summary = "Single-file public domain C/C++ libraries (stb headers)" },
   { name = "steam", version = "1.0.0.87", summary = "Steam - Valve's digital game distribution platform" },
