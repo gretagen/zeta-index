@@ -782,6 +782,7 @@ return {
   { name = "opencode", version = "1.18.18", summary = "AI-powered CLI coding agent" },
   { name = "opencore-amr", version = "0.1.6", summary = "OpenCORE AMR codec" },
   { name = "opengl-driver", version = "1.0", summary = "OpenGL driver (provided by mesa)" },
+  { name = "openh264", version = "2.7.0-1-x86_64", summary = "OpenH264 video codec (Arch binary)" },
   { name = "openjpeg2", version = "2.5.4", summary = "JPEG 2000 library" },
   { name = "openrc", version = "0.63.3-1", summary = "OpenRC init system and service manager for Haliade system" },
   { name = "openssh", version = "10.3p1", summary = "OpenSSH protocol implementation for remote login, command execution and file transfer" },
