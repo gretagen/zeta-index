@@ -898,6 +898,7 @@ return {
   { name = "slurp", version = "1.5.0", summary = "Select a region in a Wayland compositor" },
   { name = "snappy", version = "1.2.2", summary = "Compression library" },
   { name = "sndio", version = "1.10.0", summary = "Sound input/output library" },
+  { name = "socat", version = "1.8.1.3-1-x86_64", summary = "Multipurpose relay (SOcket CAT) (Arch binary)" },
   { name = "solid", version = "6.13.0", summary = "KDE: Solid" },
   { name = "sonnet", version = "6.13.0", summary = "KDE: Spelling framework for Qt." },
   { name = "spdlog", version = "1.15.3", summary = "Fast C++ logging library" },
