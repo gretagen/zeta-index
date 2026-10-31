@@ -171,6 +171,7 @@ return {
   { name = "gpgmepp", version = "2.2.0", summary = "C++ bindings for GPGME" },
   { name = "graphene", version = "1.10.8-2", summary = "Thin layer of math types for graphic libraries (required by GTK4)" },
   { name = "graphite2", version = "1.3.14", summary = "Graphite2 font rendering engine" },
+  { name = "graphviz", version = "16.1.0-2-x86_64", summary = "Graph visualization software (dot) (Arch binary)" },
   { name = "grep", version = "3.12", summary = "GNU grep, egrep and fgrep (with -z support for initramfs tools)" },
   { name = "grim", version = "1.5.0", summary = "Screenshot utility for Wayland compositors (wlroots)" },
   { name = "grub", version = "2.14-1", summary = "GNU GRand Unified Bootloader (BIOS + EFI)" },
