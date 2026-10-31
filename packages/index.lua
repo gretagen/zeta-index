@@ -805,6 +805,7 @@ return {
   { name = "pcre2", version = "10.47", summary = "Perl-compatible regular expression library v2" },
   { name = "peaclock", version = "0.4.3", summary = "Responsive and customizable clock, timer, and stopwatch for the terminal" },
   { name = "perl", version = "5.42.3-3", summary = "Perl interpreter" },
+  { name = "perl-regexp-common", version = "2024080801-4-any", summary = "Provide commonly requested regular expressions (Perl module) (Arch binary)" },
   { name = "perl-uri", version = "5.40", summary = "Perl URI module family (URI::Escape and friends)" },
   { name = "perl-xml-namespacesupport", version = "1.12", summary = "Perl XML::NamespaceSupport module" },
   { name = "perl-xml-parser", version = "2.47", summary = "Perl XML::Parser module (expat bindings)" },
