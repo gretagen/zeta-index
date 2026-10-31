@@ -173,6 +173,7 @@ return {
   { name = "graphite2", version = "1.3.14", summary = "Graphite2 font rendering engine" },
   { name = "grep", version = "3.12", summary = "GNU grep, egrep and fgrep (with -z support for initramfs tools)" },
   { name = "grim", version = "1.5.0", summary = "Screenshot utility for Wayland compositors (wlroots)" },
+  { name = "gron", version = "0.7.1", summary = "Make JSON greppable (Go binary)" },
   { name = "grub", version = "2.14-1", summary = "GNU GRand Unified Bootloader (BIOS + EFI)" },
   { name = "gsettings-desktop-schemas", version = "50.1", summary = "GSettings schemas for the GNOME/MATE desktop" },
   { name = "gsm", version = "1.0.24", summary = "GSM audio codec" },
