@@ -841,6 +841,7 @@ return {
   { name = "python-gobject", version = "3.56.3", summary = "Python bindings for GLib/GObject/GIO/GTK" },
   { name = "python-imageio", version = "2.38.1", summary = "Python library for reading and writing image data" },
   { name = "python-imageio-ffmpeg", version = "0.6.0", summary = "FFMPEG wrapper for imageio (uses system ffmpeg)" },
+  { name = "python-iterable-io", version = "1.0.4", summary = "Adapt generators to file-like objects (Python module)" },
   { name = "python-jinja2", version = "3.1.6", summary = "Fast and easy to use template engine (Python module)" },
   { name = "python-markupsafe", version = "3.0.4", summary = "Safe string handling for Jinja2 (Python module)" },
   { name = "python-numpy", version = "2.5.4", summary = "Fundamental package for array computing in Python" },
