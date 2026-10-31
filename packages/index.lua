@@ -78,6 +78,7 @@ return {
   { name = "desktop-file-utils", version = "0.28", summary = "Command line utilities for working with desktop entries" },
   { name = "device-mapper", version = "2.03.42", summary = "Device mapper userspace library and tools (libdevmapper, dmsetup, dmeventd)" },
   { name = "dhcpcd", version = "10.2.2", summary = "DHCP client daemon" },
+  { name = "difftastic", version = "0.72.0", summary = "Structural diff tool that understands syntax (Rust binary)" },
   { name = "diffutils", version = "3.12", summary = "GNU file comparison utilities (diff, cmp, diff3, sdiff) (Arch binary)" },
   { name = "dinit", version = "0.22.1", summary = "The dinit init/service manager (dinit, dinitctl, shutdown tools)" },
   { name = "discord", version = "1.0.157", summary = "Discord (stable Electron client)" },
