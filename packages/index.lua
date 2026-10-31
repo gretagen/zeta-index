@@ -761,6 +761,7 @@ return {
   { name = "nnn", version = "5.3", summary = "Terminal file manager" },
   { name = "noctalia", version = "5.3.0", summary = "A sleek, customizable desktop shell crafted for Wayland." },
   { name = "notepad++", version = "8.9.8", summary = "Notepad++ text editor for Windows (via Wine)" },
+  { name = "notmuch-runtime", version = "0.40-2-x86_64", summary = "Thread-based email indexer/search library (notmuch) (Arch binary)" },
   { name = "npth", version = "1.8", summary = "New Portable Threads library" },
   { name = "nscde", version = "2.3", summary = "Not so Common Desktop Environment: retro CDE-like desktop on FVWM" },
   { name = "nss", version = "3.124", summary = "Network Security Services (libnss3/libnspr4 runtime)" },
