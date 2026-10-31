@@ -880,6 +880,7 @@ return {
   { name = "sbc", version = "2.2", summary = "Sub Band Coding (SBC) codec library for Bluetooth audio" },
   { name = "scdoc", version = "1.11.1", summary = "Small man page generator (simple document -> troff)" },
   { name = "scenefx", version = "0.5", summary = "Wayland compositor effects library (window animation/effects)" },
+  { name = "screen", version = "5.0.2-2-x86_64", summary = "Full-screen window manager / terminal multiplexer (Arch binary)" },
   { name = "scrot", version = "2.0.0-1", summary = "Take a screenshot in X" },
   { name = "sd", version = "1.1.0", summary = "Intuitive find and replace CLI (sed alternative)" },
   { name = "sdbus-cpp", version = "2.3.1-2", summary = "C++ wrapper library for sd-bus (libsystemd D-Bus client)" },
