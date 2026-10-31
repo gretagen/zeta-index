@@ -1040,6 +1040,7 @@ return {
   { name = "xrdb", version = "1.2.3", summary = "X resource database utility" },
   { name = "xset", version = "1.2.6", summary = "User preference utility for X" },
   { name = "xshmfence", version = "1.3.3", summary = "X11 shared memory fence library (synchronization primitives)" },
+  { name = "xsv", version = "0.13.0", summary = "Fast CSV command line toolkit (Rust binary)" },
   { name = "xterm", version = "410", summary = "X terminal emulator" },
   { name = "xtrans", version = "1.5.1", summary = "X transport library (headers and pkg-config file, build-time dependency)" },
   { name = "xvidcore", version = "1.3.7", summary = "Xvid MPEG-4 codec" },
