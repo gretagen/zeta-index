@@ -47,6 +47,7 @@ return {
   { name = "cava", version = "1.0.0", summary = "Console-based audio visualizer for ALSA, PulseAudio and PipeWire" },
   { name = "cbonsai", version = "1.4.2", summary = "Bonsai tree generator for the terminal (ncurses)" },
   { name = "cfdisk", version = "2.42", summary = "Curses-based disk partition table editor (from util-linux)" },
+  { name = "chafa", version = "1.18.3-1-x86_64", summary = "Terminal image viewer/convertor (Arch binary)" },
   { name = "chronos", version = "1.9.6", summary = "btrfs generation manager for Haliade system (Limine boot entries)" },
   { name = "cjson", version = "1.7.19", summary = "Ultralightweight JSON parser for C (used by mango)" },
   { name = "clang21", version = "21.1.8", summary = "C language family frontend for LLVM 21 (clang and libclang-cpp)" },
