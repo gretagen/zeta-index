@@ -726,6 +726,7 @@ return {
   { name = "mate-utils", version = "1.28.0", summary = "Utilities for MATE" },
   { name = "md4c", version = "0.5.3", summary = "C Markdown parser library" },
   { name = "mdadm", version = "4.6", summary = "A tool for managing/monitoring Linux md device arrays, also known as Software RAID" },
+  { name = "mediainfo", version = "26.10-1-x86_64", summary = "Display technical/media info of video/audio files (Arch binary)" },
   { name = "menu-cache", version = "1.1.1", summary = "LXDE menu cache library" },
   { name = "mesa-drivers", version = "26.1.8-3", summary = "Mesa 3D drivers (radeonsi, iris, nouveau, lavapipe, etc.)" },
   { name = "mesa-full", version = "1.0", summary = "Complete Mesa graphics stack (OpenGL, EGL, GBM, DRI drivers, VA-API, Vulkan loader)" },
