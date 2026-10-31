@@ -84,6 +84,7 @@ return {
   { name = "djvulibre", version = "3.5.30.1", summary = "DjVu library and tools (Arch binary)" },
   { name = "dkms", version = "3.4.3", summary = "Dynamic Kernel Module Support framework" },
   { name = "dnsmasq", version = "2.93", summary = "Lightweight DNS forwarder and DHCP server" },
+  { name = "dnssec-anchors", version = "20250524-1-any", summary = "DNSSEC root trust anchors (Arch binary)" },
   { name = "doas", version = "6.8.2", summary = "Execute commands as another user (portable OpenBSD doas)" },
   { name = "docbook-xml", version = "4.5", summary = "DocBook 4.5 XML DTDs" },
   { name = "docbook-xsl", version = "1.79.2", summary = "DocBook XSL stylesheets" },
