@@ -325,6 +325,7 @@ return {
   { name = "lazygit", version = "0.66.2", summary = "Simple terminal UI for git commands (Go binary)" },
   { name = "lcms2", version = "2.17", summary = "Little CMS 2 — color management library" },
   { name = "leancrypto", version = "1.0-2", summary = "Lean cryptographic library (PQC-resistant algorithms)" },
+  { name = "leptonica", version = "1.87.0-2-x86_64", summary = "Library for image processing and analysis (Arch binary)" },
   { name = "less", version = "704", summary = "GNU less pager" },
   { name = "lf", version = "r42", summary = "Terminal file manager (Go binary)" },
   { name = "lib32-alsa-lib", version = "1.2.16.1", summary = "An alternative implementation of Linux sound support (32 bit)" },
