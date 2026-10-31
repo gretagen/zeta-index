@@ -80,6 +80,7 @@ return {
   { name = "dhcpcd", version = "10.2.2", summary = "DHCP client daemon" },
   { name = "diffutils", version = "3.12", summary = "GNU file comparison utilities (diff, cmp, diff3, sdiff) (Arch binary)" },
   { name = "dinit", version = "0.22.1", summary = "The dinit init/service manager (dinit, dinitctl, shutdown tools)" },
+  { name = "direnv", version = "2.38.2", summary = "Load and unload environment variables per directory (Go binary)" },
   { name = "discord", version = "1.0.157", summary = "Discord (stable Electron client)" },
   { name = "djvulibre", version = "3.5.30.1", summary = "DjVu library and tools (Arch binary)" },
   { name = "dkms", version = "3.4.3", summary = "Dynamic Kernel Module Support framework" },
