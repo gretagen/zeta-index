@@ -743,6 +743,7 @@ return {
   { name = "mpfr", version = "4.2.1", summary = "GNU multiple-precision floating-point rounding library" },
   { name = "mpg123", version = "0.49.4", summary = "MPEG audio decoder library" },
   { name = "mpv", version = "0.41.0", summary = "Video and audio player" },
+  { name = "mtr", version = "0.96-1-x86_64", summary = "Network diagnostic tool combining traceroute and ping (Arch binary)" },
   { name = "mujs", version = "1.3.9", summary = "An embeddable Javascript interpreter in C" },
   { name = "muparser", version = "2.3.5", summary = "Fast math expression parser library" },
   { name = "nacelle", version = "3.1.3", summary = "Haliade declarative definition system and house management (nacelle)" },
