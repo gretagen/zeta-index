@@ -937,6 +937,7 @@ return {
   { name = "tpm2-tss", version = "4.2.0", summary = "Implementation of the TCG Trusted Platform Module 2.0 Software Stack (TSS2)" },
   { name = "tree", version = "2.1.1", summary = "Display directories as trees" },
   { name = "tree-sitter", version = "0.26.9", summary = "Incremental parsing system for programming tools" },
+  { name = "trippy", version = "0.13.0", summary = "Network diagnostic tool combining traceroute and ping (Rust binary)" },
   { name = "tslib", version = "1.24", summary = "Touchscreen input library (libts), used by Qt 5 touch plugins" },
   { name = "ttf-liberation", version = "2.0.0", summary = "Liberation TrueType fonts" },
   { name = "ttf-nerdfonts", version = "3.5.1", summary = "Nerd Fonts icon glyphs + patched mono fonts (waybar/terminal)" },
