@@ -557,6 +557,7 @@ return {
   { name = "libpsl", version = "0.21.5", summary = "Public Suffix List library" },
   { name = "libqaccessibilityclient", version = "0.6.0", summary = "KDE: Accessibilty tools helper library, used e.g. by screen readers" },
   { name = "libqalculate", version = "5.13.2", summary = "Multi-purpose calculation engine library and qalc CLI" },
+  { name = "libqmi", version = "1.38.0-2-x86_64", summary = "QMI modem protocol library (libqmi) (Arch binary)" },
   { name = "libqrencode", version = "4.1.1", summary = "QR code encoder library and CLI" },
   { name = "libqtxdg", version = "4.1.0", summary = "Qt6 XDG integration library" },
   { name = "libquadmath", version = "16.2.1+r23+gd564253eb6c8", summary = "GCC __float128 library" },
