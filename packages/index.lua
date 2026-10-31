@@ -150,6 +150,7 @@ return {
   { name = "gengetopt", version = "2.23.1", summary = "Command-line option parser generator (GNU gengetopt)" },
   { name = "genkernel", version = "2.2.1", summary = "Haliade system kernel generation script" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
+  { name = "gh", version = "2.103.3", summary = "GitHub's official command line tool (Go binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
   { name = "ghostty", version = "1.4.0-1-x86_64", summary = "fast, feature-rich, and cross-platform terminal emulator" },
   { name = "giflib", version = "6.1.3", summary = "Library for reading and writing gif images" },
