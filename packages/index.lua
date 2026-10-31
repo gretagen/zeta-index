@@ -188,6 +188,7 @@ return {
   { name = "gtkmm4", version = "4.14.0", summary = "C++ bindings for GTK+ 4" },
   { name = "gtksourceview", version = "3.24.11", summary = "Text editor widget with syntax highlighting (GTK3)" },
   { name = "gtksourceview4", version = "4.8.4", summary = "GTK3 source code highlighting widget library" },
+  { name = "gts", version = "0.7.6.121130-5-x86_64", summary = "GNU Triangulated Surface library (Arch binary)" },
   { name = "guile", version = "3.0.11", summary = "GNU Scheme interpreter and library (GNU Guile)" },
   { name = "guile-bytestructures", version = "1.0.10", summary = "Structured bytevector access for Guile (needed by guile-git)" },
   { name = "guile-gcrypt", version = "0.5.0", summary = "Guile bindings for libgcrypt (required by Guix)" },
