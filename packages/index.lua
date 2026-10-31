@@ -933,6 +933,7 @@ return {
   { name = "thunar", version = "4.20.9", summary = "File manager for Xfce" },
   { name = "tllist", version = "1.1.0", summary = "Typed Linked List C header library" },
   { name = "tmux", version = "3.7_c", summary = "Terminal multiplexer (Arch binary)" },
+  { name = "tokei", version = "15.0.0-1-x86_64", summary = "Count lines of code quickly (Arch binary)" },
   { name = "tomlplusplus", version = "3.4.0-2", summary = "Header-only TOML config file parser for C++17" },
   { name = "tpm2-tss", version = "4.2.0", summary = "Implementation of the TCG Trusted Platform Module 2.0 Software Stack (TSS2)" },
   { name = "tree", version = "2.1.1", summary = "Display directories as trees" },
