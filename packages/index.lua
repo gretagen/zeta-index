@@ -149,6 +149,7 @@ return {
   { name = "gdu", version = "5.38.0", summary = "Fast disk usage analyzer with an interactive console (Go binary)" },
   { name = "gengetopt", version = "2.23.1", summary = "Command-line option parser generator (GNU gengetopt)" },
   { name = "genkernel", version = "2.2.1", summary = "Haliade system kernel generation script" },
+  { name = "geoip", version = "1.6.12-3-x86_64", summary = "Non-DNS IP-to-country resolver library (Arch binary)" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
   { name = "ghostty", version = "1.4.0-1-x86_64", summary = "fast, feature-rich, and cross-platform terminal emulator" },
