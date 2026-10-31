@@ -944,6 +944,7 @@ return {
   { name = "tzdata", version = "2026c", summary = "IANA timezone database (zoneinfo)" },
   { name = "uchardet", version = "0.0.8", summary = "Encoding detector library ported from Mozilla" },
   { name = "udisks2", version = "2.11.2", summary = "Disk management service (Arch binary)" },
+  { name = "ugrep", version = "7.8.5-1-x86_64", summary = "Ultra fast grep with interactive query UI (Arch binary)" },
   { name = "unibilium", version = "2.1.2", summary = "Library to parse terminal information (terminfo)" },
   { name = "unimatrix", version = "master", summary = "Matrix-style digital rain for the terminal" },
   { name = "unitconversion", version = "6.13.0", summary = "KDE Framework 6: measurement unit conversion (kunitconversion)" },
