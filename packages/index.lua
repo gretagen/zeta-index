@@ -501,6 +501,7 @@ return {
   { name = "libgudev", version = "238", summary = "GObject bindings for libudev" },
   { name = "libgxps", version = "0.3.2-5-x86_64", summary = "XPS document library (Arch binary)" },
   { name = "libhandy", version = "1.8.3", summary = "GTK 3 UI elements for mobile devices" },
+  { name = "libheif", version = "1.23.7-1-x86_64", summary = "High efficiency image file format library (Arch binary)" },
   { name = "libhwy", version = "1.2.0", summary = "Google Highway SIMD library" },
   { name = "libical", version = "4.0.7", summary = "iCalendar (RFC 5545) implementation library" },
   { name = "libidn", version = "1.44", summary = "Implementation of the Stringprep, Punycode and IDNA specifications" },
