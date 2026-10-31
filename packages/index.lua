@@ -848,6 +848,7 @@ return {
   { name = "python-platformdirs", version = "4.13.4", summary = "Python module for platform-specific user directory locations" },
   { name = "python-screeninfo", version = "0.8.1", summary = "Python module to fetch monitor information (resolution, position)" },
   { name = "python-yaml", version = "6.0.3", summary = "PyYAML: YAML parser and emitter for Python 3" },
+  { name = "python-zipp", version = "3.21.0", summary = "Pathlib-compatible zipfile object wrapper (Python module)" },
   { name = "qca", version = "2.3.12", summary = "KDE: Qt Cryptographic Architecture - straightforward cross-platform crypto API" },
   { name = "qcoro", version = "0.13.0", summary = "Qt coroutine helpers library (QCoro)" },
   { name = "qqc2-desktop-style", version = "6.13.0", summary = "KDE: Qt Quick Controls 2: Desktop Style" },
