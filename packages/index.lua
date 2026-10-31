@@ -734,6 +734,7 @@ return {
   { name = "micro", version = "2.0.15", summary = "Modern and intuitive terminal-based text editor" },
   { name = "milou", version = "6.3.6", summary = "KDE: A dedicated search application built on top of Baloo" },
   { name = "ministream", version = "0.99.1-1-x86_64", summary = "In-memory stream abstraction for lists (Arch binary)" },
+  { name = "mise", version = "2026.10.24", summary = "Development environment manager (asdf successor) (Rust binary)" },
   { name = "mkinitcpio", version = "41", summary = "Initramfs generation tool" },
   { name = "mksh", version = "R59c", summary = "MirBSD Korn Shell" },
   { name = "mm-common", version = "1.0.8", summary = "Common build infrastructure for Gtkmm projects" },
