@@ -137,6 +137,7 @@ return {
   { name = "fuse-common", version = "3.18.3", summary = "Common files for fuse2/3 packages" },
   { name = "fuse3", version = "3.18.3", summary = "FUSE3 userspace tools (fusermount3, mount.fuse3)" },
   { name = "fvwm3", version = "1.1.5", summary = "Virtual window manager for the X Window System" },
+  { name = "fwupd-efi", version = "1.9-1-any", summary = "EFI executable for fwupd (Arch binary)" },
   { name = "fzf", version = "0.74.4", summary = "Fuzzy finder for the command line" },
   { name = "garcon", version = "4.20.0", summary = "Freedesktop.org menu library for Xfce" },
   { name = "gawk", version = "5.4.1", summary = "GNU awk - pattern scanning and processing language" },
