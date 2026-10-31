@@ -66,6 +66,7 @@ return {
   { name = "ctwm", version = "4.1.0", summary = "Window manager based on TWM (with virtual workspaces)" },
   { name = "curl", version = "8.14.1", summary = "URL retrieval tool" },
   { name = "cxx-rust-cssparser", version = "1.1.0", summary = "KDE: Library for parsing CSS using the Rust cssparser crate" },
+  { name = "dasel", version = "3.11.2", summary = "Query and modify data structures (Go binary)" },
   { name = "dav1d", version = "1.5.4", summary = "AV1 cross-platform decoder library" },
   { name = "db5.3", version = "5.3.28", summary = "Berkeley DB library" },
   { name = "dbus", version = "1.16.2-2", summary = "D-Bus message bus system" },
