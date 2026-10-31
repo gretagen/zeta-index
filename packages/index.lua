@@ -928,6 +928,7 @@ return {
   { name = "tar", version = "1.35", summary = "GNU tar: file archiver" },
   { name = "telegram-desktop", version = "7.2.8", summary = "Telegram Desktop messaging client (official static build)" },
   { name = "terminfo", version = "1.0", summary = "Terminfo database (compiled from ncurses 6.6)" },
+  { name = "tesseract-data-osd", version = "4.1.0-5-any", summary = "Tesseract OCR orientation/script detection data (Arch binary)" },
   { name = "thesh", version = "0.5.1", summary = "Custom standalone POSIX shell for Haliade system (default shell, replaces bash)" },
   { name = "threadweaver", version = "6.13.0", summary = "KDE: ThreadWeaver" },
   { name = "thunar", version = "4.20.9", summary = "File manager for Xfce" },
