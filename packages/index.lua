@@ -258,6 +258,7 @@ return {
   { name = "jsoncpp", version = "1.9.6", summary = "C++ JSON reader/writer" },
   { name = "just", version = "1.59.0", summary = "Just a command runner" },
   { name = "kactivitymanagerd", version = "6.3.6", summary = "KDE: System service to manage user's activities, track the usage patterns etc." },
+  { name = "kakoune", version = "2026.05.21-2-x86_64", summary = "Modal code editor inspired by vim (Arch binary)" },
   { name = "karchive", version = "6.13.0", summary = "KDE: Qt addon providing access to numerous types of archives" },
   { name = "kauth", version = "6.13.0", summary = "KDE: KAuth" },
   { name = "kbd", version = "2.10.0-2", summary = "Keyboard and console utilities (loadkeys, setfont, dumpkeys, showkey, etc.)" },
