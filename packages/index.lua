@@ -839,6 +839,7 @@ return {
   { name = "pulseaudio", version = "17.0-2", summary = "Network-capable sound server and client library" },
   { name = "python", version = "3.14.7", summary = "The Python programming language" },
   { name = "python-gobject", version = "3.56.3", summary = "Python bindings for GLib/GObject/GIO/GTK" },
+  { name = "python-humanize", version = "4.16.0", summary = "Human readable formatting (Python module)" },
   { name = "python-imageio", version = "2.38.1", summary = "Python library for reading and writing image data" },
   { name = "python-imageio-ffmpeg", version = "0.6.0", summary = "FFMPEG wrapper for imageio (uses system ffmpeg)" },
   { name = "python-jinja2", version = "3.1.6", summary = "Fast and easy to use template engine (Python module)" },
