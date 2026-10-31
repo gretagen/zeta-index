@@ -27,6 +27,7 @@ return {
   { name = "bash", version = "5.3", summary = "GNU Bourne Again SHell" },
   { name = "bat", version = "0.26.1", summary = "A cat clone with wings" },
   { name = "bc", version = "1.08.2", summary = "GNU bc arbitrary precision calculator (the kernel build needs it to generate timeconst.h)" },
+  { name = "bind", version = "9.20.30-1-x86_64", summary = "DNS server and client tools (dig, host, nslookup) (Arch binary)" },
   { name = "binutils", version = "2.47", summary = "GNU Binutils - assembler, linker and binary tools (as, ld, objdump, nm, ar, strip)" },
   { name = "bitstreamvera", version = "1.10", summary = "Bitstream Vera TrueType fonts" },
   { name = "bluez", version = "5.87-2", summary = "Bluetooth protocol stack (bluetoothd, bluetoothctl, and libraries)" },
