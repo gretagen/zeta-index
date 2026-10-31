@@ -463,6 +463,7 @@ return {
   { name = "libdbusmenu-gtk3", version = "18.10.20180917", summary = "Library for passing menus over DBus (GTK+ 3 library)" },
   { name = "libdbusmenu-lxqt", version = "0.2.0", summary = "LXQt dbusmenu library" },
   { name = "libdconf", version = "0.40.0-2", summary = "GSettings configuration backend (with DBus service)" },
+  { name = "libde265", version = "1.1.3-1-x86_64", summary = "H.265/HEVC video decoder (Arch binary)" },
   { name = "libdecor", version = "0.2.5-1-x86_64", summary = "Client-side window decoration library for Wayland (Arch binary)" },
   { name = "libdeflate", version = "1.26", summary = "Fast compression/decompression library" },
   { name = "libdisplay-info", version = "0.3.0", summary = "EDID and DisplayID library" },
