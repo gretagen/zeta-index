@@ -900,6 +900,7 @@ return {
   { name = "sndio", version = "1.10.0", summary = "Sound input/output library" },
   { name = "solid", version = "6.13.0", summary = "KDE: Solid" },
   { name = "sonnet", version = "6.13.0", summary = "KDE: Spelling framework for Qt." },
+  { name = "sops", version = "3.13.3", summary = "Editor of encrypted files (secrets management) (Go binary)" },
   { name = "spdlog", version = "1.15.3", summary = "Fast C++ logging library" },
   { name = "speex", version = "1.5.2", summary = "Speex audio codec" },
   { name = "spirv-tools", version = "2026.4.1-2", summary = "Khronos SPIR-V tools (validator, linker, optimizer)" },
