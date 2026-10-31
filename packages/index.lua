@@ -750,6 +750,7 @@ return {
   { name = "ncdu", version = "2.9.2", summary = "NCurses disk usage viewer" },
   { name = "ncurses", version = "6.6-2", summary = "System V Release 4.0 curses library and utilities" },
   { name = "neovim", version = "0.12.4", summary = "Vim-fork focused on extensibility and usability" },
+  { name = "netpbm", version = "10.86.51-2-x86_64", summary = "Toolkit for manipulating images in many formats (Arch binary)" },
   { name = "nettle", version = "1.0-2", summary = "Cryptographic library" },
   { name = "networkmanager", version = "1.51.4", summary = "Network management daemon (wifi iwd+wpa_supplicant, dnsmasq, dhcpcd)" },
   { name = "newt", version = "0.52.25", summary = "Library for text mode user interfaces (libnewt)" },
