@@ -51,6 +51,7 @@ return {
   { name = "cjson", version = "1.7.19", summary = "Ultralightweight JSON parser for C (used by mango)" },
   { name = "clang21", version = "21.1.8", summary = "C language family frontend for LLVM 21 (clang and libclang-cpp)" },
   { name = "clinfo", version = "3.0.25.02.14-1-x86_64", summary = "OpenCL platform and device reporter (clinfo)" },
+  { name = "cloc", version = "2.10-1-any", summary = "Count lines of code in many languages (Arch binary)" },
   { name = "cmake", version = "3.31.6-2", summary = "Cross-platform build system generator" },
   { name = "cmatrix", version = "2.0", summary = "C Matrix (The Matrix) terminal screen saver" },
   { name = "compiler-rt", version = "22.1.8", summary = "Compiler runtime libraries for clang 22 (compiler-rt builtins)" },
