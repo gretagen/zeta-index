@@ -12,6 +12,7 @@ return {
   { name = "anipaper", version = "2022.11.07", summary = "X11+SDL2 animated wallpaper setter and video player" },
   { name = "aom", version = "3.15.0", summary = "AV1 codec library" },
   { name = "aquamarine", version = "0.12.0-2", summary = "Lightweight Wayland compositor library" },
+  { name = "aria2", version = "1.37.0-3-x86_64", summary = "Multi-protocol download utility (HTTP/FTP/BitTorrent) (Arch binary)" },
   { name = "at-spi2-core", version = "2.56.1-2", summary = "Accessibility Technologies core (AT-SPI2, ships atk)" },
   { name = "atkmm", version = "2.36.4", summary = "C++ bindings for ATK accessibility toolkit" },
   { name = "atril", version = "1.28.1", summary = "Document viewer for MATE" },
