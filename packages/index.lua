@@ -91,7 +91,7 @@ return {
   { name = "double-conversion", version = "3.4.0", summary = "IEEE-754 binary/decimal conversion library" },
   { name = "driftwm", version = "0.17.3", summary = "Trackpad-first infinite canvas Wayland compositor (smithay)" },
   { name = "duf", version = "0.9.1", summary = "Simple disk usage/free utility (Go binary)" },
-  { name = "duktape", version = "2.7.0", summary = "Embeddable JavaScript engine (used by polkit)" },
+  { name = "duktape", version = "2.7.0", summary = "Embeddable Javascript engine (shared library)" },
   { name = "dunst", version = "1.13.2", summary = "Lightweight and customizable notification daemon" },
   { name = "dust", version = "1.2.6", summary = "More intuitive version of du in Rust" },
   { name = "e2fsprogs", version = "1.47.4", summary = "ext2/ext3/ext4 filesystem utilities (mkfs.ext4, e2fsck, tune2fs, resize2fs)" },
