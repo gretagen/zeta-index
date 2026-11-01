@@ -567,6 +567,7 @@ return {
   { name = "librtmp", version = "2.4", summary = "RTMP streaming library (rtmpdump)" },
   { name = "libsamplerate", version = "0.2.2", summary = "Sample rate converter library" },
   { name = "libsasl", version = "2.1.28", summary = "Cyrus Simple Authentication Service Layer (SASL) library" },
+  { name = "libsass", version = "3.6.6", summary = "SASS to CSS compiler library (static)" },
   { name = "libseccomp", version = "2.6.0", summary = "High-level interface to the Linux seccomp syscall filter" },
   { name = "libsecret", version = "0.21.8.2-1-x86_64", summary = "Secret service library (Arch binary)" },
   { name = "libshout", version = "3.2.0", summary = "Icecast streaming library" },
