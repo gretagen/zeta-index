@@ -156,6 +156,7 @@ return {
   { name = "git", version = "2.50.0", summary = "Distributed version control system" },
   { name = "glew", version = "2.3.1", summary = "The OpenGL Extension Wrangler Library (shared lib only)" },
   { name = "glib", version = "2.90.1", summary = "Low-level core utility library (gir-enabled)" },
+  { name = "glib-networking", version = "2.90.1", summary = "Network TLS support for GLib (gnutls backend)" },
   { name = "glibc", version = "2.44-2", summary = "GNU C Library" },
   { name = "glibmm", version = "2.80.1", summary = "C++ bindings for GLib" },
   { name = "glslang", version = "1.4.357", summary = "GLSL/HLSL to SPIR-V compiler and validator" },
