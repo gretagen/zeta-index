@@ -183,7 +183,7 @@ return {
   { name = "gtk2", version = "2.24.33", summary = "GTK+ 2 toolkit (legacy apps and theme engines)" },
   { name = "gtk3", version = "3.24.50-2", summary = "GTK+ 3 toolkit (X11 + Wayland, gir-enabled rebuild)" },
   { name = "gtk3-typelibs", version = "3.24.50", summary = "GIR typelibs for the GLib/GTK3 stack (PyGObject bindings)" },
-  { name = "gtk4", version = "4.14.5-2", summary = "GTK+ 4 toolkit (X11 + Wayland)" },
+  { name = "gtk4", version = "4.24.1", summary = "GTK+ 4 toolkit (X11 + Wayland)" },
   { name = "gtkmm3", version = "3.24.7", summary = "C++ bindings for GTK+ 3" },
   { name = "gtkmm4", version = "4.14.0", summary = "C++ bindings for GTK+ 4" },
   { name = "gtksourceview", version = "3.24.11", summary = "Text editor widget with syntax highlighting (GTK3)" },
