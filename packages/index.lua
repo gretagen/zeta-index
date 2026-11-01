@@ -204,6 +204,7 @@ return {
   { name = "gupnp", version = "0.14.5", summary = "Library to ease handling and implementation of UPnP A/V profiles" },
   { name = "gupnp-igd", version = "1.6.0", summary = "Library to handle UPnP IGD port mapping" },
   { name = "gvfs", version = "1.60.3", summary = "Virtual filesystem for GNOME (Arch binary)" },
+  { name = "gweather-locations", version = "2026.2", summary = "Geographical locations database for GWeather" },
   { name = "gzip", version = "1.13", summary = "GNU gzip compression utilities" },
   { name = "haliade-utils", version = "1.0.2", summary = "Haliade system utility scripts (metapackage)" },
   { name = "harfbuzz", version = "11.1.0", summary = "Text shaping library" },
