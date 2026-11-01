@@ -878,6 +878,7 @@ return {
   { name = "rubberband", version = "4.0.0", summary = "Audio time-stretching library" },
   { name = "runit", version = "2.3.1", summary = "The runit init system (init, runsvdir service supervision)" },
   { name = "rust", version = "1.98.0", summary = "Systems programming language (rustc, cargo, rustfmt, clippy, rustdoc)" },
+  { name = "sassc", version = "3.6.2", summary = "Command-line SASS compiler" },
   { name = "sbc", version = "2.2", summary = "Sub Band Coding (SBC) codec library for Bluetooth audio" },
   { name = "scdoc", version = "1.11.1", summary = "Small man page generator (simple document -> troff)" },
   { name = "scenefx", version = "0.5", summary = "Wayland compositor effects library (window animation/effects)" },
