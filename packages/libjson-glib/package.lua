@@ -1,12 +1,12 @@
 return {
   name    = "libjson-glib",
-  version = "1.10.0",
-  summary = "GLib-based JSON serialization library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libjson-glib/libjson-glib-1.10.0.tar.gz",
-  sha256  = "25c6d0eaf38d9c3d84bb4095ad1e18a4827a75b6d4ec94c9af4d20a78ce90bc7",
-  deps    = { "glibc", "glib" },
+  version = "1.10.0-2",
+  summary = "GLib-based JSON serialization library (gir-enabled)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libjson-glib/libjson-glib-1.10.0-2.tar.gz",
+  sha256  = "9ce8b3f867ffcedf65f805b7b24dedcd3c404105a6720ac4e52f553e92a75773",
+  deps    = { "glibc", "glib", "gobject-introspection" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("find " .. p.install_root .. "/usr/lib -name 'libjson-glib*.so*' | grep -q .")
+    p:run("test -e " .. p.install_root .. "/usr/lib/libjson-glib-1.0.so.0 && test -f " .. p.install_root .. "/usr/share/gir-1.0/Json-1.0.gir && test -f " .. p.install_root .. "/usr/lib/girepository-1.0/Json-1.0.typelib")
   end,
 }

@@ -512,7 +512,7 @@ return {
   { name = "libisoburn", version = "1.5.8.2", summary = "Frontend library for libburn & libisofs" },
   { name = "libisofs", version = "1.5.8.2", summary = "Library to pack up files into an ISO 9660 disk image" },
   { name = "libjpeg-turbo", version = "3.2.0", summary = "MMX/SSE2/SMID accelerated library for JPEG images (libjpeg.so.8 ABI)" },
-  { name = "libjson-glib", version = "1.10.0", summary = "GLib-based JSON serialization library" },
+  { name = "libjson-glib", version = "1.10.0-2", summary = "GLib-based JSON serialization library (gir-enabled)" },
   { name = "libjxl", version = "0.12.0", summary = "JPEG XL image format library" },
   { name = "libkexiv2", version = "26.08.2", summary = "KDE: Wrapper around Exiv2 library to manipulate picture metadata as EXIF and XMP" },
   { name = "libkeybinder3", version = "0.3.2", summary = "Library for global keyboard shortcuts (Arch binary)" },
