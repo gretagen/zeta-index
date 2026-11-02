@@ -1,12 +1,12 @@
 return {
   name    = "libical",
-  version = "4.0.7",
-  summary = "iCalendar (RFC 5545) implementation library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libical/libical-4.0.7.tar.gz",
-  sha256  = "f6883b9a08cf78929f8a52e6034ece54a1e99b175d0aeaa040ace0774638142d",
-  deps    = { "glibc", "gcc", "libgcc", "libstdc++" },
+  version = "4.0.7-2",
+  summary = "iCalendar library (core + GLib bindings, gir-enabled)",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libical/libical-4.0.7-2.tar.gz",
+  sha256  = "eec8886f93ef93611befa6f5f952e5c0b54ea218b9280f882ddfbbd170b1d0f2",
+  deps    = { "glibc", "gcc", "libgcc", "libstdc++", "glib", "libxml2", "gobject-introspection", "icu" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -e " .. p.install_root .. "/usr/lib/libical.so.4.0 && test -f " .. p.install_root .. "/usr/include/libical/ical.h && test -f " .. p.install_root .. "/usr/lib/pkgconfig/libical.pc")
+    p:run("ls " .. p.install_root .. "/usr/lib/libical.so* | grep -q . && ls " .. p.install_root .. "/usr/lib/libical-glib.so* | grep -q . && PKG_CONFIG_PATH=" .. p.install_root .. "/usr/lib/pkgconfig pkg-config --exists libical-glib && test -f " .. p.install_root .. "/usr/share/gir-1.0/ICalGLib-4.0.gir")
   end,
 }

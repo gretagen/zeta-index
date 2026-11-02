@@ -509,7 +509,7 @@ return {
   { name = "libgxps", version = "0.3.2-5-x86_64", summary = "XPS document library (Arch binary)" },
   { name = "libhandy", version = "1.8.3", summary = "GTK 3 UI elements for mobile devices" },
   { name = "libhwy", version = "1.2.0", summary = "Google Highway SIMD library" },
-  { name = "libical", version = "4.0.7", summary = "iCalendar (RFC 5545) implementation library" },
+  { name = "libical", version = "4.0.7-2", summary = "iCalendar library (core + GLib bindings, gir-enabled)" },
   { name = "libidn", version = "1.44", summary = "Implementation of the Stringprep, Punycode and IDNA specifications" },
   { name = "libidn2", version = "0.4.0-2", summary = "Implementation of IDNA2008 and TR46 (IDNA2008 for TLS)" },
   { name = "libiec61883", version = "1.2.0", summary = "IEEE 1394 media transport library" },
