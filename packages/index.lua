@@ -169,6 +169,7 @@ return {
   { name = "glycin-loaders", version = "2.1.5", summary = "Image loader/editor modules for glycin (image-rs + svg)" },
   { name = "gmp", version = "10.5.0-2", summary = "GNU multiple precision arithmetic" },
   { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
+  { name = "gnome-session", version = "51.0", summary = "GNOME session manager (init-agnostic wiring)" },
   { name = "gnome-settings-daemon", version = "51.1", summary = "GNOME settings daemons (color, power, media keys)" },
   { name = "gnupg", version = "2.5.21", summary = "The GNU Privacy Guard — GnuPG encryption and signing tool" },
   { name = "gnutls", version = "30.42.0-2", summary = "TLS library" },
