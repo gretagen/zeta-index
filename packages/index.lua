@@ -232,6 +232,7 @@ return {
   { name = "hyprwayland-scanner", version = "0.4.6", summary = "Hyprland Wayland protocol code generator" },
   { name = "hyprwire", version = "0.3.1", summary = "Wire format library for the Hypr ecosystem" },
   { name = "i3", version = "4.25.1", summary = "Improved tiling window manager for X11" },
+  { name = "ibus", version = "1.5.34", summary = "Intelligent Input Bus (input method framework)" },
   { name = "icon-naming-utils", version = "0.8.90", summary = "Icon naming utilities and reference for icon themes" },
   { name = "icu", version = "79.1", summary = "International Components for Unicode (headers + tools)" },
   { name = "imagemagick", version = "7.1.2.31", summary = "Image manipulation software and libraries" },
