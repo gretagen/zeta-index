@@ -503,6 +503,7 @@ return {
   { name = "libgpg-error", version = "1.61", summary = "Library defining common GnuPG error values" },
   { name = "libgtop", version = "2.41.3", summary = "Library for system information via /proc (libgtop-2.0)" },
   { name = "libgudev", version = "238", summary = "GObject bindings for libudev" },
+  { name = "libgweather-4", version = "4.6.0", summary = "Weather and geolocation library (GNOME)" },
   { name = "libgxps", version = "0.3.2-5-x86_64", summary = "XPS document library (Arch binary)" },
   { name = "libhandy", version = "1.8.3", summary = "GTK 3 UI elements for mobile devices" },
   { name = "libhwy", version = "1.2.0", summary = "Google Highway SIMD library" },
