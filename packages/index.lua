@@ -574,6 +574,7 @@ return {
   { name = "libpng", version = "1.6.47", summary = "PNG image format library" },
   { name = "libproxy", version = "0.5.12", summary = "Proxy access library (pac/dns/wpad resolution)" },
   { name = "libpsl", version = "0.21.5", summary = "Public Suffix List library" },
+  { name = "libpwquality", version = "1.4.5", summary = "Password quality checking and generation library" },
   { name = "libqaccessibilityclient", version = "0.6.0", summary = "KDE: Accessibilty tools helper library, used e.g. by screen readers" },
   { name = "libqalculate", version = "5.13.2", summary = "Multi-purpose calculation engine library and qalc CLI" },
   { name = "libqrencode", version = "4.1.1", summary = "QR code encoder library and CLI" },
