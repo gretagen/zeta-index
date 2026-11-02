@@ -910,7 +910,7 @@ return {
   { name = "speex", version = "1.5.2", summary = "Speex audio codec" },
   { name = "spirv-tools", version = "2026.4.1-2", summary = "Khronos SPIR-V tools (validator, linker, optimizer)" },
   { name = "spotify", version = "1.2.96", summary = "Spotify streaming music client" },
-  { name = "sqlite", version = "3.53.4-2", summary = "Self-contained, embeddable SQL database engine" },
+  { name = "sqlite", version = "3.53.4-3", summary = "Self-contained, embeddable SQL database engine" },
   { name = "squashfs-tools", version = "4.7.5", summary = "Tools for creating and extracting squashfs filesystems (mksquashfs, unsquashfs)" },
   { name = "srt", version = "1.5.7", summary = "Secure Reliable Transport" },
   { name = "st", version = "0.9.3", summary = "Suckless simple terminal (X11)" },
