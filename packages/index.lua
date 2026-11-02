@@ -322,7 +322,7 @@ return {
   { name = "kparts", version = "6.13.0", summary = "KDE: KParts" },
   { name = "kpipewire", version = "6.3.6", summary = "KDE: Components relating to Flatpak 'pipewire' use in Plasma." },
   { name = "kquickcharts", version = "6.13.0", summary = "KDE: A QtQuick plugin providing high-performance charts." },
-  { name = "krb5", version = "1.22.2", summary = "The Kerberos network authentication system" },
+  { name = "krb5", version = "1.22.2", summary = "MIT Kerberos V5 (libraries and tools)" },
   { name = "krunner", version = "6.13.0", summary = "KDE: Framework for providing different actions given a string query." },
   { name = "kscreenlocker", version = "6.3.6", summary = "KDE: Library and components for secure lock screen architecture" },
   { name = "kservice", version = "6.13.0", summary = "KDE: KService" },
