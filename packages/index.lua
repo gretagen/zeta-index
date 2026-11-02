@@ -581,7 +581,7 @@ return {
   { name = "libsndfile", version = "1.2.2", summary = "Library for reading and writing audio files" },
   { name = "libsodium", version = "1.0.22", summary = "Modern crypto library" },
   { name = "libsoup2", version = "2.74.3", summary = "HTTP client/server library for GNOME (libsoup 2.x)" },
-  { name = "libsoup3", version = "3.6.6", summary = "HTTP client/server library for GNOME (libsoup 3)" },
+  { name = "libsoup3", version = "3.6.6-2", summary = "HTTP client/server library for GLib (gir-enabled)" },
   { name = "libsoxr", version = "0.1.3", summary = "The SoX Resampler library" },
   { name = "libspectre", version = "0.2.12-2-x86_64", summary = "PostScript rendering library (Arch binary)" },
   { name = "libssh", version = "0.12.2", summary = "SSH protocol library" },
