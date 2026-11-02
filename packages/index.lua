@@ -29,6 +29,7 @@ return {
   { name = "bc", version = "1.08.2", summary = "GNU bc arbitrary precision calculator (the kernel build needs it to generate timeconst.h)" },
   { name = "binutils", version = "2.47", summary = "GNU Binutils - assembler, linker and binary tools (as, ld, objdump, nm, ar, strip)" },
   { name = "bitstreamvera", version = "1.10", summary = "Bitstream Vera TrueType fonts" },
+  { name = "blueprint-compiler", version = "0.22.2", summary = "GTK Blueprint UI definition compiler" },
   { name = "bluez", version = "5.87-2", summary = "Bluetooth protocol stack (bluetoothd, bluetoothctl, and libraries)" },
   { name = "boost", version = "1.92.0", summary = "Boost C++ libraries (headers)" },
   { name = "bottom", version = "0.14.9", summary = "Cross platform graphical process and system monitor" },
