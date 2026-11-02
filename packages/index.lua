@@ -746,6 +746,7 @@ return {
   { name = "mkinitcpio", version = "41", summary = "Initramfs generation tool" },
   { name = "mksh", version = "R59c", summary = "MirBSD Korn Shell" },
   { name = "mm-common", version = "1.0.8", summary = "Common build infrastructure for Gtkmm projects" },
+  { name = "mozjs", version = "140.17.0", summary = "Mozilla JavaScript engine (SpiderMonkey) for gjs" },
   { name = "mozo", version = "1.28.0", summary = "Menu editor for MATE" },
   { name = "mpc", version = "1.3.1", summary = "GNU Multiple Precision Complex Library" },
   { name = "mpdecimal", version = "4.0.1", summary = "Package for correctly-rounded arbitrary precision decimal floating point arithmetic" },
