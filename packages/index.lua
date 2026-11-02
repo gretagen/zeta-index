@@ -477,7 +477,7 @@ return {
   { name = "libcap-ng", version = "0.8.5", summary = "Library for Linux capabilities" },
   { name = "libcdio", version = "2.4.0", summary = "CD-ROM I/O library (Arch binary)" },
   { name = "libcdio-paranoia", version = "10.2+2.0.2-3-x86_64", summary = "CD audio extraction library (Arch binary)" },
-  { name = "libcups", version = "2.4.19", summary = "CUPS printing library (libcups.so.2)" },
+  { name = "libcups", version = "2.4.19-2", summary = "CUPS printing library (cups.pc, dev-complete)" },
   { name = "libcurl", version = "8.21.0", summary = "URL transfer library" },
   { name = "libdaemon", version = "0.14", summary = "Lightweight C library for writing daemons" },
   { name = "libdbusmenu-glib", version = "18.10.20180917", summary = "Library for passing menus over DBus" },
