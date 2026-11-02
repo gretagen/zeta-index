@@ -969,7 +969,7 @@ return {
   { name = "unimatrix", version = "master", summary = "Matrix-style digital rain for the terminal" },
   { name = "unitconversion", version = "6.13.0", summary = "KDE Framework 6: measurement unit conversion (kunitconversion)" },
   { name = "unzip", version = "6.0", summary = "InfoZIP extractor" },
-  { name = "upower", version = "1.90.10", summary = "Power management daemon and tools" },
+  { name = "upower", version = "1.91.5", summary = "Power device manager (libupower-glib, gir-enabled)" },
   { name = "usbutils", version = "019", summary = "USB utilities (lsusb, usb-devices, usbhid-dump)" },
   { name = "util-linux", version = "2.42", summary = "Essential Linux system utilities (mount, losetup, fdisk, blkid, agetty, lsblk, etc.)" },
   { name = "util-linux-libs", version = "2.42", summary = "Util-linux shared libraries (libblkid, libmount)" },
