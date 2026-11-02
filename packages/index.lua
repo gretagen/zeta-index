@@ -1,5 +1,6 @@
 return {
   { name = "7zip", version = "26.03", summary = "File archiver with a high compression ratio" },
+  { name = "ModemManager", version = "1.24.2", summary = "ModemManager daemon and libmm-glib" },
   { name = "a52dec", version = "0.0.0", summary = "A52 (AC-3) audio decoder lib" },
   { name = "abseil-cpp", version = "20260107", summary = "Google's Abseil C++ library (collection of C++ library code)" },
   { name = "accountsservice", version = "26.27.3", summary = "D-Bus interface for user account manipulation (Arch binary)" },
