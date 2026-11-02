@@ -176,6 +176,7 @@ return {
   { name = "gmp", version = "10.5.0-2", summary = "GNU multiple precision arithmetic" },
   { name = "gnome-autoar", version = "0.5.2", summary = "GNOME archive extraction library (gir-enabled)" },
   { name = "gnome-bluetooth", version = "47.2", summary = "GNOME Bluetooth management (libgnome-bluetooth + app)" },
+  { name = "gnome-control-center", version = "51.1", summary = "GNOME Settings (control center)" },
   { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
   { name = "gnome-online-accounts", version = "3.58.1", summary = "GNOME online accounts framework (libgoa)" },
   { name = "gnome-session", version = "51.0", summary = "GNOME session manager (init-agnostic wiring)" },
