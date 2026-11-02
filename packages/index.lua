@@ -579,7 +579,7 @@ return {
   { name = "libraqm", version = "0.11.0", summary = "Complex text layout for RTL scripts (HarfBuzz/FriBidi/FreeType glue)" },
   { name = "libraw1394", version = "2.1.2", summary = "IEEE 1394 raw access library" },
   { name = "libreoffice", version = "26.2.5.2", summary = "LibreOffice office suite (single binary .deb package)" },
-  { name = "librsvg", version = "2.60.0", summary = "SVG rendering library (rsvg)" },
+  { name = "librsvg", version = "2.60.0-2", summary = "SVG renderer library (gir-enabled)" },
   { name = "librtmp", version = "2.4", summary = "RTMP streaming library (rtmpdump)" },
   { name = "libsamplerate", version = "0.2.2", summary = "Sample rate converter library" },
   { name = "libsasl", version = "2.1.28", summary = "Cyrus Simple Authentication Service Layer (SASL) library" },
