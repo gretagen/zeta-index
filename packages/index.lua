@@ -1018,6 +1018,7 @@ return {
   { name = "xclip", version = "0.13", summary = "Command line interface to the X11 clipboard" },
   { name = "xdg-dbus-proxy", version = "0.1.8", summary = "D-Bus proxy sandboxing (Arch binary)" },
   { name = "xdg-desktop-portal", version = "1.22.1-2", summary = "Desktop integration portal frontend (D-Bus)" },
+  { name = "xdg-desktop-portal-gnome", version = "51.0", summary = "GNOME backend for xdg-desktop-portal (screencast, shell integration)" },
   { name = "xdg-desktop-portal-gtk", version = "1.15.3", summary = "GTK backend for xdg-desktop-portal (file chooser, settings)" },
   { name = "xdg-desktop-portal-hyprland", version = "1.4.1-2", summary = "Hyprland backend for xdg-desktop-portal (screen sharing, file picker, screencast)" },
   { name = "xdg-desktop-portal-wlr", version = "0.8.4", summary = "xdg-desktop-portal backend for wlroots (screencast, screenshot)" },
