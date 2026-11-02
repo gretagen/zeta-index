@@ -148,6 +148,7 @@ return {
   { name = "gdbm", version = "1.26", summary = "GNU database library" },
   { name = "gdk-pixbuf", version = "2.42.12-3", summary = "Image loading library (gir-enabled rebuild)" },
   { name = "gdkmm", version = "3.24.11", summary = "C++ bindings for GDK (gdkmm, from the gtkmm suite)" },
+  { name = "gdm", version = "51.1.1", summary = "GNOME Display Manager (libgdm + Gdm typelib for gnome-shell)" },
   { name = "gdu", version = "5.38.0", summary = "Fast disk usage analyzer with an interactive console (Go binary)" },
   { name = "gengetopt", version = "2.23.1", summary = "Command-line option parser generator (GNU gengetopt)" },
   { name = "genkernel", version = "2.2.1", summary = "Haliade system kernel generation script" },
