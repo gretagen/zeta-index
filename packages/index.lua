@@ -174,6 +174,7 @@ return {
   { name = "glycin-loaders", version = "2.1.5", summary = "Image loader/editor modules for glycin (image-rs + svg)" },
   { name = "gmp", version = "10.5.0-2", summary = "GNU multiple precision arithmetic" },
   { name = "gnome-autoar", version = "0.5.2", summary = "GNOME archive extraction library (gir-enabled)" },
+  { name = "gnome-bluetooth", version = "47.2", summary = "GNOME Bluetooth management (libgnome-bluetooth + app)" },
   { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
   { name = "gnome-session", version = "51.0", summary = "GNOME session manager (init-agnostic wiring)" },
   { name = "gnome-settings-daemon", version = "51.1", summary = "GNOME settings daemons (color, power, media keys)" },
