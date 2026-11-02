@@ -780,7 +780,7 @@ return {
   { name = "ncurses", version = "6.6-2", summary = "System V Release 4.0 curses library and utilities" },
   { name = "neovim", version = "0.12.4", summary = "Vim-fork focused on extensibility and usability" },
   { name = "nettle", version = "1.0-2", summary = "Cryptographic library" },
-  { name = "networkmanager", version = "1.51.4", summary = "Network management daemon (wifi iwd+wpa_supplicant, dnsmasq, dhcpcd)" },
+  { name = "networkmanager", version = "1.58.1", summary = "Network management daemon (wifi iwd+wpa_supplicant, dnsmasq, dhcpcd)" },
   { name = "newt", version = "0.52.25", summary = "Library for text mode user interfaces (libnewt)" },
   { name = "nghttp2", version = "1.70.0", summary = "HTTP/2 framing layer C library" },
   { name = "nix", version = "2.35.2-5", summary = "Nix package manager (official prebuilt binary, /nix store layout)" },
