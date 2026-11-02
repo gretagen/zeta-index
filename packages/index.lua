@@ -104,6 +104,7 @@ return {
   { name = "eom", version = "1.28.0", summary = "Image viewer for MATE" },
   { name = "equibop", version = "3.2.2", summary = "Discord client mod (Equicord, Electron app)" },
   { name = "espeak-ng", version = "1.52.0", summary = "Speech synthesizer for over 100 languages (espeak-ng with espeak compat CLI)" },
+  { name = "evolution-data-server", version = "3.62.1", summary = "Contacts/calendar/tasks backend for GNOME (libedataserver)" },
   { name = "exempi", version = "2.6.6", summary = "XMP metadata library (Arch binary)" },
   { name = "exiv2", version = "0.28.9", summary = "Image metadata (EXIF/IPTC/XMP) library and CLI" },
   { name = "exo", version = "4.20.0", summary = "Application development library for Xfce" },
