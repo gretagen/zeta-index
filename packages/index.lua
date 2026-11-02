@@ -773,7 +773,7 @@ return {
   { name = "npth", version = "1.8", summary = "New Portable Threads library" },
   { name = "nscde", version = "2.3", summary = "Not so Common Desktop Environment: retro CDE-like desktop on FVWM" },
   { name = "nspr", version = "4.40", summary = "Netscape Portable Runtime (platform abstraction)" },
-  { name = "nss", version = "3.124", summary = "Network Security Services (libnss3/libnspr4 runtime)" },
+  { name = "nss", version = "3.132", summary = "Network Security Services (headers + libs, dev-complete)" },
   { name = "ntbtls", version = "0.3.2", summary = "A small TLS library using Libgcrypt and Libksba" },
   { name = "numactl", version = "2.0.19", summary = "Simple NUMA policy support" },
   { name = "nvidia", version = "610.57.04", summary = "NVIDIA official driver (meta-package: open kernel modules + userspace)" },
