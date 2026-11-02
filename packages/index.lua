@@ -513,7 +513,7 @@ return {
   { name = "libglvnd-headers", version = "1.7.0", summary = "libglvnd development headers (GL/EGL/GLES/KHR + glvnd ABI)" },
   { name = "libgomp", version = "16.2.1+r23+gd564253eb6c8", summary = "OpenMP library shipped by GCC" },
   { name = "libgpg-error", version = "1.61", summary = "Library defining common GnuPG error values" },
-  { name = "libgtop", version = "2.41.3", summary = "Library for system information via /proc (libgtop-2.0)" },
+  { name = "libgtop", version = "2.41.3", summary = "System monitoring library (libgtop-2.0)" },
   { name = "libgudev", version = "238-2", summary = "GObject bindings for libudev (gir-enabled)" },
   { name = "libgusb", version = "0.4.9", summary = "GObject wrapper for libusb-1.0" },
   { name = "libgweather-4", version = "4.6.0", summary = "Weather and geolocation library (GNOME)" },

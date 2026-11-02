@@ -1,12 +1,12 @@
 return {
   name    = "libgtop",
   version = "2.41.3",
-  summary = "Library for system information via /proc (libgtop-2.0)",
+  summary = "System monitoring library (libgtop-2.0)",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libgtop/libgtop-2.41.3.tar.gz",
-  sha256  = "4c3686eeac13acbbd1bc44af164d9bf2b42ecc9dceb9ff11dd272b989242dad2",
-  deps    = { "glibc", "glib" },
+  sha256  = "3d6a0b4a59422ca55a5b824116467800e1948b0031ee9ac8b23d4c0bee8cffe1",
+  deps    = { "glibc", "glib", "gobject-introspection" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libgtop-2.0.so")
+    p:run("ls " .. p.install_root .. "/usr/lib/libgtop-2.0.so* | grep -q . && PKG_CONFIG_PATH=" .. p.install_root .. "/usr/lib/pkgconfig pkg-config --exists libgtop-2.0")
   end,
 }
