@@ -610,7 +610,7 @@ return {
   { name = "libunistring", version = "5.2.1", summary = "Unicode string library" },
   { name = "libunwind", version = "1.8.3", summary = "Determine and manipulate the call-chain of a program" },
   { name = "liburing", version = "2.15", summary = "Linux-native io_uring I/O access library" },
-  { name = "libusb", version = "1.0.30", summary = "Cross-platform USB access library (libusb-1.0)" },
+  { name = "libusb", version = "1.0.30-2", summary = "user-space USB library (libusb-1.0)" },
   { name = "libutempter", version = "1.2.3", summary = "Library for recording utmp entries (Arch binary)" },
   { name = "libuuid", version = "2.42.1", summary = "UUID library (from util-linux)" },
   { name = "libva", version = "2.2300.0-2", summary = "Video Acceleration API (VA-API) library" },
