@@ -53,6 +53,7 @@ return {
   { name = "clinfo", version = "3.0.25.02.14-1-x86_64", summary = "OpenCL platform and device reporter (clinfo)" },
   { name = "cmake", version = "3.31.6-2", summary = "Cross-platform build system generator" },
   { name = "cmatrix", version = "2.0", summary = "C Matrix (The Matrix) terminal screen saver" },
+  { name = "colord", version = "1.4.8", summary = "Color management daemon and library (libcolord)" },
   { name = "compiler-rt", version = "22.1.8", summary = "Compiler runtime libraries for clang 22 (compiler-rt builtins)" },
   { name = "compiler-rt21", version = "21.1.8", summary = "Compiler runtime libraries for clang 21 (compiler-rt builtins)" },
   { name = "composefs", version = "1.0.8", summary = "Composable, immutable, content-addressed filesystem (and library)" },
