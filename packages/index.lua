@@ -176,6 +176,7 @@ return {
   { name = "gnome-autoar", version = "0.5.2", summary = "GNOME archive extraction library (gir-enabled)" },
   { name = "gnome-bluetooth", version = "47.2", summary = "GNOME Bluetooth management (libgnome-bluetooth + app)" },
   { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
+  { name = "gnome-online-accounts", version = "3.58.1", summary = "GNOME online accounts framework (libgoa)" },
   { name = "gnome-session", version = "51.0", summary = "GNOME session manager (init-agnostic wiring)" },
   { name = "gnome-settings-daemon", version = "51.1", summary = "GNOME settings daemons (color, power, media keys)" },
   { name = "gnome-shell", version = "51.1", summary = "GNOME Shell desktop (Wayland compositor UI)" },
