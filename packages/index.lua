@@ -541,6 +541,7 @@ return {
   { name = "libngtcp2", version = "1.25.0", summary = "Implementation of IETF QUIC protocol" },
   { name = "libnice", version = "0.1.24", summary = "Nice: GLib ICE library" },
   { name = "libnl", version = "3.11.0", summary = "Netlink protocol library" },
+  { name = "libnma", version = "1.10.6", summary = "NetworkManager front-end library (GTK widgets)" },
   { name = "libnotify", version = "0.8.8", summary = "Desktop notification library" },
   { name = "libnsl", version = "2.0.1", summary = "Public client interface library for NIS(YP)" },
   { name = "libnvme", version = "1.16.2", summary = "C Library for NVM Express on Linux" },
