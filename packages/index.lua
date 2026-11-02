@@ -761,6 +761,7 @@ return {
   { name = "mpv", version = "0.41.0", summary = "Video and audio player" },
   { name = "mujs", version = "1.3.9", summary = "An embeddable Javascript interpreter in C" },
   { name = "muparser", version = "2.3.5", summary = "Fast math expression parser library" },
+  { name = "mutter", version = "51.1", summary = "GNOME Shell compositor library and mutter binary" },
   { name = "nacelle", version = "3.1.3", summary = "Haliade declarative definition system and house management (nacelle)" },
   { name = "nano", version = "9.2", summary = "Simple text editor" },
   { name = "ncdu", version = "2.9.2", summary = "NCurses disk usage viewer" },
