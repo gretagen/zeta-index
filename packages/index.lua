@@ -166,6 +166,7 @@ return {
   { name = "glycin", version = "2.1.5", summary = "Sandboxed and extendable image decoding" },
   { name = "glycin-loaders", version = "2.1.5", summary = "Image loader/editor modules for glycin (image-rs + svg)" },
   { name = "gmp", version = "10.5.0-2", summary = "GNU multiple precision arithmetic" },
+  { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
   { name = "gnupg", version = "2.5.21", summary = "The GNU Privacy Guard — GnuPG encryption and signing tool" },
   { name = "gnutls", version = "30.42.0-2", summary = "TLS library" },
   { name = "gobject-introspection", version = "1.86.0", summary = "GObject introspection data and tooling" },
