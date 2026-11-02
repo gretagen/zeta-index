@@ -149,6 +149,7 @@ return {
   { name = "gdu", version = "5.38.0", summary = "Fast disk usage analyzer with an interactive console (Go binary)" },
   { name = "gengetopt", version = "2.23.1", summary = "Command-line option parser generator (GNU gengetopt)" },
   { name = "genkernel", version = "2.2.1", summary = "Haliade system kernel generation script" },
+  { name = "geoclue2", version = "2.8.2", summary = "D-Bus geolocation service (GNOME)" },
   { name = "geocode-glib", version = "3.26.4", summary = "Geocoding library using Nominatim (GNOME)" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
