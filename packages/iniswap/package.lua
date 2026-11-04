@@ -7,6 +7,6 @@ return {
   deps    = { "bash", "chronos" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -x " .. p.install_root .. "/usr/bin/iniswap && test -x " .. p.install_root .. "/usr/bin/reboot && test -x " .. p.install_root .. "/usr/bin/shutdown && test -x " .. p.install_root .. "/sbin/reboot && test -x " .. p.install_root .. "/sbin/shutdown && grep -q '/usr/lib/nacelle/iniswap' " .. p.install_root .. "/usr/bin/iniswap && grep -q 'shepherd' " .. p.install_root .. "/usr/bin/iniswap && ! grep -q '/usr/lib/declaration' " .. p.install_root .. "/usr/bin/iniswap")
+    p:run("test -x " .. p.install_root .. "/usr/bin/iniswap && test -x " .. p.install_root .. "/usr/bin/reboot && test -x " .. p.install_root .. "/usr/bin/shutdown && test -x " .. p.install_root .. "/sbin/reboot && test -x " .. p.install_root .. "/sbin/shutdown && grep -q '/usr/lib/nacelle/iniswap' " .. p.install_root .. "/usr/bin/iniswap && grep -q 'shepherd' " .. p.install_root .. "/usr/bin/iniswap && ! grep -q '/usr/lib/iniswap' " .. p.install_root .. "/usr/bin/iniswap" .. p.install_root .. "/usr/lib/iniswap/openrc.sh" .. p.install_root .. "/usr/lib/iniswap/runit.sh" .. p.install_root .. "/usr/lib/iniswap/dinit.sh" .. p.install_root .. "/usr/lib/iniswap/systemd.sh" .. p.install_root .. "/usr/lib/iniswap/runit.sh")
   end,
 }
