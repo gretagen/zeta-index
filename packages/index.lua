@@ -816,6 +816,7 @@ return {
   { name = "opengl-driver", version = "1.0", summary = "OpenGL driver (provided by mesa)" },
   { name = "openjpeg2", version = "2.5.4", summary = "JPEG 2000 library" },
   { name = "openrc", version = "0.63.3-1", summary = "OpenRC init system and service manager for Haliade system" },
+  { name = "openrgb", version = "1.1", summary = "Open source RGB lighting control" },
   { name = "openssh", version = "10.3p1", summary = "OpenSSH protocol implementation for remote login, command execution and file transfer" },
   { name = "openssl", version = "3.6.3-2", summary = "OpenSSL 3 crypto and TLS libraries (libcrypto/libssl)" },
   { name = "opsec", version = "1.0.0", summary = "opsec" },
