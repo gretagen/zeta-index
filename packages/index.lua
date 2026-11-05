@@ -179,7 +179,7 @@ return {
   { name = "gnome-control-center", version = "51.1", summary = "GNOME Settings (control center)" },
   { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
   { name = "gnome-online-accounts", version = "3.58.1", summary = "GNOME online accounts framework (libgoa)" },
-  { name = "gnome-session", version = "51.0", summary = "GNOME session manager (init-agnostic wiring)" },
+  { name = "gnome-session", version = "51.0-2", summary = "GNOME session manager (init-agnostic wiring)" },
   { name = "gnome-settings-daemon", version = "51.1", summary = "GNOME settings daemons (color, power, media keys)" },
   { name = "gnome-shell", version = "51.1", summary = "GNOME Shell desktop (Wayland compositor UI)" },
   { name = "gnupg", version = "2.5.21", summary = "The GNU Privacy Guard — GnuPG encryption and signing tool" },
