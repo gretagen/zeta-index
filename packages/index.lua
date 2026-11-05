@@ -982,6 +982,7 @@ return {
   { name = "twolame", version = "0.0.0", summary = "MPEG-2 AAC encoder library" },
   { name = "tzdata", version = "2026c", summary = "IANA timezone database (zoneinfo)" },
   { name = "uchardet", version = "0.0.8", summary = "Encoding detector library ported from Mozilla" },
+  { name = "udev-rules", version = "262", summary = "Standard udev rules and hwdb (data only, init-agnostic)" },
   { name = "udisks2", version = "2.11.2", summary = "Disk management service (Arch binary)" },
   { name = "unibilium", version = "2.1.2", summary = "Library to parse terminal information (terminfo)" },
   { name = "unimatrix", version = "master", summary = "Matrix-style digital rain for the terminal" },
