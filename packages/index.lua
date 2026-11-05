@@ -531,7 +531,7 @@ return {
   { name = "libidn2", version = "0.4.0-2", summary = "Implementation of IDNA2008 and TR46 (IDNA2008 for TLS)" },
   { name = "libiec61883", version = "1.2.0", summary = "IEEE 1394 media transport library" },
   { name = "libigdgmm", version = "22.5.0", summary = "Intel Graphics Memory Management Library" },
-  { name = "libinput", version = "1.31.3", summary = "Input device and event processing library" },
+  { name = "libinput", version = "1.31.3-2", summary = "Input device and event processing library (fixed udev layout)" },
   { name = "libisoburn", version = "1.5.8.2", summary = "Frontend library for libburn & libisofs" },
   { name = "libisofs", version = "1.5.8.2", summary = "Library to pack up files into an ISO 9660 disk image" },
   { name = "libjpeg-turbo", version = "3.2.0", summary = "MMX/SSE2/SMID accelerated library for JPEG images (libjpeg.so.8 ABI)" },
