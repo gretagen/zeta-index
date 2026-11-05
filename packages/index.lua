@@ -444,7 +444,7 @@ return {
   { name = "libXres", version = "1.2.2", summary = "X11 resource usage extension" },
   { name = "libXt", version = "1.3.1", summary = "X11 toolkit intrinsics library" },
   { name = "libXtst", version = "1.2.5", summary = "X11 Testing extension library" },
-  { name = "libXv", version = "1.0.13", summary = "X11 Video extension library" },
+  { name = "libXv", version = "1.0.13-2", summary = "X11 Video extension library (fixed .so symlinks)" },
   { name = "libXvMC", version = "1.0.14", summary = "X Video Motion Compensation extension library" },
   { name = "libXxf86vm", version = "1.1.7", summary = "X11 XFree86 video mode extension library" },
   { name = "libadwaita", version = "1.10.0-1-x86_64", summary = "Building blocks for modern GTK 4 applications (Arch binary)" },
