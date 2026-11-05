@@ -73,7 +73,7 @@ return {
   { name = "cxx-rust-cssparser", version = "1.1.0", summary = "KDE: Library for parsing CSS using the Rust cssparser crate" },
   { name = "dav1d", version = "1.5.4", summary = "AV1 cross-platform decoder library" },
   { name = "db5.3", version = "5.3.28", summary = "Berkeley DB library" },
-  { name = "dbus", version = "1.16.2-2", summary = "D-Bus message bus system" },
+  { name = "dbus", version = "1.16.2-3", summary = "D-Bus message bus (system + session)" },
   { name = "dbus-glib", version = "0.112-2", summary = "GLib integration for the freedesktop D-Bus message bus" },
   { name = "dconf-editor", version = "49.0", summary = "GSettings editor for GNOME" },
   { name = "default-cursors", version = "3", summary = "Default cursor set" },
