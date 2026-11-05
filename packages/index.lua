@@ -909,6 +909,7 @@ return {
   { name = "ripgrep", version = "15.2.0", summary = "Recursive grep alternative" },
   { name = "rofi", version = "2.0.0", summary = "Window switcher, application launcher and dmenu replacement" },
   { name = "rsync", version = "3.5.0", summary = "Remote file sync with ACL/xattr support" },
+  { name = "rtkit", version = "0.14", summary = "RealtimeKit dbus service (thread priority mediation)" },
   { name = "rtw89", version = "0.20260825", summary = "Realtek RTW89 wifi firmware blobs" },
   { name = "rubberband", version = "4.0.0", summary = "Audio time-stretching library" },
   { name = "runit", version = "2.3.1", summary = "The runit init system (init, runsvdir service supervision)" },
