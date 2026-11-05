@@ -987,6 +987,7 @@ return {
   { name = "udev-rules", version = "262", summary = "Standard udev rules and hwdb (data only, init-agnostic)" },
   { name = "udisks2", version = "2.11.2", summary = "Disk management service (Arch binary)" },
   { name = "unibilium", version = "2.1.2", summary = "Library to parse terminal information (terminfo)" },
+  { name = "unifdef", version = "2.12", summary = "#ifdef preprocessor stripper (build tooling)" },
   { name = "unimatrix", version = "master", summary = "Matrix-style digital rain for the terminal" },
   { name = "unitconversion", version = "6.13.0", summary = "KDE Framework 6: measurement unit conversion (kunitconversion)" },
   { name = "unzip", version = "6.0", summary = "InfoZIP extractor" },
