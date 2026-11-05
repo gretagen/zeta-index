@@ -912,6 +912,7 @@ return {
   { name = "rtkit", version = "0.14", summary = "RealtimeKit dbus service (thread priority mediation)" },
   { name = "rtw89", version = "0.20260825", summary = "Realtek RTW89 wifi firmware blobs" },
   { name = "rubberband", version = "4.0.0", summary = "Audio time-stretching library" },
+  { name = "ruby", version = "3.4.5", summary = "Ruby interpreter (build tooling + scripting)" },
   { name = "runit", version = "2.3.1", summary = "The runit init system (init, runsvdir service supervision)" },
   { name = "rust", version = "1.98.0", summary = "Systems programming language (rustc, cargo, rustfmt, clippy, rustdoc)" },
   { name = "samba", version = "4.25.1", summary = "Samba networking suite (SMB/CIFS)" },
