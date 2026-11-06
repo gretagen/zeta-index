@@ -888,6 +888,7 @@ return {
   { name = "python-prompt-toolkit", version = "3.0.53", summary = "Python terminal prompting and rich TUI library" },
   { name = "python-screeninfo", version = "0.8.1", summary = "Python module to fetch monitor information (resolution, position)" },
   { name = "python-wcwidth", version = "0.9.4", summary = "Terminal character width library (wcwidth)" },
+  { name = "python-wsaccel", version = "0.6.7", summary = "WebSocket accelerator for autobahn (Python module)" },
   { name = "python-yaml", version = "6.0.3", summary = "PyYAML: YAML parser and emitter for Python 3" },
   { name = "qca", version = "2.3.12", summary = "KDE: Qt Cryptographic Architecture - straightforward cross-platform crypto API" },
   { name = "qcoro", version = "0.13.0", summary = "Qt coroutine helpers library (QCoro)" },
