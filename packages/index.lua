@@ -68,6 +68,7 @@ return {
   { name = "cpufetch", version = "1.07", summary = "Fancy CPU architecture fetching tool" },
   { name = "cpupower", version = "7.2.6", summary = "CPU power management tools (Arch binary)" },
   { name = "cracklib", version = "2.10.4", summary = "Password-strength checking library and word list" },
+  { name = "croc", version = "11.6.0", summary = "Easily and securely send files between computers (Go binary)" },
   { name = "cryptsetup", version = "2.8.8", summary = "Userspace setup tool for transparent encryption of block devices using dm-crypt" },
   { name = "ctwm", version = "4.1.0", summary = "Window manager based on TWM (with virtual workspaces)" },
   { name = "curl", version = "8.14.1", summary = "URL retrieval tool" },
