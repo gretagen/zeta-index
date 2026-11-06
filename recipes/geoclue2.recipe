@@ -1,0 +1,17 @@
+-- geoclue2.recipe — GeoClue 2.8.2: location daemon over D-Bus, needed by
+-- gnome-settings-daemon's location plugin. dbus activation file ships
+-- (init-agnostic); gitlab source archive.
+
+return {
+  name           = "geoclue2",
+  version        = "2.8.2",
+  summary        = "D-Bus geolocation service (GNOME)",
+  url            = "https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/2.8.2/geoclue-2.8.2.tar.bz2",
+  sha256         = "d4d65933b704d4c8d4ca9747dc511b883e35099abe534c8560f2aab3017e4cd4",
+  deps           = { "glibc", "glib", "libjson-glib", "curl", "avahi", "libnotify", "libsoup3" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-D3g-source=false", "-Dcdma-source=false", "-Dmodem-gps-source=false", "-Dvapi=false", "-Dgtk-doc=false" },
+  test           = "test -x ${DESTDIR}/usr/libexec/geoclue-2.0"
+    .. " && grep -q Exec=/usr/libexec/geoclue ${DESTDIR}/usr/share/dbus-1/system-services/org.freedesktop.GeoClue2.service",
+}

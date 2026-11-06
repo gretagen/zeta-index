@@ -1,0 +1,17 @@
+-- scdoc.recipe — scdoc 1.11.1, minimal man page generator; needed to turn
+-- cbonsai.scd into cbonsai.6 (and other scdoc-based projects).
+-- Upstream (git.sr.ht/~emersion/scdoc) is unreachable from some networks;
+-- Debian's pool mirrors the orig tarball verbatim over HTTPS.
+
+return {
+  name         = "scdoc",
+  version      = "1.11.1",
+  summary      = "Small man page generator (simple document -> troff)",
+  url          = "https://deb.debian.org/debian/pool/main/s/scdoc/scdoc_1.11.1.orig.tar.gz",
+  sha256       = "1098a1ed2e087596fc0b3f657c1c8a5e00412267aa4baf3619e36824306645b1",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-scdoc.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/scdoc"
+    .. " && printf 'x(1) \"X\" \"Manual\"\n\n# NAME\nx - demo\n' | ${DESTDIR}/usr/bin/scdoc | grep -q demo",
+}

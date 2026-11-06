@@ -1,0 +1,17 @@
+-- libsass.recipe — libsass 3.6.6: SASS compiler library, build-time
+-- requirement of gtk4 (which compiles the Adwaita theme CSS with sassc).
+-- Static lib + headers only; sassc links the archive statically.
+
+return {
+  name         = "libsass",
+  version      = "3.6.6",
+  summary      = "SASS to CSS compiler library (static)",
+  url          = "https://github.com/sass/libsass/archive/refs/tags/3.6.6.tar.gz",
+  sha256       = "11f0bb3709a4f20285507419d7618f3877a425c0131ea8df40fe6196129df15d",
+  deps         = { "glibc", "libstdc++" },
+  build_system = "custom",
+  build_script = "build-libsass.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/libsass.a"
+    .. " && test -f ${DESTDIR}/usr/include/sass.h"
+    .. " && test -f ${DESTDIR}/usr/include/sass/base.h",
+}

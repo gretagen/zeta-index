@@ -1,0 +1,15 @@
+-- mate-applets.recipe — MATE 1.28.1 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-applets",
+  version        = "1.28.1",
+  summary        = "Panel applets for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-applets-1.28.1.tar.xz",
+  sha256         = "a5967141527dc5b172d322a6003c23aeec253160f650bb36430a06ddaefa7e2e",
+  deps           = { "glibc", "glib", "gtk3",  "cpupower", "gtksourceview4", "libgtop", "libnotify", "mate-panel", "polkit", "upower", "wireless_tools", "libnl"   },
+  build_system   = "custom",
+  build_script   = "build-mate-applets.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

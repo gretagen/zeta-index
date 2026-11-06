@@ -1,0 +1,18 @@
+-- p11-kit.recipe — repack: index payload was libs-only. Version "0.4.8"
+-- is the index's soname-style label (libp11-kit.so.0.4.8); source is
+-- upstream 0.26.5 (Debian pool mirror of the release tarball) which
+-- produces exactly that soname.
+
+return {
+  name           = "p11-kit",
+  version        = "0.4.8-2",
+  summary        = "PKCS#11 module loading library",
+  url            = "https://deb.debian.org/debian/pool/main/p/p11-kit/p11-kit_0.26.5.orig.tar.xz",
+  sha256         = "f2cc09111e44bf3fea58f023180b33acea90aa82d042d6fbb623fbc5ba033bb7",
+  deps           = { "glibc", "libtasn1", "libffi" },
+  build_system   = "autotools",
+  configure_args = { "--disable-gtk_doc", "--disable-static", "--libdir=/usr/lib" },
+  test           = "ls ${DESTDIR}/usr/lib/libp11-kit.so.0* >/dev/null"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/p11-kit-1.pc"
+    .. " && test -x ${DESTDIR}/usr/bin/p11-kit",
+}

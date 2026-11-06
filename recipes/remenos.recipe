@@ -1,0 +1,30 @@
+-- remenos.recipe — Remenos0.1.0-2, Simon-inspired memory game rendered in
+-- big FIGlet letters (gretagen's own project, packaged from commit
+-- 02f12bf since upstream has no tags).
+--
+-- remenos-fhs.patch replaces the two $HOME/remenos hardcodes: the sfx dir
+-- resolves relative to the script (identical behaviour at
+-- /usr/share/remenos and in the classic ~/remenos layout), the best score
+-- moves to ${XDG_STATE_HOME:-~/.local/state}/remenos/ with mkdir -p so
+-- first-run saves work on clean systems.
+-- -2: espeak-ng added to the deps - speak()/speak_char() use its espeak
+-- compat CLI (guarded with an echo fallback, but declared now).
+-- paplay stays runtime-optional exactly as upstream designed it.
+
+return {
+  name         = "remenos",
+  version      = "0.1.0-2",
+  summary      = "Simon-inspired memory game rendered in big FIGlet ASCII letters",
+  url          = "https://github.com/gretagen/remenos/archive/02f12bf410ba697c658ddba9281a0a3b9a28c07a.tar.gz",
+  sha256       = "e3c21a245f35886056b85a77b05446f803eea42d428d5c09db6d29a485cd1b4e",
+  deps         = { "bash", "figlet", "espeak-ng" },
+  build_system = "custom",
+  build_script = "build-remenos.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/remenos"
+    .. " && test -x ${DESTDIR}/usr/share/remenos/game.sh"
+    .. " && test -f ${DESTDIR}/usr/share/remenos/sfx/tick.wav"
+    .. " && test -f ${DESTDIR}/usr/share/doc/remenos/read-me.txt"
+    .. " && bash -n ${DESTDIR}/usr/share/remenos/game.sh"
+    .. " && grep -q 'XDG_STATE_HOME' ${DESTDIR}/usr/share/remenos/game.sh"
+    .. " && grep -q 'SCRIPT_DIR/sfx' ${DESTDIR}/usr/share/remenos/game.sh",
+}

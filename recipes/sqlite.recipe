@@ -1,0 +1,20 @@
+-- sqlite.recipe — 3.53.4-3: rebuilt with libtool so the shared library
+-- carries a proper SONAME. The previous hand-built .so had none, which
+-- made consumers (libsoup) record absolute-path NEEDED entries that the
+-- closure check rejects.
+
+return {
+  name           = "sqlite",
+  version        = "3.53.4-3",
+  summary        = "Self-contained, embeddable SQL database engine",
+  url            = "https://www.sqlite.org/2026/sqlite-autoconf-3530400.tar.gz",
+  sha256         = "0e9483900e92cd5de8fd48d16bf9200145a61f7fd5be542a5ac81d8a9516eb9c",
+  deps           = { "glibc", "libz", "ncurses", "readline" },
+  build_system   = "custom",
+  build_script   = "build-sqlite.sh",
+  test           = "ls ${DESTDIR}/usr/lib/libsqlite3.so.0* >/dev/null"
+    .. " && test -x ${DESTDIR}/usr/bin/sqlite3"
+    .. " && test -f ${DESTDIR}/usr/include/sqlite3.h"
+    .. " && readelf -d ${DESTDIR}/usr/lib/libsqlite3.so.0 | grep -q SONAME"
+    .. " && ${DESTDIR}/usr/bin/sqlite3 --version | grep -q 3.53",
+}

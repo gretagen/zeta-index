@@ -1,0 +1,15 @@
+-- mate-calc.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-calc",
+  version        = "1.28.0",
+  summary        = "Calculator for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-calc-1.28.0.tar.xz",
+  sha256         = "804b125d1e2864b1e74af816da9b2ab8b19472b9af974437ee7355ada5e628f5",
+  deps           = { "mpfr",  "libmpc",  "glibc",  "gtk3", "gettext"  },
+  build_system   = "custom",
+  build_script   = "build-mate-calc.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -x ${DESTDIR}/usr/bin/mate-calc",
+}

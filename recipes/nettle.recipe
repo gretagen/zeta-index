@@ -1,0 +1,20 @@
+-- nettle.recipe — repack: index payload was libs-only (no headers/pc,
+-- blocking gnutls' rebuild). Version label "1.0" kept from the index
+-- (their legacy label); source = upstream 3.10.2 which produces the
+-- libnettle.so.9/libhogweed.so.7 the system links.
+
+return {
+  name           = "nettle",
+  version        = "1.0-2",
+  summary        = "Cryptographic library",
+  url            = "https://ftp.gnu.org/gnu/nettle/nettle-4.0.tar.gz",
+  sha256         = "3addbc00da01846b232fb3bc453538ea5468da43033f21bb345cb1e9073f5094",
+  deps           = { "glibc", "gmp" },
+  build_system   = "autotools",
+  configure_args = { "--libdir=/usr/lib" },
+  test           = "ls ${DESTDIR}/usr/lib/libnettle.so.9* >/dev/null"
+    .. " && ls ${DESTDIR}/usr/lib/libhogweed.so.7* >/dev/null"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/nettle.pc"
+    .. " && test -f ${DESTDIR}/usr/include/nettle/nettle-meta.h"
+    .. " && test -x ${DESTDIR}/usr/bin/nettle-hash",
+}

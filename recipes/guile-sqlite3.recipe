@@ -1,0 +1,17 @@
+-- guile-sqlite3 0.1.3 — Guile bindings for SQLite, required by guix.
+-- Debian pool mirror of the notabug.org tag archive (notabug unreachable).
+
+return {
+  name           = "guile-sqlite3",
+  version        = "0.1.3",
+  summary        = "Guile bindings for SQLite (required by Guix)",
+  url            = "https://deb.debian.org/debian/pool/main/g/guile-sqlite3/guile-sqlite3_0.1.3.orig.tar.gz",
+  sha256         = "158cb82958c6329319f911412999ea125980f327f54185bf0dad271d6f8f45c2",
+  deps           = { "glibc", "guile", "sqlite" },
+  build_system   = "custom",
+  build_script   = "build-guile-sqlite3.sh",
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/sqlite3*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " guile -c '(use-modules (sqlite3))'",
+}

@@ -1,0 +1,17 @@
+-- gdkmm.recipe — gdkmm 3.0 bindings extracted from gtkmm-3.24.11 (no
+-- standalone gdkmm tarball upstream); payload pruned to gdkmm only —
+-- mate-system-monitor needs gdkmmconfig.h/gdkmm headers.
+
+return {
+  name           = "gdkmm",
+  version        = "3.24.11",
+  summary        = "C++ bindings for GDK (gdkmm, from the gtkmm suite)",
+  url            = "https://download.gnome.org/sources/gtkmm/3.24/gtkmm-3.24.11.tar.xz",
+  sha256         = "19e383c82d5dd89db275e00b82864e90414d4c3fb3d100b2f996bcc2338a4cc7",
+  deps           = { "glibc", "gtk3", "glibmm", "pangomm", "cairomm", "gobject-introspection" },
+  build_system   = "custom",
+  build_script   = "build-gdkmm.sh",
+  test           = "test -f ${DESTDIR}/usr/lib/pkgconfig/gdkmm-3.0.pc"
+    .. " && test -e ${DESTDIR}/usr/lib/libgdkmm-3.0.so"
+    .. " && test -f ${DESTDIR}/usr/lib/gdkmm-3.0/include/gdkmmconfig.h",
+}

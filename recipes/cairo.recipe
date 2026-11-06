@@ -1,0 +1,13 @@
+-- cairo.recipe — 1.18.4-2 rebuilt with introspection enabled (the gir/typelib stack
+-- mozo and the GNOME campaign need; same version/flags as installed, plus
+-- share/gir-1.0 + lib/girepository-1.0 payloads).
+return {
+  name           = "cairo",
+  version        = "1.18.4-2",
+  summary        = "2D graphics library (gir-enabled rebuild)",
+  url            = "https://cairographics.org/releases/cairo-1.18.4.tar.xz",
+  sha256         = "445ed8208a6e4823de1226a74ca319d3600e83f6369f99b14265006599c32ccb",
+  deps           = { "glibc", "libX11", "libXext", "libXrender", "libxcb", "pixman", "fontconfig", "freetype", "glib", "libpng", "libz", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib" },
+}

@@ -1,0 +1,14 @@
+-- libhwy.recipe — repack1.2.0: the index payload shipped only libhwy.so
+-- (no headers, no pkg-config), breaking libjxl's Requires chain.
+
+return {
+  name         = "libhwy",
+  version      = "1.2.0",
+  summary      = "Google Highway SIMD library",
+  url          = "https://github.com/google/highway/archive/refs/tags/1.2.0.tar.gz",
+  sha256       = "7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343",
+  deps         = { "glibc", "gcc", "libgcc", "libstdc++" },
+  build_system = "custom",
+  build_script = "build-hwy.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libhwy.so.1 && test -f ${DESTDIR}/usr/include/hwy/highway.h && test -f ${DESTDIR}/usr/lib/pkgconfig/libhwy.pc",
+}

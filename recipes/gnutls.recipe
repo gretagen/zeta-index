@@ -1,0 +1,22 @@
+-- gnutls.recipe — rebuild of gnutls 30.42.0 (upstream 3.8.13, matches the
+-- installed libgnutls.so.30.42.0) with a complete dev payload: the index
+-- copy shipped libs only (no headers/pc), which blocks every TLS-devel
+-- consumer - notably the upcoming guile-gnutls for guix.
+--
+-- Crypto backend kept exactly like the original build: nettle + leancrypto
+-- (--with-leancrypto), IDNA via libidn2, PKCS#11 via p11-kit.
+
+return {
+  name           = "gnutls",
+  version        = "30.42.0-2",
+  summary        = "TLS library",
+  url            = "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.13.tar.xz",
+  sha256         = "ffed8ec1bf09c2426d4f14aae377de4753b53e537d685e604e99a8b16ca9c97e",
+  deps           = { "glibc", "gmp", "leancrypto", "libidn2", "libtasn1", "libunistring", "nettle", "p11-kit", "gcc", "libgcc", "libstdc++" },
+  build_system   = "custom",
+  build_script   = "build-gnutls.sh",
+  test           = "ls ${DESTDIR}/usr/lib/libgnutls.so.30* >/dev/null"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/gnutls.pc"
+    .. " && test -f ${DESTDIR}/usr/include/gnutls/gnutls.h"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists --print-errors gnutls",
+}

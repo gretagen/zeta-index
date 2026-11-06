@@ -1,0 +1,17 @@
+-- intltool.recipe — intltool 0.51.0: gettext/i18n build glue every MATE
+-- 1.28 autotools component needs (IT_PROG_INTLTOOL, intltool-merge for
+-- .desktop/po handling). Scripts only, no compiled code.
+
+return {
+  name           = "intltool",
+  version        = "0.51.0",
+  summary        = "Universal gettext i18n tool converter (build glue)",
+  url            = "https://deb.debian.org/debian/pool/main/i/intltool/intltool_0.51.0.orig.tar.gz",
+  sha256         = "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd",
+  deps           = { "glibc", "perl" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static" },
+  test           = "test -x ${DESTDIR}/usr/bin/intltoolize"
+    .. " && test -x ${DESTDIR}/usr/bin/intltool-merge"
+    .. " && test -f ${DESTDIR}/usr/share/aclocal/intltool.m4"
+}

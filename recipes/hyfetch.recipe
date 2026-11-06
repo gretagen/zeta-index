@@ -1,0 +1,25 @@
+-- hyfetch.recipe — 2.1.1 (hykilpikonna/hyfetch): neofetch fork with pride
+-- flags, hybrid rust+python. cargo builds the v2 engine; the build script
+-- installs the python package, the embedded neofetch tree, the rust
+-- binary at site-packages/hyfetch/rust/hyfetch (where run_rust() looks —
+-- SRC = package dir) and the four [project.scripts] shims. Falls back to
+-- the pure-python v1 path automatically if the rust binary ever vanishes.
+
+return {
+  name         = "hyfetch",
+  version      = "2.1.1",
+  summary      = "Neofetch with LGBTQ+ pride flags",
+  url          = "https://files.pythonhosted.org/packages/9a/2e/631d3a18c301573aa37b2ec2b212c7bac850bb0ae475f9875d69298901c8/hyfetch-2.1.1.tar.gz",
+  sha256       = "3dbc5165eeb1790ff9abbc257f834ff9cc6b0f6edd57ea10fcdd2a691710bc20",
+  deps         = { "python", "python-prompt-toolkit", "gcc" },
+  build_system = "custom",
+  build_script = "build-hyfetch.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/hyfetch"
+    .. " && test -x ${DESTDIR}/usr/bin/hyfetch.v1"
+    .. " && test -x ${DESTDIR}/usr/bin/hyfetch.rs"
+    .. " && test -x ${DESTDIR}/usr/bin/neowofetch"
+    .. " && test -x ${DESTDIR}/usr/lib/python3.14/site-packages/hyfetch/rust/hyfetch"
+    .. " && test -f ${DESTDIR}/usr/lib/python3.14/site-packages/neofetch"
+    .. " && PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages python3 -c \"import hyfetch, hyfetch.__main__\""
+    .. " && PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages python3 ${DESTDIR}/usr/bin/hyfetch --version | grep -q 2.1.1",
+}

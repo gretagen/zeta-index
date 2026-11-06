@@ -1,0 +1,23 @@
+-- colord.recipe — colord 1.4.8: color management daemon; mutter links
+-- libcolord unconditionally (no meson switch to opt out), and gsd's color
+-- plugin wants it too. BLFS flow with -Dsystemd=false (init-agnostic:
+-- dbus activation + local config), no vala, no docs/man. The daemon runs
+-- as the unprivileged "colord" user (created on the host at install).
+
+return {
+  name           = "colord",
+  version        = "1.4.8",
+  summary        = "Color management daemon and library (libcolord)",
+  url            = "https://www.freedesktop.org/software/colord/releases/colord-1.4.8.tar.xz",
+  sha256         = "21500bd68975312a7f0f3ce6019d9f75f42aacaa75ca7115ec720b5445406896",
+  deps           = { "glibc", "glib", "dbus", "lcms2", "libgudev", "libgusb", "polkit", "gobject-introspection", "sqlite" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Ddaemon_user=colord", "-Dvapi=false", "-Dsystemd=false",
+                     "-Dlibcolordcompat=true", "-Dargyllcms_sensor=false",
+                     "-Dbash_completion=false", "-Ddocs=false", "-Dman=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libcolord.so* | grep -q ."
+    .. " && test -x ${DESTDIR}/usr/bin/colormgr"
+    .. " && grep -q org.freedesktop.ColorManager ${DESTDIR}/usr/share/dbus-1/system-services/org.freedesktop.ColorManager.service"
+    .. " && ! ls ${DESTDIR}/usr/lib/systemd 2>/dev/null | grep -q .",
+}

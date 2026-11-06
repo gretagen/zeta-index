@@ -1,0 +1,17 @@
+-- duktape.recipe — duktape 2.7.0: embeddable Javascript engine; build
+-- dependency of libproxy (pacrunner-duktape PAC backend). Shared library
+-- (libduktape.so.207) + duktape.pc via the shipped Makefile.sharedlibrary.
+
+return {
+  name         = "duktape",
+  version      = "2.7.0",
+  summary      = "Embeddable Javascript engine (shared library)",
+  url          = "https://duktape.org/duktape-2.7.0.tar.xz",
+  sha256       = "90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-duktape.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libduktape.so.207"
+    .. " && test -f ${DESTDIR}/usr/include/duktape.h"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists duktape",
+}

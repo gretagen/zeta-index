@@ -1,0 +1,20 @@
+-- pulseaudio.recipe — 17.0-3: repack fixing the libdir. 17.0-2 installed
+-- into /usr/lib64, which pkg-config never searches, so consumers
+-- (gnome-settings-daemon) could not find libpulse-mainloop-glib. Same
+-- scope as before: server + client libs + tools (pipewire-pulse provides
+-- the running server; this package is the client/tooling side).
+
+return {
+  name           = "pulseaudio",
+  version        = "17.0-3",
+  summary        = "Network-capable sound server and client library",
+  url            = "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz",
+  sha256         = "053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5",
+  deps           = { "glibc", "glib", "dbus", "libsndfile", "libtdb", "wireplumber", "libcap", "libICE", "libSM", "libX11", "libXtst", "libxcb", "avahi", "gst-plugins-base-libs", "gstreamer", "jack2", "libtool", "libsoxr" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload", "-Dtests=false", "-Ddoxygen=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libpulse-mainloop-glib.so.0"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/libpulse.pc"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists libpulse-mainloop-glib"
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib:${DESTDIR}/usr/lib/pulseaudio ${DESTDIR}/usr/bin/pulseaudio --version",
+}

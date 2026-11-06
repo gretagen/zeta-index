@@ -1,0 +1,16 @@
+-- gnome-bluetooth recipe — 47.2: Bluetooth management library + app,
+-- required by gnome-control-center (bluetooth panel).
+
+return {
+  name           = "gnome-bluetooth",
+  version        = "47.2",
+  summary        = "GNOME Bluetooth management (libgnome-bluetooth + app)",
+  url            = "https://download.gnome.org/sources/gnome-bluetooth/47/gnome-bluetooth-47.2.tar.xz",
+  sha256         = "41f20e6d6176b72590af63552b232d83f2fffdd77ecfaa5eaf32c5a4a86fad64",
+  deps           = { "glibc", "glib", "gtk4", "gnome-desktop", "gobject-introspection",
+                     "libnotify", "networkmanager", "libadwaita", "gsound", "upower" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "test -x ${DESTDIR}/usr/bin/bluetooth-sendto"
+    .. " && ls ${DESTDIR}/usr/lib/pkgconfig/gnome-bluetooth-3.0.pc | grep -q .",
+}

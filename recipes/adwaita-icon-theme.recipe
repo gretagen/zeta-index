@@ -1,0 +1,15 @@
+-- adwaita-icon-theme.recipe — 51.0: icon theme matching GNOME 51.
+
+return {
+  name           = "adwaita-icon-theme",
+  version        = "51.0",
+  summary        = "Adwaita icon theme",
+  url            = "https://download.gnome.org/sources/adwaita-icon-theme/51/adwaita-icon-theme-51.0.tar.xz",
+  sha256         = "ba561cf3c96305a47179fa5605856ad695c9238ea07f7093aebd9ba80c4e323b",
+  deps           = { "hicolor-icon-theme", "glib" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "test -f ${DESTDIR}/usr/share/icons/Adwaita/index.theme"
+    .. " && test -d ${DESTDIR}/usr/share/icons/Adwaita/cursors"
+    .. " && test -d ${DESTDIR}/usr/share/icons/Adwaita/symbolic",
+}

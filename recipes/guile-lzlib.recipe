@@ -1,0 +1,18 @@
+-- guile-lzlib 0.3.0 — Guile bindings to lzlib, required by guix.
+-- Source from codeberg (project moved off notabug); carries guix's own
+-- gcc-14 patch (bundled beside this recipe) which also covers newer GCCs.
+
+return {
+  name           = "guile-lzlib",
+  version        = "0.3.0",
+  summary        = "Guile bindings to lzlib (required by Guix)",
+  url            = "https://codeberg.org/guile-compression/guile-lzlib/archive/0.3.0.tar.gz",
+  sha256         = "a7f99c8d2a143e05ea22db2dc8b9ce6c27cae942162b45ee3015ed9027af0ff2",
+  deps           = { "glibc", "guile", "lzlib" },
+  build_system   = "custom",
+  build_script   = "build-guile-lzlib.sh",
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/lzlib*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " guile -c '(use-modules (lzlib))'",
+}

@@ -1,0 +1,19 @@
+-- libproxy.recipe — 0.5.12: proxy resolution library, required by
+-- glib-networking. Repack fixing the libdir: 0.5.0 shipped into
+-- /usr/lib64, which pkg-config does not search, so consumers could never
+-- find libproxy-1.0.pc.
+
+return {
+  name           = "libproxy",
+  version        = "0.5.12",
+  summary        = "Proxy access library (pac/dns/wpad resolution)",
+  url            = "https://github.com/libproxy/libproxy/archive/refs/tags/0.5.12.tar.gz",
+  sha256         = "a1fa55991998b80a567450a9e84382421a7176a84446c95caaa8b72cf09fa86f",
+  deps           = { "glibc", "curl", "duktape", "glib" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Ddocs=false", "-Dvapi=false", "-Dtests=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libproxy.so.1"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/libproxy-1.0.pc"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists libproxy-1.0",
+}

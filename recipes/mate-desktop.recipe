@@ -1,0 +1,15 @@
+-- mate-desktop.recipe — MATE 1.28.2 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-desktop",
+  version        = "1.28.2",
+  summary        = "Desktop library for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-desktop-1.28.2.tar.xz",
+  sha256         = "32bb4b792014b391c1e1b8ae9c18a82b4d447650984b4cba7d28e95564964aa2",
+  deps           = { "libdconf", "glibc",  "gtk3", "startup-notification", "iso-codes"  },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -f ${DESTDIR}/usr/lib/pkgconfig/mate-desktop-2.0.pc",
+}

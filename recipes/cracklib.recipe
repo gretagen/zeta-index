@@ -1,0 +1,19 @@
+-- cracklib.recipe — 2.10.4: password-strength dictionary library, hard
+-- dependency of libpwquality (gnome-control-center's user-passwords
+-- panel). Word list ships with the package; the binary dictionary is
+-- generated on the host after install (doas create-cracklib-dict ...).
+
+return {
+  name         = "cracklib",
+  version      = "2.10.4",
+  summary      = "Password-strength checking library and word list",
+  url          = "https://github.com/cracklib/cracklib/releases/download/v2.10.4/cracklib-2.10.4.tar.xz",
+  sha256       = "503573391cfea3e1fca0b7ea0011c887f87f49cf2a97db9a54f92094e604b82b",
+  deps         = { "glibc", "libz" },
+  build_system = "custom",
+  build_script = "build-cracklib.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libcrack.so.2"
+    .. " && test -x ${DESTDIR}/usr/sbin/create-cracklib-dict"
+    .. " && test -f ${DESTDIR}/usr/share/dict/cracklib-words"
+    .. " && test -f ${DESTDIR}/usr/include/crack.h",
+}

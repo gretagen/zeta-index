@@ -1,0 +1,16 @@
+-- sassc.recipe — sassc 3.6.2: SASS CLI, build-time requirement of gtk4
+-- (compiles the Adwaita theme CSS). Statically links the libsass archive
+-- (SASS_LIBSASS_PATH=/usr), so no libsass runtime dep.
+
+return {
+  name         = "sassc",
+  version      = "3.6.2",
+  summary      = "Command-line SASS compiler",
+  url          = "https://github.com/sass/sassc/archive/refs/tags/3.6.2.tar.gz",
+  sha256       = "608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03",
+  deps         = { "glibc", "gcc" },
+  build_system = "custom",
+  build_script = "build-sassc.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/sassc"
+    .. " && printf 'a { color: red; }' | ${DESTDIR}/usr/bin/sassc | grep -q 'color: red'",
+}

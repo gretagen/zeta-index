@@ -1,0 +1,23 @@
+-- libidn2.recipe — repack: index payload was libs-only (no headers/pc),
+-- blocking gnutls' rebuild; without them gnutls would silently lose
+-- IDNA2008 support (its configure only warns). Version "0.4.0" is the
+-- index's soname-style label (libidn2.so.0.4.0); source = upstream
+-- 2.3.8 (Debian pool mirror of the git archive).
+--
+-- bootstrap needs: patch, gengetopt, gettext m4 (ACLOCAL_PATH) and a
+-- pinned gnulib clone from savannah - all pre-provisioned or handled.
+
+return {
+  name           = "libidn2",
+  version        = "0.4.0-2",
+  summary        = "Implementation of IDNA2008 and TR46 (IDNA2008 for TLS)",
+  url            = "https://deb.debian.org/debian/pool/main/libi/libidn2/libidn2_2.3.8.orig.tar.gz",
+  sha256         = "bbad1678d35d28e2c62e6a2577083829461402d9e47b908791c55314a5cb5e04",
+  deps           = { "glibc", "libunistring" },
+  build_system   = "custom",
+  build_script   = "build-libidn2.sh",
+  test           = "ls ${DESTDIR}/usr/lib/libidn2.so.0* >/dev/null"
+    .. " && test -f ${DESTDIR}/usr/include/idn2.h"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/libidn2.pc"
+    .. " && test -x ${DESTDIR}/usr/bin/idn2",
+}

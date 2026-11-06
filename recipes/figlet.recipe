@@ -1,0 +1,23 @@
+-- figlet.recipe — FIGlet 2.2.5, ASCII-art banner generator (standard
+-- font set incl. big.flf, which remenos renders its sequence with).
+-- Plain Makefile build (no configure): prefix/MANDIR overridden, font dir
+-- DEFAULTFONTDIR bakes to /usr/share/figlet and stays overridable at
+-- runtime via FIGLET_FONTDIR.
+
+return {
+  name         = "figlet",
+  version      = "2.2.5",
+  summary      = "ASCII art banner generator (FIGlet)",
+  -- canonical upstream file mirrored verbatim by Debian's pool (byte-identical,
+  -- cross-checked against the nixpkgs SRI hash); figlet.org's own TLS chain is
+  -- broken and its FTP endpoint is unusable for makepkg
+  url          = "https://deb.debian.org/debian/pool/main/f/figlet/figlet_2.2.5.orig.tar.gz",
+  sha256       = "bf88c40fd0f077dab2712f54f8d39ac952e4e9f2e1882f1195be9e5e4257417d",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-figlet.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/figlet"
+    .. " && test -f ${DESTDIR}/usr/share/figlet/big.flf"
+    .. " && test -f ${DESTDIR}/usr/share/figlet/standard.flf"
+    .. " && test \"$(FIGLET_FONTDIR=${DESTDIR}/usr/share/figlet ${DESTDIR}/usr/bin/figlet -f big hi | wc -l)\" -ge 5",
+}

@@ -1,0 +1,24 @@
+-- pip.recipe — pip 26.2.2, the PyPA package installer. Pure python: the
+-- build copies src/pip out of the sdist, assembles pip-26.2.2.dist-info
+-- (METADATA from the sdist's PKG-INFO, WHEEL/entry_points/RECORD
+-- generated) and writes the pip/pip3 shims. Source is the PyPI sdist
+-- rather than the wheel because the toolchain's extractor only handles
+-- tar archives.
+
+return {
+  name         = "pip",
+  version      = "26.2.2",
+  summary      = "The PyPA package installer (pip)",
+  url          = "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz",
+  sha256       = "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f",
+  deps         = { "python" },
+  build_system = "custom",
+  build_script = "build-pip.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/pip"
+    .. " && test -x ${DESTDIR}/usr/bin/pip3"
+    .. " && test -d $(echo ${DESTDIR}/usr/lib/python*/site-packages)/pip"
+    .. " && test -f $(echo ${DESTDIR}/usr/lib/python*/site-packages)/pip-26.2.2.dist-info/RECORD"
+    .. " && PYTHONPATH=$(echo ${DESTDIR}/usr/lib/python*/site-packages) python3 -c \"import pip._internal.cli.main\""
+    .. " && PYTHONPATH=$(echo ${DESTDIR}/usr/lib/python*/site-packages) python3 -c \"import importlib.metadata as m; assert m.version('pip') == '26.2.2'\""
+    .. " && PYTHONPATH=$(echo ${DESTDIR}/usr/lib/python*/site-packages) ${DESTDIR}/usr/bin/pip --version | grep -q \"pip 26.2.2\"",
+}

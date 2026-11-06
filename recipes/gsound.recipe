@@ -1,0 +1,17 @@
+-- gsound.recipe — 1.0.3: event sounds library (gstreamer-backed),
+-- required by gnome-control-center's sound panel.
+
+return {
+  name           = "gsound",
+  version        = "1.0.3",
+  summary        = "GStreamer event sound library for GNOME",
+  url            = "https://download.gnome.org/sources/gsound/1.0/gsound-1.0.3.tar.xz",
+  sha256         = "ca2d039e1ebd148647017a7f548862350bc9af01986d39f10cfdc8e95f07881a",
+  deps           = { "glibc", "glib", "gstreamer", "gobject-introspection", "libcanberra" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Denable_vala=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libgsound.so* | grep -q ."
+    .. " && ls ${DESTDIR}/usr/lib/pkgconfig/gsound*.pc | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/GSound-1.0.gir",
+}

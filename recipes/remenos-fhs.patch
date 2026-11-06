@@ -1,0 +1,27 @@
+diff --git a/game.sh b/game.sh
+index e7d662b..7a592df 100755
+--- a/game.sh
++++ b/game.sh
+@@ -3,7 +3,12 @@
+ # REMENOS SOURCE CODE
+ # THIS IS WHAT MAKES THE ENTIRE GAME EVEN POSSIBLE
+ 
+-BEST_SCORE_FILE="$HOME/remenos/best-score"
++# Assets live next to this script (/usr/share/remenos or ~/remenos)
++SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
++
++# Score state goes to the user XDG state dir (never the install dir)
++BEST_SCORE_FILE="${XDG_STATE_HOME:-$HOME/.local/state}/remenos/best-score"
++mkdir -p "$(dirname "$BEST_SCORE_FILE")"
+ 
+ # Load best score
+ if [[ -f "$BEST_SCORE_FILE" ]]; then
+@@ -79,7 +84,7 @@ random_char() {
+ 
+ play_sound() {
+     local char="$1"
+-    local path="$HOME/remenos/sfx"
++    local path="$SCRIPT_DIR/sfx"
+ 
+     if [[ "$char" =~ [0-9] ]]; then
+         paplay "$path/number.wav" &

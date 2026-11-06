@@ -1,0 +1,21 @@
+-- espeak-ng.recipe — espeak-ng 1.52.0, maintained continuation of espeak
+-- (the game/remenos checks for the plain `espeak` command).
+-- 1.52.0 is the last release with autoconf; its new CMake build is used
+-- here per upstream's recommendation:
+--   USE_LIBPCAUDIO=ON  audio output via pcaudiolib (ALSA -> pipewire)
+--   ESPEAK_COMPAT=ON   official option installing the espeak symlink
+-- All dictionaries are compiled in (upstream default).
+
+return {
+  name         = "espeak-ng",
+  version      = "1.52.0",
+  summary      = "Speech synthesizer for over 100 languages (espeak-ng with espeak compat CLI)",
+  url          = "https://github.com/espeak-ng/espeak-ng/archive/refs/tags/1.52.0.tar.gz",
+  sha256       = "bb4338102ff3b49a81423da8a1a158b420124b055b60fa76cfb4b18677130a23",
+  deps         = { "glibc", "gcc", "libgcc", "libstdc++", "pcaudiolib" },
+  build_system = "custom",
+  build_script = "build-espeak-ng.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/espeak-ng"
+    .. " && test -x ${DESTDIR}/usr/bin/espeak"
+    .. " && cd ${DESTDIR}/usr/bin && ./espeak-ng --version | grep -q 1.52",
+}

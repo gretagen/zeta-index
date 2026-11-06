@@ -1,0 +1,18 @@
+-- leancrypto.recipe — repack: index payload was libs-only (no headers/pc).
+-- Version "1.0" is the index label; source = upstream v1.9.1 which still
+-- produces libleancrypto.so.1 - and crucially ships leancrypto.pc with
+-- version >= 1.2.0, which gnutls' --with-leancrypto requires.
+
+return {
+  name           = "leancrypto",
+  version        = "1.0-2",
+  summary        = "Lean cryptographic library (PQC-resistant algorithms)",
+  url            = "https://github.com/smuellerDD/leancrypto/archive/refs/tags/v1.9.1.tar.gz",
+  sha256         = "c3fe73e0e164d69e8c88c64b1649513f8e4f41c2f541614a9c4298f6368aa194",
+  deps           = { "glibc" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "-Ddefault_library=shared", "--libdir=lib" },
+  test           = "ls ${DESTDIR}/usr/lib/libleancrypto.so.1* >/dev/null"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/leancrypto.pc"
+    .. " && ls ${DESTDIR}/usr/include/leancrypto/lc_aead.h >/dev/null",
+}

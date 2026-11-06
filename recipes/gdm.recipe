@@ -1,0 +1,23 @@
+-- gdm.recipe — GDM 51.1.1: packaged for libgdm + the Gdm-1.0 typelib,
+-- which gnome-shell's main.js hard-imports even in non-GDM sessions
+-- (boot died without it). Init-agnostic per BLFS: elogind provider,
+-- systemd journal off, both systemd unit dirs = no, PAM preset none.
+-- The daemon itself is NOT started — sessions launch via the normal
+-- dinit/login path; groupadd gdm happens on the host at install.
+
+return {
+  name         = "gdm",
+  version      = "51.1.1",
+  summary      = "GNOME Display Manager (libgdm + Gdm typelib for gnome-shell)",
+  url          = "https://download.gnome.org/sources/gdm/51/gdm-51.1.1.tar.xz",
+  sha256       = "390ae9e7540f71db28a3dc64319a8f687f4d88bd4d5f1ff816b7a9f2249ab4aa",
+  deps         = { "glibc", "glib", "accountsservice", "libdconf", "libcanberra",
+                   "polkit", "dbus", "elogind", "gobject-introspection",
+                   "libgudev", "libjson-glib", "keyutils" },
+  build_system = "custom",
+  build_script = "build-gdm.sh",
+  test         = "ls ${DESTDIR}/usr/lib/libgdm.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Gdm-1.0.typelib"
+    .. " && test -x ${DESTDIR}/usr/sbin/gdm"
+    .. " && ! find ${DESTDIR} -name '*.service' -path '*systemd*' | grep -q .",
+}

@@ -1,0 +1,15 @@
+-- libmatekbd.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "libmatekbd",
+  version        = "1.28.0",
+  summary        = "Keyboard library for MATE (Arch binary)",
+  url            = "https://pub.mate-desktop.org/releases/1.28/libmatekbd-1.28.0.tar.xz",
+  sha256         = "5d2e58483c2b23d33503d24c88f8b90a28cc0189d7e4001b3e273a604f6fe80e",
+  deps           = {  "cairo", "gdk-pixbuf", "glib", "gtk3", "libX11", "libxklavier", "pango"  },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -f ${DESTDIR}/usr/lib/pkgconfig/libmatekbd.pc",
+}

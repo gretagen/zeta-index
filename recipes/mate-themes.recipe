@@ -1,0 +1,15 @@
+-- mate-themes.recipe — MATE 3.22.26 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-themes",
+  version        = "3.22.26",
+  summary        = "Themes for MATE",
+  url            = "https://pub.mate-desktop.org/releases/themes/3.22/mate-themes-3.22.26.tar.xz",
+  sha256         = "224e89d364eb3b73f1cf756d05494a98421a93cbf54349a2c85fc607eb755ed7",
+  deps           = { "glibc" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

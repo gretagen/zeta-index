@@ -1,0 +1,14 @@
+-- nlohmann-json.recipe — header-only JSON for Modern C++, with a hand-written
+-- pkg-config file (meson's dependency('nlohmann_json') resolves via pc).
+
+return {
+  name         = "nlohmann-json",
+  version      = "3.12.0-2",
+  summary      = "JSON for Modern C++ (nlohmann/json single-header library)",
+  url          = "https://github.com/nlohmann/json/archive/refs/tags/v3.12.0.tar.gz",
+  sha256       = "4b92eb0c06d10683f7447ce9406cb97cd4b453be18d7279320f7b2f025c10187",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-nlohmann.sh",
+  test         = "test -f ${DESTDIR}/usr/include/nlohmann/json.hpp && test -f ${DESTDIR}/usr/include/nlohmann/detail/abi_macros.hpp && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists --print-errors nlohmann_json",
+}

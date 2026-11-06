@@ -1,0 +1,14 @@
+-- perl-xml-simple.recipe — XML::Simple 2.25: pure-perl dependency of icon-naming-utils
+-- (XML::Simple chain; icon-naming-utils needs it to build mate-icon-theme).
+
+return {
+  name           = "perl-xml-simple",
+  version        = "2.25",
+  summary        = "Perl XML::Simple module",
+  url            = "https://cpan.metacpan.org/modules/by-module/XML/XML-Simple-2.25.tar.gz",
+  sha256         = "531fddaebea2416743eb5c4fdfab028f502123d9a220405a4100e68fc480dbf8",
+  deps           = { "perl", "glibc" },
+  build_system   = "custom",
+  build_script   = "build-perl-module.sh",
+  test           = "PERL5LIB=$(echo ${DESTDIR}/usr/lib/perl5/vendor_perl/*):$(echo ${DESTDIR}/usr/lib/perl5/vendor_perl/*/x86_64*) perl -e \"use XML::Simple; print qq(XML::Simple ok\n)\"",
+}

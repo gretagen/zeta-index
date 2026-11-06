@@ -1,0 +1,15 @@
+-- unifdef.recipe — unifdef 2.12: build-time requirement of webkit2gtk
+-- (Source/cmake/FindUnifdef.cmake). Standalone C tool.
+
+return {
+  name         = "unifdef",
+  version      = "2.12",
+  summary      = "#ifdef preprocessor stripper (build tooling)",
+  url          = "https://deb.debian.org/debian/pool/main/u/unifdef/unifdef_2.12.orig.tar.gz",
+  sha256       = "fba564a24db7b97ebe9329713ac970627b902e5e9e8b14e19e024eb6e278d10b",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-unifdef.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/unifdef"
+    .. " && ${DESTDIR}/usr/bin/unifdef -V 2>&1 | grep -q 2.12",
+}

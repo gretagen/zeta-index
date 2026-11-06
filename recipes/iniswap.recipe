@@ -1,0 +1,33 @@
+-- iniswap.recipe — 1.10.2: init-swapping tool with its per-init handlers
+-- shipped under its own /usr/lib/iniswap — iniswap no longer depends on
+-- nacelle (handlers used to live at /usr/lib/nacelle/iniswap, delivered
+-- by the nacelle package). The shepherd drop-in guard assertions moved
+-- here from the nacelle contract since shepherd.sh is this package's now.
+
+return {
+  name         = "iniswap",
+  version      = "1.10.2",
+  summary      = "Utility for swapping init systems",
+  url          = "https://github.com/gretagen/iniswap/archive/b9456fa7d1372ecb8f22a6b7fa8e7cd1563d7fa6.tar.gz",
+  sha256       = "0d0578bfffe13e501919553ecf8804c4df466f1389a49ff70810511f63e4d06b",
+  deps         = { "bash", "chronos" },
+  build_system = "custom",
+  build_script = "build-iniswap.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/iniswap"
+    .. " && test -x ${DESTDIR}/usr/bin/reboot"
+    .. " && test -x ${DESTDIR}/usr/bin/shutdown"
+    .. " && test -x ${DESTDIR}/sbin/reboot"
+    .. " && test -x ${DESTDIR}/sbin/shutdown"
+    .. " && grep -q '/usr/lib/iniswap' ${DESTDIR}/usr/bin/iniswap"
+    .. " && grep -q 'shepherd' ${DESTDIR}/usr/bin/iniswap"
+    .. " && ! grep -q 'nacelle/iniswap' ${DESTDIR}/usr/bin/iniswap"
+    .. " && ! test -e ${DESTDIR}/usr/lib/nacelle"
+    .. " && test -f ${DESTDIR}/usr/lib/iniswap/systemd.sh"
+    .. " && test -f ${DESTDIR}/usr/lib/iniswap/openrc.sh"
+    .. " && test -f ${DESTDIR}/usr/lib/iniswap/runit.sh"
+    .. " && test -f ${DESTDIR}/usr/lib/iniswap/dinit.sh"
+    .. " && test -f ${DESTDIR}/usr/lib/iniswap/shepherd.sh"
+    .. " && grep -q 'primitive-load' ${DESTDIR}/usr/lib/iniswap/shepherd.sh"
+    .. " && grep -q 'catch #t' ${DESTDIR}/usr/lib/iniswap/shepherd.sh"
+    .. " && ! grep -q '(load (string-append' ${DESTDIR}/usr/lib/iniswap/shepherd.sh",
+}

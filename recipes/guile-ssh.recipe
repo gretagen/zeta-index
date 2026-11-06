@@ -1,0 +1,19 @@
+-- guile-ssh 0.18.0 — Guile bindings for libssh, required by guix.
+-- 0.18.0 is the version Guix 1.5.0 itself pins (v1.0.0 exists but is
+-- unproven against this guix release).
+
+return {
+  name           = "guile-ssh",
+  version        = "0.18.0",
+  summary        = "Guile bindings for libssh (required by Guix)",
+  url            = "https://github.com/artyom-poptsov/guile-ssh/archive/refs/tags/v0.18.0.tar.gz",
+  sha256         = "0a73ca82b549c2b41535f4e955c11370c7c97b6300128768c6439f4c8a12c685",
+  deps           = { "glibc", "guile", "libssh" },
+  build_system   = "custom",
+  build_script   = "build-guile-ssh.sh",
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/ssh/*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " LD_LIBRARY_PATH=${DESTDIR}/usr/lib"
+    .. " guile -c '(use-modules (ssh session))'",
+}

@@ -1,0 +1,15 @@
+-- gtksourceview.recipe — 3.24.11: GTK3 source highlighting library, the
+-- pluma editor dependency missing from the index.
+
+return {
+  name           = "gtksourceview",
+  version        = "3.24.11",
+  summary        = "Text editor widget with syntax highlighting (GTK3)",
+  url            = "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.11.tar.xz",
+  sha256         = "691b074a37b2a307f7f48edc5b8c7afa7301709be56378ccf9cc9735909077fd",
+  deps           = { "glibc", "glib", "gtk3", "libxml2" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection", "CFLAGS='-O2 -Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration -Wno-error=int-conversion'" },
+  test           = "test -f ${DESTDIR}/usr/lib/pkgconfig/gtksourceview-3.0.pc"
+    .. " && test -e ${DESTDIR}/usr/lib/libgtksourceview-3.0.so",
+}

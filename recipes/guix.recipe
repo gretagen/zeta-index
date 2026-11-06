@@ -1,0 +1,30 @@
+-- guix.recipe — GNU Guix 1.5.0 built from source (the full scheme
+-- dependency stack is now packaged: guile-gnutls/gcrypt/sqlite3/ssh/git/
+-- json/zlib/lzlib/semver/bytestructures + gnutls 3.8.13 with dev files).
+--
+-- Build runs guild compile over guix's modules (the long pole); tests stay
+-- structural-plus-version like the nix package (no daemon in the test).
+
+return {
+  name           = "guix",
+  version        = "1.5.0",
+  summary        = "GNU Guile-based functional package manager",
+  url            = "https://ftp.gnu.org/gnu/guix/guix-1.5.0.tar.gz",
+  sha256         = "df2102eed00aff0b17275654a42f094c8a1117ec065884eb1ff76005e47415c5",
+  deps           = {
+    "glibc", "guile", "gcc", "libgcc", "libstdc++",
+    "guile-gcrypt", "guile-sqlite3", "guile-ssh", "guile-gnutls",
+    "guile-git", "guile-json", "guile-zlib", "guile-lzlib", "guile-semver",
+    "gnutls", "sqlite", "libgcrypt", "curl", "expat", "bzip2",
+  },
+  archive_format = "xz",
+  build_system   = "custom",
+  build_script   = "build-guix.sh",
+  test           = "test -x ${DESTDIR}/usr/bin/guix"
+    .. " && test -x ${DESTDIR}/usr/bin/guix-daemon"
+    .. " && test -x ${DESTDIR}/usr/libexec/guix/guile"
+    .. " && test -f ${DESTDIR}/usr/share/guile/site/3.0/gnu/packages.scm"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/3.0/site-ccache"
+    .. " guile --no-auto-compile -e main -s ${DESTDIR}/usr/bin/guix --version | grep -q 1.5.0",
+}

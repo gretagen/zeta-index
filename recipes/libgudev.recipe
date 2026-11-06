@@ -1,0 +1,18 @@
+-- libgudev.recipe — 238-2: repack with GObject Introspection. The old
+-- package shipped the library only; gnome-shell's JS hard-imports the
+-- GUdev typelib at boot.
+
+return {
+  name           = "libgudev",
+  version        = "238-2",
+  summary        = "GObject bindings for libudev (gir-enabled)",
+  url            = "https://download.gnome.org/sources/libgudev/238/libgudev-238.tar.xz",
+  sha256         = "61266ab1afc9d73dbc60a8b2af73e99d2fdff47d99544d085760e4fa667b5dd1",
+  deps           = { "glibc", "glib", "systemd-libs", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dintrospection=enabled", "-Dvapi=disabled", "-Dtests=disabled" },
+  test           = "ls ${DESTDIR}/usr/lib/libgudev-1.0.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/GUdev-1.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/GUdev-1.0.typelib",
+}

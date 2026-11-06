@@ -1,0 +1,15 @@
+-- gtk2.recipe — GTK+ 2.24.33: legacy toolkit mate-themes hard-requires
+-- (PKG_CHECK_MODULES THEME_ENGINE on gtk+-2.0, no opt-out). Also serves
+-- any gtk2 engines/themes on the system.
+
+return {
+  name           = "gtk2",
+  version        = "2.24.33",
+  summary        = "GTK+ 2 toolkit (legacy apps and theme engines)",
+  url            = "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.33.tar.xz",
+  sha256         = "ac2ac757f5942d318a311a54b0c80b5ef295f299c2a73c632f6bfb1ff49cc6da",
+  deps           = { "libcups",  "at-spi2-core",  "libXdamage",  "libXcomposite",  "glibc", "glib", "cairo", "pango", "gdk-pixbuf", "atk", "libX11", "libXext", "libXrender", "libXinerama", "libXrandr", "libXcursor", "libXfixes", "pango" },
+  build_system   = "custom",
+  build_script   = "build-gtk2.sh",
+  test           = "test -f ${DESTDIR}/usr/lib/pkgconfig/gtk+-2.0.pc || test -f ${DESTDIR}/usr/lib64/pkgconfig/gtk+-2.0.pc",
+}

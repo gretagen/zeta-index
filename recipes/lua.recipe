@@ -1,0 +1,22 @@
+-- lua.recipe — lua 5.5.1-2: repack fixing the pkg-config files (Libs said
+-- -llua5.5 while the payload ships liblua.so, so every pkg-config consumer
+-- failed at link time; weechat exposed it). Payload otherwise identical:
+-- PIC static+shared lib, lua/luac interpreters, headers in
+-- include/lua5.5. The test links a real program through the staged pc.
+
+return {
+  name         = "lua",
+  version      = "5.5.1-2",
+  summary      = "Lua 5.5 shared library (liblua) for embedding",
+  url          = "https://www.lua.org/ftp/lua-5.5.1.tar.gz",
+  sha256       = "1c4b4068d67061f2a2231ad2b5422e77acea1487ea9890f6320af614f4373dce",
+  deps         = { "glibc", "readline" },
+  build_system = "custom",
+  build_script = "build-lua.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/liblua.so.5.5"
+    .. " && test -x ${DESTDIR}/usr/bin/lua"
+    .. " && ${DESTDIR}/usr/bin/lua -v 2>&1 | grep -q 5.5.1"
+    .. " && ! grep -q llua5.5 ${DESTDIR}/usr/lib/pkgconfig/lua.pc"
+    .. " && ! grep -q llua5.5 ${DESTDIR}/usr/lib/pkgconfig/lua5.5.pc"
+    .. " && printf \"#include <lua.h>\\n#include <lauxlib.h>\\nint main(void){lua_State *L = luaL_newstate(); if (L) lua_close(L); return 0;}\\n\" | gcc -x c - -o /tmp/lua-link-smoke $(PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig PKG_CONFIG_SYSROOT_DIR=${DESTDIR} pkg-config --cflags --libs lua5.5) && rm -f /tmp/lua-link-smoke",
+}

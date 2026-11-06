@@ -1,0 +1,20 @@
+-- guile-gnutls 5.0.1 — Scheme bindings for GnuTLS, the module `(gnutls)`
+-- that guix's configure requires (upstream gnutls dropped its bundled
+-- bindings after 3.7.8; this standalone package supersedes them).
+
+return {
+  name           = "guile-gnutls",
+  version        = "5.0.1",
+  summary        = "Guile bindings for the GnuTLS library",
+  url            = "https://ftpmirror.gnu.org/gnutls/guile-gnutls-v5.0.1-src.tar.gz",
+  sha256         = "b190047cee068f6b22a5e8d49ca49a2425ad4593901b9ac8940f8842ba7f164f",
+  deps           = { "glibc", "guile", "gnutls" },
+  build_system   = "custom",
+  build_script   = "build-guile-gnutls.sh",
+  test           = "test -d ${DESTDIR}/usr/share/guile/site/3.0"
+    .. " && ls ${DESTDIR}/usr/share/guile/site/3.0/gnutls*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " LD_LIBRARY_PATH=${DESTDIR}/usr/lib/guile/3.0/extensions"
+    .. " guile -c '(use-modules (gnutls))'",
+}

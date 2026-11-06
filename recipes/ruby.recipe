@@ -1,0 +1,16 @@
+-- ruby.recipe — ruby 3.4.5: build-time requirement of webkit2gtk (its
+-- generated WebCore bindings scripts run on ruby). Shared library so
+-- ruby gems can link; docs off.
+
+return {
+  name           = "ruby",
+  version        = "3.4.5",
+  summary        = "Ruby interpreter (build tooling + scripting)",
+  url            = "https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.5.tar.xz",
+  sha256         = "7b3a905b84b8777aa29f557bada695c3ce108390657e614d2cc9e2fb7e459536",
+  deps           = { "glibc", "openssl", "libz", "readline", "libyaml", "libffi", "libxcrypt", "gcc", "gmp" },
+  build_system   = "autotools",
+  configure_args = { "--disable-install-doc", "--enable-shared" },
+  test           = "test -x ${DESTDIR}/usr/bin/ruby"
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib ${DESTDIR}/usr/bin/ruby -e 'print 40+2' | grep -q 42",
+}

@@ -1,0 +1,18 @@
+-- gjs.recipe — gjs 1.90.1: GNOME's JavaScript bindings, the language
+-- gnome-shell is written in. Needs mozjs-140 (provided) and gir-enabled
+-- glib/cairo. Profiler off, installed-tests off.
+
+return {
+  name           = "gjs",
+  version        = "1.90.1",
+  summary        = "JavaScript bindings for GNOME (gjs runtime)",
+  url            = "https://download.gnome.org/sources/gjs/1.90/gjs-1.90.1.tar.xz",
+  sha256         = "05ceaa80f48e3782e5c44938572fad863e02b8c4a6c55657a99aa81db8ce9efa",
+  deps           = { "glibc", "glib", "cairo", "mozjs", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dprofiler=disabled", "-Dinstalled_tests=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libgjs.so"
+    .. " && test -x ${DESTDIR}/usr/bin/gjs"
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib ${DESTDIR}/usr/bin/gjs -c 'print(40+2)' | grep -q 42",
+}

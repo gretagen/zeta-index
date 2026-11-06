@@ -1,0 +1,32 @@
+-- evolution-data-server.recipe — EDS 3.62.1: contacts/calendar/task
+-- backend, hard requirement of gnome-shell (clock/calendar). Vala bindings
+-- off (no valac), ldap/krb5/libdb off, introspection on,
+-- WITH_SYSTEMDUSERUNITDIR=no so no units ship (iniswap-clean).
+
+return {
+  name           = "evolution-data-server",
+  version        = "3.62.1",
+  summary        = "Contacts/calendar/tasks backend for GNOME (libedataserver)",
+  url            = "https://download.gnome.org/sources/evolution-data-server/3.62/evolution-data-server-3.62.1.tar.xz",
+  sha256         = "b75c823445d7d30bca797eee929809e8d389abbb8d471f68ae2af60972779f26",
+  deps           = { "glibc", "glib", "gtk3", "gtk4", "libical", "libsecret", "nss", "sqlite",
+                     "icu", "libjson-glib", "curl", "libsoup3", "gobject-introspection", "pcre2",
+                     "libcanberra", "libgweather-4", "webkit2gtk-4.1" },
+  build_system   = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DSYSCONF_INSTALL_DIR=/etc",
+                     "-DENABLE_VALA_BINDINGS=OFF",
+                     "-DENABLE_INTROSPECTION=ON",
+                     "-DENABLE_GTK_DOC=OFF",
+                     "-DWITH_OPENLDAP=OFF",
+                     "-DWITH_KRB5=OFF",
+                     "-DWITH_LIBDB=OFF",
+                     "-DWITH_SYSTEMDUSERUNITDIR=no",
+                     "-DENABLE_OAUTH2_WEBKITGTK4=OFF",
+                     "-DENABLE_GOA=OFF",
+                     "-Wno-dev" },
+  test           = "ls ${DESTDIR}/usr/lib/libedataserver-1.2.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/EDataServer-1.2.gir"
+    .. " && ls ${DESTDIR}/usr/share/dbus-1/services/org.gnome.evolution.dataserver*.service | grep -q ."
+    .. " && ! ls ${DESTDIR}/usr/lib/systemd 2>/dev/null | grep -q .",
+}

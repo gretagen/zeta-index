@@ -1,0 +1,36 @@
+-- nacelle.recipe — nacelle 3.1.4: the iniswap init handlers moved out to
+-- the iniswap package (/usr/lib/iniswap), so nacelle no longer ships or
+-- depends on them — iniswap works standalone. Payload = launcher + lua
+-- tree only (README/LICENSE stay out, as before). Shepherd guard
+-- assertions now live in the iniswap contract.
+
+return {
+  name           = "nacelle",
+  version        = "3.1.4",
+  summary        = "Haliade declarative definition system and house management (nacelle)",
+  url            = "https://github.com/gretagen/Nacelle/archive/e845757130ad6492e5f35e377cf031c817131d52.tar.gz",
+  sha256         = "8065916d31dba0b9447eecf6b38e8d89adafec59281971c743e653579ca1fe36",
+  deps           = { "lua", "bash", "chronos" },
+  build_system   = "custom",
+  build_script   = "build-nacelle.sh",
+  test           = "test -x ${DESTDIR}/usr/bin/nacelle"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/sync.lua"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/registry.lua"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/plugins.lua"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/config.lua"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/house-handlers/house_sync.lua"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/house-handlers/config.lua"
+    .. " && test -d ${DESTDIR}/usr/lib/nacelle/house-handlers/house_generators"
+    .. " && test -f ${DESTDIR}/usr/lib/nacelle/generators/shepherd-services.lua"
+    .. " && test ! -e ${DESTDIR}/usr/lib/nacelle/house-handlers/house-sync"
+    .. " && ${DESTDIR}/usr/bin/nacelle help | grep -q 'Usage: nacelle'"
+    .. " && ${DESTDIR}/usr/bin/nacelle help | grep -q 'repower'"
+    .. " && ${DESTDIR}/usr/bin/nacelle help | grep -q 'see-registered'"
+    .. " && ${DESTDIR}/usr/bin/nacelle help | grep -q 'enable-generator'"
+    .. " && grep -q 'zeta -Delete' ${DESTDIR}/usr/lib/nacelle/generators/packages.lua"
+    .. " && ! grep -q 'zeta -Remove' ${DESTDIR}/usr/lib/nacelle/generators/packages.lua"
+    .. " && ! grep -rq '/usr/lib/declaration\\|/usr/lib/house-handlers\\|/etc/haliade' ${DESTDIR}/usr/lib/nacelle ${DESTDIR}/usr/bin/nacelle"
+    .. " && lua -e 'assert(loadfile(\"${DESTDIR}/usr/lib/nacelle/registry.lua\"))'"
+    .. " && lua -e 'assert(loadfile(\"${DESTDIR}/usr/lib/nacelle/generators/shepherd-services.lua\"))'"
+    .. " && lua -e 'package.path=\"${DESTDIR}/usr/lib/nacelle/?.lua;${DESTDIR}/usr/lib/nacelle/generators/?.lua;\" .. package.path; local p=require(\"plugins\"); local l=p.enabled_generators(\"/nonexistent/enabled_modules.lua\"); assert(type(l)==\"table\" and #l>=20)'",
+}

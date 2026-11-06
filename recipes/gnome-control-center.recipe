@@ -1,0 +1,25 @@
+-- gnome-control-center recipe — 51.1: GNOME Settings. Init-agnostic:
+-- plain meson, no units of its own. Tests/docs/snap off. Samba is
+-- deliberately not declared yet — the closure check decides whether the
+-- file-sharing panel really links it (BLFS lists it, meson may not).
+
+return {
+  name           = "gnome-control-center",
+  version        = "51.1",
+  summary        = "GNOME Settings (control center)",
+  url            = "https://download.gnome.org/sources/gnome-control-center/51/gnome-control-center-51.1.tar.xz",
+  sha256         = "1054976c2f1977f770ba134b872f547c89db7005e4422f09a96d521379c083cb",
+  deps           = { "glibc", "glib", "gtk4", "gtk3", "libadwaita", "gnome-desktop",
+                     "gnome-settings-daemon", "accountsservice", "colord-gtk", "colord",
+                     "libcups", "gnome-bluetooth", "gnome-online-accounts", "gsound",
+                     "libgtop", "libnma", "libpwquality", "krb5", "ModemManager", "samba",
+                     "udisks2", "shared-mime-info", "tecla", "blueprint-compiler", "ibus",
+                     "gobject-introspection", "upower", "gsettings-desktop-schemas",
+                     "libwacom", "libsecret", "polkit", "gcr-4", "networkmanager" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dtests=false", "-Ddocumentation=false", "-Dsnap=false" },
+  test           = "test -x ${DESTDIR}/usr/bin/gnome-control-center"
+    .. " && test -x ${DESTDIR}/usr/libexec/gnome-control-center-search-provider"
+    .. " && ${DESTDIR}/usr/bin/gnome-control-center --version | grep -q 51",
+}

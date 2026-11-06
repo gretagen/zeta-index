@@ -1,0 +1,28 @@
+-- identity.recipe — Haliade system identity 1.0 (savonius): ships
+-- /etc/os-release, the OS's canonical name/version/codename file. The
+-- base metapackage depends on it. clean_stage = false is REQUIRED and
+-- deliberate: the toolchain strips etc/os-release from every payload
+-- (base-system file protection) — this package IS the sanctioned owner of
+-- that file, so the stage filter steps aside; zeta itself never filters
+-- it at install time.
+
+return {
+  name         = "identity",
+  version      = "1.0",
+  summary      = "Haliade system identity (/etc/os-release)",
+  url          = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/identity/identity-1.0.tar.gz",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-identity.sh",
+  clean_stage  = false,
+  test         = "test -f ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'NAME=\"HaliadeSYS\"' ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'PRETTY_NAME=\"HaliadeSYS (Ver 1.0 : Savonius)\"' ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'ID=haliade' ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'VERSION_CODENAME=savonius' ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'VERSION=\"1.0\"' ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'HOME_URL=\"https://github.com/gretagen/HaliadeSYS\"' ${DESTDIR}/etc/os-release"
+    .. " && grep -qxF 'LOGO=haliade' ${DESTDIR}/etc/os-release"
+    .. " && test \"$(wc -l < ${DESTDIR}/etc/os-release)\" -eq 7"
+    .. " && ! grep -q Devalas ${DESTDIR}/etc/os-release",
+}

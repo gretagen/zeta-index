@@ -1,0 +1,16 @@
+-- colord-gtk recipe — 0.3.1: GTK bindings for colord, required by
+-- gnome-control-center (color management panel glue).
+
+return {
+  name           = "colord-gtk",
+  version        = "0.3.1",
+  summary        = "GTK widgets and helpers for colord",
+  url            = "https://github.com/hughsie/colord-gtk/archive/refs/tags/0.3.1.tar.gz",
+  sha256         = "9cfb3aa8958dc3fad6c74a7e2e967d182a355a24bea2c6dfb32c4fba87228f7e",
+  deps           = { "glibc", "glib", "gtk3", "colord", "lcms2", "gobject-introspection", "gtk4" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Ddocs=false", "-Dman=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libcolord-gtk.so* | grep -q ."
+    .. " && ls ${DESTDIR}/usr/lib/pkgconfig/colord-gtk*.pc | grep -q .",
+}

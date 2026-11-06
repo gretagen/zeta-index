@@ -1,0 +1,25 @@
+-- dbus.recipe — 1.16.2-3: system bus. The launch helper must be
+-- root:messagebus mode 4750 — without the group, every PRIVILEGED
+-- activation (UPower, polkit, colord, GeoClue, AccountsService) fails
+-- with "Permission of the setuid helper is not correct". The stage build
+-- forces the mode; the install hook applies ownership at provide time
+-- (zeta runs as root then; at build time it is best-effort).
+
+return {
+  name         = "dbus",
+  version      = "1.16.2-3",
+  summary      = "D-Bus message bus (system + session)",
+  url          = "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.16.2.orig.tar.xz",
+  sha256       = "0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2",
+  deps         = { "glibc", "libX11", "audit", "libcap-ng", "expat", "systemd-libs" },
+  build_system = "custom",
+  build_script = "build-dbus.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/dbus-daemon"
+    .. " && test \"$(stat -c %a ${DESTDIR}/usr/libexec/dbus-daemon-launch-helper)\" = 4750"
+    .. " && test -x ${DESTDIR}/usr/bin/dbus-send",
+  -- Provide-time hook (runs as root after extraction): the group is what
+  -- the stage build cannot express. 4750 root:messagebus = the system bus
+  -- may use the helper, nobody else may.
+  install      = "chown root:messagebus ${DESTDIR}/usr/libexec/dbus-daemon-launch-helper"
+    .. " && chmod 4750 ${DESTDIR}/usr/libexec/dbus-daemon-launch-helper",
+}

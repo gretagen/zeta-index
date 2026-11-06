@@ -1,0 +1,20 @@
+-- ModemManager recipe — 1.24.2: modem daemon + libmm-glib, required by
+-- gnome-control-center (WWAN/mobile broadband panel). The daemon is never
+-- started (init-agnostic: dbus activation only); gitlab source archive.
+
+return {
+  name           = "ModemManager",
+  version        = "1.24.2",
+  summary        = "ModemManager daemon and libmm-glib",
+  url            = "https://gitlab.freedesktop.org/modemmanager/modemmanager/-/archive/1.24.2/modemmanager-1.24.2.tar.bz2",
+  sha256         = "9e2569347e8dc5d2ac891f8ce4f207da760b1787b190296508b28ee2ff9ede97",
+  deps           = { "glibc", "glib", "libgudev", "gobject-introspection", "libxml2", "polkit" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dvapi=false", "-Dgtk_doc=false", "-Dman=false", "-Dtests=false",
+                     "-Dbash_completion=false", "-Dmbim=false", "-Dqmi=false", "-Dqrtr=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libmm-glib.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/mm-glib.pc"
+    .. " && test -x ${DESTDIR}/usr/sbin/ModemManager"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/ModemManager-1.0.gir",
+}

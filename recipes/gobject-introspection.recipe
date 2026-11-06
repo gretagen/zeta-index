@@ -1,0 +1,18 @@
+-- gobject-introspection.recipe — 1.86.0-2: upstream scanner crashes on
+-- python >= 3.12 (module-level `import distutils`); this build guards the
+-- windows-only block so g-ir-scanner runs — unblocks gir/typelib generation
+-- across the MATE campaign (mozo needs MateMenu + Gtk typelibs).
+
+return {
+  name           = "gobject-introspection",
+  version        = "1.86.0-2",
+  summary        = "GObject introspection data and tooling",
+  url            = "https://download.gnome.org/sources/gobject-introspection/1.86/gobject-introspection-1.86.0.tar.xz",
+  sha256         = "920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae",
+  deps           = { "glibc", "glib", "cairo", "libffi", "python" },
+  build_system   = "custom",
+  build_script   = "build-gobject-introspection.sh",
+  test           = "test -x ${DESTDIR}/usr/bin/g-ir-scanner"
+    .. " && test -x ${DESTDIR}/usr/bin/g-ir-compiler"
+    .. " && ${DESTDIR}/usr/bin/g-ir-scanner --version | grep -q 1.86",
+}

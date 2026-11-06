@@ -1,0 +1,15 @@
+-- perl-xml-parser.recipe — XML::Parser 2.47: expat bindings, required by
+-- intltool's configure (XML::Parser perl module) for the MATE builds.
+
+return {
+  name           = "perl-xml-parser",
+  version        = "2.47",
+  summary        = "Perl XML::Parser module (expat bindings)",
+  url            = "https://cpan.metacpan.org/modules/by-module/XML/XML-Parser-2.47.tar.gz",
+  sha256         = "ad4aae643ec784f489b956abe952432871a622d4e2b5c619e8855accbfc4d1d8",
+  deps           = { "perl", "glibc", "expat" },
+  build_system   = "custom",
+  build_script   = "build-perl-xml-parser.sh",
+  test           = "test -n \"$(find ${DESTDIR} -name Parser.pm | head -1)\""
+    .. " && PERL5LIB=$(echo ${DESTDIR}/usr/lib/perl5/vendor_perl/*):$(echo ${DESTDIR}/usr/lib/perl5/vendor_perl/*/x86_64*) perl -e \"use XML::Parser; print qq(XML::Parser loads ok\\n)\"",
+}

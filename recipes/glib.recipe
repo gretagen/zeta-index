@@ -1,0 +1,19 @@
+-- glib.recipe — GLib 2.90.1: the GNOME 51 platform glib (gtk4 4.24
+-- requires >= 2.89.3). Same stable libglib-2.0.so.0 soname, ABI-safe.
+-- Introspection on (the distro's gir-enabled glib), wraps off (gettext is
+-- present so no proxy-libintl fallback is needed).
+
+return {
+  name           = "glib",
+  version        = "2.90.1",
+  summary        = "Low-level core utility library (gir-enabled)",
+  url            = "https://download.gnome.org/sources/glib/2.90/glib-2.90.1.tar.xz",
+  sha256         = "93c941aa17d5eb1d53fe838365f29a8b4e539c222a256d974ec8f30fc413e396",
+  deps           = { "glibc", "libffi", "libz", "pcre2", "libelf", "util-linux", "gobject-introspection", "gettext" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload", "-Dintrospection=enabled", "-Dsysprof=disabled" },
+  test           = "test -f ${DESTDIR}/usr/lib/libglib-2.0.so.0"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/GLib-2.0.typelib"
+    .. " && test -x ${DESTDIR}/usr/bin/glib-compile-schemas"
+    .. " && ${DESTDIR}/usr/bin/glib-compile-schemas --version | grep -q 2.90",
+}

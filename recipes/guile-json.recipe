@@ -1,0 +1,18 @@
+-- guile-json 4.7.3 — JSON bindings for guile, required by guix.
+-- guix's configure m4 requires the 4.3+ API (define-json-mapping +
+-- json->scm roundtrip); 4.7.3 is guix 1.5.0's own pinned version.
+
+return {
+  name           = "guile-json",
+  version        = "4.7.3",
+  summary        = "JSON bindings for Guile (required by Guix, >=4.3 API)",
+  url            = "https://download.savannah.gnu.org/releases/guile-json/guile-json-4.7.3.tar.gz",
+  sha256         = "38ba048ed29d12f05b32c5b2fb7a51795c448b41e403a2b1b72ff0035817f388",
+  deps           = { "glibc", "guile" },
+  build_system   = "autotools",
+  configure_args = { "--libdir=/usr/lib" },
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/json*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " guile -c '(use-modules (json)) (exit (if (defined? (quote define-json-mapping)) 0 1))'",
+}

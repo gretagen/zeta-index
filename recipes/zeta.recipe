@@ -1,0 +1,34 @@
+-- zeta.recipe — Zeta package manager 1.0.71: zip/whl payload extraction
+-- (zipinfo two-phase safety, strip via temp moves — needed for the noto-cjk
+-- font releases) plus install hooks that run after archive extraction
+-- (ownership/mode fixes staging cannot express, e.g. the dbus launch
+-- helper root:messagebus 4750 — manifest validation now allows the
+-- archive+install combination). Payload mirrors the previous package
+-- exactly: launcher
+-- + entry point + library tree; the launcher resolves zeta.lua relative
+-- to itself, so staged runs work for the -Help smoke test.
+--
+-- archive_format "zst" keeps the established .tar.zst naming (zeta's
+-- extractor auto-detects the compression regardless of the extension).
+
+return {
+  name           = "zeta",
+  version        = "1.0.71",
+  summary        = "Zeta package manager for Haliade system",
+  url            = "https://github.com/gretagen/ZETA/archive/76a139e370d891ab08843b50e906d0ccb2343295.tar.gz",
+  sha256         = "b7e366688e4fb428ae197e83f87b3234270aa54b043984d39e63f5b4b00b37b3",
+  deps           = { "lua", "patchelf", "desktop-file-utils" },
+  -- stock toolchain only accepts gz/xz (the old .tar.zst was packed
+  -- externally); zeta's extractor auto-detects compression either way
+  build_system   = "custom",
+  build_script   = "build-zeta.sh",
+  test           = "test -x ${DESTDIR}/usr/bin/zeta"
+    .. " && test -f ${DESTDIR}/usr/lib/zeta/zeta.lua"
+    .. " && ! test -f ${DESTDIR}/usr/lib/zeta/lib/adopt.lua"
+    .. " && for f in ${DESTDIR}/usr/lib/zeta/zeta.lua ${DESTDIR}/usr/lib/zeta/lib/*.lua; do lua -e \"assert(loadfile('$f'))\" || exit 1; done"
+    .. " && grep -q -- '-Delete' ${DESTDIR}/usr/bin/zeta"
+    .. " && ! grep -q -- '-Remove' ${DESTDIR}/usr/bin/zeta"
+    .. " && grep -q -- '-Delete' ${DESTDIR}/usr/lib/zeta/lib/cli.lua"
+    .. " && ! grep -q -- '-Remove' ${DESTDIR}/usr/lib/zeta/lib/cli.lua"
+    .. " && ${DESTDIR}/usr/bin/zeta -Help | grep -q 'Usage: zeta'",
+}

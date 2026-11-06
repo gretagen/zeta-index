@@ -1,0 +1,24 @@
+-- networkmanager recipe — 1.58.1: libnm upgrade required by
+-- gnome-control-center (needs libnm >= 1.52; host had 1.51.4). Same
+-- scope as the previous package: daemon + libnm + the usual backends
+-- (iwd/wpa_supplicant, dnsmasq, dhcpcd helpers). Gitlab source archive.
+
+return {
+  name           = "networkmanager",
+  version        = "1.58.1",
+  summary        = "Network management daemon (wifi iwd+wpa_supplicant, dnsmasq, dhcpcd)",
+  url            = "https://gitlab.freedesktop.org/NetworkManager/NetworkManager/-/archive/1.58.1/NetworkManager-1.58.1.tar.bz2",
+  sha256         = "50f0beefa02ff16159177e88379d7819edf6527b2cc25639ab4e62d8a15ca127",
+  deps           = { "glibc", "glib", "dbus", "libnl", "curl", "libndp", "libpsl", "systemd-libs",
+                     "libz", "iwd", "wpa_supplicant", "dnsmasq", "dhcpcd", "gobject-introspection",
+                     "polkit", "elogind", "libgudev", "ncurses", "newt", "nss" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dsystemdsystemunitdir=no", "-Dman=false", "-Ddocs=false",
+                     "-Dselinux=false", "-Dlibaudit=no", "-Dppp=false",
+                     "-Dmodem_manager=false", "-Dovs=false", "-Dnm_cloud_setup=false",
+                     "-Dnbft=false", "-Debpf=false", "-Dclat=false" },
+  test           = "test -x ${DESTDIR}/usr/sbin/NetworkManager"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists libnm"
+    .. " && ! ls ${DESTDIR}/usr/lib/systemd 2>/dev/null | grep -q .",
+}

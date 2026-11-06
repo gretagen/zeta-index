@@ -1,0 +1,19 @@
+-- dbus-glib.recipe — 0.112-2: repack adding the dev payload (dbus-glib-1.pc,
+-- headers, .so symlink) the previous package lacked — its lib-only build
+-- broke every pkg-config dbus-glib-1 configure check (mate-session-manager,
+-- mate-settings-daemon, mate-panel, mate-power-manager...).
+
+return {
+  name           = "dbus-glib",
+  version        = "0.112-2",
+  summary        = "GLib integration for the freedesktop D-Bus message bus",
+  url            = "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.112.tar.gz",
+  sha256         = "7d550dccdfcd286e33895501829ed971eeb65c614e73aadb4a08aeef719b143a",
+  deps           = { "glibc", "glib", "dbus" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "CFLAGS='-O2 -std=gnu11'" },
+  test           = "test -f ${DESTDIR}/usr/lib/pkgconfig/dbus-glib-1.pc"
+    .. " && test -f ${DESTDIR}/usr/include/dbus-1.0/dbus/dbus-glib.h"
+    .. " && test -e ${DESTDIR}/usr/lib/libdbus-glib-1.so"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists dbus-glib-1",
+}

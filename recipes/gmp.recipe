@@ -1,0 +1,19 @@
+-- gmp.recipe — repack: the index payload shipped only libgmp.so (no headers,
+-- no gmp.pc), so consumers like libqalculate cannot build against it.
+-- Version follows the index soname-based convention (libgmp.so.10.5.0 ==
+-- GMP 6.3.0 upstream). Custom build: gmp 6.3.0's configure conftests use
+-- pre-C23 prototype semantics ("()" == unspecified args), which GCC 15+
+-- rejects under its gnu23 default, so force -std=gnu17. --disable-cxx and
+-- --disable-static keep the payload focused: shared lib + gmp.h + gmp.pc.
+
+return {
+  name         = "gmp",
+  version      = "10.5.0-2",
+  summary      = "GNU multiple precision arithmetic",
+  url          = "https://ftp.gnu.org/gnu/gmp/gmp-6.3.0.tar.xz",
+  sha256       = "a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-gmp.sh",
+  test         = "test -f ${DESTDIR}/usr/include/gmp.h && test -f ${DESTDIR}/usr/lib/pkgconfig/gmp.pc && test -f ${DESTDIR}/usr/lib/libgmp.so.10",
+}

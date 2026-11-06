@@ -1,0 +1,19 @@
+-- shared-mime-info.recipe — 2.5.1-2: rebuild with the mime database
+-- properly generated. The installed package shipped a 244-byte stub
+-- mime.cache with no packages/*.xml, so every GIO content-type guess
+-- returned application/octet-stream — gdk-pixbuf could not recognize
+-- ANY image format (PNG rendering broken system-wide).
+
+return {
+  name           = "shared-mime-info",
+  version        = "2.5.1-2",
+  summary        = "shared MIME type database and update tool",
+  url            = "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.5.1/shared-mime-info-2.5.1.tar.gz",
+  sha256         = "ea248ea157b7fa0165f4fe282c84919fa84c3f175553642f229c8f1ab7539128",
+  deps           = { "glibc", "glib", "libxml2", "gcc", "libgcc", "libstdc++" },
+  build_system   = "custom",
+  build_script   = "build-shared-mime-info.sh",
+  test           = "test -x ${DESTDIR}/usr/bin/update-mime-database"
+    .. " && test -f ${DESTDIR}/usr/share/mime/packages/freedesktop.org.xml"
+    .. " && test $(stat -c%s ${DESTDIR}/usr/share/mime/mime.cache) -gt 50000",
+}

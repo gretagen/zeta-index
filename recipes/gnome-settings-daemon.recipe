@@ -1,0 +1,21 @@
+-- gnome-settings-daemon.recipe — gsd 51.1: settings daemons (color, power,
+-- media-keys, keyboard...), hard requirement of mutter. BLFS's two fixes
+-- applied; -Dsystemd=false so no units ever ship (iniswap-clean).
+
+return {
+  name         = "gnome-settings-daemon",
+  version      = "51.1",
+  summary      = "GNOME settings daemons (color, power, media keys)",
+  url          = "https://download.gnome.org/sources/gnome-settings-daemon/51/gnome-settings-daemon-51.1.tar.xz",
+  sha256       = "e7de8d30ae2d63c7a9a21f8f0247219275cbc1d7f5ed09205e4a47642666f6ae",
+  deps         = { "glibc", "glib", "gtk4", "gtk3", "gnome-desktop", "geoclue2", "geocode-glib",
+                   "libgweather-4", "libcanberra", "libnotify", "libwacom", "alsa-lib",
+                   "fontconfig", "gcr-4", "upower", "pulseaudio", "networkmanager",
+                   "gsettings-desktop-schemas", "gobject-introspection" },
+  build_system = "custom",
+  build_script = "build-gsd.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/gnome-settings-daemon-51/libgsd.so"
+    .. " && test -f ${DESTDIR}/usr/share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml"
+    .. " && test -f ${DESTDIR}/usr/share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.power.gschema.xml"
+    .. " && ! ls ${DESTDIR}/usr/lib/systemd 2>/dev/null | grep -q .",
+}

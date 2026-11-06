@@ -1,0 +1,19 @@
+-- openrgb.recipe — OpenRGB 1.1: RGB lighting control (daemon/CLI/GUI).
+-- qmake+Qt6 build (upstream switched from cmake); needs mbedtls 3.x
+-- (NOT 4.x), system hidapi and libusb. The upstream systemd service is
+-- stripped by clean_stage — no unit ships, any init works.
+
+return {
+  name         = "openrgb",
+  version      = "1.1",
+  summary      = "Open source RGB lighting control",
+  url          = "https://github.com/CalcProgrammer1/OpenRGB/archive/refs/tags/release_1.1.tar.gz",
+  sha256       = "5983cd8daf5fd0d56c83e3d0699bdb7429a69702d7147f8883a27c252dcc367d",
+  deps         = { "glibc", "libgcc", "libstdc++", "libusb", "hidapi", "qtbase",
+                   "mbedtls", "libX11", "libXrandr", "dbus" },
+  build_system = "custom",
+  build_script = "build-openrgb.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/openrgb"
+    .. " && test -f ${DESTDIR}/usr/share/applications/org.openrgb.OpenRGB.desktop"
+    .. " && ! find ${DESTDIR}/usr/lib/systemd -name '*.service' 2>/dev/null | grep -q .",
+}

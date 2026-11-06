@@ -1,0 +1,18 @@
+-- mbedtls recipe — 3.6.7: TLS/crypto library, required by OpenRGB 1.x
+-- (it links mbedtls 3.x and explicitly will NOT work with 4.x). Static
+-- library + headers; openrgb links the archive in.
+
+return {
+  name           = "mbedtls",
+  version        = "3.6.7",
+  summary        = "TLS 1.3/1.2 and DTLS library (mbedTLS 3.x)",
+  url            = "https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-3.6.7/mbedtls-3.6.7.tar.bz2",
+  sha256         = "a7e8bcbec0e6f761b4af24f25677626b35f762f68eef79c08677a363212d11f6",
+  deps           = { "glibc" },
+  build_system   = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_LIBDIR=lib",
+                     "-DENABLE_TESTING=OFF", "-DENABLE_PROGRAMS=OFF" },
+  test           = "test -f ${DESTDIR}/usr/lib/libmbedtls.a"
+    .. " && test -f ${DESTDIR}/usr/include/mbedtls/ssl.h"
+    .. " && ls ${DESTDIR}/usr/lib/libmbedcrypto.a | grep -q .",
+}

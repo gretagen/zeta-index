@@ -1,0 +1,17 @@
+-- libgusb.recipe — libgusb 0.4.9: GObject wrapper for libusb-1.0,
+-- required by colord (which mutter hard-requires). Docs off (gi-docgen).
+
+return {
+  name           = "libgusb",
+  version        = "0.4.9",
+  summary        = "GObject wrapper for libusb-1.0",
+  url            = "https://github.com/hughsie/libgusb/releases/download/0.4.9/libgusb-0.4.9.tar.xz",
+  sha256         = "9df5ef301d6a4b361002aa52cce1165a87a89744055879bdbab31e7e86f1e846",
+  deps           = { "glibc", "glib", "libjson-glib", "libusb", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Ddocs=false", "-Dvapi=false", "-Dtests=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libgusb.so* | grep -q ."
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists gusb"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/GUsb-1.0.gir",
+}

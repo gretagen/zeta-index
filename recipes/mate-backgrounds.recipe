@@ -1,0 +1,15 @@
+-- mate-backgrounds.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-backgrounds",
+  version        = "1.28.0",
+  summary        = "Background images for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-backgrounds-1.28.0.tar.xz",
+  sha256         = "50d1afd02486bd07ac22a5a6b6efa3031148f0d48a82e488d909ad57003a6943",
+  deps           = { "glibc" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

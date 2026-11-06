@@ -1,0 +1,16 @@
+-- libgweather4.recipe — libgweather 4.6.0: weather/geolocation library for
+-- the shell's world clock and gsd's weather.
+
+return {
+  name           = "libgweather-4",
+  version        = "4.6.0",
+  summary        = "Weather and geolocation library (GNOME)",
+  url            = "https://download.gnome.org/sources/libgweather/4.6/libgweather-4.6.0.tar.xz",
+  sha256         = "7f5d0e8c9685ef2ff46c2f3a57cae48d7bf3540b2d83921f889ef28e6a876788",
+  deps           = { "glibc", "glib", "libsoup3", "gsettings-desktop-schemas", "gweather-locations", "iso-codes", "gobject-introspection", "libxml2", "geocode-glib" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload", "-Dgtk_doc=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libgweather-4.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/GWeather-4.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/GWeather-4.0.typelib",
+}

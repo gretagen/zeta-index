@@ -1,0 +1,22 @@
+-- seatd.recipe — seatd 0.9.3-2: repack adding the dev payload (libseat.h,
+-- libseat.pc) plus the seatd daemon and seatd-launch that upstream's meson
+-- install produces; the previous package shipped libseat.so only, which
+-- broke pkg-config detection for wlroots/mango builds. test keeps the
+-- original libseat.so.1 contract and adds the dev/server checks.
+
+return {
+  name           = "seatd",
+  version        = "0.9.3-2",
+  summary        = "Seat management daemon and library",
+  url            = "https://github.com/kennylevinsen/seatd/archive/refs/tags/0.9.3.tar.gz",
+  sha256         = "302564d54d8e28191fadfd734f2675ecb0c9e0615a58011b89ef15dfa4dbaa96",
+  deps           = { "glibc", "systemd-libs" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "-Dlibseat-logind=systemd" },
+  test           = "test -f ${DESTDIR}/usr/lib/libseat.so.1"
+    .. " && test -f ${DESTDIR}/usr/include/libseat.h"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/libseat.pc"
+    .. " && test -x ${DESTDIR}/usr/bin/seatd"
+    .. " && test -x ${DESTDIR}/usr/bin/seatd-launch"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists libseat",
+}

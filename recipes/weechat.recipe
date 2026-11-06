@@ -1,0 +1,24 @@
+-- weechat.recipe — WeeChat 4.10.1: console IRC/Matrix/etc. client.
+-- Ncurses + headless binaries, python and lua scripting bridges (the two
+-- interpreters the distro ships); perl/ruby/tcl/guile/php/spell disabled
+-- to match available index packages. SSL via gnutls (auto-detected),
+-- curl/zstd/cjson support on. Docs/man/tests stay off.
+
+return {
+  name           = "weechat",
+  version        = "4.10.1",
+  summary        = "Extensible chat client (IRC, Matrix, …) for the terminal",
+  url            = "https://weechat.org/files/src/weechat-4.10.1.tar.gz",
+  sha256         = "84207fc87f19274e2d9efb3f229b3594af6ca5d54e2ee25b10f07015e681b8d1",
+  deps           = { "glibc", "ncurses", "curl", "gnutls", "zstd", "cjson", "libgcrypt", "python", "lua" },
+  build_system   = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DENABLE_PERL=OFF", "-DENABLE_RUBY=OFF", "-DENABLE_TCL=OFF",
+                     "-DENABLE_GUILE=OFF", "-DENABLE_PHP=OFF", "-DENABLE_SPELL=OFF" },
+  test           = "test -x ${DESTDIR}/usr/bin/weechat"
+    .. " && test -x ${DESTDIR}/usr/bin/weechat-headless"
+    .. " && ${DESTDIR}/usr/bin/weechat --version | grep -q 4.10.1"
+    .. " && readelf -d ${DESTDIR}/usr/bin/weechat | grep -q libcurl"
+    .. " && readelf -d ${DESTDIR}/usr/bin/weechat | grep -q libgnutls"
+    .. " && readelf -d ${DESTDIR}/usr/bin/weechat | grep -q libncurses",
+}

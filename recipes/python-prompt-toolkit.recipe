@@ -1,0 +1,15 @@
+-- python-prompt-toolkit.recipe — 3.0.53: pure-python terminal prompting
+-- library; hyfetch's python paths depend on it. Module tree copied into
+-- site-packages (distro convention for python-* packages).
+
+return {
+  name         = "python-prompt-toolkit",
+  version      = "3.0.53",
+  summary      = "Python terminal prompting and rich TUI library",
+  url          = "https://files.pythonhosted.org/packages/7d/ea/39b988c938f75cb75d7045b5c69f8bfed47ee2152c8837fb403de29d6fb8/prompt_toolkit-3.0.53.tar.gz",
+  sha256       = "9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6",
+  deps         = { "python", "python-wcwidth" },
+  build_system = "custom",
+  build_script = "build-python-prompt-toolkit.sh",
+  test         = "PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages python3 -c \"import prompt_toolkit, prompt_toolkit.shortcuts\"",
+}

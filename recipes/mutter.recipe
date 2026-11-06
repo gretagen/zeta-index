@@ -1,0 +1,23 @@
+-- mutter.recipe — mutter 51.1: the compositor (libmutter-18) GNOME Shell
+-- drives; hard-depends on gnome-settings-daemon (provided). BLFS flags:
+-- tests/profiler/bash-completion off.
+
+return {
+  name           = "mutter",
+  version        = "51.1",
+  summary        = "GNOME Shell compositor library and mutter binary",
+  url            = "https://download.gnome.org/sources/mutter/51/mutter-51.1.tar.xz",
+  sha256         = "0d311d87901dbcb94518fb89304febe30852ce5d8a4befa9f87e85c68eceefde",
+  deps           = { "glibc", "glib", "gtk4", "graphene", "wayland", "libinput", "xkbcommon",
+                     "libdrm", "pipewire", "libei", "libdisplay-info", "gnome-settings-daemon",
+                     "gsettings-desktop-schemas", "at-spi2-core", "gobject-introspection",
+                     "upower", "gnutls", "libadwaita", "colord", "mesa-drivers", "lcms2",
+                     "startup-notification" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dtests=disabled", "-Dprofiler=false", "-Dbash_completion=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libmutter-51.so* | grep -q ."
+    .. " && test -x ${DESTDIR}/usr/bin/mutter"
+    .. " && test -x ${DESTDIR}/usr/bin/gdctl"
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib:${DESTDIR}/usr/lib/mutter-51 ${DESTDIR}/usr/bin/mutter --version | grep -q 51",
+}

@@ -1,0 +1,16 @@
+-- geocode-glib.recipe — 3.26.4: geocoding via Nominatim, needed by
+-- gnome-settings-daemon's location plugin.
+
+return {
+  name           = "geocode-glib",
+  version        = "3.26.4",
+  summary        = "Geocoding library using Nominatim (GNOME)",
+  url            = "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz",
+  sha256         = "2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa",
+  deps           = { "glibc", "glib", "libsoup3", "libjson-glib", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Denable-gtk-doc=false", "-Dsoup2=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libgeocode-glib-2.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/GeocodeGlib-2.0.gir",
+}

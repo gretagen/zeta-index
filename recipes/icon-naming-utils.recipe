@@ -1,0 +1,15 @@
+-- icon-naming-utils.recipe — 0.8.90: freedesktop icon naming reference
+-- tool mate-icon-theme requires at configure time.
+
+return {
+  name           = "icon-naming-utils",
+  version        = "0.8.90",
+  summary        = "Icon naming utilities and reference for icon themes",
+  url            = "https://deb.debian.org/debian/pool/main/i/icon-naming-utils/icon-naming-utils_0.8.90.orig.tar.gz",
+  sha256         = "044ab2199ed8c6a55ce36fd4fcd8b8021a5e21f5bab028c0a7cdcf52a5902e1c",
+  deps           = { "perl", "glibc", "perl-xml-simple", "perl-xml-namespacesupport" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static" },
+  test           = "test -f ${DESTDIR}/usr/share/pkgconfig/icon-naming-utils.pc"
+    .. " && test -x ${DESTDIR}/usr/libexec/icon-name-mapping",
+}

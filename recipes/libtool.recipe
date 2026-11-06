@@ -1,0 +1,17 @@
+-- libtool.recipe — GNU libtool (m4 macros + libtoolize), required by
+-- autoreconf for any libtool-based project (e.g. libqalculate). The index
+-- only had libltdl (runtime lib); the ambient host install lacked the
+-- /usr/share/aclocal macros entirely. --disable-ltdl keeps the payload from
+-- overlapping the existing libltdl package.
+
+return {
+  name           = "libtool",
+  version        = "2.6.2",
+  summary        = "Generic library support script (m4 macros and libtoolize)",
+  url            = "https://ftp.gnu.org/gnu/libtool/libtool-2.6.2.tar.xz",
+  sha256         = "2ef1067c16c97db930fd740cc9bc3d3ba9a583804ae5ac42cc3e8719e49e191e",
+  deps           = { "glibc", "m4" },
+  build_system   = "autotools",
+  configure_args = { "--disable-ltdl" },
+  test           = "test -x ${DESTDIR}/usr/bin/libtoolize && test -f ${DESTDIR}/usr/share/aclocal/libtool.m4 && test -x ${DESTDIR}/usr/bin/libtool && ${DESTDIR}/usr/bin/libtool --version | grep -q 2.6.2",
+}

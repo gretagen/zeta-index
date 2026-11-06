@@ -1,0 +1,15 @@
+-- marco.recipe — MATE 1.28.1 window manager (source build; see
+-- build-marco.sh for the itstool configure stub). deps carried from the
+-- proven nemesis manifest.
+
+return {
+  name           = "marco",
+  version        = "1.28.1",
+  summary        = "Window manager for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/marco-1.28.1.tar.xz",
+  sha256         = "2496e5e40ee980cd6849493ac3e0f8fd0dec8b81c674da8d9ba19a577f0ac2e1",
+  deps           = { "libdconf", "startup-notification", "glibc", "glib", "gtk3", "libcanberra", "libgtop", "mate-desktop", "zenity", "libXpresent", "gettext", "libXres", "libSM" },
+  build_system   = "custom",
+  build_script   = "build-marco.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -x ${DESTDIR}/usr/bin/marco",
+}

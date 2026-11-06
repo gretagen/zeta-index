@@ -1,0 +1,22 @@
+-- cbonsai.recipe — cbonsai 1.4.2, bonsai tree generator for the terminal
+-- (ncurses). Upstream lives on GitLab (jallbrit/cbonsai, GPL-3.0).
+-- Makefile links ncursesw+panelw via pkg-config; CC passed explicitly
+-- since the host has no cc symlink; PREFIX=/usr makes DATADIR/MANDIR
+-- resolve to the /usr/share conventions (incl. bash completion).
+
+return {
+  name         = "cbonsai",
+  version      = "1.4.2",
+  summary      = "Bonsai tree generator for the terminal (ncurses)",
+  url          = "https://gitlab.com/jallbrit/cbonsai/-/archive/v1.4.2/cbonsai-v1.4.2.tar.gz",
+  sha256       = "75cf844940e5ef825a74f2d5b1551fe81883551b600fecd00748c6aa325f5ab0",
+  deps         = { "glibc", "ncurses" },
+  build_system = "custom",
+  build_script = "build-cbonsai.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/cbonsai"
+    .. " && test -f ${DESTDIR}/usr/share/man/man6/cbonsai.6"
+    .. " && test -f ${DESTDIR}/usr/share/bash-completion/completions/cbonsai"
+    -- cbonsai draws via ncurses and ends on a wgetch; without a tty it
+    -- exits cleanly, with a tty it waits for a keypress - hence timeout.
+    .. " && timeout 10 ${DESTDIR}/usr/bin/cbonsai -s 1 -l 5 </dev/null",
+}

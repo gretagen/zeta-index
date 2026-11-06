@@ -1,0 +1,16 @@
+-- tomlplusplus.recipe — repack3.4.0: the index payload shipped headers and
+-- libtomlplusplus.so but no tomlplusplus.pc, so pkg-config/meson consumers
+-- (noctalia) could not find it. Rebuild with the same payload plus a
+-- hand-written pkg-config file.
+
+return {
+  name         = "tomlplusplus",
+  version      = "3.4.0-2",
+  summary      = "Header-only TOML config file parser for C++17",
+  url          = "https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz",
+  sha256       = "8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155",
+  deps         = { "glibc", "gcc", "libgcc", "libstdc++" },
+  build_system = "custom",
+  build_script = "build-tomlplusplus.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/libtomlplusplus.so.3 && test -f ${DESTDIR}/usr/include/toml++/toml.h && test -f ${DESTDIR}/usr/lib/pkgconfig/tomlplusplus.pc",
+}

@@ -1,0 +1,17 @@
+-- pango.recipe — Pango 1.58.2: required by gtk4 4.24 (needs >= 1.58).
+-- Gir-enabled like the previous build; Xft/Xrender kept for X11 text.
+
+return {
+  name           = "pango",
+  version        = "1.58.2",
+  summary        = "Text rendering and layout (gir-enabled)",
+  url            = "https://download.gnome.org/sources/pango/1.58/pango-1.58.2.tar.xz",
+  sha256         = "342385b6ca3b7c73455d7c80a13b7dbe4489e00bc3bd4c5bd6ed4dce421e374a",
+  deps           = { "glibc", "cairo", "harfbuzz", "fribidi", "fontconfig", "freetype", "libXft", "libXrender", "glib", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload", "-Dintrospection=enabled" },
+  test           = "test -f ${DESTDIR}/usr/lib/libpango-1.0.so.0"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Pango-1.0.typelib"
+    .. " && test -x ${DESTDIR}/usr/bin/pango-list"
+    .. " && ${DESTDIR}/usr/bin/pango-list | grep -q Font",
+}

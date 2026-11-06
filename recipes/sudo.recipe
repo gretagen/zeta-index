@@ -1,0 +1,37 @@
+-- sudo.recipe — sudo 1.9.17p2-1 (latest stable + CVE-2026-96512 fix).
+--
+-- "Default Insults": insults are a runtime sudoers flag but need the
+-- USE_INSULTS compile gate (--with-insults); post_install then enables
+-- `Defaults insults` in /etc/sudoers. Also enabled there:
+--   - %wheel ALL=(ALL:ALL) ALL (password; the NOPASSWD alternative line
+--     is removed so exactly one wheel rule applies)
+--   - /etc/pam.d/sudo (upstream ships none; mirrors the host's pam_unix
+--     system-auth style)
+-- sudoers is forced to mode 0440; the setuid bit on /usr/bin/sudo is
+-- verified by the test (sudo cannot function without it).
+
+return {
+  name         = "sudo",
+  version      = "1.9.17p2-1",
+  summary      = "Execute commands as another user with limited superuser privileges",
+  url          = "https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz",
+  sha256       = "4a38a1ab3adb1199257edc2a7c4a2bd714665eb605b04368843b06dada2cfcfb",
+  deps         = { "glibc", "pam", "libz", "openssl" },
+  build_system = "custom",
+  build_script = "build-sudo.sh",
+  post_install = "mkdir -p ${DESTDIR}/etc/sudoers.d ${DESTDIR}/etc/pam.d"
+    .. " && sed -i '/^# *%wheel.*NOPASSWD/d' ${DESTDIR}/etc/sudoers"
+    .. " && sed -i 's/^# *%wheel/%wheel/' ${DESTDIR}/etc/sudoers"
+    .. " && sed -i '0,/^Defaults/s/^Defaults/Defaults insults\\nDefaults/' ${DESTDIR}/etc/sudoers"
+    .. " && chmod 440 ${DESTDIR}/etc/sudoers"
+    .. " && printf 'auth     required     pam_unix.so\\naccount  required     pam_unix.so\\nsession  required     pam_unix.so\\n' > ${DESTDIR}/etc/pam.d/sudo",
+  test         = "test -x ${DESTDIR}/usr/bin/sudo"
+    .. " && test -x ${DESTDIR}/usr/sbin/visudo"
+    .. " && test -u ${DESTDIR}/usr/bin/sudo"
+    .. " && grep -q '^Defaults insults' ${DESTDIR}/etc/sudoers"
+    .. " && grep -qE '^%wheel[[:space:]]+ALL=' ${DESTDIR}/etc/sudoers"
+    .. " && grep -q 'pam_unix.so' ${DESTDIR}/etc/pam.d/sudo"
+    .. " && test \"$(stat -c %a ${DESTDIR}/etc/sudoers)\" = 440"
+    .. " && sed 's|^@includedir|#@includedir|' ${DESTDIR}/etc/sudoers > /tmp/sudoers.stage"
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/libexec/sudo ${DESTDIR}/usr/sbin/visudo -c -f /tmp/sudoers.stage",
+}

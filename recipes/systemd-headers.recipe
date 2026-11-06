@@ -1,0 +1,17 @@
+-- systemd-headers.recipe — public systemd/libsystemd API headers
+-- (src/systemd/*.h), previously shipped nowhere: the systemd and
+-- systemd-libs packages are runtime-only, so sd-bus.h consumers
+-- (libsystemd bindings like sdbus-cpp) could not compile.
+-- Headers-only staging, no compilation.
+
+return {
+  name         = "systemd-headers",
+  version      = "262",
+  summary      = "Systemd/libsystemd public API headers (sd-bus, sd-event, ...)",
+  url          = "https://github.com/systemd/systemd/archive/refs/tags/v262.tar.gz",
+  sha256       = "6aa77506c0644aa67f940a48e3d3a7368601f787e4f249139516d353f107bcab",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-systemd-headers.sh",
+  test         = "test -f ${DESTDIR}/usr/include/systemd/sd-bus.h && test -f ${DESTDIR}/usr/include/systemd/sd-daemon.h && test -f ${DESTDIR}/usr/include/systemd/sd-event.h",
+}

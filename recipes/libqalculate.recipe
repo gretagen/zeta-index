@@ -1,0 +1,15 @@
+-- libqalculate.recipe — Qalculate! calculation engine (library + qalc CLI),
+-- powers noctalia's launcher calculator. GitHub tag tarballs ship no
+-- pre-generated ./configure, so bootstrap with autoreconf first.
+
+return {
+  name         = "libqalculate",
+  version      = "5.13.2",
+  summary      = "Multi-purpose calculation engine library and qalc CLI",
+  url          = "https://github.com/Qalculate/libqalculate/archive/refs/tags/v5.13.2.tar.gz",
+  sha256       = "354ddd2ced6dc04f9c8d8d022da94a5efd4d58a8d4af604479ec6346c5acf22f",
+  deps         = { "glibc", "gcc", "libgcc", "libstdc++", "gmp", "mpfr", "libxml2", "curl", "readline", "ncurses", "libidn2", "nghttp2", "libpsl", "librtmp", "libssh2", "libzstd" },
+  build_system = "custom",
+  build_script = "build-qalculate.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libqalculate.so.23 && test -x ${DESTDIR}/usr/bin/qalc && test -f ${DESTDIR}/usr/lib/pkgconfig/libqalculate.pc",
+}

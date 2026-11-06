@@ -1,0 +1,15 @@
+-- mate-power-manager.recipe — MATE 1.28.1 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-power-manager",
+  version        = "1.28.1",
+  summary        = "Power manager for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-power-manager-1.28.1.tar.xz",
+  sha256         = "8ebdcb74b607e868336ba9a8146cdef8f97bce535c2b0cb3bf650c58f71eee21",
+  deps           = { "startup-notification",  "mate-panel",  "mate-desktop",  "glibc", "glib", "gtk3",  "dbus-glib", "gettext", "libcanberra", "libnotify", "upower", "polkit", "libsecret"   },
+  build_system   = "custom",
+  build_script   = "build-mate-power-manager.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -x ${DESTDIR}/usr/bin/mate-power-manager",
+}

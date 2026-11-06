@@ -1,0 +1,18 @@
+-- libtasn1.recipe — repack: index payload was libs-only. ASN.1 parser
+-- (build dep of gnutls). Git tag archive → autoreconf bootstrap.
+
+return {
+  name           = "libtasn1",
+  version        = "4.21.0-2",
+  summary        = "ASN.1 type parsing library",
+  -- gitlab rate-limits anonymous downloads from makepkg's curl; the exact
+  -- tarball (sha256 above) is staged beside this recipe instead
+  url            = "libtasn1-src.tar.gz",
+  sha256         = "548ba3b7a30cc3feeeddd1833d9e4bbc86e7cea56496ad9efcf9507e47b17f8a",
+  deps           = { "glibc" },
+  build_system   = "custom",
+  build_script   = "build-libtasn1.sh",
+  test           = "test -e ${DESTDIR}/usr/lib/libtasn1.so.6"
+    .. " && test -f ${DESTDIR}/usr/include/libtasn1.h"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/libtasn1.pc",
+}

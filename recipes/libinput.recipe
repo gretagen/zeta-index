@@ -1,0 +1,21 @@
+-- libinput.recipe — 1.31.3-2: rebuild with the CORRECT udev layout. The
+-- previous package passed a wrong udev-dir and landed its rules at
+-- usr/lib/udev/rules.d/rules.d/ where udevd never reads them (this is why
+-- libinput saw no devices). udev-dir is now the proper base directory.
+
+return {
+  name           = "libinput",
+  version        = "1.31.3-2",
+  summary        = "Input device and event processing library (fixed udev layout)",
+  url            = "https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.31.3/libinput-1.31.3.tar.bz2",
+  sha256         = "01414457befc3d1c68a328ebe01eacec8e7077a4ff08e181f5659daf9f50930e",
+  deps           = { "glibc", "libevdev", "libmtdev", "libwacom", "systemd-libs", "gtk4", "lua", "wayland" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dudev-dir=/usr/lib/udev", "-Dtests=false", "-Dinstall-tests=false",
+                     "-Ddocumentation=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libinput.so.10"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/80-libinput-device-groups.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/90-libinput-fuzz-override.rules"
+    .. " && ! test -d ${DESTDIR}/usr/lib/udev/rules.d/rules.d",
+}

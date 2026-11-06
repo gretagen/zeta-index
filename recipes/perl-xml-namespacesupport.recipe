@@ -1,0 +1,14 @@
+-- perl-xml-namespacesupport.recipe — XML::NamespaceSupport 1.12: pure-perl dependency of icon-naming-utils
+-- (XML::Simple chain; icon-naming-utils needs it to build mate-icon-theme).
+
+return {
+  name           = "perl-xml-namespacesupport",
+  version        = "1.12",
+  summary        = "Perl XML::NamespaceSupport module",
+  url            = "https://cpan.metacpan.org/modules/by-module/XML/XML-NamespaceSupport-1.12.tar.gz",
+  sha256         = "47e995859f8dd0413aa3f22d350c4a62da652e854267aa0586ae544ae2bae5ef",
+  deps           = { "perl", "glibc" },
+  build_system   = "custom",
+  build_script   = "build-perl-module.sh",
+  test           = "PERL5LIB=$(echo ${DESTDIR}/usr/lib/perl5/vendor_perl/*):$(echo ${DESTDIR}/usr/lib/perl5/vendor_perl/*/x86_64*) perl -e \"use XML::NamespaceSupport; print qq(XML::NamespaceSupport ok\n)\"",
+}

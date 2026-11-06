@@ -1,0 +1,15 @@
+-- mate-sensors-applet.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-sensors-applet",
+  version        = "1.28.0",
+  summary        = "Sensors applet for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-sensors-applet-1.28.0.tar.xz",
+  sha256         = "d465366682af8feb8618283c9789e8b70db6fd17ca8fa950ac6f710102315a81",
+  deps           = { "glibc", "glib", "gtk3",  "udisks2", "libnotify", "lm-sensors", "mate-panel", "gettext"   },
+  build_system   = "custom",
+  build_script   = "build-mate-sensors-applet.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

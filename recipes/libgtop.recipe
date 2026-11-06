@@ -1,0 +1,15 @@
+-- libgtop recipe — 2.41.3: process/system monitoring library, required by
+-- gnome-control-center's system panel (libgtop-2.0).
+
+return {
+  name           = "libgtop",
+  version        = "2.41.3",
+  summary        = "System monitoring library (libgtop-2.0)",
+  url            = "https://download.gnome.org/sources/libgtop/2.41/libgtop-2.41.3.tar.xz",
+  sha256         = "775676df958e2ea2452f7568f28b2ea581063d312773dd5c0b7624c1b9b2da8c",
+  deps           = { "glibc", "glib", "gobject-introspection" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static" },
+  test           = "ls ${DESTDIR}/usr/lib/libgtop-2.0.so* | grep -q ."
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists libgtop-2.0",
+}

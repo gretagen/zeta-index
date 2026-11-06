@@ -1,0 +1,15 @@
+-- at-spi2-core.recipe — 2.56.1-2: same version as installed, rebuilt with
+-- introspection. This build absorbed atk (it ships libatk-1.0), so
+-- Atk-1.0.gir + Atspi-2.0.gir come from here — gtk3's gir generation
+-- hard-requires Atk-1.0.gir, which the installed package doesn't ship.
+
+return {
+  name           = "at-spi2-core",
+  version        = "2.56.1-2",
+  summary        = "Accessibility Technologies core (AT-SPI2, ships atk)",
+  url            = "https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.1.tar.xz",
+  sha256         = "fd177fecd8c95006ff0a355eafd7066fe110a2e17eb5eb5fe17ff70e49a4eace",
+  deps           = { "glibc", "libX11", "libXi", "libXtst", "libxml2", "dbus", "glib", "systemd-libs", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "-Dintrospection=enabled", "-Ddocs=false" },
+}

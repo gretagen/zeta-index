@@ -1,0 +1,14 @@
+-- tecla recipe — 51.0: keyboard layout viewer, required by
+-- gnome-control-center's input/keyboard panel.
+
+return {
+  name           = "tecla",
+  version        = "51.0",
+  summary        = "GNOME keyboard layout viewer (tecla)",
+  url            = "https://download.gnome.org/sources/tecla/51/tecla-51.0.tar.xz",
+  sha256         = "ddf1a8555044171d0d84b580d6d541c3c621ae77996f6bc5edde598de2f8625b",
+  deps           = { "glibc", "glib", "gtk4", "libadwaita" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "test -x ${DESTDIR}/usr/bin/tecla",
+}

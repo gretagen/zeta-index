@@ -1,0 +1,17 @@
+-- libnma.recipe — libnma 1.10.6: NetworkManager front-end widgets
+-- (802.1x/wifi dialogs). gnome-shell links it (BLFS runtime dep).
+
+return {
+  name           = "libnma",
+  version        = "1.10.6",
+  summary        = "NetworkManager front-end library (GTK widgets)",
+  url            = "https://download.gnome.org/sources/libnma/1.10/libnma-1.10.6.tar.xz",
+  sha256         = "53a6fb2b190ad37c5986caed3e98bede7c3c602399ee4f93c8fc054303d76dab",
+  deps           = { "glibc", "glib", "gtk4", "gtk3", "networkmanager", "gcr-4" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dlibnma_gtk4=true", "-Dgtk_doc=false", "-Dmobile_broadband_provider_info=false", "-Dvapi=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libnma-gtk4.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/NMA-1.0.gir"
+    .. " && test -f ${DESTDIR}/usr/include/libnma/nma-ui-utils.h",
+}

@@ -1,0 +1,18 @@
+-- libpwquality.recipe — 1.4.5: password quality scoring, required by
+-- gnome-control-center (user password panel). PAM module included;
+-- python bindings disabled (BLFS pip-wheel flow not needed here).
+
+return {
+  name         = "libpwquality",
+  version      = "1.4.5",
+  summary      = "Password quality checking and generation library",
+  url          = "https://github.com/libpwquality/libpwquality/releases/download/libpwquality-1.4.5/libpwquality-1.4.5.tar.bz2",
+  sha256       = "6fcf18b75d305d99d04d2e42982ed5b787a081af2842220ed63287a2d6a10988",
+  deps         = { "glibc", "cracklib", "pam" },
+  build_system = "autotools",
+  configure_args = { "--disable-static", "--with-securedir=/usr/lib/security",
+                     "--disable-python-bindings" },
+  test         = "test -e ${DESTDIR}/usr/lib/libpwquality.so.1"
+    .. " && test -x ${DESTDIR}/usr/bin/pwmake"
+    .. " && test -f ${DESTDIR}/usr/include/pwquality.h",
+}

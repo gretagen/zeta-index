@@ -1,0 +1,28 @@
+-- power-profiles-daemon.recipe — PPD 0.30: D-Bus power profile service
+-- (balanced/performance/power-saver) for laptops. Init-agnostic per the
+-- toolchain's clean_stage policy: no systemd units can ship (they are
+-- purged from staging by design) — systemdsystemunitdir=no just skips
+-- generating one. Upstream's dbus system-service is a systemd-only
+-- placeholder (Exec=/bin/false + SystemdService=), so under any non-systemd
+-- init the daemon is started by init itself: a local /etc/dinit.d file, in
+-- the same style as connmand/pipewire. deps declare python-gobject for
+-- powerprofilesctl, a python+gi script the closure check cannot see.
+
+return {
+  name           = "power-profiles-daemon",
+  version        = "0.30-2",
+  summary        = "Makes power profiles management available over D-Bus (laptops)",
+  url            = "https://gitlab.freedesktop.org/upower/power-profiles-daemon/-/archive/0.30/power-profiles-daemon-0.30.tar.gz",
+  sha256         = "90f2c95024861d9f4062abedd514084939224e7a49edd468f001af7260ec8e6c",
+  deps           = { "glib", "systemd-libs", "polkit", "libgudev", "python-gobject" },
+  build_system   = "custom",
+  build_script   = "build-power-profiles-daemon.sh",
+  test           = "test -x ${DESTDIR}/usr/libexec/power-profiles-daemon"
+    .. " && test -x ${DESTDIR}/usr/bin/powerprofilesctl"
+    .. " && python3 -c \"import ast; ast.parse(open('${DESTDIR}/usr/bin/powerprofilesctl').read())\""
+    .. " && test -f ${DESTDIR}/usr/share/dbus-1/system-services/net.hadess.PowerProfiles.service"
+    .. " && grep -q SystemdService=power-profiles-daemon.service ${DESTDIR}/usr/share/dbus-1/system-services/net.hadess.PowerProfiles.service"
+    .. " && grep -q Exec=/usr/libexec/power-profiles-daemon ${DESTDIR}/usr/share/dbus-1/system-services/net.hadess.PowerProfiles.service"
+    .. " && test -f ${DESTDIR}/usr/share/polkit-1/actions/power-profiles-daemon.policy"
+    .. " && grep -q switch-profile ${DESTDIR}/usr/share/polkit-1/actions/power-profiles-daemon.policy",
+}

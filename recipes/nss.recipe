@@ -1,0 +1,20 @@
+-- nss.recipe — NSS 3.132: Network Security Services, dev-complete rebuild.
+-- The previous package shipped libraries only (no headers, no nss.pc);
+-- evolution-data-server's S/MIME detection needs nspr+nss headers. BLFS
+-- flow with the standalone patch; system nspr/zlib/sqlite.
+
+return {
+  name         = "nss",
+  version      = "3.132",
+  summary      = "Network Security Services (headers + libs, dev-complete)",
+  url          = "https://archive.mozilla.org/pub/security/nss/releases/NSS_3_132_RTM/src/nss-3.132.tar.gz",
+  sha256       = "ee9cf4837ba801141a804321c4462ad8f452ff4314275c6d5108a6b05af227ff",
+  deps         = { "glibc", "nspr", "libz", "sqlite", "libtasn1" },
+  build_system = "custom",
+  build_script = "build-nss.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libnss3.so"
+    .. " && test -e ${DESTDIR}/usr/lib/libsmime3.so"
+    .. " && test -f ${DESTDIR}/usr/include/nss/nss.h"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists nss"
+    .. " && test -x ${DESTDIR}/usr/bin/certutil",
+}

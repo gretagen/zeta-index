@@ -1,0 +1,24 @@
+-- gtk4.recipe — GTK 4.24.1 upgrade: forced by the GNOME 51 stack (mutter,
+-- gnome-settings-daemon, evolution-data-server, gnome-desktop all require
+-- >= 4.18-class GTK). Same libgtk-4.so.1 soname, so installed gtk4 apps
+-- stay compatible. Needs the platform chain: glib >= 2.89.3 (2.90.1) and
+-- pango >= 1.58 (1.58.2), plus sassc/libsass for the Adwaita CSS.
+-- Defaults are right for the distro: x11+wayland backends on, vulkan and
+-- media auto-detected (gstreamer absent -> off), accesskit off.
+
+return {
+  name           = "gtk4",
+  version        = "4.24.1",
+  summary        = "GTK+ 4 toolkit (X11 + Wayland)",
+  url            = "https://download.gnome.org/sources/gtk/4.24/gtk-4.24.1.tar.xz",
+  sha256         = "e98abe720e16129c8c0f50761dee0a2e9ae2478055e31018f6cf977fcf6513e9",
+  deps           = { "glibc", "at-spi2-core", "cairo", "fontconfig", "fribidi", "gdk-pixbuf", "graphene", "harfbuzz", "libX11", "libXcomposite", "libXcursor", "libXdamage", "libXext", "libXfixes", "libXi", "libXinerama", "libXrandr", "libepoxy", "libz", "pango", "glib>=2.89.3", "wayland", "wayland-protocols", "xkbcommon", "libcups", "librsvg" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dmedia-gstreamer=disabled", "-Dintrospection=enabled", "-Dvulkan=disabled" },
+  test           = "test -f ${DESTDIR}/usr/lib/libgtk-4.so.1"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Gtk-4.0.typelib"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Gtk-4.0.gir"
+    .. " && test -x ${DESTDIR}/usr/bin/gtk4-query-settings"
+    .. " && ${DESTDIR}/usr/bin/gtk4-query-settings | grep -q gtk-theme",
+}

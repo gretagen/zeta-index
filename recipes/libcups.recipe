@@ -1,0 +1,18 @@
+-- cups recipe — 2.4.19-2: repack of libcups adding the pkg-config file
+-- (the old package shipped libs and cups-config only; gnome-control-center
+-- and libcolord's cups backend need cups.pc). Official signed source.
+
+return {
+  name           = "libcups",
+  version        = "2.4.19-2",
+  summary        = "CUPS printing library (cups.pc, dev-complete)",
+  url            = "https://github.com/OpenPrinting/cups/releases/download/v2.4.19/cups-2.4.19-source.tar.gz",
+  sha256         = "820984b12a67f98705785aae2dd1347fe0ac097828001d4583ff64574aed6389",
+  deps           = { "glibc", "gnutls", "libpng", "libz", "avahi", "libusb",
+                     "acl", "openssl", "dbus", "pam" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-libusb", "--libdir=/usr/lib" },
+  test           = "ls ${DESTDIR}/usr/lib/libcups.so* | grep -q ."
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists cups"
+    .. " && test -x ${DESTDIR}/usr/bin/cups-config",
+}

@@ -1,0 +1,17 @@
+-- gnome-autoar.recipe — 0.5.2: archive extraction library for GNOME,
+-- imported unconditionally by gnome-shell's ui/init.js (GnomeAutoar
+-- typelib — BLFS lists it as a gnome-shell recommended dep).
+
+return {
+  name           = "gnome-autoar",
+  version        = "0.5.2",
+  summary        = "GNOME archive extraction library (gir-enabled)",
+  url            = "https://download.gnome.org/sources/gnome-autoar/0.5/gnome-autoar-0.5.2.tar.xz",
+  sha256         = "6c20bd16c87aba15869e56444424481f632ac302989a203e8ce4dcc73dea33a5",
+  deps           = { "glibc", "glib", "gtk4", "gobject-introspection", "libarchive" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "ls ${DESTDIR}/usr/lib/libgnome-autoar*.so* | grep -q ."
+    .. " && ls ${DESTDIR}/usr/share/gir-1.0/GnomeAutoar*.gir | grep -q ."
+    .. " && ls ${DESTDIR}/usr/lib/girepository-1.0/GnomeAutoar*.typelib | grep -q .",
+}

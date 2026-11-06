@@ -1,0 +1,18 @@
+-- librsvg.recipe — 2.60.0-2: repack with introspection. The old package
+-- shipped the library and pixbuf loader only; gnome-shell's JS hard-
+-- imports the Rsvg-2.0 typelib at boot. Rust build (host cargo).
+
+return {
+  name           = "librsvg",
+  version        = "2.60.0-2",
+  summary        = "SVG renderer library (gir-enabled)",
+  url            = "https://download.gnome.org/sources/librsvg/2.60/librsvg-2.60.0.tar.xz",
+  sha256         = "0b6ffccdf6e70afc9876882f5d2ce9ffcf2c713cbaaf1ad90170daa752e1eec3",
+  deps           = { "glibc", "glib", "cairo", "pango", "gdk-pixbuf", "gobject-introspection", "gcc", "dav1d" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dintrospection=enabled", "-Ddocs=disabled", "-Dvala=disabled", "-Dtests=false" },
+  test           = "ls ${DESTDIR}/usr/lib/librsvg-2.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Rsvg-2.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Rsvg-2.0.typelib",
+}

@@ -1,0 +1,15 @@
+-- mate-menus.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-menus",
+  version        = "1.28.0",
+  summary        = "Menu system for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-menus-1.28.0.tar.xz",
+  sha256         = "cf40c75c7d6f0aad1d4969828fc62025c6222bc6a84f0bb9d6ead7e45970508d",
+  deps           = { "glibc", "glib", "gtk3",  "glib"   },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

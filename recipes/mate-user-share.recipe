@@ -1,0 +1,15 @@
+-- mate-user-share.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-user-share",
+  version        = "1.28.0",
+  summary        = "User file sharing for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-user-share-1.28.0.tar.xz",
+  sha256         = "8985609999179651348e497ef08f350b86081b97b1a4a7304077eeae5739ae38",
+  deps           = { "caja",  "libnotify",  "dbus-glib",  "libcanberra",  "libSM",  "libICE",  "glibc",  "gtk3", "gettext"  },
+  build_system   = "custom",
+  build_script   = "build-mate-user-share.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

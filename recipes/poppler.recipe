@@ -1,0 +1,17 @@
+-- poppler.recipe — 26.08.0-3: repack stripping the nss/gpgmepp Requires
+-- from the shipped .pc files (their packages ship no .pc; pkgconf resolves
+-- them even for dynamic queries, breaking every poppler-glib configure —
+-- atril). Binaries untouched.
+
+return {
+  name           = "poppler",
+  version        = "26.08.0-4",
+  summary        = "PDF rendering library (pc Requires repaired)",
+  url            = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/poppler/poppler-26.08.0-2.tar.gz",
+  sha256         = "423acdd25a495e56c7563e1dc0c80cfae4b26b432643be7651d4a29b05ece287",
+  deps           = { "glibc", "libjpeg-turbo", "cairo", "fontconfig", "lcms2", "curl", "gpgme", "libpng", "freetype", "libz", "openjpeg2", "qtbase", "gcc" },
+  build_system   = "custom",
+  build_script   = "build-poppler.sh",
+  test           = "test -f ${DESTDIR}/usr/lib64/pkgconfig/poppler-glib.pc || test -f ${DESTDIR}/usr/lib/pkgconfig/poppler-glib.pc"
+    .. " && ! grep -l \"gpgmepp\" $(find ${DESTDIR} -name \"poppler*.pc\") | grep -q .",
+}

@@ -1,0 +1,15 @@
+-- mate-settings-daemon.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-settings-daemon",
+  version        = "1.28.0",
+  summary        = "Settings daemon for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-settings-daemon-1.28.0.tar.xz",
+  sha256         = "4ed7cdadaaa4c99efffc0282b8411703bb76e072c41c4b57989f8c5b40611a3a",
+  deps           = { "libxklavier", "startup-notification", "libdconf", "libSM", "libICE", "glibc", "glib", "gtk3",  "dbus-glib", "libcanberra", "libmatekbd", "libmatemixer", "libnotify", "mate-desktop", "nss", "polkit", "gettext"   },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -x ${DESTDIR}/usr/libexec/mate-settings-daemon",
+}

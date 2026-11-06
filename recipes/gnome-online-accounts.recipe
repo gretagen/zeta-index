@@ -1,0 +1,20 @@
+-- gnome-online-accounts recipe — 3.58.1: online accounts framework,
+-- required by gnome-control-center (accounts panel). WebKitGTK-4.1 is
+-- already installed for the login webview.
+
+return {
+  name           = "gnome-online-accounts",
+  version        = "3.58.1",
+  summary        = "GNOME online accounts framework (libgoa)",
+  url            = "https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.1.tar.xz",
+  sha256         = "9ec1900cc51409c2067c07c828c10be06fe3bf68d2999bb72d7d5ed325ed9bbc",
+  deps           = { "glibc", "glib", "gtk4", "gcr-4", "libjson-glib", "libsecret",
+                     "webkit2gtk-4.1", "gobject-introspection", "libadwaita", "keyutils",
+                     "librest" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dvapi=false", "-Ddocumentation=false", "-Dman=false" },
+  test           = "ls ${DESTDIR}/usr/lib/libgoa-1.0.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Goa-1.0.gir"
+    .. " && grep -q org.gnome.OnlineAccounts ${DESTDIR}/usr/share/dbus-1/services/org.gnome.OnlineAccounts.service",
+}

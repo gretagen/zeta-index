@@ -1,0 +1,17 @@
+-- guile-semver 0.2.0 — semantic versioning helpers, required by guix.
+-- Source from codeberg (guix's own pinned fork; adds MAJOR.MINOR.PATCH.REVISION).
+
+return {
+  name           = "guile-semver",
+  version        = "0.2.0",
+  summary        = "Semantic versioning helpers for Guile (required by Guix)",
+  url            = "https://codeberg.org/daym/guile-semver/archive/v0.2.0.tar.gz",
+  sha256         = "c497bcf23cd25a4ba4283298a8f7449eb9bb0a0dcfc4aec305e796e2a4e9c91b",
+  deps           = { "glibc", "guile" },
+  build_system   = "custom",
+  build_script   = "build-guile-autotools.sh",
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/semver*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " guile -c '(use-modules (semver))'",
+}

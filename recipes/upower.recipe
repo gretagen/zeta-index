@@ -1,0 +1,23 @@
+-- upower.recipe — 1.91.5: power device manager, bumped while adding
+-- introspection (the old package shipped libupower-glib only;
+-- gnome-shell's JS hard-imports UPowerGlib at boot). BLFS flags:
+-- no systemd units, explicit udevrulesdir, docs/man off; gir builds
+-- automatically with gobject-introspection present.
+
+return {
+  name           = "upower",
+  version        = "1.91.5",
+  summary        = "Power device manager (libupower-glib, gir-enabled)",
+  url            = "https://gitlab.freedesktop.org/upower/upower/-/archive/v1.91.5/upower-v1.91.5.tar.bz2",
+  sha256         = "c465a1c7fc05d00ac2bc7321c19b9b7e479410d8392bd7eb3e714275729629fd",
+  deps           = { "glibc", "glib", "libgudev", "libusb", "gobject-introspection", "polkit" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dgtk-doc=false", "-Dman=false", "-Dsystemdsystemunitdir=no",
+                     "-Dudevrulesdir=/usr/lib/udev/rules.d" },
+  test           = "ls ${DESTDIR}/usr/lib/libupower-glib.so* | grep -q ."
+    .. " && test -x ${DESTDIR}/usr/bin/upower"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/UPowerGlib-1.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/UPowerGlib-1.0.typelib"
+    .. " && ! ls ${DESTDIR}/usr/lib/systemd 2>/dev/null | grep -q .",
+}

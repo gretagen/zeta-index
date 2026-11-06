@@ -1,0 +1,15 @@
+-- mozo.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mozo",
+  version        = "1.28.0",
+  summary        = "Menu editor for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mozo-1.28.0.tar.xz",
+  sha256         = "fe98984ffd6aa8c36d0594bcefdba03de39b42d41e007251680384f3cef44924",
+  deps           = {  "gtk3", "mate-menus", "gettext", "mate-panel"  },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -x ${DESTDIR}/usr/bin/mozo",
+}

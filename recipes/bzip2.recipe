@@ -1,0 +1,16 @@
+-- bzip2.recipe — repack1.0.8: the index payload shipped only libbz2.so
+-- (no CLI), which breaks `tar -j` based source extraction on clean builders.
+-- This adds /usr/bin/{bzip2,bunzip2,bzcat,bz2recover} while keeping the
+-- original shared-library payload byte-compatible.
+
+return {
+  name         = "bzip2",
+  version      = "1.0.8-2",
+  summary      = "bzip2 compression library",
+  url          = "https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz",
+  sha256       = "ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-bzip2.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/bzip2 && test -x ${DESTDIR}/usr/bin/bunzip2 && test -f ${DESTDIR}/usr/lib/libbz2.so.1.0",
+}

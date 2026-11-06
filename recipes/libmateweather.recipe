@@ -1,0 +1,15 @@
+-- libmateweather.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "libmateweather",
+  version        = "1.28.0",
+  summary        = "Weather library for MATE (Arch binary)",
+  url            = "https://pub.mate-desktop.org/releases/1.28/libmateweather-1.28.0.tar.xz",
+  sha256         = "554373deb5b393b9d84b275dd2ca66c9a4a2d0e6ec92044fab8aa53e3032d2b5",
+  deps           = { "libsoup2",  "gdk-pixbuf", "glib", "gtk3", "hicolor-icon-theme", "libsoup3", "libxml2"  },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -f ${DESTDIR}/usr/lib/pkgconfig/mateweather.pc",
+}

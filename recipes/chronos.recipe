@@ -1,0 +1,21 @@
+-- chronos.recipe — chronos 1.9.6: "chronos remove <N>|all" (delete every
+-- generation at once) on top of the bootable-kernels work; the rebase's
+-- message-wording conflicts were resolved toward the em-dash cleanup
+-- style. Payload mirrors the previous package: the script alone in
+-- usr/bin. Test keeps the 1.9.5 contract and adds a regression guard for
+-- the new remove-all command.
+
+return {
+  name         = "chronos",
+  version      = "1.9.6",
+  summary      = "btrfs generation manager for Haliade system (Limine boot entries)",
+  url          = "https://github.com/gretagen/chronos/archive/982cf15e7c28bb51d84002c7b06685d519204dbf.tar.gz",
+  sha256       = "25197a6f443d7617951bfa6eb54a293cccaea13519aa6d60a23cea2d547ead68",
+  deps         = { "bash", "btrfs-progs", "util-linux" },
+  build_system = "custom",
+  build_script = "build-chronos.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/chronos"
+    .. " && bash -n ${DESTDIR}/usr/bin/chronos"
+    .. " && grep -q bootable_modules_kernel ${DESTDIR}/usr/bin/chronos"
+    .. " && grep -q cmd_remove_all ${DESTDIR}/usr/bin/chronos",
+}

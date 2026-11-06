@@ -1,0 +1,17 @@
+-- krb5.recipe — 1.22.2: MIT Kerberos V5, required by gnome-control-center
+-- (kerberos auth) and gnome-online-accounts' kerberos provider.
+
+return {
+  name         = "krb5",
+  version      = "1.22.2",
+  summary      = "MIT Kerberos V5 (libraries and tools)",
+  url          = "https://kerberos.org/dist/krb5/1.22/krb5-1.22.2.tar.gz",
+  sha256       = "3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13",
+  deps         = { "glibc", "openssl", "libedit", "keyutils", "lmdb" },
+  build_system = "custom",
+  build_script = "build-krb5.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libkrb5.so.3"
+    .. " && test -f ${DESTDIR}/usr/include/krb5.h"
+    .. " && test -x ${DESTDIR}/usr/bin/krb5-config"
+    .. " && test -x ${DESTDIR}/usr/bin/kinit",
+}

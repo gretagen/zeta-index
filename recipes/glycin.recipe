@@ -1,0 +1,18 @@
+-- glycin.recipe — glycin 2.1.5-2: repack adding the pkg-config file and
+-- gir. The existing package shipped the library only, which left
+-- gnome-shell's mandatory glycin-2 dependency unfindable. Tests/vala off;
+-- loaders stay in the separate glycin-loaders package.
+
+return {
+  name           = "glycin",
+  version        = "2.1.5-2",
+  summary        = "GNOME image loading library (libglycin-2, gir-enabled)",
+  url            = "https://download.gnome.org/sources/glycin/2.1/glycin-2.1.5.tar.xz",
+  sha256         = "6c09757ee906330a60b6705753aa56bca007ad219b95e6e3537510d41bc341c8",
+  deps           = { "glibc", "glib", "gcc", "gtk4", "lcms2", "libseccomp" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dtests=false", "-Dvapi=false", "-Dloaders=[]" },
+  test           = "ls ${DESTDIR}/usr/lib/libglycin-2.so* | grep -q ."
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists glycin-2",
+}

@@ -1,0 +1,13 @@
+-- gdk-pixbuf.recipe — 2.42.12-3 rebuilt with introspection enabled (the gir/typelib stack
+-- mozo and the GNOME campaign need; same version/flags as installed, plus
+-- share/gir-1.0 + lib/girepository-1.0 payloads).
+return {
+  name           = "gdk-pixbuf",
+  version        = "2.42.12-3",
+  summary        = "Image loading library (gir-enabled rebuild)",
+  url            = "https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz",
+  sha256         = "b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7",
+  deps           = { "glibc", "glib", "libpng", "libjpeg-turbo", "shared-mime-info", "libtiff", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "-Dintrospection=enabled" },
+}

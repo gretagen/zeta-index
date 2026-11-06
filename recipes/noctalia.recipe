@@ -1,0 +1,41 @@
+-- noctalia.recipe — Noctalia v5.3.0 desktop shell for Wayland.
+-- Standalone C++23/Meson project (no Qt/Quickshell since v5): direct
+-- Wayland + OpenGL ES rendering, PipeWire audio, PAM lock screen,
+-- libqalculate launcher math, libical calendar.
+--
+-- jemalloc: upstream recommends it on glibc for long-running sessions.
+-- Tests off (release packaging, per PACKAGING.md). Shell completions are
+-- generated from the built binary as a packaging step (upstream does not
+-- install them via Meson, to keep cross-compilation working).
+
+return {
+  name           = "noctalia",
+  version        = "5.3.0",
+  summary        = "A sleek, customizable desktop shell crafted for Wayland.",
+  url            = "https://github.com/noctalia-dev/noctalia/releases/download/v5.3.0/noctalia-v5.3.0.tar.gz",
+  sha256         = "d7d27ea6f432d96b3750476e881ed06240658d0026129e5f96d3ab7281040b62",
+  deps           = {
+    "glibc", "gcc", "libgcc", "libstdc++",
+    "sdbus-cpp", "wayland", "libglvnd", "egl", "freetype", "fontconfig",
+    "cairo", "pango", "harfbuzz", "librsvg", "xkbcommon", "glib",
+    "libsecret", "libsodium", "polkit", "pam",
+    "pipewire", "wireplumber", "curl", "libqalculate", "libxml2",
+    "md4c", "libical", "libwebp", "libjxl", "libsndfile",
+    "tomlplusplus", "jemalloc", "git", "upower",
+  },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "-Dtests=disabled", "-Djemalloc=enabled" },
+  post_install   = "mkdir -p ${DESTDIR}/usr/share/bash-completion/completions ${DESTDIR}/usr/share/zsh/site-functions ${DESTDIR}/usr/share/fish/vendor_completions.d"
+    .. " && ${DESTDIR}/usr/bin/noctalia completions bash > ${DESTDIR}/usr/share/bash-completion/completions/noctalia"
+    .. " && ${DESTDIR}/usr/bin/noctalia completions zsh > ${DESTDIR}/usr/share/zsh/site-functions/_noctalia"
+    .. " && ${DESTDIR}/usr/bin/noctalia completions fish > ${DESTDIR}/usr/share/fish/vendor_completions.d/noctalia.fish",
+  test           = "test -x ${DESTDIR}/usr/bin/noctalia"
+    .. " && test -f ${DESTDIR}/usr/share/noctalia/assets/emoji.json"
+    .. " && test -f ${DESTDIR}/usr/share/noctalia/assets/fonts/noctalia-tabler.ttf"
+    .. " && test -f ${DESTDIR}/usr/share/noctalia/assets/templates/builtin.toml"
+    .. " && test -f ${DESTDIR}/usr/share/noctalia/assets/translations/en.json"
+    .. " && test -f ${DESTDIR}/usr/share/applications/dev.noctalia.Noctalia.desktop"
+    .. " && test -f ${DESTDIR}/usr/share/icons/hicolor/scalable/apps/noctalia.svg"
+    .. " && test -f ${DESTDIR}/usr/share/bash-completion/completions/noctalia"
+    .. " && ${DESTDIR}/usr/bin/noctalia --version | grep -q 5.3.0",
+}

@@ -1,0 +1,16 @@
+-- stb.recipe — header-only snapshot of the stb single-file libraries.
+-- Pinned to a specific commit (version = commit date); noctalia requires
+-- stb/stb_image_resize2.h (currently living under deprecated/) and
+-- stb/stb_image_write.h.
+
+return {
+  name         = "stb",
+  version      = "20261019",
+  summary      = "Single-file public domain C/C++ libraries (stb headers)",
+  url          = "https://github.com/nothings/stb/archive/a7d4c2175630e1ea5b6f8dd00ab96fed0b97b96d.tar.gz",
+  sha256       = "ae498e10fadeba0c2e7aa86c71cc9989c4d895201cd26b8b72061c76cfde4edf",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-stb.sh",
+  test         = "test -f ${DESTDIR}/usr/include/stb/stb_image_resize2.h && test -f ${DESTDIR}/usr/include/stb/stb_image_write.h && test -f ${DESTDIR}/usr/include/stb/stb_image.h",
+}

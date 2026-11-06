@@ -1,0 +1,21 @@
+-- mozjs.recipe — SpiderMonkey 140.17.0: the JS engine gjs (and therefore
+-- gnome-shell) runs on. Built from the Firefox ESR source with the js
+-- project only (BLFS flow): python-3.14 compat patch, system icu, intl API.
+-- Build toolchain: rust/cargo (host), cbindgen (~/.local), which, icu.
+
+return {
+  name         = "mozjs",
+  version      = "140.17.0",
+  summary      = "Mozilla JavaScript engine (SpiderMonkey) for gjs",
+  url          = "https://archive.mozilla.org/pub/firefox/releases/140.17.0esr/source/firefox-140.17.0esr.source.tar.xz",
+  sha256       = "4d6ed3b18b2069c55bab12d8ba95da6013ac0b036d8a031df8b9f39a25d05c33",
+  deps         = { "glibc", "icu", "readline", "libz" },
+  build_system = "custom",
+  build_script = "build-mozjs.sh",
+  test         = "test -e ${DESTDIR}/usr/lib/libmozjs-140.so"
+    .. " && test -f ${DESTDIR}/usr/include/mozjs-140/js-config.h"
+    .. " && grep -q XP_UNIX ${DESTDIR}/usr/include/mozjs-140/js-config.h"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists mozjs-140"
+    .. " && test -x ${DESTDIR}/usr/bin/js140"
+    .. " && ${DESTDIR}/usr/bin/js140 -e 'print(40+2)' | grep -q 42",
+}

@@ -1,0 +1,15 @@
+-- gengetopt.recipe — GNU gengetopt 2.23.1, command-line option parser
+-- generator (prerequisite of gnulib's ./bootstrap, used by libidn2).
+
+return {
+  name           = "gengetopt",
+  version        = "2.23.1",
+  summary        = "Command-line option parser generator (GNU gengetopt)",
+  url            = "https://ftp.gnu.org/gnu/gengetopt/gengetopt-2.23.1.tar.xz",
+  sha256         = "3b9def48422bd45f78af95936200b7f9287369a3db76c4907c42fe10f4922ab6",
+  deps           = { "glibc", "gcc", "libgcc", "libstdc++" },
+  build_system   = "custom",
+  build_script   = "build-gengetopt.sh",
+  test           = "test -x ${DESTDIR}/usr/bin/gengetopt"
+    .. " && ${DESTDIR}/usr/bin/gengetopt --version | grep -q 2.23",
+}

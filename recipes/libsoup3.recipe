@@ -1,0 +1,18 @@
+-- libsoup3.recipe — 3.6.6-2: repack with GObject Introspection
+-- (Soup-3.0.gir was missing; geocode-glib's gir generation needs it).
+-- Vala vapi and docs off (no valac/gtk-doc on the host).
+
+return {
+  name           = "libsoup3",
+  version        = "3.6.6-2",
+  summary        = "HTTP client/server library for GLib (gir-enabled)",
+  url            = "https://github.com/GNOME/libsoup/archive/refs/tags/3.6.6.tar.gz",
+  sha256         = "828c357f6deca0646744ca2045870a8a215cd97a87357069b8fe94a786d8c316",
+  deps           = { "glibc", "libpsl", "glib", "libz", "nghttp2", "gobject-introspection", "sqlite", "krb5" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dintrospection=enabled", "-Ddocs=disabled", "-Dvapi=disabled" },
+  test           = "test -f ${DESTDIR}/usr/lib/libsoup-3.0.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Soup-3.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Soup-3.0.typelib",
+}

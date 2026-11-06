@@ -1,0 +1,19 @@
+-- libdconf.recipe — dconf 0.40.0-2: repack adding the DBus activation file
+-- (usr/share/dbus-1/services/ca.desrt.dconf.service) the previous package
+-- shipped an EMPTY services dir for — without it every gsettings/dconf
+-- write in a session fails (\"ca.desrt.dconf not provided by any .service
+-- files\"), so themes/icons/settings could never stick.
+
+return {
+  name           = "libdconf",
+  version        = "0.40.0-2",
+  summary        = "GSettings configuration backend (with DBus service)",
+  url            = "https://download.gnome.org/sources/dconf/0.40/dconf-0.40.0.tar.xz",
+  sha256         = "cf7f22a4c9200421d8d3325c5c1b8b93a36843650c9f95d6451e20f0bcb24533",
+  deps           = { "glibc", "glib" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "-Dbash_completion=false", "-Dman=false", "-Dvapi=false" },
+  test           = "test -f ${DESTDIR}/usr/share/dbus-1/services/ca.desrt.dconf.service"
+    .. " && test -x ${DESTDIR}/usr/libexec/dconf-service"
+    .. " && test -f ${DESTDIR}/usr/lib/libdconf.so.1",
+}

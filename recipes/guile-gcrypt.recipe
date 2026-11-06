@@ -1,0 +1,17 @@
+-- guile-gcrypt 0.5.0 — Guile bindings for libgcrypt, required by guix.
+-- Debian pool mirror of the notabug.org tag archive (notabug unreachable).
+
+return {
+  name           = "guile-gcrypt",
+  version        = "0.5.0",
+  summary        = "Guile bindings for libgcrypt (required by Guix)",
+  url            = "https://deb.debian.org/debian/pool/main/g/guile-gcrypt/guile-gcrypt_0.5.0.orig.tar.gz",
+  sha256         = "59fafedf6bc23dce32d26400c957a4d7cd32be1fbb26d0c6992aa71777284fe3",
+  deps           = { "glibc", "guile", "libgcrypt" },
+  build_system   = "custom",
+  build_script   = "build-guile-gcrypt.sh",
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/gcrypt/*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " guile -c '(use-modules (gcrypt hash))'",
+}

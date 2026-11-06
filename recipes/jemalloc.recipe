@@ -1,0 +1,14 @@
+-- jemalloc.recipe — scalable malloc (recommended by noctalia upstream for
+-- long-running sessions on glibc). Release tarball ships ./configure.
+
+return {
+  name           = "jemalloc",
+  version        = "5.4.0",
+  summary        = "Scalable malloc implementation",
+  url            = "https://github.com/jemalloc/jemalloc/releases/download/5.4.0/jemalloc-5.4.0.tar.bz2",
+  sha256         = "200776fac271093e7c2f21edd6d62657ecd2be578d9328633f2a86bfa6ef4f1d",
+  deps           = { "glibc", "gcc", "libgcc", "libstdc++" },
+  build_system   = "autotools",
+  configure_args = { "--disable-static" },
+  test           = "test -e ${DESTDIR}/usr/lib/libjemalloc.so.2 && test -f ${DESTDIR}/usr/lib/pkgconfig/jemalloc.pc",
+}

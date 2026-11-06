@@ -1,0 +1,25 @@
+-- libical.recipe — 4.0.7-2: repack adding the GLib bindings. The previous
+-- package shipped the core library only; evolution-data-server requires
+-- libical-glib (and its gir for the EDS typelib chain). Docs off (needs
+-- doxygen), testing off, no vapi (no valac).
+
+return {
+  name           = "libical",
+  version        = "4.0.7-2",
+  summary        = "iCalendar library (core + GLib bindings, gir-enabled)",
+  url            = "https://github.com/libical/libical/archive/refs/tags/v4.0.7.tar.gz",
+  sha256         = "47c05bc96e41416578cf1803bb2ba3f8d292cb17d5ac2fca539dee922bae8a94",
+  deps           = { "glibc", "gcc", "libgcc", "libstdc++", "glib", "libxml2", "gobject-introspection", "icu" },
+  build_system   = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DCMAKE_INSTALL_LIBDIR=lib",
+                     "-DLIBICAL_GLIB=true",
+                     "-DLIBICAL_GOBJECT_INTROSPECTION=true",
+                     "-DLIBICAL_BUILD_DOCS=false",
+                     "-DLIBICAL_BUILD_TESTING=false",
+                     "-DLIBICAL_JAVA_BINDINGS=False" },
+  test           = "ls ${DESTDIR}/usr/lib/libical.so* | grep -q ."
+    .. " && ls ${DESTDIR}/usr/lib/libical-glib.so* | grep -q ."
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists libical-glib"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/ICalGLib-4.0.gir",
+}

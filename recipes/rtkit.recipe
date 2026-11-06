@@ -1,0 +1,20 @@
+-- rtkit.recipe — rtkit 0.14: RealtimeKit dbus service; mutter asks
+-- org.freedesktop.RealtimeKit1 to raise the KMS/audio thread priority
+-- (its absence is logged as a non-fatal warning today). Dbus-activated,
+-- systemd unit dir = no (init-agnostic), libsystemd only for sd-bus.
+
+return {
+  name           = "rtkit",
+  version        = "0.14",
+  summary        = "RealtimeKit dbus service (thread priority mediation)",
+  url            = "https://deb.debian.org/debian/pool/main/r/rtkit/rtkit_0.14.orig.tar.gz",
+  sha256         = "b896741902847f3b4934bf0c75536ace5b07364402adcc9b20568578e5bb45b3",
+  deps           = { "glibc", "glib", "systemd-libs", "polkit", "dbus", "libcap" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dsystemd_systemunitdir=no", "-Dinstalled_tests=false" },
+  test           = "test -x ${DESTDIR}/usr/libexec/rtkit-daemon"
+    .. " && grep -q org.freedesktop.RealtimeKit1 ${DESTDIR}/usr/share/dbus-1/system-services/org.freedesktop.RealtimeKit1.service"
+    .. " && test -f ${DESTDIR}/usr/share/polkit-1/actions/org.freedesktop.RealtimeKit1.policy"
+    .. " && ! ls ${DESTDIR}/usr/lib/systemd 2>/dev/null | grep -q .",
+}

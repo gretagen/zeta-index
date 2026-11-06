@@ -1,0 +1,15 @@
+-- gsettings-desktop-schemas.recipe — 51.0: GNOME 51 schema set (shell's
+-- desktop schema requirements).
+
+return {
+  name           = "gsettings-desktop-schemas",
+  version        = "51.0",
+  summary        = "GSettings schemas for the GNOME/MATE desktop",
+  url            = "https://download.gnome.org/sources/gsettings-desktop-schemas/51/gsettings-desktop-schemas-51.0.tar.xz",
+  sha256         = "1e2419a5f21d26c324b28ae1c00e29e9175e8b596fff385a04c2172b36652226",
+  deps           = { "glibc", "glib" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "test -f ${DESTDIR}/usr/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml"
+    .. " && test -f ${DESTDIR}/usr/share/glib-2.0/schemas/org.gnome.desktop.a11y.gschema.xml",
+}

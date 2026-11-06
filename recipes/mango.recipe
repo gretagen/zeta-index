@@ -1,0 +1,22 @@
+-- mango.recipe — MangoWM 0.18.3 (upstream mangowm/mango). XWayland is a
+-- meson feature enabled by default (matching the 0.18.2 build's libxcb/
+-- xcb-util-wm deps); test contract carried over verbatim from 0.18.2.
+
+return {
+  name           = "mango",
+  version        = "0.18.3",
+  summary        = "MangoWM: lightweight dwl-based Wayland compositor",
+  url            = "https://github.com/mangowm/mango/archive/refs/tags/0.18.3.tar.gz",
+  sha256         = "9b9c66c55ba83131cc2e7b847239f0f7520207f448a8c580c8ca796ec9e13e41",
+  deps           = { "glibc", "glib", "cairo", "cjson", "pango", "pixman", "scenefx", "wayland", "wlroots", "xkbcommon", "libinput", "pcre2", "libxcb", "xcb-util-wm" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release" },
+  test           = "test -x ${DESTDIR}/usr/bin/mango"
+    .. " && test -x ${DESTDIR}/usr/bin/mmsg"
+    .. " && test -x ${DESTDIR}/usr/bin/mangonag"
+    .. " && test -f ${DESTDIR}/etc/mango/config.conf"
+    .. " && test -f ${DESTDIR}/etc/mango/config.toml"
+    .. " && test -f ${DESTDIR}/usr/share/wayland-sessions/mango.desktop"
+    .. " && test -f ${DESTDIR}/usr/share/xdg-desktop-portal/mango-portals.conf"
+    .. " && readelf -d ${DESTDIR}/usr/bin/mango | grep -q libwlroots-0.20",
+}

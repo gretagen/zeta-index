@@ -1,0 +1,18 @@
+-- libjson-glib.recipe — 1.10.0-2: repack with GObject Introspection
+-- (Json-1.0.gir was missing; geocode-glib's gir generation needs it).
+-- Docs/man/tests off.
+
+return {
+  name           = "libjson-glib",
+  version        = "1.10.0-2",
+  summary        = "GLib-based JSON serialization library (gir-enabled)",
+  url            = "https://github.com/GNOME/json-glib/archive/refs/tags/1.10.0.tar.gz",
+  sha256         = "447890f9de2a04c312871768208f6c8aeec4069392af7605bc77e61165dcb374",
+  deps           = { "glibc", "glib", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dintrospection=enabled", "-Ddocumentation=disabled", "-Dman=false", "-Dtests=false" },
+  test           = "test -e ${DESTDIR}/usr/lib/libjson-glib-1.0.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Json-1.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Json-1.0.typelib",
+}

@@ -1,0 +1,19 @@
+-- fontconfig recipe — 2.18.2-2: dev-complete + tools repack. The old
+-- package shipped the library only — no fc-cache/fc-scan/fc-match on the
+-- whole system, which also blocks font package tests (noto-fonts-cjk).
+
+return {
+  name           = "fontconfig",
+  version        = "2.18.2-2",
+  summary        = "Font configuration and customization library (with fc-* tools)",
+  url            = "https://gitlab.freedesktop.org/fontconfig/fontconfig/-/archive/2.18.2/fontconfig-2.18.2.tar.bz2",
+  sha256         = "34d612edc4a1ed7aa032fc0b9ab7ca52803032f94b1a47e37ee5d49a1db4cbeb",
+  deps           = { "glibc", "freetype", "libxml2", "expat" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "test -e ${DESTDIR}/usr/lib/libfontconfig.so.1"
+    .. " && test -x ${DESTDIR}/usr/bin/fc-scan"
+    .. " && test -x ${DESTDIR}/usr/bin/fc-cache"
+    .. " && test -x ${DESTDIR}/usr/bin/fc-match"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists fontconfig",
+}

@@ -1,0 +1,18 @@
+-- gnome-desktop.recipe — gnome-desktop 51.0: background/thumbnail/URL
+-- handling library (libgnome-desktop), linked by gnome-shell, gnome-session
+-- and gnome-settings-daemon.
+
+return {
+  name           = "gnome-desktop",
+  version        = "51.0",
+  summary        = "Desktop core library for GNOME (background, thumbnails)",
+  url            = "https://download.gnome.org/sources/gnome-desktop/51/gnome-desktop-51.0.tar.xz",
+  sha256         = "9ebeb9f1769d3c310caeadd921ab34c8f264b92937740518b3bc859a579a6912",
+  deps           = { "glibc", "glib", "gtk4", "gtk3", "libseccomp", "gsettings-desktop-schemas", "iso-codes", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Ddesktop_docs=false", "-Dgtk_doc=false", "-Dsystemd=disabled" },
+  test           = "ls ${DESTDIR}/usr/lib/libgnome-desktop-4.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/GnomeDesktop-4.0.gir"
+    .. " && ls ${DESTDIR}/usr/lib/libgnome-bg-4.so* | grep -q .",
+}

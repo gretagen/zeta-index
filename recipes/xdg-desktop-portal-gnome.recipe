@@ -1,0 +1,21 @@
+-- xdg-desktop-portal-gnome.recipe — 51.0: GNOME backend for
+-- xdg-desktop-portal (screenshot/screencast/settings via shell+mutter).
+-- BLFS flow: units to a throwaway dir (clean_stage sweeps the .service
+-- suffix anyway); schema cache recompiled on the host after install.
+
+return {
+  name           = "xdg-desktop-portal-gnome",
+  version        = "51.0",
+  summary        = "GNOME backend for xdg-desktop-portal (screencast, shell integration)",
+  url            = "https://download.gnome.org/sources/xdg-desktop-portal-gnome/51/xdg-desktop-portal-gnome-51.0.tar.xz",
+  sha256         = "ec228b305091b649c16c690e102aa1d66fc10e9834888d51e411913c82c1430d",
+  deps           = { "glibc", "glib", "gtk4", "libadwaita", "gnome-desktop",
+                     "xdg-desktop-portal", "gsettings-desktop-schemas" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dsystemduserunitdir=/tmp" },
+  test           = "test -x ${DESTDIR}/usr/libexec/xdg-desktop-portal-gnome"
+    .. " && test -f ${DESTDIR}/usr/share/xdg-desktop-portal/portals/gnome.portal"
+    .. " && test -f ${DESTDIR}/usr/share/glib-2.0/schemas/xdg-desktop-portal-gnome.gschema.xml"
+    .. " && ! find ${DESTDIR} -name '*.service' -path '*systemd*' | grep -q .",
+}

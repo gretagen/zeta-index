@@ -1,0 +1,17 @@
+-- graphene.recipe — graphene 1.10.8-3: repack with GObject Introspection.
+-- The old package shipped the library only; gtk4's gir generation needs
+-- Graphene-1.0.gir/typelib (GNOME 51 stack).
+
+return {
+  name           = "graphene",
+  version        = "1.10.8-3",
+  summary        = "Thin layer of math types for graphic libraries (required by GTK4)",
+  url            = "https://github.com/ebassi/graphene/archive/refs/tags/1.10.8.tar.gz",
+  sha256         = "922dc109d2dc5dc56617a29bd716c79dd84db31721a8493a13a5f79109a4a4ed",
+  deps           = { "glibc", "glib", "gobject-introspection" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload", "-Dintrospection=enabled" },
+  test           = "test -e ${DESTDIR}/usr/lib/libgraphene-1.0.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Graphene-1.0.gir"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Graphene-1.0.typelib",
+}

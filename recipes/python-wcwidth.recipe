@@ -1,0 +1,16 @@
+-- python-wcwidth.recipe — 0.9.4: wcwidth(), the terminal character-cell
+-- width library. prompt_toolkit imports it at load time, so hyfetch's
+-- dependency chain is hyfetch -> python-prompt-toolkit -> python-wcwidth.
+-- Module tree copied into site-packages (distro convention for python-*).
+
+return {
+  name         = "python-wcwidth",
+  version      = "0.9.4",
+  summary      = "Terminal character width library (wcwidth)",
+  url          = "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz",
+  sha256       = "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954",
+  deps         = { "python" },
+  build_system = "custom",
+  build_script = "build-python-wcwidth.sh",
+  test         = "PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages python3 -c \"import wcwidth; assert wcwidth.__version__ == '0.9.4'\"",
+}

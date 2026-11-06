@@ -1,0 +1,18 @@
+-- ibus.recipe — ibus 1.5.34: input method framework; gnome-shell links
+-- libibus directly (BLFS required dep). Autotools; introspection on for
+-- gjs; builds the gtk4 ui by default when gtk4 is present.
+
+return {
+  name           = "ibus",
+  version        = "1.5.34",
+  summary        = "Intelligent Input Bus (input method framework)",
+  url            = "https://github.com/ibus/ibus/releases/download/1.5.34/ibus-1.5.34.tar.gz",
+  sha256         = "12a72210ce5250f8a66df562a75e034e67b2bce74c4df2983dc86d1154894943",
+  deps           = { "glibc", "glib", "gtk4", "gtk3", "gobject-introspection", "libxml2", "libnotify", "python", "libdbusmenu-glib", "libdbusmenu-gtk3", "libdconf" },
+  build_system   = "autotools",
+  configure_args = { "--disable-gtk-doc", "--enable-introspection", "--disable-gtk2", "--enable-gtk4",
+                     "--disable-emoji-dict", "--disable-unicode-dict" },
+  test           = "test -x ${DESTDIR}/usr/bin/ibus"
+    .. " && ls ${DESTDIR}/usr/lib/libibus-1.0.so* | grep -q ."
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/IBus-1.0.gir",
+}

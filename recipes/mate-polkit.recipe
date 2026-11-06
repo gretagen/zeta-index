@@ -1,0 +1,15 @@
+-- mate-polkit.recipe — MATE 1.28.1 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-polkit",
+  version        = "1.28.1",
+  summary        = "Polkit agent for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-polkit-1.28.1.tar.xz",
+  sha256         = "350a1dd0a8ed6a2c9c183cff2a21f394299e968fcc6ae2e8c93c565dae604ae8",
+  deps           = { "glibc",  "gtk3", "polkit", "gettext"  },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

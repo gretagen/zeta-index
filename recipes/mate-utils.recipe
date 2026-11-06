@@ -1,0 +1,15 @@
+-- mate-utils.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-utils",
+  version        = "1.28.0",
+  summary        = "Utilities for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-utils-1.28.0.tar.xz",
+  sha256         = "58449d7a0d1d900ff03b78ca9f7e98c21e97f47fc26bee7ff1c61834f22f88d3",
+  deps           = { "mate-panel",  "glibc", "glib", "gtk3",  "mate-desktop", "gettext", "libcanberra", "libgtop", "libSM", "udisks2", "libxml2"   },
+  build_system   = "custom",
+  build_script   = "build-mate-utils.sh",
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

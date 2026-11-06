@@ -1,0 +1,17 @@
+-- openssl.recipe — repack3.6.3: the index payload shipped only libssl.so.3
+-- and libcrypto.so.3 (no headers, no pkg-config files, no CLI), which broke
+-- every consumer of libcurl's Requires.private chain (openssl.pc) and all
+-- TLS-devel builds. Custom build: install_sw without the static archives,
+-- keeping the original shared-library payload intact.
+
+return {
+  name         = "openssl",
+  version      = "3.6.3-2",
+  summary      = "OpenSSL 3 crypto and TLS libraries (libcrypto/libssl)",
+  url          = "https://github.com/openssl/openssl/releases/download/openssl-3.6.3/openssl-3.6.3.tar.gz",
+  sha256       = "243a86649cf6f23eeb6a2ff2456e09e5d77dd9018a54d3d96b0c6bdd6ba6c7f1",
+  deps         = { "glibc", "brotli", "libz", "zstd" },
+  build_system = "custom",
+  build_script = "build-openssl.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/libssl.so.3 && test -f ${DESTDIR}/usr/lib/libcrypto.so.3 && test -f ${DESTDIR}/usr/lib/pkgconfig/openssl.pc && test -f ${DESTDIR}/usr/include/openssl/ssl.h && test -x ${DESTDIR}/usr/bin/openssl",
+}

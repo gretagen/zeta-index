@@ -1,0 +1,17 @@
+-- guile-zlib 0.2.2 — Guile bindings to zlib, required by guix.
+-- Debian pool mirror of the notabug.org archive (notabug unreachable).
+
+return {
+  name           = "guile-zlib",
+  version        = "0.2.2",
+  summary        = "Guile bindings to zlib (required by Guix)",
+  url            = "https://deb.debian.org/debian/pool/main/g/guile-zlib/guile-zlib_0.2.2.orig.tar.gz",
+  sha256         = "6f6cca4b32ca79f3f4627cdb7ea68569a3cc38be60468991e2b5c085783e38c1",
+  deps           = { "glibc", "guile", "libz" },
+  build_system   = "custom",
+  build_script   = "build-guile-autotools.sh",
+  test           = "ls ${DESTDIR}/usr/share/guile/site/3.0/zlib*.scm >/dev/null"
+    .. " && GUILE_LOAD_PATH=${DESTDIR}/usr/share/guile/site/3.0"
+    .. " GUILE_LOAD_COMPILED_PATH=${DESTDIR}/usr/lib/guile/site-ccache"
+    .. " guile -c '(use-modules (zlib))'",
+}

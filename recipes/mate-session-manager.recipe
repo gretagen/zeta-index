@@ -1,0 +1,15 @@
+-- mate-session-manager.recipe — MATE 1.28.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-session-manager",
+  version        = "1.28.0",
+  summary        = "Session manager for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.28/mate-session-manager-1.28.0.tar.xz",
+  sha256         = "d32ce4595ba1da65290777203f2bc82bd973b214a3a04080a1ef5c68990a2d7b",
+  deps           = { "egl", "glibc",  "dbus-glib", "gettext", "gtk3", "libSM", "mate-desktop"  },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\" && test -x ${DESTDIR}/usr/bin/mate-session",
+}

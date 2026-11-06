@@ -1,0 +1,18 @@
+-- samba recipe — 4.25.1: required by gnome-control-center (file sharing
+-- panel). Samba's own configure wrapper; the daemons ship but are never
+-- started (init-agnostic — no units survive clean_stage).
+
+return {
+  name         = "samba",
+  version      = "4.25.1",
+  summary      = "Samba networking suite (SMB/CIFS)",
+  url          = "https://download.samba.org/pub/samba/stable/samba-4.25.1.tar.gz",
+  sha256       = "7f367545bca69aa96897628f82f0f04d4b66b3bcb36cb978b9bb952c4b4c428d",
+  deps         = { "glibc", "gnutls", "libarchive", "popt", "avahi", "libcups", "readline",
+                   "libbsd", "libcap", "libxcrypt", "ncurses", "icu", "lmdb", "python" },
+  build_system = "custom",
+  build_script = "build-samba.sh",
+  test         = "test -x ${DESTDIR}/usr/sbin/smbd"
+    .. " && test -x ${DESTDIR}/usr/bin/smbclient"
+    .. " && ls ${DESTDIR}/usr/lib/libsmbclient.so* | grep -q .",
+}

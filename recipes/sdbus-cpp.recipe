@@ -1,0 +1,23 @@
+-- sdbus-cpp.recipe — repack2.3.1: the original tarball used flat `usr/...`
+-- entries, and with `archive = { strip = 1 }` the installer stripped the
+-- real `usr` component - headers ended up in /include (orphan) instead of
+-- /usr/include, so no consumer could compile against the library.
+-- Rebuilt with the toolchain's correct `./usr/...` layout.
+
+return {
+  name           = "sdbus-cpp",
+  version        = "2.3.1-2",
+  summary        = "C++ wrapper library for sd-bus (libsystemd D-Bus client)",
+  url            = "https://github.com/Kistler-Group/sdbus-cpp/archive/refs/tags/v2.3.1.tar.gz",
+  sha256         = "3a289eded586c26d06c1387de72c7bf7c809527a70d51ba6401fe61059b19626",
+  deps           = { "glibc", "gcc", "libgcc", "libstdc++", "systemd-libs" },
+  build_system   = "cmake",
+  configure_args = {
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DCMAKE_INSTALL_LIBDIR=lib",
+    "-DBUILD_EXAMPLES=OFF",
+    "-DBUILD_TESTS=OFF",
+    "-DBUILD_STATIC_LIBS=OFF",
+  },
+  test           = "test -f ${DESTDIR}/usr/include/sdbus-c++/sdbus-c++.h && test -e ${DESTDIR}/usr/lib/libsdbus-c++.so.2.3.1 && test -f ${DESTDIR}/usr/lib/pkgconfig/sdbus-c++.pc",
+}

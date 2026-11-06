@@ -1,0 +1,34 @@
+-- webkit2gtk-4.1.recipe — 2.52.6-2: SOURCE rebuild replacing the Arch
+-- binary package. The binary was built against ICU 78 while the system
+-- ships ICU 79 (libicui18n.so.78 unresolved) and omitted libyuv/hidapi
+-- from its declared deps. Flags follow Arch's PKGBUILD (PORT=GTK,
+-- USE_SOUP2=OFF = the 4.1 API, speech/libbacktrace/docs off); built with
+-- gcc (Arch prefers clang, upstream accepts gcc). ruby is a build tool
+-- (ambient, like cmake), not a runtime dep. Test locks the ICU 79 fix.
+
+return {
+  name           = "webkit2gtk-4.1",
+  version        = "2.52.6-2",
+  summary        = "Web browser engine library (GTK3 + soup3, built from source)",
+  url            = "https://webkitgtk.org/releases/webkitgtk-2.52.6.tar.xz",
+  sha256         = "179a2ea3f8f6edd4be7f31fdc55afc57bd0729f1fba648c61d4181539ac116fc",
+  deps           = { "at-spi2-core", "cairo", "enchant", "fontconfig", "freetype", "gdk-pixbuf", "glib", "gstreamer", "gst-plugins-base-libs", "gst-plugins-bad-libs", "gtk3", "harfbuzz", "harfbuzz-icu", "hyphen", "icu", "lcms2", "libavif", "libdrm", "libepoxy", "libgcrypt", "libjxl", "libmanette", "libpng", "libseccomp", "libsecret", "libsoup3", "libtasn1", "libwebp", "libX11", "libxml2", "libxslt", "pango", "sqlite", "woff2", "xdg-dbus-proxy", "libz", "libyuv", "hidapi", "bubblewrap", "mesa-drivers" },
+  build_system   = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DCMAKE_INSTALL_LIBDIR=lib",
+                     "-DCMAKE_INSTALL_LIBEXECDIR=lib",
+                     "-DCMAKE_SKIP_RPATH=ON",
+                     "-DENABLE_DOCUMENTATION=OFF",
+                     "-DENABLE_MINIBROWSER=ON",
+                     "-DENABLE_SPEECH_SYNTHESIS=OFF",
+                     "-DPORT=GTK",
+                     "-DUSE_FLITE=OFF",
+                     "-DUSE_GTK4=OFF",
+                     "-DUSE_LIBBACKTRACE=OFF",
+                     "-DUSE_SOUP2=OFF",
+                     "-DUSE_SYSTEM_SYSPROF_CAPTURE=NO" },
+  test           = "ls ${DESTDIR}/usr/lib/libwebkit2gtk-4.1.so* | grep -q ."
+    .. " && readelf -d ${DESTDIR}/usr/lib/libwebkit2gtk-4.1.so.0 | grep -q libicui18n.so.79"
+    .. " && test -x ${DESTDIR}/usr/lib/webkit2gtk-4.1/WebKitWebProcess"
+    .. " && ls ${DESTDIR}/usr/share/gir-1.0/WebKit2-4.1.gir | grep -q .",
+}

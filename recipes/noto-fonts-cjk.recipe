@@ -1,0 +1,20 @@
+-- noto-fonts-cjk recipe — Sans 2.004 + Serif 2.003: CJK font families.
+-- Zip releases (toolchain extracts .zip since v1.0.6). Sans ships as the
+-- primary source; Serif is fetched in-build with a pinned digest. TTC
+-- collections carry every weight/language pair per family. fontconfig
+-- scans /usr/share/fonts recursively, so plain install is enough.
+
+return {
+  name         = "noto-fonts-cjk",
+  version      = "2.004",
+  summary      = "Noto Sans/Serif CJK fonts (TTC collections, all weights)",
+  url          = "https://github.com/notofonts/noto-cjk/releases/download/Sans2.004/00_NotoSansCJK.ttc.zip",
+  sha256       = "a56077736038875f3a5b1e6715b2713a2bd049cc0bf0dfdf645927b070d38bfc",
+  deps         = { "fontconfig" },
+  build_system = "custom",
+  build_script = "build-noto-cjk.sh",
+  test         = "test -f ${DESTDIR}/usr/share/fonts/noto/NotoSansCJK.ttc"
+    .. " && test -f ${DESTDIR}/usr/share/fonts/noto/NotoSerifCJK.ttc"
+    .. " && fc-scan ${DESTDIR}/usr/share/fonts/noto/NotoSansCJK.ttc | grep -qi \"noto sans cjk\""
+    .. " && fc-scan ${DESTDIR}/usr/share/fonts/noto/NotoSerifCJK.ttc | grep -qi \"noto serif cjk\"",
+}

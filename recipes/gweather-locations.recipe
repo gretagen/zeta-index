@@ -1,0 +1,18 @@
+-- gweather-locations.recipe — 2026.2: the GWeather locations database
+-- (gweather-locations.pc + Locations.bin), a hard dependency of
+-- libgweather 4.6 (separate GNOME project since the locations split).
+
+return {
+  name           = "gweather-locations",
+  version        = "2026.2",
+  summary        = "Geographical locations database for GWeather",
+  url            = "https://download.gnome.org/sources/gweather-locations/2026/gweather-locations-2026.2.tar.xz",
+  sha256         = "e7570a3661e0a752a06387b2032585cf588fc56770b1f9f39f1a55d17b2835fe",
+  deps           = { "glibc", "glib" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload" },
+  test           = "test -f ${DESTDIR}/usr/lib/gweather-locations/Locations.bin"
+    .. " && test -f ${DESTDIR}/usr/share/pkgconfig/gweather-locations.pc"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/share/pkgconfig pkg-config --exists gweather-locations"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/share/pkgconfig pkg-config --variable=locations_db gweather-locations | grep -q Locations.bin",
+}

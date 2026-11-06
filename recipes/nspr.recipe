@@ -1,0 +1,16 @@
+-- nspr.recipe — NSPR 4.40: Netscape Portable Runtime, required by nss and
+-- (through nss) by evolution-data-server's S/MIME support.
+
+return {
+  name           = "nspr",
+  version        = "4.40",
+  summary        = "Netscape Portable Runtime (platform abstraction)",
+  url            = "https://ftp.mozilla.org/pub/nspr/releases/v4.40/src/nspr-4.40.tar.gz",
+  sha256         = "c0c1884c627f3db7a783f7c7314c695226b2043696791d15519e7e0578c19bdc",
+  deps           = { "glibc" },
+  build_system   = "custom",
+  build_script   = "build-nspr.sh",
+  test           = "test -e ${DESTDIR}/usr/lib/libnspr4.so"
+    .. " && test -f ${DESTDIR}/usr/include/nspr/prtypes.h"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig pkg-config --exists nspr",
+}

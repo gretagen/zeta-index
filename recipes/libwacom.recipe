@@ -1,0 +1,20 @@
+-- libwacom.recipe — 2.20.0: tablet database and library, rebuilt with the
+-- CORRECT udev layout (the previous package nested rules under
+-- usr/lib/udev/rules.d/rules.d/ and hwdb under rules.d/hwdb.d/, where
+-- udevd never reads them). udev-dir now defaults to the proper base.
+
+return {
+  name           = "libwacom",
+  version        = "2.20.0",
+  summary        = "Wacom tablet database and library (fixed udev layout)",
+  url            = "https://deb.debian.org/debian/pool/main/libw/libwacom/libwacom_2.20.0.orig.tar.gz",
+  sha256         = "aad76712118a522133e90ad701b92a7c30b0334c459b8174777e4b31aab00ba7",
+  deps           = { "glibc", "libevdev", "libgudev", "glib", "libxml2" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dudev-dir=/usr/lib/udev", "-Dtests=disabled", "-Ddocumentation=disabled" },
+  test           = "test -e ${DESTDIR}/usr/lib/libwacom.so.9"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/65-libwacom.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/hwdb.d/65-libwacom.hwdb"
+    .. " && ! test -d ${DESTDIR}/usr/lib/udev/rules.d/rules.d",
+}

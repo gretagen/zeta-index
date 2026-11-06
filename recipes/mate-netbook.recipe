@@ -1,0 +1,15 @@
+-- mate-netbook.recipe — MATE 1.26.0 source build (part of the MATE-from-source campaign
+-- replacing nemesis Arch binaries). deps/summary carried from the proven
+-- nemesis manifest.
+
+return {
+  name           = "mate-netbook",
+  version        = "1.26.0",
+  summary        = "Netbook mode for MATE",
+  url            = "https://pub.mate-desktop.org/releases/1.26/mate-netbook-1.26.0.tar.xz",
+  sha256         = "e3bf1b6d9fb266600db408fd9ce97d4a4d3b29586853d4ea46547b6793f1ed89",
+  deps           = { "glibc", "glib", "gtk3",  "libfakekey", "mate-panel", "gettext"   },
+  build_system   = "autotools",
+  configure_args = { "--disable-static", "--disable-gtk-doc", "--disable-introspection" },
+  test           = "test -n \"$(find ${DESTDIR}/usr -mindepth 1 -type f | head -1)\"",
+}

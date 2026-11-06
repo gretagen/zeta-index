@@ -1,0 +1,16 @@
+-- brotli.recipe — repack1.2.0: the index payload shipped only the three
+-- shared libraries (no headers, no pkg-config files, no CLI), breaking
+-- libjxl's Requires.private chain. Rebuild with the same libs plus dev
+-- files and the pkg-config files upstream's CMake never installs.
+
+return {
+  name         = "brotli",
+  version      = "1.2.0",
+  summary      = "Brotli compression library",
+  url          = "https://github.com/google/brotli/archive/refs/tags/v1.2.0.tar.gz",
+  sha256       = "816c96e8e8f193b40151dad7e8ff37b1221d019dbcb9c35cd3fadbfe6477dfec",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-brotli.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/libbrotlienc.so.1 && test -f ${DESTDIR}/usr/include/brotli/encode.h && test -f ${DESTDIR}/usr/lib/pkgconfig/libbrotlienc.pc && test -x ${DESTDIR}/usr/bin/brotli",
+}

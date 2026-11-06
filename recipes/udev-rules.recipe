@@ -1,0 +1,25 @@
+-- udev-rules.recipe — 262: the standard udev rule + hwdb set (data only)
+-- copied from the systemd-262 source. Fixes fresh installs where libinput
+-- saw zero devices: 50-udev-default, 60-input-id/evdev/persistent-input,
+-- 70-uaccess/mouse/touchpad, 80-drivers and friends, plus the hwdb
+-- database. No binaries — works under any init (systemd, dinit, openrc,
+-- runit alike; udevd just reads these paths).
+
+return {
+  name         = "udev-rules",
+  version      = "262",
+  summary      = "Standard udev rules and hwdb (data only, init-agnostic)",
+  url          = "https://github.com/systemd/systemd/archive/refs/tags/v262.tar.gz",
+  sha256       = "6aa77506c0644aa67f940a48e3d3a7368601f787e4f249139516d353f107bcab",
+  build_system = "custom",
+  build_script = "build-udev-rules.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/udev/rules.d/50-udev-default.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/60-input-id.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/60-evdev.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/60-persistent-input.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/70-uaccess.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/70-touchpad.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/rules.d/80-drivers.rules"
+    .. " && test -f ${DESTDIR}/usr/lib/udev/hwdb.d/60-input-id.hwdb"
+    .. " && test \"$(ls ${DESTDIR}/usr/lib/udev/hwdb.d/*.hwdb | wc -l)\" -ge 30",
+}

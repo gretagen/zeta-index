@@ -1,0 +1,14 @@
+-- lzlib.recipe — the lzlib C compression library (guile-lzlib's binding
+-- target; not previously packaged). Built shared per upstream note.
+
+return {
+  name           = "lzlib",
+  version        = "1.12",
+  summary        = "LZ-compression library (lzip runtime)",
+  url            = "https://deb.debian.org/debian/pool/main/l/lzlib/lzlib_1.12.orig.tar.xz",
+  sha256         = "18d66f681be0a47d1e6c62428d84ecd1469657758c2ec29afd9c8ae8c741aa36",
+  deps           = { "glibc" },
+  build_system   = "autotools",
+  configure_args = { "--libdir=/usr/lib", "--enable-shared", "--disable-static" },
+  test           = "ls ${DESTDIR}/usr/lib/libz.so* >/dev/null || true; ls ${DESTDIR}/usr/lib/liblz.so* >/dev/null",
+}

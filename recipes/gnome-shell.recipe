@@ -1,0 +1,25 @@
+-- gnome-shell.recipe — gnome-shell 51.1: THE desktop shell (Wayland,
+-- JS on gjs/mozjs). BLFS recipe: -Dsystemd=false (no units, ever —
+-- init-agnostic), tests off, extensions_tool off (skips gnome-autoar).
+
+return {
+  name           = "gnome-shell",
+  version        = "51.1",
+  summary        = "GNOME Shell desktop (Wayland compositor UI)",
+  url            = "https://download.gnome.org/sources/gnome-shell/51/gnome-shell-51.1.tar.xz",
+  sha256         = "c1eb08d9651a567ed5d9b2791371f1898e657cf45e75e1d88adefbab807977d6",
+  deps           = { "glibc", "glib", "gtk4", "mutter", "gjs", "gnome-desktop",
+                     "evolution-data-server", "gcr-4", "ibus", "polkit", "startup-notification",
+                     "libnma", "networkmanager", "libgweather-4", "gsettings-desktop-schemas",
+                     "adwaita-icon-theme", "libdconf", "gobject-introspection", "cairo",
+                     "gdk-pixbuf", "librsvg", "pipewire", "xdg-desktop-portal",
+                     "libgudev", "gnome-autoar", "gnome-bluetooth", "gdm",
+                     "accountsservice", "geoclue2", "upower" },
+  build_system   = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "-Dsystemd=false", "-Dtests=false", "-Dextensions_tool=false" },
+  test           = "test -x ${DESTDIR}/usr/bin/gnome-shell"
+    .. " && test -d ${DESTDIR}/usr/lib/gnome-shell"
+    .. " && test -f ${DESTDIR}/usr/share/glib-2.0/schemas/org.gnome.shell.gschema.xml"
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib:${DESTDIR}/usr/lib/gnome-shell:${DESTDIR}/usr/lib/mutter-51 ${DESTDIR}/usr/bin/gnome-shell --version | grep -q 51",
+}
