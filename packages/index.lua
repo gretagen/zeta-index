@@ -164,6 +164,7 @@ return {
   { name = "ghostty", version = "1.4.0-1-x86_64", summary = "fast, feature-rich, and cross-platform terminal emulator" },
   { name = "giflib", version = "6.1.3", summary = "Library for reading and writing gif images" },
   { name = "git", version = "2.50.0", summary = "Distributed version control system" },
+  { name = "git-lfs", version = "3.8.1", summary = "Git extension for versioning large files (Go binary)" },
   { name = "gjs", version = "1.90.1", summary = "JavaScript bindings for GNOME (gjs runtime)" },
   { name = "glew", version = "2.3.1", summary = "The OpenGL Extension Wrangler Library (shared lib only)" },
   { name = "glib", version = "2.90.1", summary = "Low-level core utility library (gir-enabled)" },
