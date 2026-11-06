@@ -886,6 +886,7 @@ return {
   { name = "python-pillow", version = "13.0.0", summary = "Python Imaging Library (Pillow)" },
   { name = "python-platformdirs", version = "4.13.4", summary = "Python module for platform-specific user directory locations" },
   { name = "python-prompt-toolkit", version = "3.0.53", summary = "Python terminal prompting and rich TUI library" },
+  { name = "python-pygments", version = "2.21.0", summary = "Python syntax highlighting engine (Python module)" },
   { name = "python-screeninfo", version = "0.8.1", summary = "Python module to fetch monitor information (resolution, position)" },
   { name = "python-wcwidth", version = "0.9.4", summary = "Terminal character width library (wcwidth)" },
   { name = "python-yaml", version = "6.0.3", summary = "PyYAML: YAML parser and emitter for Python 3" },
