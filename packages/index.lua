@@ -238,6 +238,7 @@ return {
   { name = "htop", version = "3.5.2", summary = "Interactive process viewer" },
   { name = "hunspell", version = "1.7.5", summary = "Hunspell spell-checker library and CLI" },
   { name = "hwdata", version = "0.389", summary = "Hardware identification databases (pci.ids, usb.ids)" },
+  { name = "hyfetch", version = "2.1.1", summary = "Neofetch with LGBTQ+ pride flags" },
   { name = "hyperfine", version = "2.0.0", summary = "Command line benchmarking tool" },
   { name = "hyphen", version = "2.8.9", summary = "Hyphenation library (Arch binary)" },
   { name = "hyprcursor", version = "0.1.13", summary = "Library and toolkit for the Hyprland cursor format" },
