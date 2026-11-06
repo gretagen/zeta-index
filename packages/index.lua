@@ -65,6 +65,7 @@ return {
   { name = "corrosion", version = "0.6.1", summary = "CMake/Cargo integration module (Corrosion)" },
   { name = "cowsay", version = "3.8.4", summary = "Cow says things" },
   { name = "cpio", version = "2.15", summary = "GNU cpio: a program to manage archives of files" },
+  { name = "cpufetch", version = "1.07", summary = "Fancy CPU architecture fetching tool" },
   { name = "cpupower", version = "7.2.6", summary = "CPU power management tools (Arch binary)" },
   { name = "cracklib", version = "2.10.4", summary = "Password-strength checking library and word list" },
   { name = "cryptsetup", version = "2.8.8", summary = "Userspace setup tool for transparent encryption of block devices using dm-crypt" },
