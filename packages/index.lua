@@ -758,6 +758,7 @@ return {
   { name = "mbedtls", version = "3.6.7", summary = "TLS 1.3/1.2 and DTLS library (mbedTLS 3.x)" },
   { name = "md4c", version = "0.5.3", summary = "C Markdown parser library" },
   { name = "mdadm", version = "4.6", summary = "A tool for managing/monitoring Linux md device arrays, also known as Software RAID" },
+  { name = "mdbook", version = "0.5.4", summary = "Create books from markdown files (Rust binary)" },
   { name = "menu-cache", version = "1.1.1", summary = "LXDE menu cache library" },
   { name = "mesa-drivers", version = "26.1.8-3", summary = "Mesa 3D drivers (radeonsi, iris, nouveau, lavapipe, etc.)" },
   { name = "mesa-full", version = "1.0", summary = "Complete Mesa graphics stack (OpenGL, EGL, GBM, DRI drivers, VA-API, Vulkan loader)" },
