@@ -14,7 +14,7 @@ with its `build-<name>.sh` build script, patch files and vendored sources next t
 - If you do a PR to the index, also do one in the selected repository, such as constructs or nemesis.
 - AI use is permitted to contribute to package-ports
 - PRs improving recipes (build scripts, patches, versions) are welcome. Keep the flat
-  layout — `<name>.recipe` + `build-<name>.sh` side by side in `recipes/` — toolchain
+  layout `<name>.recipe` + `build-<name>.sh` side by side in `recipes/`, the toolchain
   resolves build scripts and `--follow` dependency recipes relative to that directory.
 
 ## Repository scheme
