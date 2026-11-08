@@ -729,7 +729,7 @@ return {
   { name = "make", version = "4.4.1", summary = "GNU Make — build automation tool" },
   { name = "mako", version = "1.11.0", summary = "Lightweight Wayland notification daemon" },
   { name = "mango", version = "0.18.3", summary = "MangoWM: lightweight dwl-based Wayland compositor" },
-  { name = "manual", version = "1.0.2", summary = "Haliade system manual as a command (manual)" },
+  { name = "manual", version = "1.0.3", summary = "Haliade system manual as a command (manual)" },
   { name = "marco", version = "1.28.1", summary = "Window manager for MATE" },
   { name = "mate", version = "1.29", summary = "MATE desktop group (meta-package)" },
   { name = "mate-applets", version = "1.28.1", summary = "Panel applets for MATE" },
