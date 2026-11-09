@@ -931,6 +931,7 @@ return {
   { name = "scrot", version = "2.0.0-1", summary = "Take a screenshot in X" },
   { name = "sd", version = "1.1.0", summary = "Intuitive find and replace CLI (sed alternative)" },
   { name = "sdbus-cpp", version = "2.3.1-2", summary = "C++ wrapper library for sd-bus (libsystemd D-Bus client)" },
+  { name = "sddm", version = "0.21.0", summary = "Qt-based display manager with X11 greeter" },
   { name = "sdl2", version = "2.32.10", summary = "Simple DirectMedia Layer 2 (low-level multimedia library)" },
   { name = "seatd", version = "0.9.3-2", summary = "Seat management daemon and library" },
   { name = "sed", version = "4.10", summary = "GNU stream editor" },
