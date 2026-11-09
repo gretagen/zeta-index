@@ -187,6 +187,7 @@ return {
   { name = "gnutls", version = "30.42.0-2", summary = "TLS library" },
   { name = "gobject-introspection", version = "1.86.0", summary = "GObject introspection data and tooling" },
   { name = "gobject-introspection-runtime", version = "1.86.0", summary = "Introspection system for GObject-based libraries - runtime" },
+  { name = "golang", version = "1.27.3", summary = "Go compiler and standard toolchain" },
   { name = "gpgme", version = "2.1.0", summary = "Library providing access to GnuPG crypto functions" },
   { name = "gpgmepp", version = "2.2.0", summary = "C++ bindings for GPGME" },
   { name = "graphene", version = "1.10.8-3", summary = "Thin layer of math types for graphic libraries (required by GTK4)" },
