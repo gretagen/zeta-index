@@ -925,6 +925,7 @@ return {
   { name = "samba", version = "4.25.1", summary = "Samba networking suite (SMB/CIFS)" },
   { name = "sassc", version = "3.6.2", summary = "Command-line SASS compiler" },
   { name = "sbc", version = "2.2", summary = "Sub Band Coding (SBC) codec library for Bluetooth audio" },
+  { name = "sbctl", version = "0.18", summary = "Secure Boot key manager and EFI signing tool" },
   { name = "scdoc", version = "1.11.1", summary = "Small man page generator (simple document -> troff)" },
   { name = "scenefx", version = "0.5", summary = "Wayland compositor effects library (window animation/effects)" },
   { name = "scrot", version = "2.0.0-1", summary = "Take a screenshot in X" },
