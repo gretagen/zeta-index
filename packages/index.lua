@@ -149,6 +149,7 @@ return {
   { name = "fzf", version = "0.74.4", summary = "Fuzzy finder for the command line" },
   { name = "garcon", version = "4.20.0", summary = "Freedesktop.org menu library for Xfce" },
   { name = "gawk", version = "5.4.1", summary = "GNU awk - pattern scanning and processing language" },
+  { name = "gbinder-python", version = "1.3.1", summary = "Python bindings for libgbinder" },
   { name = "gcc", version = "16.2.0", summary = "GNU Compiler Collection (C and C++ front ends, libstdc++)" },
   { name = "gcc-minimal", version = "16.2.0", summary = "C-only GCC for building the kernel: driver, cc1, collect2, headers and link support (no C++, LTO or sanitizers)" },
   { name = "gcr-4", version = "4.4.1", summary = "GCR certificate library (Arch binary)" },
