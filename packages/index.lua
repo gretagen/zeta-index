@@ -1025,6 +1025,7 @@ return {
   { name = "vulkan-loader", version = "1.4.357", summary = "Vulkan loader library" },
   { name = "vulkan-tools", version = "1.4.363.0-1-x86_64", summary = "Vulkan tools (vulkaninfo, vkcube)" },
   { name = "waybar", version = "0.15.0-2", summary = "Highly customizable Wayland bar (Sway/Waybar)" },
+  { name = "waydroid", version = "1.6.3", summary = "Android container manager (LXC-based)" },
   { name = "wayland", version = "1.26.0", summary = "Wayland display server protocol" },
   { name = "wayland-protocols", version = "1.49", summary = "Wayland protocol XML definitions (build-time data for compositors and clients)" },
   { name = "waypaper", version = "2.9", summary = "GUI wallpaper setter for Wayland and Xorg window managers" },
