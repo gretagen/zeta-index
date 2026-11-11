@@ -7,6 +7,6 @@ return {
   deps    = { "glibc", "gcc-minimal", "libgcc", "openrc", "bash", "uutils-coreutils", "limine", "tar", "squashfs-tools", "lua", "cfdisk", "util-linux", "zeta", "thesh", "nacelle", "identity", "foundation", "subspace-scripts", "chronos", "iniswap", "genkernel" },
   archive = { strip = 1 },
   test    = function(p)
- gcc   p:run("test -f " .. p.install_root .. "/usr/share/doc/base/README")
+    p:run("test -f " .. p.install_root .. "/usr/share/doc/base/README")
   end,
 }
