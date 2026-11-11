@@ -939,6 +939,7 @@ return {
   { name = "scdoc", version = "1.11.1", summary = "Small man page generator (simple document -> troff)" },
   { name = "scenefx", version = "0.5", summary = "Wayland compositor effects library (window animation/effects)" },
   { name = "scrot", version = "2.0.0-1", summary = "Take a screenshot in X" },
+  { name = "scs", version = "0.2.0", summary = "A very cool TUI clock with a large pixel font" },
   { name = "sd", version = "1.1.0", summary = "Intuitive find and replace CLI (sed alternative)" },
   { name = "sdbus-cpp", version = "2.3.1-2", summary = "C++ wrapper library for sd-bus (libsystemd D-Bus client)" },
   { name = "sddm", version = "0.21.0", summary = "Qt-based display manager with X11 greeter" },
