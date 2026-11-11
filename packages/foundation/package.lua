@@ -1,9 +1,9 @@
 return {
   name    = "foundation",
-  version = "0.2.1",
+  version = "0.2.2",
   summary = "Haliade system deployment tool (tower)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/foundation/foundation-0.2.1.tar.gz",
-  sha256  = "4a38c3b3b66a578c7f78b40df7e3fcf9f4dd7e88cecdce231a8591a90db0006e",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/foundation/foundation-0.2.2.tar.gz",
+  sha256  = "eab6fa2b78773a01b3bf5d1b627823d983fcff718f6e065d8d2654613d904b78",
   deps    = { "bash", "btrfs-progs", "e2fsprogs", "util-linux", "dosfstools", "limine", "rsync", "chronos", "bubblewrap", "xorriso", "squashfs-tools" },
   archive = { strip = 1 },
   test    = function(p)
