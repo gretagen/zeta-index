@@ -24,7 +24,7 @@ return {
   { name = "avahi", version = "0.8", summary = "mDNS/DNS-SD (Bonjour) implementation" },
   { name = "awww", version = "0.12.1", summary = "Efficient animated wallpaper daemon for Wayland" },
   { name = "baloo", version = "6.13.0", summary = "KDE: Baloo is a framework for searching and managing metadata." },
-  { name = "base", version = "1.0.3", summary = "Haliade system base system (metapackage)" },
+  { name = "base", version = "1.0.4", summary = "Haliade system base system (metapackage)" },
   { name = "bash", version = "5.3", summary = "GNU Bourne Again SHell" },
   { name = "bat", version = "0.26.1", summary = "A cat clone with wings" },
   { name = "bc", version = "1.08.2", summary = "GNU bc arbitrary precision calculator (the kernel build needs it to generate timeconst.h)" },
