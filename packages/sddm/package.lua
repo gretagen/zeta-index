@@ -1,6 +1,6 @@
 return {
   name    = "sddm",
-  version = "0.21.0",
+  version = "0.21.0-2",
   summary = "Qt-based display manager with X11 greeter",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/sddm/sddm-0.21.0.tar.gz",
   sha256  = "f3c5c97a0bf86effdd3972b0c019a6c1c7c8c05f8db3bc3152c6c81010aa1736",
