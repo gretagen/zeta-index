@@ -1105,7 +1105,7 @@ return {
   { name = "xmessage", version = "1.0.7", summary = "Display a message or dialog in a window" },
   { name = "xmodmap", version = "1.0.12", summary = "Utility for modifying keymaps and pointer button mappings in X" },
   { name = "xorg-full", version = "21.1.24", summary = "Complete X.Org stack (meta-package): X server, X11/XCB libs, GL, input, fonts, utilities" },
-  { name = "xorg-server", version = "21.1.24-2", summary = "X.Org X server (modesetting driver, GLX + glamor)" },
+  { name = "xorg-server", version = "21.1.26", summary = "X.Org X server (Xorg, Xvfb, Xephyr; modesetting, GLX + glamor)" },
   { name = "xorg-xmodmap", version = "1.0.12", summary = "X11 keyboard modifier utility (Arch binary)" },
   { name = "xorg-xset", version = "1.2.6", summary = "X11 user preference utility (Arch binary)" },
   { name = "xorgproto", version = "2025.1", summary = "Combined X.Org protocol headers (build-time dependency)" },
