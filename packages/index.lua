@@ -953,6 +953,7 @@ return {
   { name = "setuptools", version = "84.2.1", summary = "Python build system and distutils shim (setuptools)" },
   { name = "setxkbmap", version = "1.3.2", summary = "Set the keyboard using the X Keyboard Extension" },
   { name = "sh", version = "1.0", summary = "POSIX shell (provided by bash)" },
+  { name = "shader-slang", version = "2026.22", summary = "NVIDIA Slang shader compiler (slangc)" },
   { name = "shaderc", version = "2026.3", summary = "Collection of tools, libraries and tests for shader compilation" },
   { name = "shadow", version = "4.20.2", summary = "Password and user management utilities (passwd, login, su, useradd, etc.)" },
   { name = "shared-mime-info", version = "2.5.1-2", summary = "shared MIME type database and update tool" },
