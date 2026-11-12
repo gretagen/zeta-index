@@ -997,7 +997,7 @@ return {
   { name = "threadweaver", version = "6.13.0", summary = "KDE: ThreadWeaver" },
   { name = "thunar", version = "4.20.9", summary = "File manager for Xfce" },
   { name = "tinfo", version = "6.6", summary = "pkg-config module for tinfo (gap-filler for wide-char ncurses)" },
-  { name = "tllist", version = "1.1.0", summary = "Typed Linked List C header library" },
+  { name = "tllist", version = "1.1.0-2", summary = "Typed Linked List C header library" },
   { name = "tmux", version = "3.7_c", summary = "Terminal multiplexer (Arch binary)" },
   { name = "tomlplusplus", version = "3.4.0-2", summary = "Header-only TOML config file parser for C++17" },
   { name = "tpm2-tss", version = "4.2.0", summary = "Implementation of the TCG Trusted Platform Module 2.0 Software Stack (TSS2)" },
