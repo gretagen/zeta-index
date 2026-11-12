@@ -142,6 +142,7 @@ return {
   { name = "flatpak", version = "1.18.0-2", summary = "Linux application sandboxing and distribution framework" },
   { name = "flatpak-generator", version = "1.2", summary = "Declare flatpak apps from definition.lua (extra generator for nacelle)" },
   { name = "fmt", version = "11.1.4", summary = "Modern C++ formatting library" },
+  { name = "font-util", version = "1.4.2", summary = "X.Org font package creation utilities (fontutil.pc)" },
   { name = "fontconfig", version = "2.18.2-2", summary = "Font configuration and customization library (with fc-* tools)" },
   { name = "foot", version = "1.28.0", summary = "Fast Wayland terminal emulator" },
   { name = "foundation", version = "0.2.5", summary = "Haliade system deployment tool (tower)" },
