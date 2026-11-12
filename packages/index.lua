@@ -958,6 +958,7 @@ return {
   { name = "shared-mime-info", version = "2.5.1-2", summary = "shared MIME type database and update tool" },
   { name = "shepherd", version = "1.0.9-3", summary = "GNU init system and service manager written in Scheme" },
   { name = "shepherd-services", version = "1.0.0", summary = "Haliade system GNU Shepherd service definitions" },
+  { name = "simde", version = "0.8.2", summary = "SIMD Everywhere (header-only)" },
   { name = "slang", version = "2.3.3", summary = "S-Lang programming library (terminal handling, screen management)" },
   { name = "slop", version = "7.7", summary = "Select a region of the screen with a mouse (X11), maim's selection backend" },
   { name = "slurp", version = "1.5.0", summary = "Select a region in a Wayland compositor" },
