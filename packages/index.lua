@@ -328,7 +328,7 @@ return {
   { name = "kirigami-addons", version = "1.9.0", summary = "KDE: Add-ons for the Kirigami framework" },
   { name = "kitemmodels", version = "6.13.0", summary = "KDE: KItemModels" },
   { name = "kitemviews", version = "6.13.0", summary = "KDE: KItemViews" },
-  { name = "kitty", version = "0.48.2", summary = "Fast, feature-rich, GPU-based terminal emulator" },
+  { name = "kitty", version = "0.50.0", summary = "Fast, feature-rich, GPU-based terminal emulator" },
   { name = "kjobwidgets", version = "6.13.0", summary = "KDE: KJobWidgets" },
   { name = "kmod", version = "34", summary = "Linux kernel module management tools (insmod, rmmod, modprobe, lsmod, depmod)" },
   { name = "knewstuff", version = "6.13.0", summary = "KDE: KNewStuff" },
