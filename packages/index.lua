@@ -1018,6 +1018,7 @@ return {
   { name = "unzip", version = "6.0", summary = "InfoZIP extractor" },
   { name = "upower", version = "1.91.5", summary = "Power device manager (libupower-glib, gir-enabled)" },
   { name = "usbutils", version = "019", summary = "USB utilities (lsusb, usb-devices, usbhid-dump)" },
+  { name = "utf8proc", version = "2.12.0", summary = "Unicode processing library (utf8proc)" },
   { name = "util-linux", version = "2.42", summary = "Essential Linux system utilities (mount, losetup, fdisk, blkid, agetty, lsblk, etc.)" },
   { name = "util-linux-libs", version = "2.42", summary = "Util-linux shared libraries (libblkid, libmount)" },
   { name = "util-macros", version = "1.20.2", summary = "X.Org Autoconf macros (build-time dependency)" },
