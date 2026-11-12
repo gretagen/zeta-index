@@ -124,6 +124,7 @@ return {
   { name = "faad2", version = "2.11.2", summary = "AAC decoder library" },
   { name = "fastfetch", version = "2.68.1", summary = "Fast, feature-rich system information fetcher (neofetch successor)" },
   { name = "fastwc", version = "0.1.0", summary = "A wc replacement that beats GNU wc - SIMD kernels, mmap, threads" },
+  { name = "fcft", version = "3.3.3", summary = "Font shaping and line breaking library (for foot)" },
   { name = "fd", version = "10.5.0", summary = "Simple find alternative" },
   { name = "feh", version = "3.13.1", summary = "Fast and light image viewer (Arch binary)" },
   { name = "femboysay", version = "0.1.0", summary = "an intuitive tool, for them" },
