@@ -1050,6 +1050,7 @@ return {
   { name = "wayland-protocols", version = "1.49", summary = "Wayland protocol XML definitions (build-time data for compositors and clients)" },
   { name = "waypaper", version = "2.9", summary = "GUI wallpaper setter for Wayland and Xorg window managers" },
   { name = "webkit2gtk-4.1", version = "2.52.6-2", summary = "Web browser engine library (GTK3 + soup3, built from source)" },
+  { name = "websocat", version = "1.14.1", summary = "Command-line client for WebSockets (Rust binary)" },
   { name = "weechat", version = "4.10.1", summary = "Extensible chat client (IRC, Matrix, …) for the terminal" },
   { name = "wget", version = "1.25.0", summary = "Network downloader" },
   { name = "which", version = "2.21", summary = "Locate a command in the PATH" },
