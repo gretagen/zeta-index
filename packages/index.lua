@@ -806,7 +806,7 @@ return {
   { name = "nghttp2", version = "1.70.0", summary = "HTTP/2 framing layer C library" },
   { name = "nix", version = "2.35.2-5", summary = "Nix package manager (official prebuilt binary, /nix store layout)" },
   { name = "nix-generator", version = "1.6", summary = "Declare nixpkgs packages from definition.lua (extra generator for nacelle)" },
-  { name = "nlohmann-json", version = "3.12.0-2", summary = "JSON for Modern C++ (nlohmann/json single-header library)" },
+  { name = "nlohmann-json", version = "3.12.0", summary = "nlohmann/json: JSON for Modern C++ (header-only)" },
   { name = "nmap", version = "7.991", summary = "Network exploration and security auditing tool (includes ncat, nping)" },
   { name = "nnn", version = "5.3", summary = "Terminal file manager" },
   { name = "noctalia", version = "5.3.0", summary = "A sleek, customizable desktop shell crafted for Wayland." },
