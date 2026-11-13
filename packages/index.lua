@@ -247,6 +247,7 @@ return {
   { name = "hidapi", version = "0.15.0", summary = "Simple library for communicating with USB and Bluetooth HID devices" },
   { name = "htop", version = "3.5.2", summary = "Interactive process viewer" },
   { name = "hunspell", version = "1.7.5", summary = "Hunspell spell-checker library and CLI" },
+  { name = "hurl", version = "8.1.0", summary = "Run and test HTTP requests with plain text (Rust binary)" },
   { name = "hwdata", version = "0.389", summary = "Hardware identification databases (pci.ids, usb.ids)" },
   { name = "hyfetch", version = "2.1.1", summary = "Neofetch with LGBTQ+ pride flags" },
   { name = "hyperfine", version = "2.0.0", summary = "Command line benchmarking tool" },
