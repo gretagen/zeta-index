@@ -989,6 +989,7 @@ return {
   { name = "sudo", version = "1.9.17p2-1", summary = "Execute commands as another user with limited superuser privileges" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
+  { name = "swig", version = "4.5.1", summary = "SWIG: connect C/C++ to other languages (build tool)" },
   { name = "syndication", version = "6.13.0", summary = "KDE: Syndication Library" },
   { name = "syntax-highlighting", version = "6.13.0", summary = "KDE: Syntax highlighting Engine for Structured Text and Code." },
   { name = "sysmd-services", version = "1.0.0", summary = "Haliade system systemd units (sysmd-services)" },
