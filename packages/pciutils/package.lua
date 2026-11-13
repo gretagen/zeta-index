@@ -1,8 +1,8 @@
 return {
   name    = "pciutils",
-  version = "3.15.0",
+  version = "3.15.0-2",
   summary = "PCI utility tools and the libpci library",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/pciutils/pciutils-3.15.0.tar.gz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/pciutils/pciutils-3.15.0-2.tar.gz",
   sha256  = "fd58c30032c9ce1492b8a9ad2b376938047cfa12b17b83accc99b9f84c3ea13a",
   deps    = { "glibc", "libz", "kmod", "systemd-libs" },
   archive = { strip = 1 },

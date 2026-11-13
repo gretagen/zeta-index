@@ -1,8 +1,8 @@
 return {
   name    = "nlohmann-json",
-  version = "3.12.0",
+  version = "3.12.0-3",
   summary = "nlohmann/json: JSON for Modern C++ (header-only)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nlohmann-json/nlohmann-json-3.12.0.tar.gz",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/nlohmann-json/nlohmann-json-3.12.0-3.tar.gz",
   sha256  = "6ea3d55ae32fe6408a45a67f04ae57307fbc8944d0f7a17e796b8b4f99ac1197",
   deps    = {},
   archive = { strip = 1 },
