@@ -495,6 +495,7 @@ return {
   { name = "libcups", version = "2.4.19-2", summary = "CUPS printing library (cups.pc, dev-complete)" },
   { name = "libcurl", version = "8.21.0", summary = "URL transfer library" },
   { name = "libdaemon", version = "0.14", summary = "Lightweight C library for writing daemons" },
+  { name = "libdatachannel", version = "0.24.6", summary = "libdatachannel: WebRTC data channels and media tracks" },
   { name = "libdbusmenu-glib", version = "18.10.20180917", summary = "Library for passing menus over DBus" },
   { name = "libdbusmenu-gtk3", version = "18.10.20180917", summary = "Library for passing menus over DBus (GTK+ 3 library)" },
   { name = "libdbusmenu-lxqt", version = "0.2.0", summary = "LXQt dbusmenu library" },
