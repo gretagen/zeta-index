@@ -1,12 +1,12 @@
 return {
   name    = "pciutils",
   version = "3.15.0",
-  summary = "PCI bus utilities (lspci, setpci, update-pciids)",
+  summary = "PCI utility tools and the libpci library",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/pciutils/pciutils-3.15.0.tar.gz",
-  sha256  = "48e8ac07777aecd1add0b9f439468caa05c071156e5d02df606f71ff662bfaac",
-  deps    = { "glibc", "libz", "systemd-libs", "kmod" },
+  sha256  = "fd58c30032c9ce1492b8a9ad2b376938047cfa12b17b83accc99b9f84c3ea13a",
+  deps    = { "glibc", "libz", "kmod", "systemd-libs" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -x " .. p.install_root .. "/usr/bin/lspci")
+    p:run("test -f " .. p.install_root .. "/usr/lib/libpci.so.3 && test -f " .. p.install_root .. "/usr/include/pci/pci.h && test -x " .. p.install_root .. "/usr/bin/lspci && test -n \"$(find " .. p.install_root .. "/usr/lib -name '*.pc' -path '*pci*')\"")
   end,
 }
