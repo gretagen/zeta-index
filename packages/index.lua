@@ -773,7 +773,7 @@ return {
   { name = "mate-themes", version = "3.22.26", summary = "Themes for MATE" },
   { name = "mate-user-share", version = "1.28.0", summary = "User file sharing for MATE" },
   { name = "mate-utils", version = "1.28.0", summary = "Utilities for MATE" },
-  { name = "mbedtls", version = "3.6.7", summary = "TLS 1.3/1.2 and DTLS library (mbedTLS 3.x)" },
+  { name = "mbedtls", version = "3.6.7", summary = "Mbed TLS: crypto and SSL/TLS library (shared)" },
   { name = "md4c", version = "0.5.3", summary = "C Markdown parser library" },
   { name = "mdadm", version = "4.6", summary = "A tool for managing/monitoring Linux md device arrays, also known as Software RAID" },
   { name = "menu-cache", version = "1.1.1", summary = "LXDE menu cache library" },
