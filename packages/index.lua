@@ -999,6 +999,7 @@ return {
   { name = "tailscale", version = "1.104.5", summary = "WireGuard-based mesh VPN (tailscaled daemon + tailscale CLI)" },
   { name = "tango-icon-theme", version = "0.8.90", summary = "Tango icon theme" },
   { name = "tar", version = "1.35", summary = "GNU tar: file archiver" },
+  { name = "tealdeer", version = "1.9.1", summary = "Very fast tldr client (Rust binary)" },
   { name = "tecla", version = "51.0", summary = "GNOME keyboard layout viewer (tecla)" },
   { name = "telegram-desktop", version = "7.2.8", summary = "Telegram Desktop messaging client (official static build)" },
   { name = "terminfo", version = "1.0", summary = "Terminfo database (compiled from ncurses 6.6)" },
