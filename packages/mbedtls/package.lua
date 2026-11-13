@@ -3,7 +3,7 @@ return {
   version = "3.6.7",
   summary = "Mbed TLS: crypto and SSL/TLS library (shared)",
   url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/mbedtls/mbedtls-3.6.7.tar.gz",
-  sha256  = "df2c64599beb72a17dab1f4c8b6b8ea2595ad36dfaa223b8a47a0b72207e23c8",
+  sha256  = "338c3d26328c0a10103dd467f7425628e4ac0319414984021acc6b4c1930bb35",
   deps    = { "glibc" },
   archive = { strip = 1 },
   test    = function(p)
