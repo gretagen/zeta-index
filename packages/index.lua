@@ -199,6 +199,7 @@ return {
   { name = "golang", version = "1.27.3", summary = "Go compiler and standard toolchain" },
   { name = "gpgme", version = "2.1.0", summary = "Library providing access to GnuPG crypto functions" },
   { name = "gpgmepp", version = "2.2.0", summary = "C++ bindings for GPGME" },
+  { name = "gping", version = "1.21.0", summary = "Ping with a graph (Rust binary)" },
   { name = "graphene", version = "1.10.8-3", summary = "Thin layer of math types for graphic libraries (required by GTK4)" },
   { name = "graphite2", version = "1.3.14", summary = "Graphite2 font rendering engine" },
   { name = "grep", version = "3.12", summary = "GNU grep, egrep and fgrep (with -z support for initramfs tools)" },
