@@ -652,6 +652,7 @@ return {
   { name = "libva-utils", version = "2.24.0-1-x86_64", summary = "VA-API utilities (vainfo and encode demos)" },
   { name = "libvdpau", version = "1.5", summary = "VDPAU library" },
   { name = "libverto-module-base", version = "0.3.2", summary = "Event loop abstraction (optional, base module)" },
+  { name = "libvlc-dev", version = "3.0.23", summary = "libvlc stable API headers (for plugin authors)" },
   { name = "libvorbis", version = "3.3.8", summary = "Vorbis audio codec" },
   { name = "libvpl", version = "2.17.0", summary = "Intel Video Processing Library (oneVPL API, libvpl.so.2)" },
   { name = "libvpx", version = "12.0.0", summary = "VP8/VP9 video codec" },
