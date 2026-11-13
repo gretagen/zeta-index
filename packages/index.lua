@@ -169,6 +169,7 @@ return {
   { name = "geoclue2", version = "2.8.2", summary = "D-Bus geolocation service (GNOME)" },
   { name = "geocode-glib", version = "3.26.4", summary = "Geocoding library using Nominatim (GNOME)" },
   { name = "gettext", version = "1.0-2-x86_64", summary = "GNU gettext runtime library (Arch binary)" },
+  { name = "gh", version = "2.103.3", summary = "GitHub's official command line tool (Go binary)" },
   { name = "ghostscript", version = "10.08.0", summary = "An interpreter for the PostScript language" },
   { name = "ghostty", version = "1.4.0-1-x86_64", summary = "fast, feature-rich, and cross-platform terminal emulator" },
   { name = "giflib", version = "6.1.3", summary = "Library for reading and writing gif images" },
