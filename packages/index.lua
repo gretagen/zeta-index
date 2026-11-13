@@ -835,6 +835,7 @@ return {
   { name = "nvidia-optix", version = "620.70.06", summary = "NVIDIA OptiX ray tracing runtime" },
   { name = "nvidia-settings", version = "615.78.08-1-x86_64", summary = "NVIDIA driver settings tool (nvidia-settings)" },
   { name = "nvidia-utils", version = "620.70.06", summary = "NVIDIA driver userspace (vendor GL/EGL/GLES/Vulkan libs, tools, Xorg modules)" },
+  { name = "obs-studio", version = "33.0.1", summary = "Open Broadcaster Software — live streaming and screen recording" },
   { name = "ocl-icd", version = "2.3.5", summary = "OpenCL ICD loader" },
   { name = "onefetch", version = "3.1.0", summary = "Git repository summary on the terminal (Rust binary)" },
   { name = "oniguruma", version = "6.9.10", summary = "Regular expressions library" },
