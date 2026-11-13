@@ -174,6 +174,7 @@ return {
   { name = "giflib", version = "6.1.3", summary = "Library for reading and writing gif images" },
   { name = "git", version = "2.50.0", summary = "Distributed version control system" },
   { name = "gjs", version = "1.90.1", summary = "JavaScript bindings for GNOME (gjs runtime)" },
+  { name = "glab", version = "1.126.0", summary = "GitLab's official command line tool (Go binary)" },
   { name = "glew", version = "2.3.1", summary = "The OpenGL Extension Wrangler Library (shared lib only)" },
   { name = "glib", version = "2.90.1", summary = "Low-level core utility library (gir-enabled)" },
   { name = "glib-networking", version = "2.90.1", summary = "Network TLS support for GLib (gnutls backend)" },
