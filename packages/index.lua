@@ -1056,6 +1056,7 @@ return {
   { name = "wine", version = "11.17", summary = "Compatibility layer for running Windows applications (Arch binary)" },
   { name = "wireless_tools", version = "30.pre9-5-x86_64", summary = "Wireless tools (Arch binary)" },
   { name = "wireplumber", version = "0.5.15", summary = "Session / policy manager for PipeWire (bundled with libwireplumber)" },
+  { name = "wl-clipboard", version = "2.3.0", summary = "Wayland clipboard utilities (wl-copy and wl-paste)" },
   { name = "wlr-protocols", version = "1.14.0", summary = "wlr Wayland protocol definitions" },
   { name = "wlroots", version = "0.20.2-2", summary = "Modular Wayland compositor library" },
   { name = "wmaker", version = "0.96.0-3", summary = "X11 window manager with a NeXTSTEP look and feel" },
