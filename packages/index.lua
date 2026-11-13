@@ -820,6 +820,7 @@ return {
   { name = "nvidia", version = "620.70.06", summary = "NVIDIA official driver (meta-package: proprietary DKMS modules + userspace)" },
   { name = "nvidia-compiler", version = "595.71.05", summary = "NVIDIA official driver compiler libraries (NVVM, gpucomp, tileiras)" },
   { name = "nvidia-cuda", version = "595.71.05", summary = "NVIDIA official driver CUDA/OpenCL runtime (libcuda, libOpenCL, MPS tools)" },
+  { name = "nvidia-cuda-libs", version = "620.70.06", summary = "NVIDIA CUDA driver libraries (libcuda, nvvm, ptxjit)" },
   { name = "nvidia-dkms", version = "620.70.06", summary = "NVIDIA proprietary driver kernel modules (DKMS, all GPUs)" },
   { name = "nvidia-firmware", version = "620.70.06", summary = "NVIDIA GPU firmware blobs (GSP, ucodes) for the 620.70.06 driver" },
   { name = "nvidia-gpucomp", version = "620.70.06", summary = "NVIDIA GPU shader compiler libraries" },
