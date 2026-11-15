@@ -875,6 +875,7 @@ return {
   { name = "perl-xml-parser", version = "2.47", summary = "Perl XML::Parser module (expat bindings)" },
   { name = "perl-xml-simple", version = "2.25", summary = "Perl XML::Simple module" },
   { name = "phonon", version = "4.12.0", summary = "Phonon media abstraction framework (Qt6)" },
+  { name = "picom", version = "13", summary = "X11 compositor (picom, fork of compton)" },
   { name = "pinentry", version = "1.3.3", summary = "PIN or passphrase entry dialog for GnuPG" },
   { name = "pip", version = "26.2.2", summary = "The PyPA package installer (pip)" },
   { name = "pip-generator", version = "1.1", summary = "Declare pip packages from definition.lua (extra generator for nacelle)" },
