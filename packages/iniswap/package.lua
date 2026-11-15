@@ -1,9 +1,9 @@
 return {
   name    = "iniswap",
-  version = "1.10.2",
+  version = "1.10.3",
   summary = "Utility for swapping init systems",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/iniswap/iniswap-1.10.2.tar.gz",
-  sha256  = "7d83058263b172fa8ece46e0c267da708957f22330b2afafe7b2ff37e6ec5018",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/iniswap/iniswap-1.10.3.tar.gz",
+  sha256  = "b17e28f532795aac27b0b3a5e9410ee3d7fb73d8e2c42ac0d1409f2bb4718751",
   deps    = { "bash", "chronos" },
   archive = { strip = 1 },
   test    = function(p)
