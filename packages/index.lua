@@ -1012,7 +1012,7 @@ return {
   { name = "tecla", version = "51.0", summary = "GNOME keyboard layout viewer (tecla)" },
   { name = "telegram-desktop", version = "7.2.8", summary = "Telegram Desktop messaging client (official static build)" },
   { name = "terminfo", version = "1.0", summary = "Terminfo database (compiled from ncurses 6.6)" },
-  { name = "thesh", version = "0.5.1", summary = "Custom standalone POSIX shell for Haliade system (default shell, replaces bash)" },
+  { name = "thesh", version = "1.0.0", summary = "Custom standalone POSIX shell for Haliade system (default shell, replaces bash)" },
   { name = "threadweaver", version = "6.13.0", summary = "KDE: ThreadWeaver" },
   { name = "thunar", version = "4.20.9", summary = "File manager for Xfce" },
   { name = "tinfo", version = "6.6", summary = "pkg-config module for tinfo (gap-filler for wide-char ncurses)" },

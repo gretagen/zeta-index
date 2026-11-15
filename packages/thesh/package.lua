@@ -1,12 +1,12 @@
 return {
   name    = "thesh",
-  version = "0.5.1",
+  version = "1.0.0",
   summary = "Custom standalone POSIX shell for Haliade system (default shell, replaces bash)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/thesh/thesh-0.5.1.tar.gz",
-  sha256  = "40f608785b9f64c718561cd6b7da5c8d598a0a85101f6769e5d20003169167f2",
-  deps    = { "glibc" },
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/thesh/thesh-1.0.0.tar.gz",
+  sha256  = "f18a7e7d7bf24daa2c81d53127950d73b39385743bfb0e48cbc4be6c66750c7c",
+  deps    = { "glibc", "libgcc" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -x " .. p.install_root .. "/usr/bin/thesh && ! test -f " .. p.install_root .. "/etc/theshrc")
+    p:run("test -x " .. p.install_root .. "/usr/bin/thesh && ! test -f " .. p.install_root .. "/etc/theshrc && " .. p.install_root .. "/usr/bin/thesh --version | grep -q '1.0.0' && " .. p.install_root .. "/usr/bin/thesh -c 'echo zeta-thesh-ok' | grep -q 'zeta-thesh-ok'")
   end,
 }
