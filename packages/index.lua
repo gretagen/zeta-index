@@ -150,6 +150,7 @@ return {
   { name = "frameworkintegration", version = "6.13.0", summary = "KDE: Framework providing components to allow applications to integrate with a KDE Workspace" },
   { name = "freetype", version = "2.14.3", summary = "FreeType font engine library" },
   { name = "fribidi", version = "1.0.16", summary = "Bidirectional text algorithm library" },
+  { name = "funstuff", version = "0.1.0", summary = "Terminal toys: animations, cowsay bubble, weather" },
   { name = "fuse-common", version = "3.18.3", summary = "Common files for fuse2/3 packages" },
   { name = "fuse3", version = "3.18.3", summary = "FUSE3 userspace tools (fusermount3, mount.fuse3)" },
   { name = "fvwm3", version = "1.1.5", summary = "Virtual window manager for the X Window System" },
