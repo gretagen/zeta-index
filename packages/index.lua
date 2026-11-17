@@ -1066,6 +1066,7 @@ return {
   { name = "webkit2gtk-4.1", version = "2.52.6-2", summary = "Web browser engine library (GTK3 + soup3, built from source)" },
   { name = "websocketpp", version = "0.8.2", summary = "WebSocket++: header-only C++ WebSocket library" },
   { name = "weechat", version = "4.10.1", summary = "Extensible chat client (IRC, Matrix, …) for the terminal" },
+  { name = "wev", version = "1.1.0", summary = "Wayland event viewer (xev for Wayland)" },
   { name = "wget", version = "1.25.0", summary = "Network downloader" },
   { name = "which", version = "2.21", summary = "Locate a command in the PATH" },
   { name = "wine", version = "11.17", summary = "Compatibility layer for running Windows applications (Arch binary)" },
