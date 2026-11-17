@@ -995,7 +995,7 @@ return {
   { name = "steam", version = "1.0.0.87", summary = "Steam - Valve's digital game distribution platform" },
   { name = "steam-devices", version = "20260625", summary = "Steam and SteamVR device permissions (udev rules for flatpak Steam)" },
   { name = "strace", version = "7.2", summary = "System call tracer for Linux processes" },
-  { name = "subspace-scripts", version = "1.7.2", summary = "Haliade system subspace management scripts" },
+  { name = "subspace-scripts", version = "1.7.3", summary = "Haliade system subspace management scripts" },
   { name = "sudo", version = "1.9.17p2-1", summary = "Execute commands as another user with limited superuser privileges" },
   { name = "svt-av1", version = "4.2.0", summary = "Scalable AV1 encoder" },
   { name = "swaybg", version = "1.2.2", summary = "Wallpaper utility for Wayland compositors (sway)" },
