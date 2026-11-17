@@ -179,7 +179,7 @@ return {
   { name = "glib", version = "2.90.1", summary = "Low-level core utility library (gir-enabled)" },
   { name = "glib-networking", version = "2.90.1", summary = "Network TLS support for GLib (gnutls backend)" },
   { name = "glibc", version = "2.44-2", summary = "GNU C Library" },
-  { name = "glibmm", version = "2.80.1", summary = "C++ bindings for GLib" },
+  { name = "glibmm", version = "2.89.1", summary = "C++ bindings for GLib" },
   { name = "glslang", version = "1.4.357", summary = "GLSL/HLSL to SPIR-V compiler and validator" },
   { name = "glu", version = "9.0.3", summary = "Mesa OpenGL utility library" },
   { name = "glycin", version = "2.1.5-2", summary = "GNOME image loading library (libglycin-2, gir-enabled)" },
