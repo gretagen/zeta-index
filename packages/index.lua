@@ -24,6 +24,7 @@ return {
   { name = "automake", version = "1.18.1", summary = "GNU Automake - generates Makefile.in from Makefile.am (automake, aclocal)" },
   { name = "avahi", version = "0.8", summary = "mDNS/DNS-SD (Bonjour) implementation" },
   { name = "awww", version = "0.12.1", summary = "Efficient animated wallpaper daemon for Wayland" },
+  { name = "axon", version = "0.1.0", summary = "Blood-red note-taking TUI built with Textual" },
   { name = "baloo", version = "6.13.0", summary = "KDE: Baloo is a framework for searching and managing metadata." },
   { name = "base", version = "1.0.5", summary = "Haliade system base system (metapackage)" },
   { name = "bash", version = "5.3", summary = "GNU Bourne Again SHell" },
