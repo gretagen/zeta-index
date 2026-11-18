@@ -893,6 +893,7 @@ return {
   { name = "plasma-wayland-protocols", version = "1.23.0", summary = "KDE: Plasma-specific protocols for Wayland" },
   { name = "plasma-workspace", version = "6.3.6", summary = "Plasma workspace: the Plasma 6 desktop shell (plasmashell)" },
   { name = "plasma5support", version = "6.3.6", summary = "Plasma 5 compatibility support library" },
+  { name = "playerctl", version = "2.4.1", summary = "MPRIS media player command-line controller" },
   { name = "pluma", version = "1.28.0", summary = "Text editor for MATE" },
   { name = "polkit", version = "127", summary = "Authorization framework for privileged actions" },
   { name = "polkit-qt-1", version = "0.200.0", summary = "Qt6 polkit wrapper library" },
