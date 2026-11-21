@@ -1,9 +1,9 @@
 return {
   name    = "chronos",
-  version = "1.9.7",
+  version = "1.9.8",
   summary = "btrfs generation manager for Haliade system (Limine boot entries)",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/chronos/chronos-1.9.7.tar.gz",
-  sha256  = "3c01ec0654405db68a991300bed71f12f933f90c70ade07e27a32518822b4cbd",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/chronos/chronos-1.9.8.tar.gz",
+  sha256  = "92961073080b5fba20349600fcfe56ea87265cfa55a2354c3f6fcc612f9bd2da",
   deps    = { "bash", "btrfs-progs", "util-linux" },
   archive = { strip = 1 },
   test    = function(p)
