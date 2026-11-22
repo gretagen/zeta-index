@@ -22,6 +22,7 @@ return {
   { name = "attr", version = "2.5.2", summary = "Extended attribute support library for ACL support" },
   { name = "audit", version = "4.2.1", summary = "Linux audit userspace library (libaudit)" },
   { name = "autoconf", version = "2.73", summary = "GNU Autoconf - generate configure scripts (autoconf, autoreconf, autoheader, autom4te)" },
+  { name = "autofs", version = "5.2.0", summary = "Kernel automounter daemon and tools (automount)" },
   { name = "automake", version = "1.18.1", summary = "GNU Automake - generates Makefile.in from Makefile.am (automake, aclocal)" },
   { name = "avahi", version = "0.8", summary = "mDNS/DNS-SD (Bonjour) implementation" },
   { name = "awww", version = "0.12.1", summary = "Efficient animated wallpaper daemon for Wayland" },
