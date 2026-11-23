@@ -5,10 +5,10 @@
 
 return {
   name         = "tomlplusplus",
-  version      = "3.4.0-2",
+  version      = "3.5.1",
   summary      = "Header-only TOML config file parser for C++17",
-  url          = "https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz",
-  sha256       = "8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155",
+  url          = "https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.5.1.tar.gz",
+  sha256       = "4821c769370a6489b6a37814f16f3769eee0f2e733a5c129d5d99e2515a95c2b",
   deps         = { "glibc", "gcc", "libgcc", "libstdc++" },
   build_system = "custom",
   build_script = "build-tomlplusplus.sh",
