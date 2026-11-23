@@ -1,15 +1,17 @@
--- nacelle.recipe — nacelle 3.1.4: the iniswap init handlers moved out to
--- the iniswap package (/usr/lib/iniswap), so nacelle no longer ships or
--- depends on them — iniswap works standalone. Payload = launcher + lua
--- tree only (README/LICENSE stay out, as before). Shepherd guard
--- assertions now live in the iniswap contract.
+-- nacelle.recipe — nacelle 3.1.7: HEAD fd2977d (Nov 21 — "make nacelle
+-- look better, and a whole bunch", on top of the Nov-15 AI-sweep that
+-- 3.1.6 pinned and the Ctrl+C-sync work). The iniswap init handlers
+-- moved out to the iniswap package (/usr/lib/iniswap), so nacelle no
+-- longer ships or depends on them — iniswap works standalone. Payload
+-- = launcher + lua tree only (README/LICENSE stay out, as before).
+-- Shepherd guard assertions live in the iniswap contract.
 
 return {
   name           = "nacelle",
-  version        = "3.1.4",
+  version        = "3.1.7",
   summary        = "Haliade declarative definition system and house management (nacelle)",
-  url            = "https://github.com/gretagen/Nacelle/archive/e845757130ad6492e5f35e377cf031c817131d52.tar.gz",
-  sha256         = "8065916d31dba0b9447eecf6b38e8d89adafec59281971c743e653579ca1fe36",
+  url            = "https://github.com/gretagen/Nacelle/archive/fd2977d2d4d994ee64f8884d9642179f11676660.tar.gz",
+  sha256         = "649efd0bbf1522861ee47e5017b444b9f811b2c741a9c7ce309cfda788dda7dc",
   deps           = { "lua", "bash", "chronos" },
   build_system   = "custom",
   build_script   = "build-nacelle.sh",

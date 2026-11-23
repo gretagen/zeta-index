@@ -1,0 +1,24 @@
+-- ash.recipe — 0.1.0: a minimal x86-64 shell in pure NASM assembly
+-- (github.com/germanex3000dev/ash — commit-pinned, repo has no tags).
+-- Build = nasm + GNU ld + strip from binutils, all ambient host
+-- build tools (nasm isn't indexed; it is compile-time only). The
+-- result is static and freestanding (raw syscalls, no libc), so the
+-- runtime closure is empty. Note: busybox also ships a bin/ash —
+-- they only collide if both get installed.
+-- The functional test uses the README's own pipe usage: one full-path
+-- command on stdin, expect its output.
+
+return {
+  name         = "ash",
+  version      = "0.1.0",
+  summary      = "Minimal x86-64 assembly shell (NASM)",
+  url          = "https://github.com/germanex3000dev/ash/archive/c7b2fdfd874c0ba82e2f6d9b72f8ba68edbbb3b8.tar.gz",
+  sha256       = "5e59799952772c517c0fef5ed3c19a49e1f0e9638c89f5e5ea2fa99961b7f6f2",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-ash.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/ash"
+    .. " && file ${DESTDIR}/usr/bin/ash | grep -q 'ELF 64-bit'"
+    .. " && printf '/bin/echo hello-from-ash\\n' | ${DESTDIR}/usr/bin/ash"
+    .. " | grep -q 'hello-from-ash'",
+}

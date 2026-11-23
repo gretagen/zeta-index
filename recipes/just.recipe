@@ -1,0 +1,22 @@
+-- just.recipe — 1.59.0: command runner (github.com/casey/just —
+-- latest tag; newer tags dropped the v prefix). Native cargo build
+-- with --locked (Cargo.lock ships in the tag); gcc joins the deps per
+-- this index's Rust convention (GNU targets pull NEEDED libgcc_s,
+-- same as alacritty and dysk).
+
+return {
+  name           = "just",
+  version        = "1.59.0",
+  summary        = "Command runner for justfiles",
+  url            = "https://github.com/casey/just/archive/refs/tags/1.59.0.tar.gz",
+  sha256         = "20f876880851f1cc67fc7eb7589c7f7ccaa7612d827feac75797cf4a6ed729aa",
+  deps           = { "glibc", "gcc" },
+  build_system   = "cargo",
+  configure_args = { "--locked" },
+  test           = "test -x ${DESTDIR}/usr/bin/just"
+    .. " && ${DESTDIR}/usr/bin/just --version | grep -q 1.59"
+    -- functional: run a real justfile (printf emits the tab-indented
+    -- recipe body just requires)
+    .. " && printf 'default:\\n\\t@echo just-works\\n' > /tmp/just-smoke.just"
+    .. " && ${DESTDIR}/usr/bin/just --justfile /tmp/just-smoke.just | grep -q just-works",
+}

@@ -1,0 +1,25 @@
+-- pcsc-lite.recipe — 2.5.3: PC/SC smartcard daemon + client library
+-- (Ludovic Rousseau, canonical tarball from pcsclite.apdu.fr). Ported
+-- because sbctl's YubiKey backend (piv-go) links libpcsclite via cgo —
+-- no way around it at build time, so it becomes a real runtime dep.
+-- systemd daemon-autostart and polkit access control are disabled:
+-- the distro is init-agnostic (udevd already runs for hotplug) and
+-- polkitd would gate reader access. Any units upstream installs are
+-- stripped by clean_stage regardless.
+
+return {
+  name         = "pcsc-lite",
+  version      = "2.5.3",
+  summary      = "PC/SC smartcard service and client library",
+  url          = "https://pcsclite.apdu.fr/files/pcsc-lite-2.5.3.tar.xz",
+  sha256       = "fe2bb733ecf95e52768907eb00da9f9f3daf180960283e514a05dcc090afa3bd",
+  deps         = { "glibc", "systemd-libs" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "--sysconfdir=/usr/etc", "-Dlibsystemd=false", "-Dpolkit=false",
+                     "-Dserialconfdir=/usr/etc/reader.conf.d" },
+  test         = "test -x ${DESTDIR}/usr/sbin/pcscd"
+    .. " && test -f ${DESTDIR}/usr/lib/libpcsclite.so.1"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/libpcsclite.pc"
+    .. " && test -f ${DESTDIR}/usr/include/PCSC/winscard.h",
+}

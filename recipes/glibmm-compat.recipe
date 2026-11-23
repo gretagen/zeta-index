@@ -1,0 +1,34 @@
+-- glibmm-compat.recipe — 2.66.5: the glibmm-2.4 / giomm-2.4 API
+-- series, split into its own package. Upstream DROPPED the 2.4
+-- compatibility libraries before 2.80 (the old payload labeled
+-- "2.80.1" was in fact built from 2.66.5 — its .pc says Version:
+-- 2.66.5), which silently broke every gtkmm3-era consumer — atkmm,
+-- gdkmm, gtkmm3, pangomm and waybar all NEEDED libglibmm-2.4.so.1 and
+-- hit "unresolved libraries" on fresh installs (waybar's report).
+-- Rebuilding 2.66.5 from source does NOT work on this system anymore:
+-- glib 2.90/gdk-pixbuf 2.43 now G_DECLARE_FINAL_TYPE the very classes
+-- glibmm's pre-generated headers give named struct typedefs, so the
+-- build conflicts. Instead this package RE-CUTS the proven old payload
+-- (the exact binaries that have been working on this host) down to the
+-- 2.4 files only — pure file filtering, no compiler. The main glibmm
+-- package (2.89.1) owns everything 2.68, no overlap.
+
+return {
+  name         = "glibmm-compat",
+  version      = "2.66.5",
+  summary      = "glibmm 2.4 compatibility libraries (gtkmm3-era consumers)",
+  url          = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/glibmm/glibmm-2.80.1.tar.gz",
+  sha256       = "787f26dc8862f97f76e23f6ffeeac6d2e66e127982e156e554288d3a4bf6cc21",
+  deps         = { "glibc", "gcc", "glib", "libsigc++2" },
+  build_system = "custom",
+  build_script = "build-glibmm-compat.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/libglibmm-2.4.so.1"
+    .. " && test -f ${DESTDIR}/usr/lib/libgiomm-2.4.so.1"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/glibmm-2.4.pc"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/giomm-2.4.pc"
+    .. " && test -d ${DESTDIR}/usr/include/glibmm-2.4"
+    -- nothing the main glibmm package owns may leak in
+    .. " && ! test -e ${DESTDIR}/usr/lib/libglibmm-2.68.so.1"
+    .. " && ! test -e ${DESTDIR}/usr/lib/pkgconfig/glibmm-2.68.pc"
+    .. " && ! test -d ${DESTDIR}/usr/include/glibmm-2.68",
+}

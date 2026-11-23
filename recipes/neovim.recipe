@@ -1,0 +1,42 @@
+-- neovim.recipe — 0.12.6 (current stable): Vim-fork focused on
+-- extensibility. Repack of the broken 0.12.4: that build disabled
+-- USE_BUNDLED_TS_PARSERS, so no tree-sitter parsers shipped — and 0.12's
+-- ftplugin/lua.lua replaced syntax highlighting with
+-- vim.treesitter.start(), which errors "Parser could not be created"
+-- on every .lua file and leaves it uncolored (both reported symptoms).
+-- This build takes upstream's default bundled deps (deps.txt pins URL +
+-- sha256 for every download) including the c/lua/vim/vimdoc/query/
+-- markdown grammars, all linked static -> runtime closure is just
+-- glibc. Parsers are copied from the deps prefix onto nvim's runtime
+-- search path (site/parser) in the build script.
+
+return {
+  name         = "neovim",
+  version      = "0.12.6",
+  summary      = "Vim-fork focused on extensibility and usability",
+  url          = "https://github.com/neovim/neovim/archive/refs/tags/v0.12.6.tar.gz",
+  sha256       = "8629fdc5eb951daf89a76f68cad12f2f1e03fab0d539150ba3fe6d177d254b7f",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-neovim.sh",
+  archive      = { strip = 1 },
+  test         = "test -x ${DESTDIR}/usr/bin/nvim"
+    .. " && ${DESTDIR}/usr/bin/nvim --version | grep -q 'v0.12.6'"
+    .. " && test -f ${DESTDIR}/usr/share/nvim/runtime/syntax/lua.vim"
+    .. " && test -f ${DESTDIR}/usr/share/nvim/site/parser/lua.so"
+    .. " && test -f ${DESTDIR}/usr/share/nvim/site/parser/vimdoc.so"
+    -- Regression guard for the reported bug: opening a .lua file must
+    -- attach a tree-sitter parser (0.12.4 failed exactly here, which
+    -- also killed the FileType chain and all highlighting).
+    -- XDG_DATA_HOME points nvim's user-site rtp entry at the stage
+    -- (the system site /usr/share/nvim/site is hardcoded and would
+    -- escape the stage), and the marker grep is needed because nvim
+    -- exits 0 even when a -c command errors.
+    .. " && F=$(mktemp /tmp/nvimtest.XXXXXX.lua)"
+    .. " && printf 'local x = 1\\n' > \"$F\""
+    .. " && OUT=$(XDG_DATA_HOME=${DESTDIR}/usr/share ${DESTDIR}/usr/bin/nvim --headless \"$F\""
+    .. " -c 'lua print(vim.treesitter.get_parser(0, \"lua\") and \"PARSER_ATTACH_OK\" or \"PARSER_MISSING\")'"
+    .. " -c 'qa!' 2>&1)"
+    .. " && rm -f \"$F\""
+    .. " && echo \"$OUT\" | grep -q PARSER_ATTACH_OK",
+}

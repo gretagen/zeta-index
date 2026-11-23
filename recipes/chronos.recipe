@@ -1,16 +1,16 @@
--- chronos.recipe — chronos 1.9.6: "chronos remove <N>|all" (delete every
--- generation at once) on top of the bootable-kernels work; the rebase's
--- message-wording conflicts were resolved toward the em-dash cleanup
--- style. Payload mirrors the previous package: the script alone in
--- usr/bin. Test keeps the 1.9.5 contract and adds a regression guard for
--- the new remove-all command.
+-- chronos.recipe — chronos 1.9.8: HEAD as of 2026-11-21 (17f00c6 —
+-- "only use entries it owns for other sys" on top of the reviewed-
+-- scripts cleanup and the remove-all/bootable-kernels work). Payload
+-- mirrors the previous package: the script alone in usr/bin. Test keeps
+-- the established contract (bootable_modules_kernel + cmd_remove_all
+-- both still present at HEAD).
 
 return {
   name         = "chronos",
-  version      = "1.9.6",
+  version      = "1.9.8",
   summary      = "btrfs generation manager for Haliade system (Limine boot entries)",
-  url          = "https://github.com/gretagen/chronos/archive/982cf15e7c28bb51d84002c7b06685d519204dbf.tar.gz",
-  sha256       = "25197a6f443d7617951bfa6eb54a293cccaea13519aa6d60a23cea2d547ead68",
+  url          = "https://github.com/gretagen/chronos/archive/17f00c6760067b61125fa0ef60595794bdd8657f.tar.gz",
+  sha256       = "a6d6e3e8b1f8f9b8a95a8e9e7a6e93f320aca8637d32726573114db4025a65c6",
   deps         = { "bash", "btrfs-progs", "util-linux" },
   build_system = "custom",
   build_script = "build-chronos.sh",

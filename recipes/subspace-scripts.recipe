@@ -1,0 +1,35 @@
+-- subspace-scripts.recipe — 1.7.3: Haliade subspace management
+-- scripts. Repack of the merging-feature removal (796ee29/2a3dc1e/
+-- 4b374a9 "remove merging" + "remove merged-packages-updates too"):
+-- subspace-merge, subspace-unmerge and merged-packages-update no longer
+-- exist, so the test now negatively asserts their absence alongside
+-- positive checks on the remaining four scripts. Per the maintainer's
+-- decision all four install to /usr/bin only — the package ships
+-- nothing into /subspace (subspace-cli's setup() copies the trio there
+-- itself and adds it to PATH). Pinned to the exact commit (no tags).
+
+return {
+  name         = "subspace-scripts",
+  version      = "1.7.3",
+  summary      = "Haliade system subspace management scripts",
+  url          = "https://github.com/gretagen/subspace-scripts/archive/796ee29a3bf36ef4ecfe48a286903541ea296216.tar.gz",
+  sha256       = "1c476eb0b9b20344854765fbf2fd1461ad617bd88fa3bc415377ca22cc430981",
+  deps         = { "bash", "bubblewrap", "chronos" },
+  build_system = "custom",
+  build_script = "build-subspace-scripts.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/subspace-cli"
+    .. " && test -x ${DESTDIR}/usr/bin/subspace-enter"
+    .. " && test -x ${DESTDIR}/usr/bin/subspace-sync"
+    .. " && test -x ${DESTDIR}/usr/bin/subspace-run"
+    .. " && bash -n ${DESTDIR}/usr/bin/subspace-cli"
+    .. " && bash -n ${DESTDIR}/usr/bin/subspace-enter"
+    .. " && bash -n ${DESTDIR}/usr/bin/subspace-sync"
+    .. " && bash -n ${DESTDIR}/usr/bin/subspace-run"
+    -- the package must not ship anything into /subspace (setup() owns
+    -- that directory at runtime)
+    .. " && ! test -d ${DESTDIR}/subspace"
+    -- merging feature removed upstream — these must stay gone
+    .. " && ! test -f ${DESTDIR}/usr/bin/subspace-merge"
+    .. " && ! test -f ${DESTDIR}/usr/bin/subspace-unmerge"
+    .. " && ! test -f ${DESTDIR}/usr/bin/merged-packages-update",
+}

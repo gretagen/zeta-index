@@ -1,0 +1,25 @@
+-- glibmm.recipe — 2.89.1: C++ bindings for GLib (glibmm-2.68 API
+-- series, so pc name and SONAME libglibmm-2.68.so.1 are unchanged and
+-- existing consumers keep working). Bumped from 2.80.1 because gtkmm
+-- 4.24.0 — the only gtkmm release whose generated gdkmm headers handle
+-- GTK 4.24's G_DECLARE_FINAL_TYPE(GdkCursor) — requires glibmm
+-- >= 2.89.0. Same mid-cycle pairing as the system's glib 2.90.1.
+-- Docs/examples off; mm-common is only needed in maintainer mode.
+
+return {
+  name         = "glibmm",
+  version      = "2.89.1",
+  summary      = "C++ bindings for GLib",
+  url          = "https://download.gnome.org/sources/glibmm/2.89/glibmm-2.89.1.tar.xz",
+  sha256       = "f24b3298078730fb96ed7066f900bf476f3baea8b283a2975d3bf3f4e8def513",
+  deps         = { "glibc", "gcc", "glib", "libsigc++" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib",
+                     "--wrap-mode=nodownload", "-Dbuild-examples=false",
+                     "-Dbuild-documentation=false" },
+  test         = "test -f ${DESTDIR}/usr/lib/libglibmm-2.68.so.1"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/glibmm-2.68.pc"
+    .. " && test -f ${DESTDIR}/usr/include/glibmm-2.68/glibmm.h"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig"
+    .. " pkg-config --modversion glibmm-2.68 | grep -q 2.89",
+}

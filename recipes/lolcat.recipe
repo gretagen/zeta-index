@@ -1,0 +1,24 @@
+-- lolcat.recipe — 1.5: rainbow terminal colorizer (jaseg/lolcat —
+-- the plain-C implementation, not the rust/ruby variants). Trivial
+-- Makefile; CC passed explicitly (no cc symlink on this host).
+-- xterm256lut.h ships pre-generated — the python regen rule only
+-- fires when the header is older than the generator, and the build
+-- script touches it anyway. Both upstream binaries ship: lolcat and
+-- censor. The test asserts a real ESC byte in lolcat's output.
+
+return {
+  name         = "lolcat",
+  version      = "1.5",
+  summary      = "Colorize terminal output with a rainbow gradient",
+  url          = "https://github.com/jaseg/lolcat/archive/refs/tags/v1.5.tar.gz",
+  sha256       = "2af79bed90e0bda52ae500d16e7e7022037fad10c487c317e7f0ff17ec4b14f5",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-lolcat.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/lolcat"
+    .. " && test -x ${DESTDIR}/usr/bin/censor"
+    -- proves actual ANSI coloring (ESC = 0x1b): lolcat only enables
+    -- colors when stdout is a tty, so run it under a pty via script(1)
+    .. " && printf x | script -qec \"${DESTDIR}/usr/bin/lolcat\" /dev/null"
+    .. " | od -An -tx1 | grep -q 1b",
+}

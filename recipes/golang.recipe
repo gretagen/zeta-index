@@ -1,0 +1,23 @@
+-- golang.recipe — 1.27.3: official Go toolchain from go.dev (prebuilt
+-- bootstrap-style distribution; no compilation needed). The whole tree
+-- lands at /usr/lib/go with relative symlinks from /usr/bin — the go
+-- binary re-derives GOROOT from its own /proc/self/exe path, so no
+-- wrapper or GOROOT env is required. Replaces the base image's broken
+-- gccgo /usr/bin/go (libgo.so.24 missing, unowned by any package).
+
+return {
+  name         = "golang",
+  version      = "1.27.3",
+  summary      = "Go compiler and standard toolchain",
+  url          = "https://go.dev/dl/go1.27.3.linux-amd64.tar.gz",
+  sha256       = "65efbc80fdc1fa2cd2631cad5b481777a68e8725f34e89f50fc6ac714e379b40",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-golang.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/go"
+    .. " && test -x ${DESTDIR}/usr/bin/gofmt"
+    .. " && ${DESTDIR}/usr/bin/go version | grep -q 'go1.27'"
+    -- Proof the symlinks relocate correctly: GOROOT must re-derive to
+    -- the packaged tree, not the tarball's default /usr/local/go.
+    .. " && ${DESTDIR}/usr/bin/go env GOROOT | grep -q '/usr/lib/go'",
+}

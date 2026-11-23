@@ -1,0 +1,38 @@
+-- wireplumber.recipe — 0.5.15-1: session / policy manager for
+-- PipeWire (bundled with libwireplumber). Replaces the hand-built
+-- payload with a real recipe and carries wireplumber's own service
+-- files for every init, distro-style (apps own their services; the
+-- [init]-services packages stay the bare swap-minimum).
+-- clean_stage = false lets meson's default systemd-user-service
+-- install (wireplumber.service user unit) and the gir ship. Meson:
+-- system-lua=true reproduces the previous build (lua in its deps);
+-- introspection/doc stay auto (gir ships like before; man is skipped
+-- because sphinx is absent on this host).
+
+return {
+  name           = "wireplumber",
+  version        = "0.5.15-2",
+  summary        = "Session / policy manager for PipeWire (bundled with libwireplumber)",
+  url            = "https://github.com/PipeWire/wireplumber/archive/refs/tags/0.5.15.tar.gz",
+  sha256         = "baa121bc918df5fa0e0e70755bb1c99ffab0ab107225ecf99aa470e2c6ba5e7b",
+  deps           = { "glibc", "libgcc", "glib", "lua", "pipewire", "systemd-libs" },
+  build_system   = "custom",
+  build_script   = "build-wireplumber.sh",
+  clean_stage    = false,
+  test           = "test -x ${DESTDIR}/usr/bin/wireplumber"
+    .. " && test -x ${DESTDIR}/usr/bin/wpctl"
+    .. " && test -e ${DESTDIR}/usr/lib/libwireplumber-0.5.so.0"
+    .. " && test -f ${DESTDIR}/usr/share/gir-1.0/Wp-0.5.gir"
+    -- systemd: SYSTEM unit (consistency with the other four inits;
+    -- upstream's system template carries User=pipewire and the
+    -- -p main-systemwide policy flag)
+    .. " && test -f ${DESTDIR}/usr/lib/systemd/system/wireplumber.service"
+    .. " && ! test -e ${DESTDIR}/usr/lib/systemd/user/wireplumber.service"
+    -- dinit enable-at-boot symlink (dinit-services convention)
+    .. " && test -L ${DESTDIR}/etc/dinit.d/boot.d/wireplumber"
+    -- in-package service files for the four non-systemd init
+    .. " && test -x ${DESTDIR}/etc/init.d/wireplumber"
+    .. " && test -x ${DESTDIR}/etc/service/wireplumber/run"
+    .. " && test -f ${DESTDIR}/etc/dinit.d/wireplumber"
+    .. " && test -f ${DESTDIR}/etc/shepherd.d/wireplumber.scm",
+}

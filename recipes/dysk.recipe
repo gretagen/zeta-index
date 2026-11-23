@@ -1,0 +1,19 @@
+-- dysk.recipe — 3.8.2: table-based filesystem lister (df alternative,
+-- JSON/CSV export; github.com/Canop/dysk — latest tag). Native cargo
+-- build system; Cargo.lock ships in the tag so --locked pins every
+-- crate. gcc joins the deps per this index's convention (GNU rust
+-- targets pull NEEDED libgcc_s for unwinding — same pattern as
+-- alacritty).
+
+return {
+  name           = "dysk",
+  version        = "3.8.2",
+  summary        = "Filesystem table with columns, filters, JSON/CSV (df alternative)",
+  url            = "https://github.com/Canop/dysk/archive/refs/tags/v3.8.2.tar.gz",
+  sha256         = "3e82c5d1624bf30a8c71e56f879d7e1af85c1a0a957d7a47ffa1194dbc281ea3",
+  deps           = { "glibc", "gcc" },
+  build_system   = "cargo",
+  configure_args = { "--locked" },
+  test           = "test -x ${DESTDIR}/usr/bin/dysk"
+    .. " && ${DESTDIR}/usr/bin/dysk --version | grep -q 3.8",
+}

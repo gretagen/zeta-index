@@ -1,0 +1,29 @@
+-- manual.recipe — Haliade system manual 1.0.3: interactive CLI pager over
+-- the full documentation tree (new sections: declarative plugins/modules,
+-- package writing) plus the manual-gui wiki launcher desktop entry. The
+-- desktop conflict markers are gone (regression-guarded in the test) and
+-- the icon installs to the pixmap path instead of a home directory.
+
+return {
+  name         = "manual",
+  version      = "1.0.3",
+  summary      = "Haliade system manual as a command (manual)",
+  url          = "https://github.com/gretagen/haliade-manual/archive/a660927fd9f912b1266ad8a5c4eeb80b36af79d5.tar.gz",
+  sha256       = "6284a66a503ee7cecbf1e44b298c35cd34cd531b6a12e57b38363c77c84dd379",
+  deps         = { "bash", "ncurses", "uutils-coreutils", "xdg-utils" },
+  build_system = "custom",
+  build_script = "build-manual.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/manual"
+    .. " && test -f ${DESTDIR}/usr/share/manual/cover.txt"
+    .. " && test -f ${DESTDIR}/usr/share/manual/15-end.txt"
+    .. " && test -f ${DESTDIR}/usr/share/manual/03-installation.txt"
+    .. " && test -f ${DESTDIR}/usr/share/manual/14-package-writing.txt"
+    .. " && ${DESTDIR}/usr/bin/manual 2>&1 | grep -q 'interactive terminal'"
+    .. " && test -x ${DESTDIR}/usr/bin/manual-gui"
+    .. " && grep -q xdg-open ${DESTDIR}/usr/bin/manual-gui"
+    .. " && test -f ${DESTDIR}/usr/share/applications/manual.desktop"
+    .. " && grep -q '^Exec=manual-gui' ${DESTDIR}/usr/share/applications/manual.desktop"
+    .. " && grep -q '^Icon=haliade-manual' ${DESTDIR}/usr/share/applications/manual.desktop"
+    .. " && ! grep -q '<<<<<<<' ${DESTDIR}/usr/share/applications/manual.desktop"
+    .. " && test -f ${DESTDIR}/usr/share/pixmaps/haliade-manual.png",
+}

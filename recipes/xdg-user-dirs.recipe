@@ -1,0 +1,21 @@
+-- xdg-user-dirs recipe — 0.20: XDG user directories tool
+-- (creates ~/Desktop, ~/Downloads, ... and keeps user-dirs.dirs in sync).
+-- Bumped from the stale 0.18; upstream moved to meson. sysconfdir keeps
+-- the distro's usr/etc convention (the zeta install hook mirrors the
+-- autostart entry into /etc/xdg/autostart).
+
+return {
+  name         = "xdg-user-dirs",
+  version      = "0.20",
+  summary      = "XDG user dirs management tool",
+  url          = "https://gitlab.freedesktop.org/xdg/xdg-user-dirs/-/archive/v0.20/xdg-user-dirs-v0.20.tar.bz2",
+  sha256       = "48ca34c6591f5c0ee94416124b6b98bd8fce85ccf1bd8fcecd292e3af3720088",
+  deps         = { "glibc" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
+                     "--sysconfdir=/usr/etc", "-Ddocs=false" },
+  test         = "test -x ${DESTDIR}/usr/bin/xdg-user-dirs-update"
+    .. " && test -x ${DESTDIR}/usr/bin/xdg-user-dir"
+    .. " && test -f ${DESTDIR}/usr/etc/xdg/autostart/xdg-user-dirs.desktop"
+    .. " && test -f ${DESTDIR}/usr/etc/xdg/user-dirs.conf",
+}

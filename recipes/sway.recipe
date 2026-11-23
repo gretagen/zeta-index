@@ -1,0 +1,31 @@
+-- sway.recipe — 1.12: tiling Wayland compositor (i3-compatible).
+-- Latest stable; pairs with the indexed wlroots-0.20.2 (meson wants
+-- >=0.20.0,<0.21 — satisfied, no wlroots/mango cascade). No
+-- subprojects in the tarball, so --wrap-mode=nodownload just enforces
+-- the system deps. Tray (auto) resolves to libsystemd, so systemd-libs
+-- joins the closure — a library link, not an init dependency (units,
+-- if any, are stripped by clean_stage; the wayland-sessions .desktop
+-- ships as-is). swaybg stays a separate package (already indexed);
+-- Xwayland is exec'd, not linked — soft need only.
+
+return {
+  name         = "sway",
+  version      = "1.12",
+  summary      = "Tiling Wayland compositor (i3-compatible)",
+  url          = "https://github.com/swaywm/sway/archive/refs/tags/1.12.tar.gz",
+  sha256       = "29ca7caac960d13e02d8213418d91a5422c7c23102a283ceab944c57c5e1efcf",
+  deps         = { "glibc", "wlroots", "wayland", "json-c", "pcre2",
+                   "xkbcommon", "cairo", "pango", "gdk-pixbuf", "pixman",
+                   "libevdev", "libinput", "libxcb", "xcb-util-wm",
+                   "libdrm", "systemd-libs" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib",
+                     "--wrap-mode=nodownload" },
+  test         = "test -x ${DESTDIR}/usr/bin/sway"
+    .. " && test -x ${DESTDIR}/usr/bin/swaymsg"
+    .. " && test -x ${DESTDIR}/usr/bin/swaybar"
+    .. " && test -x ${DESTDIR}/usr/bin/swaynag"
+    .. " && ${DESTDIR}/usr/bin/sway --version | grep -q '1.12'"
+    .. " && test -f ${DESTDIR}/usr/share/man/man1/sway.1"
+    .. " && test -f ${DESTDIR}/usr/share/wayland-sessions/sway.desktop",
+}

@@ -1,0 +1,34 @@
+-- pulseplayer.recipe — 0.1.0: PULSE, a terminal music player TUI
+-- (Textual + mpv + CAVA; github.com/gretagen/pulse_music branch
+-- contrib — commit-pinned, no tags). Installed as an APP TREE, not a
+-- package import: main.py does a top-level `from config import …`
+-- and keeps pulse.tcss beside itself (CSS_PATH), so the entry point
+-- prepends /usr/lib/pulseplayer to sys.path and runpy-executes
+-- main.py — the same shape as `python pulseplayer/main.py`.
+-- Deps: python-textual (shared chain, option B split), and mpv —
+-- python-mpv loads libmpv.so.2 via ctypes, which no ELF NEEDED entry
+-- would ever reveal, so it must be declared semantically or fresh
+-- roots die at import (the exact Nix pain upstream's smoke test
+-- documents). cava/parec are soft: the visualizer degrades without.
+-- The upstream headless test suite runs inside the build script.
+
+return {
+  name         = "pulseplayer",
+  version      = "0.1.0",
+  summary      = "Terminal music player TUI (Textual, mpv, CAVA visualizer)",
+  url          = "https://github.com/gretagen/pulse_music/archive/7447f238aa91416aab02ec5ac020467bf23f90c4.tar.gz",
+  sha256       = "001523fbf56b827d47521722b83de1789176f34727ec24daef8ea094bb0f1f1a",
+  deps         = { "glibc", "python", "python-textual", "mpv" },
+  build_system = "custom",
+  build_script = "build-pulseplayer.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/pulseplayer"
+    .. " && test -f ${DESTDIR}/usr/lib/pulseplayer/main.py"
+    .. " && test -f ${DESTDIR}/usr/lib/pulseplayer/config.py"
+    .. " && test -f ${DESTDIR}/usr/lib/pulseplayer/pulse.tcss"
+    .. " && grep -q 'runpy.run_path' ${DESTDIR}/usr/bin/pulseplayer"
+    -- module import from the staged tree (textual resolves from the
+    -- python-textual dependency on the build host); no bytecode may
+    -- land in the stage — it would ship in the payload
+    .. " && PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=${DESTDIR}/usr/lib/pulseplayer"
+    .. " python3 -c \"import main; print('module ok')\"",
+}

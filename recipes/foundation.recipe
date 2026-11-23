@@ -1,0 +1,29 @@
+-- foundation.recipe — 0.2.0: Haliade deployment/filesystem builder
+-- (single bash script "tower"). 0.2.1: ensure_merge migrates with a directory merge (cp -a) so both-sides subdirs like lib/pkgconfig merge instead of stranding; 0.2.0: usr-merge symlinks before/
+-- after provides (fixes #!/bin/bash shebangs inside climb/chroot for both
+-- fresh and pre-merge trees), --shell flag writing the default root shell
+-- into the tree's /etc/passwd (created if absent; default thesh — the
+-- host convention), host thesh config copied into deploy+place trees,
+-- deploy re-runs use -ReProvide to HEAL an existing tree, and climb's
+-- default shell = the tree root's login shell (else thesh). Source
+-- pinned to the exact commit on main.
+
+return {
+  name         = "foundation",
+  version      = "0.2.5",
+  summary      = "Haliade system deployment tool (tower)",
+  url          = "https://github.com/gretagen/foundation/archive/6fd92fbe161106211279c32b2021db16271f2888.tar.gz",
+  sha256       = "7e84061c875e357e92a859936361f94dbec856cbc6cb2f37a586be825ecc90fe",
+  deps         = { "bash", "btrfs-progs", "e2fsprogs", "util-linux",
+                   "dosfstools", "limine", "rsync", "chronos",
+                   "bubblewrap", "xorriso", "squashfs-tools" },
+  build_system = "custom",
+  build_script = "build-foundation.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/tower"
+    -- syntax check + the usage contract (help exits 0, no root needed).
+    .. " && bash -n ${DESTDIR}/usr/bin/tower"
+    .. " && ${DESTDIR}/usr/bin/tower help | grep -q 'tower place'"
+    -- regression guards for 0.2.0 behaviour.
+    .. " && ${DESTDIR}/usr/bin/tower help | grep -q -- '--shell'"
+    .. " && grep -q 'ensure_merge()' ${DESTDIR}/usr/bin/tower",
+}

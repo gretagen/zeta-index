@@ -1,5 +1,5 @@
 #!/bin/sh
-# nacelle 3.1.2: launcher + lua tree, layout identical to the previous
+# nacelle 3.1.7: launcher + lua tree, layout identical to the previous
 # package (README/LICENSE are not installed).
 set -e
 

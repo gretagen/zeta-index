@@ -1,0 +1,21 @@
+-- uv.recipe — 0.13.9: the uv Python package manager (astral-sh/uv —
+-- latest tag, numeric). Cargo build of the virtual workspace's crates/uv
+-- member only (-p uv — the workspace default would also build benches,
+-- audit tools and the nightly-excluded trampoline), --locked against
+-- the shipped Cargo.lock; rust-version 1.98.0 is exactly the host
+-- toolchain. gcc per this index's Rust convention; python is declared
+-- semantically — uv's whole job is managing Python environments.
+
+return {
+  name           = "uv",
+  version        = "0.13.9",
+  summary        = "Fast Python package and environment manager",
+  url            = "https://github.com/astral-sh/uv/archive/refs/tags/0.13.9.tar.gz",
+  sha256         = "66b26bd860dd35790bd7e3b721bbb3d39451cb18e3ff25fb0557d25a26f06c00",
+  deps           = { "glibc", "gcc", "python" },
+  build_system   = "cargo",
+  configure_args = { "--locked", "-p", "uv" },
+  test           = "test -x ${DESTDIR}/usr/bin/uv"
+    .. " && ${DESTDIR}/usr/bin/uv --version | grep -q 0.13"
+    .. " && ${DESTDIR}/usr/bin/uv --help 2>&1 | grep -qi usage",
+}

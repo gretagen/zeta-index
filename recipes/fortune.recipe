@@ -1,0 +1,27 @@
+-- fortune.recipe — 1.99.1: classic random-quote program (fortune-mod;
+-- sourced from Debian's orig tarball — the GitHub mirror is gone).
+-- Plain multilevel makefile, no configure. Two-phase build: phase 1
+-- compiles with the default prefix so the cookie directory
+-- (-DFORTDIR="$(COOKIEDIR)") and fortune.man bake the real runtime
+-- path /usr/share/games/fortunes; phase 2 installs with prefix=$DESTDIR
+-- while -o on the phony build targets stops make from recompiling
+-- under the staged prefix. FORTDIR is forced to /usr/bin — upstream
+-- defaults to /usr/games, which is not on this distro's PATH. The off/
+-- cookie set ships too but fortune only shows it with -a.
+
+return {
+  name         = "fortune",
+  version      = "1.99.1",
+  summary      = "Randomly display a fortune from the cookie files",
+  url          = "https://deb.debian.org/debian/pool/main/f/fortune-mod/fortune-mod_1.99.1.orig.tar.gz",
+  sha256       = "fc51aee1f73c936c885f4e0f8b6b48f4f68103e3896eaddc6a45d2b71e14eace",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-fortune.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/fortune"
+    .. " && test -x ${DESTDIR}/usr/bin/strfile"
+    .. " && test -f ${DESTDIR}/usr/share/games/fortunes/fortunes"
+    .. " && test -f ${DESTDIR}/usr/share/man/man6/fortune.6"
+    -- prints an actual quote from the staged cookie file
+    .. " && ${DESTDIR}/usr/bin/fortune ${DESTDIR}/usr/share/games/fortunes/fortunes",
+}

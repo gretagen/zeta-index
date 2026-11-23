@@ -1,0 +1,24 @@
+-- picom.recipe — v13: X11 compositor (picom, yshui/picom — fork of
+-- compton). Meson build with upstream defaults: regex (pcre2), GL
+-- backend (epoxy), D-Bus remote control, compton compat name; docs
+-- off (no asciidoc on this host). --wrap-mode=nodownload forces the
+-- system libconfig (>=1.7, provided as its own package) instead of
+-- meson's wrap download. All X protocol deps come from libxcb core +
+-- the xcb-util* packages; libev has no .pc on this host but picom's
+-- find_library fallback links it anyway, so it is declared too.
+
+return {
+  name         = "picom",
+  version      = "13",
+  summary      = "X11 compositor (picom, fork of compton)",
+  url          = "https://github.com/yshui/picom/archive/refs/tags/v13.tar.gz",
+  sha256       = "db9791a54255742c924ef82a6a882042636d61de0fa61bc14c5e56279cf5791c",
+  deps         = { "glibc", "pixman", "libX11", "libxcb", "xcb-util",
+                   "xcb-util-image", "xcb-util-renderutil", "libepoxy",
+                   "dbus", "pcre2", "libconfig", "libev" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib",
+                     "--wrap-mode=nodownload" },
+  test         = "test -x ${DESTDIR}/usr/bin/picom"
+    .. " && ${DESTDIR}/usr/bin/picom --version | grep -q 'v13'",
+}

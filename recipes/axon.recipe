@@ -1,0 +1,27 @@
+-- axon.recipe — 0.1.1: axON, a blood-red note-taking TUI built with
+-- Textual (github.com/gretagen/axON, feature/configurable-colors —
+-- commit-pinned since the fork has no tags; pyproject version is the
+-- source of truth). 0.1.1 moves the textual chain OUT of this package:
+-- it now depends on python-textual 8.2.8 (shared with pulseplayer and
+-- any future Textual app) instead of vendoring its own pip copy, so
+-- the payload shrinks to the axon module + entry point.
+
+return {
+  name         = "axon",
+  version      = "0.1.1",
+  summary      = "Blood-red note-taking TUI built with Textual",
+  url          = "https://github.com/gretagen/axON/archive/8cbb5545c43e01511f2e86821fc56aa27727c008.tar.gz",
+  sha256       = "5d1ed1112cb85b55a01615e115f39cce4eabc597e1ff488ec0e505d9026af187",
+  deps         = { "glibc", "python", "python-textual" },
+  build_system = "custom",
+  build_script = "build-axon.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/axon"
+    .. " && test -d ${DESTDIR}/usr/lib/python3.14/site-packages/axon"
+    -- 0.1.1 must NOT ship textual anymore — python-textual owns those
+    -- files now, and a vendored copy would fight it for them
+    .. " && ! test -d ${DESTDIR}/usr/lib/python3.14/site-packages/textual"
+    -- import works with the staged module via PYTHONPATH and textual
+    -- resolving from the dependency (present on the build host)
+    .. " && PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages"
+    .. " python3 -c \"import axon, textual; print('imports ok')\"",
+}

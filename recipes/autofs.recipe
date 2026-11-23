@@ -1,0 +1,28 @@
+-- autofs.recipe — 5.2.0: kernel automounter userspace tools (daemon +
+-- automount(8); upstream tarball from kernel.org v5/, Ian Kent —
+-- signed release, sha256-pinned here). Autotools build with the
+-- distro convention: --prefix=/usr makes sysconfdir /usr/etc (the
+-- usr/etc→/etc mirror hook handles it), and the Makefiles route
+-- install through INSTALLROOT=$(DESTDIR). configure finds libsystemd
+-- via pkg-config (systemd-libs — a library link, not an init
+-- dependency; the unit files, if any, are stripped by clean_stage).
+-- hesiod/openldap/libtirpc stay at their default-off. Host kernel
+-- already has autofs in /proc/filesystems.
+
+return {
+  name         = "autofs",
+  version      = "5.2.0",
+  summary      = "Kernel automounter daemon and tools (automount)",
+  url          = "https://mirrors.edge.kernel.org/pub/linux/daemons/autofs/v5/autofs-5.2.0.tar.xz",
+  sha256       = "131a642acbb9fe98a41fb52b05adc979e9094e025dd18a1ae7bef00ca72351b0",
+  deps         = { "glibc", "systemd-libs", "libtirpc" },
+  build_system = "autotools",
+  -- glibc dropped sunrpc headers (rpc/rpc.h) long ago — autofs needs
+  -- TI-RPC for its RPC maps, which is exactly what this flag switches on
+  configure_args = { "--with-libtirpc" },
+  test         = "test -x ${DESTDIR}/usr/sbin/automount"
+    -- staged run needs LD_LIBRARY_PATH: the loader cache doesn't know
+    -- the stage's own libautofs.so yet
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib ${DESTDIR}/usr/sbin/automount --version | grep -q 5.2"
+    .. " && test -f ${DESTDIR}/usr/share/man/man8/automount.8"
+}

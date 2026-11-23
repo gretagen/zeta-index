@@ -1,0 +1,19 @@
+-- speck.recipe — 0.1.0: "EXTREMELY minimalistic text editor" — the
+-- source IS the program: speck.hex holds a hex-encoded freestanding
+-- x86_64 ELF (1539 bytes), and upstream's Makefile just runs
+-- `xxd -r -p` (from vim) and chmods it. No compiler, no interpreter,
+-- no runtime deps — the image is static with no dynamic section.
+-- Source pinned to the exact commit (the repo has no tags).
+
+return {
+  name         = "speck",
+  version      = "0.1.0",
+  summary      = "Extremely minimalistic text editor (hex-encoded ELF)",
+  url          = "https://github.com/germanex3000dev/speck/archive/fef2c45cd0453a0d949187c8d1656ecd3f76ec05.tar.gz",
+  sha256       = "1c5c939f78798427a54e17bd4b726fc1407dbabe5ad53bafe5fafe2b0e510126",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-speck.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/speck"
+    .. " && file ${DESTDIR}/usr/bin/speck | grep -q 'ELF 64-bit'",
+}

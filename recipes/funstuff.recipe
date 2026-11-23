@@ -1,0 +1,43 @@
+-- funstuff.recipe — 0.1.1: five terminal toys (badapple/fan/turbine
+-- animations, gynoidsay cowsay bubble, weather stub) plus badapple's
+-- 6.4MB frame file — without it badapple only worked via the author's
+-- $HOME fallback and died with "not found" everywhere else. Source is
+-- a local bare-filename tarball of ~/funstuff (the ca-certificates
+-- precedent — no upstream repo yet; the author will add one later,
+-- at which point this can pin a commit archive instead).
+-- Three patches are applied AT BUILD so ~/funstuff stays as written:
+--   * weather is a bare `curl wttr.in` line with no shebang — direct
+--     execve would fail ENOEXEC; one gets prepended.
+--   * gynoidsay's artfile path is CWD-relative ("usr/lib/gynoidsay/
+--     ascii"), which only works from the source dir — made absolute.
+--   * badapple's frame lookup gains /usr/lib/badapple/BadApple_ASCII.ps1
+--     as first candidate (it only searched next-to-script, cwd and
+--     ~/BadApple-ASCII-Terminal).
+-- Script deps are declared semantically, zstrappa-style.
+
+return {
+  name         = "funstuff",
+  version      = "0.1.1",
+  summary      = "Terminal toys: animations, cowsay bubble, weather",
+  url          = "funstuff-0.1.1.tar.gz",
+  sha256       = "ee651f3f6d8d4620932e252bed4e72eab1835a2e381f9f4cabd5d422f55612df",
+  deps         = { "bash", "gawk", "ncurses", "perl", "curl" },
+  build_system = "custom",
+  build_script = "build-funstuff.sh",
+  test         = "test -x ${DESTDIR}/usr/bin/badapple"
+    .. " && test -x ${DESTDIR}/usr/bin/fan"
+    .. " && test -x ${DESTDIR}/usr/bin/turbine"
+    .. " && test -x ${DESTDIR}/usr/bin/gynoidsay"
+    .. " && test -x ${DESTDIR}/usr/bin/weather"
+    .. " && bash -n ${DESTDIR}/usr/bin/badapple"
+    .. " && bash -n ${DESTDIR}/usr/bin/fan"
+    .. " && bash -n ${DESTDIR}/usr/bin/turbine"
+    .. " && bash -n ${DESTDIR}/usr/bin/weather"
+    .. " && perl -c ${DESTDIR}/usr/bin/gynoidsay"
+    -- the three build-time patches must have landed:
+    .. " && head -1 ${DESTDIR}/usr/bin/weather | grep -q '#!/bin/sh'"
+    .. " && grep -q 'my $artfile = \"/usr/lib/gynoidsay/ascii\"' ${DESTDIR}/usr/bin/gynoidsay"
+    .. " && grep -q '\"/usr/lib/badapple/BadApple_ASCII.ps1\"' ${DESTDIR}/usr/bin/badapple"
+    .. " && test -f ${DESTDIR}/usr/lib/gynoidsay/ascii"
+    .. " && test -f ${DESTDIR}/usr/lib/badapple/BadApple_ASCII.ps1",
+}

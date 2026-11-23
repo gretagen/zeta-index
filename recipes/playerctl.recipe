@@ -1,0 +1,27 @@
+-- playerctl.recipe — 2.4.1: MPRIS media player controller CLI +
+-- libplayerctl library (github.com/acrisci/playerctl — latest tag).
+-- Meson; deps are just the glib stack (GDBus via gio-unix-2.0 — no
+-- libdbus). gtk-doc off (gtk-doc absent on this host), introspection
+-- kept on so the Playerctl GIR/typelib ships per this index's
+-- convention; completions stay at their default (off).
+
+return {
+  name         = "playerctl",
+  version      = "2.4.1",
+  summary      = "MPRIS media player command-line controller",
+  url          = "https://github.com/acrisci/playerctl/archive/refs/tags/v2.4.1.tar.gz",
+  sha256       = "75957ad5071956f563542c7557af16a57e40b4a7f66bc9b6373d022ec5eef548",
+  deps         = { "glibc", "glib" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib",
+                     "--wrap-mode=nodownload", "-Dgtk-doc=false" },
+  test         = "test -x ${DESTDIR}/usr/bin/playerctl"
+    .. " && test -x ${DESTDIR}/usr/bin/playerctld"
+    -- staged run needs LD_LIBRARY_PATH: the loader cache doesn't know
+    -- the stage's libplayerctl.so.2 yet
+    .. " && LD_LIBRARY_PATH=${DESTDIR}/usr/lib ${DESTDIR}/usr/bin/playerctl --version | grep -q 2.4"
+    .. " && test -f ${DESTDIR}/usr/lib/libplayerctl.so.2"
+    .. " && test -f ${DESTDIR}/usr/lib/girepository-1.0/Playerctl-2.0.typelib"
+    -- playerctld is dbus-activated (init-agnostic: service file, not a unit)
+    .. " && test -f ${DESTDIR}/usr/share/dbus-1/services/org.mpris.MediaPlayer2.playerctld.service",
+}

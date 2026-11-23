@@ -1,0 +1,27 @@
+-- iwd.recipe — 3.12: iNet Wireless Daemon, rebuilt as a proper
+-- construct binary. The previous manifest carried a build function
+-- (configure/make/install ran at provide time), so every target
+-- machine source-built iwd and failed without a full build env
+-- ("Readline library is required" — PKG_CHECK_MODULES couldn't see
+-- readline.pc); it also bypassed clean_stage and shipped systemd
+-- units. Now: built once here, installs everywhere are extract-only.
+-- Same configure flags as the old build fn (--localstatedir=/var
+-- keeps /usr/var out; external ell; no man pages). configure only
+-- checks D-Bus/systemd *directory paths*, no extra libs needed.
+
+return {
+  name         = "iwd",
+  version      = "3.12",
+  summary      = "Wireless daemon (iNet Wireless Daemon)",
+  url          = "https://deb.debian.org/debian/pool/main/i/iwd/iwd_3.12.orig.tar.xz",
+  sha256       = "d89a5e45c7180170e19be828f9e944a768c593758094fc57a358d0e7c4cb1a49",
+  deps         = { "glibc", "ell", "readline" },
+  build_system = "autotools",
+  configure_args = { "--localstatedir=/var", "--enable-external-ell",
+                     "--disable-manual-pages" },
+  post_install = "mkdir -p etc/iwd",
+  test         = "test -x ${DESTDIR}/usr/libexec/iwd"
+    .. " && test -x ${DESTDIR}/usr/bin/iwctl"
+    .. " && test -d ${DESTDIR}/etc/iwd"
+    .. " && ! strings ${DESTDIR}/usr/libexec/iwd | grep -q /usr/var",
+}

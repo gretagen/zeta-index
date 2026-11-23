@@ -1,0 +1,27 @@
+-- ca-certificates.recipe — 2026-11-05: Mozilla root bundle (curl.se's
+-- cacert.pem — upstream SHA256 427c064216761a1e72a8b30f0d954d08cb6e4435a82091fb865afd20c8497285,
+-- wrapped in a local tarball because the build pipeline only extracts
+-- archives; version = the bundle's own "Certificate data from Mozilla
+-- as of" date). No zeta package shipped CA certs — the
+-- host's /etc/ssl/certs/ca-certificates.crt is an unowned base-image
+-- leftover — so every HTTPS fetch INSIDE a deployed tree/container died
+-- with wget exit 5 (SSL certificate verification) even though DNS and
+-- TCP worked ("download failed: <url>" on zeta -provide inside tower
+-- climb). Installs the bundle at the path gnutls/openssl/wget/curl all
+-- read, plus the /etc/ssl/cert.pem compatibility alias. Text-only
+-- payload: deps {} (terminfo convention).
+
+return {
+  name         = "ca-certificates",
+  version      = "2026-11-05",
+  summary      = "Mozilla CA root certificate bundle for TLS verification",
+  url          = "ca-certificates-src.tar.gz",
+  sha256       = "7d3d1ed0fd4ca75522d3dc712b4358d5c19f3b792256963343d6a31c02ffda0e",
+  deps         = {},
+  build_system = "custom",
+  build_script = "build-ca-certificates.sh",
+  test         = "test -f ${DESTDIR}/etc/ssl/certs/ca-certificates.crt"
+    .. " && test \"$(grep -c 'BEGIN CERTIFICATE' ${DESTDIR}/etc/ssl/certs/ca-certificates.crt)\" -ge 100"
+    .. " && grep -q 'Certificate data from Mozilla' ${DESTDIR}/etc/ssl/certs/ca-certificates.crt"
+    .. " && test -f ${DESTDIR}/etc/ssl/cert.pem",
+}

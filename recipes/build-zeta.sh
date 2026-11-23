@@ -1,5 +1,5 @@
 #!/bin/sh
-# zeta 1.0.64: launcher + entry point + library tree, byte-for-byte the
+# zeta 2.1: launcher + entry point + library tree, byte-for-byte the
 # layout of the previous package (the launcher finds ../lib/zeta/zeta.lua
 # relative to itself).
 set -e

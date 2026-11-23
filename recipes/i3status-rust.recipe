@@ -1,0 +1,19 @@
+-- i3status-rust recipe — 0.40.1: resource-friendly status bar for
+-- i3/sway (github.com/greshake/i3status-rust — tag carries the v
+-- prefix, unlike their older releases). cargo build --locked against
+-- the shipped Cargo.lock; the crate's binary is i3status-rs (the
+-- builder's directory-scan fallback finds it even though the package
+-- name is i3status-rust). No man pages in the upstream tree.
+
+return {
+  name           = "i3status-rust",
+  version        = "0.40.1",
+  summary        = "Resource-friendly system status bar for i3/sway",
+  url            = "https://github.com/greshake/i3status-rust/archive/refs/tags/v0.40.1.tar.gz",
+  sha256         = "02282374ca07561c97be9a7d22bb8e7809cef598c23ae0b0bb0dabbf043c3aa0",
+  deps           = { "glibc", "gcc", "pulseaudio", "lm-sensors" },
+  build_system   = "cargo",
+  configure_args = { "--locked" },
+  test           = "test -x ${DESTDIR}/usr/bin/i3status-rs"
+    .. " && ${DESTDIR}/usr/bin/i3status-rs --version | grep -q 0.40",
+}

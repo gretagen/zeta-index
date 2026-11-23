@@ -1,0 +1,30 @@
+-- gtkmm4.recipe — 4.24.0: C++ bindings for GTK 4. Repack of the
+-- broken batch-import (ec3e9fc): the constructs payload was the raw
+-- upstream source tarball — zero usr/ paths — so zeta's extractor
+-- refused it ("gtkmm-4.14.0/.clang-format would extract as a top-level
+-- file at the destination root") and blocked pavucontrol's install.
+-- Version pairs with the system's GTK 4.24.1: gtkmm 4.14.0 could not
+-- compile against it — GTK 4.24's gdkcursor.h now uses
+-- G_DECLARE_FINAL_TYPE, whose anonymous GdkCursorClass typedef
+-- conflicts with the Class using-decl gtkmm 4.14's gmmproc emits.
+-- Meson build against the system mm stack (gtk4.pc, cairomm-1.16,
+-- pangomm-2.48, glibmm-2.68 all present); demos/tests/docs off.
+-- gcc joins the deps per this index's C++ convention.
+
+return {
+  name         = "gtkmm4",
+  version      = "4.24.0",
+  summary      = "C++ bindings for GTK+ 4",
+  url          = "https://download.gnome.org/sources/gtkmm/4.24/gtkmm-4.24.0.tar.xz",
+  sha256       = "7fd9cea356e7d3b74bf7d2a51d7e0e6763f3f9f1cddc5e77c8b0b5b7fa9d5e5a",
+  deps         = { "glibc", "gcc", "gtk4", "cairomm", "glibmm",
+                   "pangomm", "gdk-pixbuf" },
+  build_system = "meson",
+  configure_args = { "--buildtype=release", "--libdir=/usr/lib",
+                     "--wrap-mode=nodownload", "-Dbuild-demos=false",
+                     "-Dbuild-tests=false", "-Dbuild-documentation=false" },
+  test         = "test -f ${DESTDIR}/usr/lib/libgtkmm-4.0.so.0"
+    .. " && test -f ${DESTDIR}/usr/lib/libgtkmm-4.0.so"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/gtkmm-4.0.pc"
+    .. " && test -f ${DESTDIR}/usr/include/gtkmm-4.0/gtkmm.h",
+}

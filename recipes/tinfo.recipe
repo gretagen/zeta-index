@@ -1,0 +1,21 @@
+-- tinfo.recipe —6.6: pkg-config module for tinfo. Not a library — a
+-- one-file gap-filler: the distro ncurses is a wide-char-only build
+-- (ships tinfow.pc, no plain tinfo.pc), while readline.pc declares
+-- Requires.private: tinfo, so pkg-config couldn't resolve readline and
+-- every PKG_CHECK_MODULES(readline, ...) failed at configure time
+-- (seen on iwd). Libs point at libtinfow, whose symbol set is a
+-- superset of the plain terminfo API; version matches ncurses.
+
+return {
+  name         = "tinfo",
+  version      = "6.6",
+  summary      = "pkg-config module for tinfo (gap-filler for wide-char ncurses)",
+  url          = "tinfo-pc.tar.gz",
+  sha256       = "7e80c81315b37bf2eda91d339e072de5d234db91e4987905f9c91d3bb06fe1ba",
+  deps         = { "ncurses" },
+  build_system = "custom",
+  build_script = "build-tinfo.sh",
+  test         = "test -f ${DESTDIR}/usr/lib/pkgconfig/tinfo.pc"
+    .. " && grep -q 'Version: 6.6' ${DESTDIR}/usr/lib/pkgconfig/tinfo.pc"
+    .. " && grep -q -- '-ltinfow' ${DESTDIR}/usr/lib/pkgconfig/tinfo.pc",
+}

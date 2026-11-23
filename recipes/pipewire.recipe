@@ -1,0 +1,53 @@
+-- pipewire.recipe — 1.6.8-4: multimedia processing graph and audio/
+-- video daemon. Replaces the hand-built payload with a real recipe AND
+-- carries the service files for every init, distro-style (apps own
+-- their services; the [init]-services packages stay the bare
+-- swap-minimum). clean_stage = false is the sanctioned opt-out that
+-- lets dbus/udev/tmpfiles files ship and lets meson's default
+-- systemd-user-service install bring upstream's user units
+-- (pipewire{,-pulse}.{service,socket}, filter-chain.service) in for
+-- free — that covers init=systemd. The openrc/dinit/runit/shepherd
+-- files are written by the build script (harvested: Void's dedicated-
+-- user run model, Gentoo's depend() semantics, house iwd/shepherd
+-- templates) — pipewire AND pipewire-pulse, using the standalone
+-- /usr/bin/pipewire-pulse binary exactly as upstream's unit and the
+-- running host do. Build flags reproduce the previous build: no
+-- jack/ffmpeg/x11/pipewire-alsa, docs/man/tests off.
+
+return {
+  name           = "pipewire",
+  version        = "1.6.8-5",
+  summary        = "Multimedia processing graph and audio/video daemon",
+  url            = "https://github.com/PipeWire/pipewire/archive/refs/tags/1.6.8.tar.gz",
+  sha256         = "8181172a1d95131f6af8bbc0b98f90b2a33349b042b84c3ce57dd5d11348cc58",
+  deps           = { "glibc", "alsa-lib", "bluez", "dbus", "glib", "libgcc",
+                     "libsndfile", "ncurses", "openssl", "sbc", "systemd-libs" },
+  build_system   = "custom",
+  build_script   = "build-pipewire.sh",
+  clean_stage    = false,
+  test           = "LD_LIBRARY_PATH=${DESTDIR}/usr/lib ${DESTDIR}/usr/bin/pipewire --version"
+    .. " && test -f ${DESTDIR}/usr/lib/spa-0.2/alsa/libspa-alsa.so"
+    .. " && test -f ${DESTDIR}/usr/lib/spa-0.2/support/libspa-dbus.so"
+    .. " && test -f ${DESTDIR}/usr/lib/spa-0.2/bluez5/libspa-bluez5.so"
+    -- service files for all four non-systemd inits, in-package
+    .. " && test -x ${DESTDIR}/etc/init.d/pipewire"
+    .. " && test -x ${DESTDIR}/etc/init.d/pipewire-pulse"
+    .. " && test -x ${DESTDIR}/etc/service/pipewire/run"
+    .. " && test -x ${DESTDIR}/etc/service/pipewire-pulse/run"
+    .. " && test -f ${DESTDIR}/etc/dinit.d/pipewire"
+    .. " && test -f ${DESTDIR}/etc/dinit.d/pipewire-pulse"
+    .. " && test -f ${DESTDIR}/etc/shepherd.d/pipewire.scm"
+    .. " && test -f ${DESTDIR}/etc/shepherd.d/pipewire-pulse.scm"
+    -- systemd: SYSTEM units (consistency with the other four inits —
+    -- system-level services as the pipewire user, like upstream ships)
+    .. " && test -f ${DESTDIR}/usr/lib/systemd/system/pipewire.service"
+    .. " && test -f ${DESTDIR}/usr/lib/systemd/system/pipewire.socket"
+    .. " && test -f ${DESTDIR}/usr/lib/systemd/system/pipewire-pulse.service"
+    .. " && test -f ${DESTDIR}/usr/lib/systemd/system/pipewire-pulse.socket"
+    .. " && ! test -e ${DESTDIR}/usr/lib/systemd/user/pipewire.service"
+    -- dinit enable-at-boot symlinks (dinit-services convention)
+    .. " && test -L ${DESTDIR}/etc/dinit.d/boot.d/pipewire"
+    .. " && test -L ${DESTDIR}/etc/dinit.d/boot.d/pipewire-pulse"
+    -- the pulse daemon must be the standalone binary, not pipewire -c
+    .. " && grep -q '/usr/bin/pipewire-pulse' ${DESTDIR}/etc/init.d/pipewire-pulse",
+}

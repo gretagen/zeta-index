@@ -1,0 +1,24 @@
+-- python-textual.recipe — 8.2.8: the Textual TUI framework and its
+-- dependency chain (rich, pygments, markdown-it-py, mdit-py-plugins,
+-- linkify-it-py, mdurl, platformdirs, typing-extensions), split out of
+-- axon so every Textual app in this index (axon, pulseplayer, …)
+-- depends on one shared package instead of vendoring its own copy.
+-- Source = a tarball of the nine pure wheels pinned by pip download
+-- (--only-binary), so the build is fully offline and reproducible:
+-- pip installs with --no-index --find-links from the local wheels.
+
+return {
+  name         = "python-textual",
+  version      = "8.2.8",
+  summary      = "Textual TUI framework for Python (with dependency chain)",
+  url          = "python-textual-wheels-8.2.8.tar.gz",
+  sha256       = "59bb6d84d7068d790a19c3ce2b5babff1de4150213807cd054b7135ffe59ab34",
+  deps         = { "glibc", "python" },
+  build_system = "custom",
+  build_script = "build-python-textual.sh",
+  test         = "test -d ${DESTDIR}/usr/lib/python3.14/site-packages/textual"
+    .. " && test -d ${DESTDIR}/usr/lib/python3.14/site-packages/textual-8.2.8.dist-info"
+    -- the whole point: the chain imports as a unit
+    .. " && PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages"
+    .. " python3 -c \"import textual, rich, platformdirs, markdown_it, pygments; print('pt ok')\"",
+}
