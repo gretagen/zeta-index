@@ -124,7 +124,7 @@ cat > "$DESTDIR/etc/dinit.d/pipewire" <<'EOF'
 # definition; sh -c MUST be double-quoted: dinit only groups whitespace
 # inside double quotes).
 type = process
-command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=pipewire --regid=pipewire --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire"
+command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire"
 smooth-recovery = yes
 log-type = buffer
 depends-on: dbus
@@ -132,7 +132,7 @@ EOF
 cat > "$DESTDIR/etc/dinit.d/pipewire-pulse" <<'EOF'
 # pipewire-pulse — standalone daemon after pipewire (same user/bus).
 type = process
-command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=pipewire --regid=pipewire --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"
+command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"
 smooth-recovery = yes
 log-type = buffer
 depends-on: pipewire
@@ -156,7 +156,7 @@ cat > "$DESTDIR/etc/shepherd.d/pipewire.scm" <<'EOF'
   #:requirement '(boot dbus)
   #:start (make-forkexec-constructor
            '("/bin/sh" "-c"
-             "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; n=0; until [ -S /run/dbus/system_bus_socket ]; do n=$((n+1)); [ $n -ge 5 ] && break; sleep 1; done; exec setpriv --reuid=pipewire --regid=pipewire --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire"))
+             "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; n=0; until [ -S /run/dbus/system_bus_socket ]; do n=$((n+1)); [ $n -ge 5 ] && break; sleep 1; done; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire"))
   #:stop (make-kill-destructor)
   #:respawn? #t))
 EOF
@@ -169,7 +169,7 @@ cat > "$DESTDIR/etc/shepherd.d/pipewire-pulse.scm" <<'EOF'
   #:requirement '(pipewire)
   #:start (make-forkexec-constructor
            '("/bin/sh" "-c"
-             "exec setpriv --reuid=pipewire --regid=pipewire --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"))
+             "exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"))
   #:stop (make-kill-destructor)
   #:respawn? #t))
 EOF

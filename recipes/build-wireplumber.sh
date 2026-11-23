@@ -81,7 +81,7 @@ mkdir -p "$DESTDIR/etc/dinit.d" "$DESTDIR/etc/dinit.d/boot.d"
 cat > "$DESTDIR/etc/dinit.d/wireplumber" <<'EOF'
 # WirePlumber — session manager over pipewire's native socket (no bus).
 type = process
-command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=pipewire --regid=pipewire --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire /usr/bin/wireplumber"
+command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire /usr/bin/wireplumber"
 smooth-recovery = yes
 log-type = buffer
 depends-on: pipewire
@@ -100,7 +100,7 @@ cat > "$DESTDIR/etc/shepherd.d/wireplumber.scm" <<'EOF'
   #:requirement '(pipewire)
   #:start (make-forkexec-constructor
            '("/bin/sh" "-c"
-             "exec setpriv --reuid=pipewire --regid=pipewire --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire /usr/bin/wireplumber"))
+             "exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire /usr/bin/wireplumber"))
   #:stop (make-kill-destructor)
   #:respawn? #t))
 EOF

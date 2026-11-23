@@ -16,7 +16,7 @@
 
 return {
   name           = "pipewire",
-  version        = "1.6.8-5",
+  version        = "1.6.8-6",
   summary        = "Multimedia processing graph and audio/video daemon",
   url            = "https://github.com/PipeWire/pipewire/archive/refs/tags/1.6.8.tar.gz",
   sha256         = "8181172a1d95131f6af8bbc0b98f90b2a33349b042b84c3ce57dd5d11348cc58",
@@ -49,5 +49,10 @@ return {
     .. " && test -L ${DESTDIR}/etc/dinit.d/boot.d/pipewire"
     .. " && test -L ${DESTDIR}/etc/dinit.d/boot.d/pipewire-pulse"
     -- the pulse daemon must be the standalone binary, not pipewire -c
-    .. " && grep -q '/usr/bin/pipewire-pulse' ${DESTDIR}/etc/init.d/pipewire-pulse",
+    .. " && grep -q '/usr/bin/pipewire-pulse' ${DESTDIR}/etc/init.d/pipewire-pulse"
+    -- regression: setpriv must get NUMERIC uids — older util-linux on
+    -- other machines rejects names ("failed to parse reuid: 'pipewire'"
+    -- on willow, dinit crash-loop). Covers the dinit and shepherd forms.
+    .. " && grep -q 'id -u pipewire' ${DESTDIR}/etc/dinit.d/pipewire"
+    .. " && ! grep -q -- '--reuid=pipewire' ${DESTDIR}/etc/shepherd.d/pipewire.scm",
 }
