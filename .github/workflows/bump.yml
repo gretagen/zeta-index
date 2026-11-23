@@ -1,0 +1,29 @@
+# bump-bot: scheduled upstream checks -> recipe bumps -> PR branches
+# (recipe + manifest + index.lua, review checklist in the commit body).
+#
+# One-time runner setup, on this machine (devsys-vera):
+#   1. GitHub repo -> Settings -> Actions -> Runners -> New self-hosted
+#      runner (Linux x64), copy the configure command it shows, e.g.:
+#        ./config.sh --url https://github.com/gretagen/zeta-index \
+#                    --token <REGISTRATION_TOKEN> --name devsys-vera
+#   2. Start it with ./run.sh (foreground), or wire ./svc.sh into your
+#      init of choice for boot persistence. The bot script exports its
+#      own PATH/CC/CARGO env, so a plain user session is enough.
+# Missed schedules queue on GitHub and run when the runner comes online
+# (default pending window ~60 days), so nothing is lost while the box
+# sleeps. tools/bump-bot.sh is also runnable by hand at any time.
+name: bump-bot
+
+on:
+  schedule:
+    - cron: "30 4 * * *"     # daily 04:30 — deferred to next runner-online if asleep
+  workflow_dispatch:          # manual "Run workflow" button
+
+jobs:
+  bump:
+    runs-on: [self-hosted, linux]
+    timeout-minutes: 180
+    steps:
+      - name: Check and bump pending recipes
+        working-directory: /home/gretagen/zeta-index
+        run: bash tools/bump-bot.sh --all
