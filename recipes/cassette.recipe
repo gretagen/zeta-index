@@ -1,0 +1,11 @@
+return {
+  name           = "cassette",
+  version        = "0.1.0",
+  summary        = "Terminal music and video player (Rust TUI, mpv video backend)",
+  url            = "https://github.com/homu-sys/cassette/archive/6a8bc9269b55a489df48cdc77f2ed6d98b17f070.tar.gz",
+  sha256         = "47e2f176866e1b64b5ef093476e1095825ed6f52dca414d86ce5a0866c6ebd63",
+  deps           = { "glibc", "gcc", "mpv", "pipewire", "pulseaudio" },
+  build_system   = "cargo",
+  configure_args = { "--locked" },
+  test           = "test -x ${DESTDIR}/usr/bin/cassette",
+}
