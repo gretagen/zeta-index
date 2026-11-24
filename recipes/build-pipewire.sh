@@ -73,6 +73,14 @@ start_pre() {
 		install -m 755 -o pipewire -g pipewire -d /run/pipewire
 	fi
 }
+
+start_post() {
+	# openrc-run honors neither a top-level umask command nor a umask
+	# variable (no forwarding to supervise-daemon), so the socket lands
+	# 0755 and session clients get denied. Fix it after creation —
+	# systemd's units do the equivalent with SocketMode=0660.
+	chmod 0666 /run/pipewire/pipewire-0 /run/pipewire/pipewire-0-manager 2>/dev/null || true
+}
 EOF
 cat > "$DESTDIR/etc/init.d/pipewire-pulse" <<'EOF'
 #!/sbin/openrc-run
@@ -100,6 +108,12 @@ start_pre() {
 	if [ ! -d /run/pipewire/pulse ]; then
 		install -m 755 -o pipewire -g pipewire -d /run/pipewire/pulse
 	fi
+}
+
+start_post() {
+	# same openrc-run umask limitation as the pipewire unit; belt and
+	# braces even though the pulse socket is already world-writable
+	chmod 0666 /run/pipewire/pulse/native 2>/dev/null || true
 }
 EOF
 chmod +x "$DESTDIR/etc/init.d/pipewire" "$DESTDIR/etc/init.d/pipewire-pulse"

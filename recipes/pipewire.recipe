@@ -16,7 +16,7 @@
 
 return {
   name           = "pipewire",
-  version        = "1.6.8-9",
+  version        = "1.6.8-10",
   summary        = "Multimedia processing graph and audio/video daemon",
   url            = "https://github.com/PipeWire/pipewire/archive/refs/tags/1.6.8.tar.gz",
   sha256         = "8181172a1d95131f6af8bbc0b98f90b2a33349b042b84c3ce57dd5d11348cc58",
@@ -69,6 +69,7 @@ return {
     -- systemd's SocketMode=0660 equivalent)
     .. " && ! grep -q 'dbus-run-session' ${DESTDIR}/etc/init.d/pipewire"
     .. " && grep -q 'umask 000' ${DESTDIR}/etc/init.d/pipewire"
+    .. " && grep -q 'chmod 0666 /run/pipewire/pipewire-0' ${DESTDIR}/etc/init.d/pipewire"
     .. " && ! grep -q 'dbus-run-session' ${DESTDIR}/etc/service/pipewire/run"
     .. " && ! grep -q 'dbus-run-session' ${DESTDIR}/etc/dinit.d/pipewire"
     .. " && grep -q 'umask 000' ${DESTDIR}/etc/dinit.d/pipewire",
