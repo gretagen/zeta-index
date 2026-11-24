@@ -51,6 +51,7 @@ return {
   { name = "cairo", version = "1.18.4", summary = "2D graphics library with Xlib/XCB surfaces" },
   { name = "cairomm", version = "1.15.4", summary = "C++ bindings for the Cairo graphics library" },
   { name = "caja", version = "1.28.0", summary = "File manager for MATE" },
+  { name = "cassette", version = "0.1.0", summary = "Terminal music and video player (Rust TUI, mpv video backend)" },
   { name = "cava", version = "1.0.0", summary = "Console-based audio visualizer for ALSA, PulseAudio and PipeWire" },
   { name = "cbonsai", version = "1.4.2", summary = "Bonsai tree generator for the terminal (ncurses)" },
   { name = "cfdisk", version = "2.42", summary = "Curses-based disk partition table editor (from util-linux)" },
