@@ -60,7 +60,6 @@ description="PipeWire Multimedia Service"
 supervisor=supervise-daemon
 command=/usr/bin/pipewire
 command_user=pipewire
-umask 000
 export PIPEWIRE_RUNTIME_DIR="/run/pipewire"
 
 depend() {
@@ -69,6 +68,7 @@ depend() {
 }
 
 start_pre() {
+	umask 000
 	if [ ! -d /run/pipewire ]; then
 		install -m 755 -o pipewire -g pipewire -d /run/pipewire
 	fi
@@ -84,7 +84,6 @@ description="PipeWire PulseAudio-compatible server"
 supervisor=supervise-daemon
 command=/usr/bin/pipewire-pulse
 command_user=pipewire
-umask 000
 export PIPEWIRE_RUNTIME_DIR="/run/pipewire"
 # pulse protocol resolves unix:native from PULSE_RUNTIME_PATH (or
 # XDG_RUNTIME_DIR) — PIPEWIRE_RUNTIME_DIR alone makes it exit at spawn
@@ -97,6 +96,7 @@ depend() {
 }
 
 start_pre() {
+	umask 000
 	if [ ! -d /run/pipewire/pulse ]; then
 		install -m 755 -o pipewire -g pipewire -d /run/pipewire/pulse
 	fi

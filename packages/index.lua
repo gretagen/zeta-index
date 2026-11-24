@@ -887,7 +887,7 @@ return {
   { name = "pip", version = "26.2.2", summary = "The PyPA package installer (pip)" },
   { name = "pip-generator", version = "1.1", summary = "Declare pip packages from definition.lua (extra generator for nacelle)" },
   { name = "pipes.sh", version = "1.3.0", summary = "Animated pipes terminal screensaver" },
-  { name = "pipewire", version = "1.6.8-8", summary = "Multimedia processing graph and audio/video daemon" },
+  { name = "pipewire", version = "1.6.8-9", summary = "Multimedia processing graph and audio/video daemon" },
   { name = "pixman", version = "0.46.4", summary = "Pixel manipulation library (low-level rendering primitives)" },
   { name = "pkgconf", version = "3.0.10", summary = "pkg-config implementation for querying build/library metadata" },
   { name = "plasma-activities", version = "6.3.6", summary = "KDE: Core components for the KDE's Activities System" },
