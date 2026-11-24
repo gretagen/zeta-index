@@ -16,7 +16,7 @@
 
 return {
   name           = "pipewire",
-  version        = "1.6.8-7",
+  version        = "1.6.8-8",
   summary        = "Multimedia processing graph and audio/video daemon",
   url            = "https://github.com/PipeWire/pipewire/archive/refs/tags/1.6.8.tar.gz",
   sha256         = "8181172a1d95131f6af8bbc0b98f90b2a33349b042b84c3ce57dd5d11348cc58",
@@ -62,5 +62,14 @@ return {
     .. " && grep -q 'PULSE_RUNTIME_PATH=/run/pipewire/pulse' ${DESTDIR}/etc/dinit.d/pipewire-pulse"
     -- openrc enable-at-boot runlevel links (dinit boot.d parity)
     .. " && test -L ${DESTDIR}/etc/runlevels/default/pipewire"
-    .. " && test -L ${DESTDIR}/etc/runlevels/default/pipewire-pulse",
+    .. " && test -L ${DESTDIR}/etc/runlevels/default/pipewire-pulse"
+    -- no dbus-run-session wrapper (it orphaned the daemon on stop, so a
+    -- restart left the old pipewire holding the socket) and umask 000
+    -- (pipewire's native socket must be writable by session clients —
+    -- systemd's SocketMode=0660 equivalent)
+    .. " && ! grep -q 'dbus-run-session' ${DESTDIR}/etc/init.d/pipewire"
+    .. " && grep -q 'umask 000' ${DESTDIR}/etc/init.d/pipewire"
+    .. " && ! grep -q 'dbus-run-session' ${DESTDIR}/etc/service/pipewire/run"
+    .. " && ! grep -q 'dbus-run-session' ${DESTDIR}/etc/dinit.d/pipewire"
+    .. " && grep -q 'umask 000' ${DESTDIR}/etc/dinit.d/pipewire",
 }
