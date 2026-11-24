@@ -1060,6 +1060,7 @@ return {
   { name = "uutils-coreutils", version = "0.13.0", summary = "Rust reimplementation of the GNU coreutils (multicall binary)" },
   { name = "uv", version = "0.13.9", summary = "Fast Python package and environment manager" },
   { name = "v4l-utils", version = "1.32.0", summary = "Video4Linux utilities" },
+  { name = "vala", version = "0.56.19", summary = "Vala compiler and VAPI generator (build tool)" },
   { name = "vapoursynth", version = "79", summary = "Video processing framework" },
   { name = "vid.stab", version = "1.1.2", summary = "Video stabilization library" },
   { name = "vim", version = "9.2.0920", summary = "Modal text editor" },

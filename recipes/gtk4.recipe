@@ -12,7 +12,7 @@ return {
   summary        = "GTK+ 4 toolkit (X11 + Wayland)",
   url            = "https://download.gnome.org/sources/gtk/4.24/gtk-4.24.1.tar.xz",
   sha256         = "e98abe720e16129c8c0f50761dee0a2e9ae2478055e31018f6cf977fcf6513e9",
-  deps           = { "glibc", "at-spi2-core", "cairo", "fontconfig", "fribidi", "gdk-pixbuf", "graphene", "harfbuzz", "libX11", "libXcomposite", "libXcursor", "libXdamage", "libXext", "libXfixes", "libXi", "libXinerama", "libXrandr", "libepoxy", "libz", "pango", "glib>=2.89.3", "wayland", "wayland-protocols", "xkbcommon", "libcups", "librsvg" },
+  deps           = { "glibc", "at-spi2-core", "cairo", "fontconfig", "fribidi", "gdk-pixbuf", "graphene", "harfbuzz", "libX11", "libXcomposite", "libXcursor", "libXdamage", "libXext", "libXfixes", "libXi", "libXinerama", "libXrandr", "libepoxy", "libz", "pango", "wayland", "wayland-protocols", "xkbcommon", "libcups", "librsvg" },
   build_system   = "meson",
   configure_args = { "--buildtype=release", "--libdir=/usr/lib", "--wrap-mode=nodownload",
                      "-Dmedia-gstreamer=disabled", "-Dintrospection=enabled", "-Dvulkan=disabled" },
