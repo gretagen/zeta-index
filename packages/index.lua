@@ -127,7 +127,7 @@ return {
   { name = "extra-cmake-modules", version = "6.31.0", summary = "KDE: Extra modules and scripts for CMake." },
   { name = "eza", version = "0.23.5", summary = "Modern, maintained replacement for ls (exa fork)" },
   { name = "faad2", version = "2.11.2", summary = "AAC decoder library" },
-  { name = "fastfetch", version = "2.68.1", summary = "Fast, feature-rich system information fetcher (neofetch successor)" },
+  { name = "fastfetch", version = "2.72.0", summary = "System information tool (fastfetch, zeta-tracking fork)" },
   { name = "fastwc", version = "0.1.0", summary = "A wc replacement that beats GNU wc - SIMD kernels, mmap, threads" },
   { name = "fcft", version = "3.3.3", summary = "Font shaping and line breaking library (for foot)" },
   { name = "fd", version = "10.5.0", summary = "Simple find alternative" },
