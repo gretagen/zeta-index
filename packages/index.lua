@@ -912,6 +912,7 @@ return {
   { name = "pugixml", version = "1.15", summary = "Lightweight C++ XML processing library" },
   { name = "pulseaudio", version = "17.0-3", summary = "Network-capable sound server and client library" },
   { name = "pulseplayer", version = "0.1.0", summary = "Terminal music player TUI (Textual, mpv, CAVA visualizer)" },
+  { name = "pwvucontrol", version = "0.5.3", summary = "PipeWire volume control applet (GTK4/libadwaita)" },
   { name = "python", version = "3.14.7", summary = "The Python programming language" },
   { name = "python-gobject", version = "3.56.3", summary = "Python bindings for GLib/GObject/GIO/GTK" },
   { name = "python-imageio", version = "2.38.1", summary = "Python library for reading and writing image data" },
