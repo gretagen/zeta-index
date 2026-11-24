@@ -77,8 +77,14 @@ start_pre() {
 start_post() {
 	# openrc-run honors neither a top-level umask command nor a umask
 	# variable (no forwarding to supervise-daemon), so the socket lands
-	# 0755 and session clients get denied. Fix it after creation —
-	# systemd's units do the equivalent with SocketMode=0660.
+	# 0755 and session clients get denied. start_post runs right after
+	# SPAWN though — wait for the socket to exist, then fix its mode
+	# (systemd's units do the equivalent with SocketMode=0660).
+	n=0
+	while [ ! -S /run/pipewire/pipewire-0 ] && [ "$n" -lt 50 ]; do
+		sleep 0.1
+		n=$((n + 1))
+	done
 	chmod 0666 /run/pipewire/pipewire-0 /run/pipewire/pipewire-0-manager 2>/dev/null || true
 }
 EOF

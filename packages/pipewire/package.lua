@@ -1,9 +1,9 @@
 return {
   name    = "pipewire",
-  version = "1.6.8-10",
+  version = "1.6.8-11",
   summary = "Multimedia processing graph and audio/video daemon",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/pipewire/pipewire-1.6.8-10.tar.gz",
-  sha256  = "f15ab1793d191f568f99af39d92e85ba35e0da518153ee04222d9dc2d2e40adc",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/pipewire/pipewire-1.6.8-11.tar.gz",
+  sha256  = "5882ffdf2dff10ec43f394c37aba8486a5344b224afd69457eae18e9de1d92f5",
   deps    = { "glibc", "alsa-lib", "bluez", "dbus", "glib", "libgcc", "libsndfile", "ncurses", "openssl", "sbc", "systemd-libs" },
   archive = { strip = 1 },
   test    = function(p)
