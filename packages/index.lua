@@ -196,6 +196,7 @@ return {
   { name = "gnome-bluetooth", version = "47.2", summary = "GNOME Bluetooth management (libgnome-bluetooth + app)" },
   { name = "gnome-control-center", version = "51.1", summary = "GNOME Settings (control center)" },
   { name = "gnome-desktop", version = "51.0", summary = "Desktop core library for GNOME (background, thumbnails)" },
+  { name = "gnome-keyring", version = "48.0", summary = "GNOME keyring daemon: secret service, PKCS#11, PAM helper" },
   { name = "gnome-online-accounts", version = "3.58.1", summary = "GNOME online accounts framework (libgoa)" },
   { name = "gnome-session", version = "51.0-2", summary = "GNOME session manager (init-agnostic wiring)" },
   { name = "gnome-settings-daemon", version = "51.1", summary = "GNOME settings daemons (color, power, media keys)" },
