@@ -104,3 +104,7 @@ cat > "$DESTDIR/etc/shepherd.d/wireplumber.scm" <<'EOF'
   #:stop (make-kill-destructor)
   #:respawn? #t))
 EOF
+
+# ---------- openrc: enable-at-boot runlevel link (dinit boot.d parity) ----------
+mkdir -p "$DESTDIR/etc/runlevels/default"
+ln -s ../../init.d/wireplumber "$DESTDIR/etc/runlevels/default/wireplumber"

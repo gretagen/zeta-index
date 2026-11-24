@@ -16,7 +16,7 @@
 
 return {
   name           = "pipewire",
-  version        = "1.6.8-6",
+  version        = "1.6.8-7",
   summary        = "Multimedia processing graph and audio/video daemon",
   url            = "https://github.com/PipeWire/pipewire/archive/refs/tags/1.6.8.tar.gz",
   sha256         = "8181172a1d95131f6af8bbc0b98f90b2a33349b042b84c3ce57dd5d11348cc58",
@@ -54,5 +54,13 @@ return {
     -- other machines rejects names ("failed to parse reuid: 'pipewire'"
     -- on willow, dinit crash-loop). Covers the dinit and shepherd forms.
     .. " && grep -q 'id -u pipewire' ${DESTDIR}/etc/dinit.d/pipewire"
-    .. " && ! grep -q -- '--reuid=pipewire' ${DESTDIR}/etc/shepherd.d/pipewire.scm",
+    .. " && ! grep -q -- '--reuid=pipewire' ${DESTDIR}/etc/shepherd.d/pipewire.scm"
+    -- pulse protocol needs PULSE_RUNTIME_PATH (unix:native resolves
+    -- from it; PIPEWIRE_RUNTIME_DIR alone made pipewire-pulse exit at
+    -- spawn on openrc). Asserted on the openrc + dinit forms.
+    .. " && grep -q 'PULSE_RUNTIME_PATH=/run/pipewire/pulse' ${DESTDIR}/etc/init.d/pipewire-pulse"
+    .. " && grep -q 'PULSE_RUNTIME_PATH=/run/pipewire/pulse' ${DESTDIR}/etc/dinit.d/pipewire-pulse"
+    -- openrc enable-at-boot runlevel links (dinit boot.d parity)
+    .. " && test -L ${DESTDIR}/etc/runlevels/default/pipewire"
+    .. " && test -L ${DESTDIR}/etc/runlevels/default/pipewire-pulse",
 }

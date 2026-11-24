@@ -11,7 +11,7 @@
 
 return {
   name           = "wireplumber",
-  version        = "0.5.15-3",
+  version        = "0.5.15-4",
   summary        = "Session / policy manager for PipeWire (bundled with libwireplumber)",
   url            = "https://github.com/PipeWire/wireplumber/archive/refs/tags/0.5.15.tar.gz",
   sha256         = "baa121bc918df5fa0e0e70755bb1c99ffab0ab107225ecf99aa470e2c6ba5e7b",
@@ -34,6 +34,8 @@ return {
     -- names — see pipewire's note)
     .. " && grep -q 'id -u pipewire' ${DESTDIR}/etc/dinit.d/wireplumber"
     .. " && ! grep -q -- '--reuid=pipewire' ${DESTDIR}/etc/shepherd.d/wireplumber.scm"
+    -- openrc enable-at-boot runlevel link (dinit boot.d parity)
+    .. " && test -L ${DESTDIR}/etc/runlevels/default/wireplumber"
     -- in-package service files for the four non-systemd init
     .. " && test -x ${DESTDIR}/etc/init.d/wireplumber"
     .. " && test -x ${DESTDIR}/etc/service/wireplumber/run"

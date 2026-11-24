@@ -81,10 +81,20 @@ command=/usr/bin/dbus-run-session
 command_args="/usr/bin/pipewire-pulse"
 command_user=pipewire
 export PIPEWIRE_RUNTIME_DIR="/run/pipewire"
+# pulse protocol resolves unix:native from PULSE_RUNTIME_PATH (or
+# XDG_RUNTIME_DIR) — PIPEWIRE_RUNTIME_DIR alone makes it exit at spawn
+export PULSE_RUNTIME_PATH=/run/pipewire/pulse
+export XDG_STATE_HOME="/var/lib"
 
 depend() {
 	need pipewire
 	need dbus
+}
+
+start_pre() {
+	if [ ! -d /run/pipewire/pulse ]; then
+		install -m 755 -o pipewire -g pipewire -d /run/pipewire/pulse
+	fi
 }
 EOF
 chmod +x "$DESTDIR/etc/init.d/pipewire" "$DESTDIR/etc/init.d/pipewire-pulse"
@@ -106,9 +116,13 @@ cat > "$DESTDIR/etc/service/pipewire-pulse/run" <<'EOF'
 #!/bin/sh
 exec 2>&1
 # pipewire-pulse — standalone daemon beside pipewire, own session bus.
+# PULSE_RUNTIME_PATH: the pulse protocol resolves unix:native from it
+# (or XDG_RUNTIME_DIR) — PIPEWIRE_RUNTIME_DIR alone makes it exit.
 ! [ -d /run/pipewire ] && install -m 755 -g pipewire -o pipewire -d /run/pipewire
+! [ -d /run/pipewire/pulse ] && install -m 755 -g pipewire -o pipewire -d /run/pipewire/pulse
 umask 002
 export PIPEWIRE_RUNTIME_DIR=/run/pipewire
+export PULSE_RUNTIME_PATH=/run/pipewire/pulse
 export XDG_STATE_HOME=/var/lib
 exec chpst -P -u pipewire:audio:video dbus-run-session /usr/bin/pipewire-pulse
 EOF
@@ -132,7 +146,7 @@ EOF
 cat > "$DESTDIR/etc/dinit.d/pipewire-pulse" <<'EOF'
 # pipewire-pulse — standalone daemon after pipewire (same user/bus).
 type = process
-command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire 2>/dev/null || true; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"
+command = /bin/sh -c "install -m 755 -g pipewire -o pipewire -d /run/pipewire /run/pipewire/pulse 2>/dev/null || true; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire PULSE_RUNTIME_PATH=/run/pipewire/pulse XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"
 smooth-recovery = yes
 log-type = buffer
 depends-on: pipewire
@@ -169,7 +183,13 @@ cat > "$DESTDIR/etc/shepherd.d/pipewire-pulse.scm" <<'EOF'
   #:requirement '(pipewire)
   #:start (make-forkexec-constructor
            '("/bin/sh" "-c"
-             "exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"))
+             "install -m 755 -g pipewire -o pipewire -d /run/pipewire /run/pipewire/pulse 2>/dev/null || true; exec setpriv --reuid=$(id -u pipewire) --regid=$(id -g pipewire) --init-groups env PIPEWIRE_RUNTIME_DIR=/run/pipewire PULSE_RUNTIME_PATH=/run/pipewire/pulse XDG_STATE_HOME=/var/lib dbus-run-session /usr/bin/pipewire-pulse"))
   #:stop (make-kill-destructor)
   #:respawn? #t))
 EOF
+
+# ---------- openrc: enable-at-boot runlevel links (parity with dinit's
+# boot.d symlinks; same relative form the rootfs images use) ----------
+mkdir -p "$DESTDIR/etc/runlevels/default"
+ln -s ../../init.d/pipewire       "$DESTDIR/etc/runlevels/default/pipewire"
+ln -s ../../init.d/pipewire-pulse "$DESTDIR/etc/runlevels/default/pipewire-pulse"
