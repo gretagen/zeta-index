@@ -916,6 +916,7 @@ return {
   { name = "pulseplayer", version = "0.1.0", summary = "Terminal music player TUI (Textual, mpv, CAVA visualizer)" },
   { name = "pwvucontrol", version = "0.5.3", summary = "PipeWire volume control applet (GTK4/libadwaita)" },
   { name = "python", version = "3.14.7", summary = "The Python programming language" },
+  { name = "python-base58", version = "2.1.1", summary = "Base58 and Base58Check encoding (Python module)" },
   { name = "python-gobject", version = "3.56.3", summary = "Python bindings for GLib/GObject/GIO/GTK" },
   { name = "python-imageio", version = "2.38.1", summary = "Python library for reading and writing image data" },
   { name = "python-imageio-ffmpeg", version = "0.6.0", summary = "FFMPEG wrapper for imageio (uses system ffmpeg)" },
