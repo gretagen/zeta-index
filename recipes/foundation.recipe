@@ -1,29 +1,40 @@
--- foundation.recipe — 0.2.0: Haliade deployment/filesystem builder
--- (single bash script "tower"). 0.2.1: ensure_merge migrates with a directory merge (cp -a) so both-sides subdirs like lib/pkgconfig merge instead of stranding; 0.2.0: usr-merge symlinks before/
--- after provides (fixes #!/bin/bash shebangs inside climb/chroot for both
--- fresh and pre-merge trees), --shell flag writing the default root shell
--- into the tree's /etc/passwd (created if absent; default thesh — the
--- host convention), host thesh config copied into deploy+place trees,
--- deploy re-runs use -ReProvide to HEAL an existing tree, and climb's
--- default shell = the tree root's login shell (else thesh). Source
--- pinned to the exact commit on main.
+-- foundation.recipe — 0.3.0: Haliade deployment/filesystem builder —
+-- three commands now: tower (place/clone/deploy/climb/enable-
+-- generators), capture (ISO building, owns what `tower rebuild` used
+-- to do) and harness. 0.3.0 ships capture+harness for the first time
+-- and includes a source fix: leftover git conflict markers in tower
+-- (committed by an incomplete conflict-resolution pass) are resolved
+-- toward HEAD — new header, "Build an ISO with: capture", stale
+-- rebuild block dropped — and capture's inherited die() no longer
+-- reboots the machine via sysrq on fatal errors (mirrors tower/
+-- harness plain-exit). Earlier: 0.2.5 ensure_merge directory merge,
+-- 0.2.0 usr-merge symlinks + --shell flag + deploy -ReProvide healing
+-- + climb default shell. Source pinned to the exact commit on main.
 
 return {
   name         = "foundation",
-  version      = "0.2.5",
-  summary      = "Haliade system deployment tool (tower)",
-  url          = "https://github.com/gretagen/foundation/archive/6fd92fbe161106211279c32b2021db16271f2888.tar.gz",
-  sha256       = "7e84061c875e357e92a859936361f94dbec856cbc6cb2f37a586be825ecc90fe",
+  version      = "0.3.0",
+  summary      = "Haliade system deployment tool (tower, capture, harness)",
+  url          = "https://github.com/gretagen/foundation/archive/1981ab4e807718a43aa8e35d367efa4465e4a974.tar.gz",
+  sha256       = "044371e72ec320fb787883969d309a5e2d40ffd446ce616c7592cc53d87a7265",
   deps         = { "bash", "btrfs-progs", "e2fsprogs", "util-linux",
                    "dosfstools", "limine", "rsync", "chronos",
                    "bubblewrap", "xorriso", "squashfs-tools" },
   build_system = "custom",
   build_script = "build-foundation.sh",
   test         = "test -x ${DESTDIR}/usr/bin/tower"
+    .. " && test -x ${DESTDIR}/usr/bin/capture"
+    .. " && test -x ${DESTDIR}/usr/bin/harness"
     -- syntax check + the usage contract (help exits 0, no root needed).
     .. " && bash -n ${DESTDIR}/usr/bin/tower"
+    .. " && bash -n ${DESTDIR}/usr/bin/capture"
+    .. " && bash -n ${DESTDIR}/usr/bin/harness"
     .. " && ${DESTDIR}/usr/bin/tower help | grep -q 'tower place'"
+    .. " && grep -q 'Usage: capture' ${DESTDIR}/usr/bin/capture"
     -- regression guards for 0.2.0 behaviour.
     .. " && ${DESTDIR}/usr/bin/tower help | grep -q -- '--shell'"
-    .. " && grep -q 'ensure_merge()' ${DESTDIR}/usr/bin/tower",
+    .. " && grep -q 'ensure_merge()' ${DESTDIR}/usr/bin/tower"
+    -- 0.3.0: no conflict markers, no sysrq-reboot die left behind
+    .. " && ! grep -q '^<<<<<<<' ${DESTDIR}/usr/bin/tower"
+    .. " && ! grep -q 'sysrq-trigger; }' ${DESTDIR}/usr/bin/capture",
 }

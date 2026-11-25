@@ -150,7 +150,7 @@ return {
   { name = "font-util", version = "1.4.2", summary = "X.Org font package creation utilities (fontutil.pc)" },
   { name = "fontconfig", version = "2.18.2-2", summary = "Font configuration and customization library (with fc-* tools)" },
   { name = "foot", version = "1.28.0", summary = "Fast Wayland terminal emulator" },
-  { name = "foundation", version = "0.2.5", summary = "Haliade system deployment tool (tower)" },
+  { name = "foundation", version = "0.3.0", summary = "Haliade system deployment tool (tower, capture, harness)" },
   { name = "frameworkintegration", version = "6.13.0", summary = "KDE: Framework providing components to allow applications to integrate with a KDE Workspace" },
   { name = "freetype", version = "2.14.3", summary = "FreeType font engine library" },
   { name = "fribidi", version = "1.0.16", summary = "Bidirectional text algorithm library" },
