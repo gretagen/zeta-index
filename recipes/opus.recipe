@@ -1,0 +1,23 @@
+-- opus.recipe — 1.6.1: Opus audio codec (xiph.org, current release).
+-- Rebuild of the old opus-0.11.1 package: that payload shipped ONLY
+-- the three .so files (no headers, no .pc — fine for prebuilt mpv,
+-- fatal for chiaki-ng's FindOpus) and its recipe was lost, with the
+-- original 0.11.1 sources gone from xiph's mirror. Opus kept soname
+-- libopus.so.0 across 0.x and 1.x, so 1.6.1 is a drop-in ABI-wise;
+-- this ships the full development payload (headers + pkg-config).
+
+return {
+  name         = "opus",
+  version      = "1.6.1",
+  summary      = "Opus interactive audio codec",
+  url          = "https://downloads.xiph.org/releases/opus/opus-1.6.1.tar.gz",
+  sha256       = "6ffcb593207be92584df15b32466ed64bbec99109f007c82205f0194572411a1",
+  deps         = { "glibc" },
+  build_system = "autotools",
+  configure_args = { "--disable-static" },
+  test         = "ls ${DESTDIR}/usr/lib/libopus.so* | grep -q libopus"
+    .. " && test -f ${DESTDIR}/usr/include/opus/opus.h"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/opus.pc"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig"
+    .. " pkg-config --modversion opus | grep -q 1.6",
+}

@@ -1,12 +1,12 @@
 return {
   name    = "opus",
-  version = "0.11.1",
-  summary = "Opus audio codec",
-  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/opus/opus-0.11.1.tar.gz",
-  sha256  = "534a654a714378c2856305c04e6c9b19f769e923b7726377e2a6647207a740f6",
+  version = "1.6.1",
+  summary = "Opus interactive audio codec",
+  url     = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/opus/opus-1.6.1.tar.gz",
+  sha256  = "35c3d0f9d99f29bafc69fac04d98501ddd475697d3165e5b985da37de599379d",
   deps    = { "glibc" },
   archive = { strip = 1 },
   test    = function(p)
-    p:run("test -f " .. p.install_root .. "/usr/lib/libopus.so.0")
+    p:run("ls " .. p.install_root .. "/usr/lib/libopus.so* | grep -q libopus && test -f " .. p.install_root .. "/usr/include/opus/opus.h && test -f " .. p.install_root .. "/usr/lib/pkgconfig/opus.pc && PKG_CONFIG_PATH=" .. p.install_root .. "/usr/lib/pkgconfig pkg-config --modversion opus | grep -q 1.6")
   end,
 }

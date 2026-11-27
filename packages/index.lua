@@ -860,7 +860,7 @@ return {
   { name = "openssh", version = "10.3p1", summary = "OpenSSH protocol implementation for remote login, command execution and file transfer" },
   { name = "openssl", version = "3.6.3-2", summary = "OpenSSL 3 crypto and TLS libraries (libcrypto/libssl)" },
   { name = "opsec", version = "1.0.0", summary = "opsec" },
-  { name = "opus", version = "0.11.1", summary = "Opus audio codec" },
+  { name = "opus", version = "1.6.1", summary = "Opus interactive audio codec" },
   { name = "orc", version = "0.4.44", summary = "Optimized Inner Loop Runtime Compiler" },
   { name = "oxygen-icons", version = "6.31.0", summary = "KDE: Oxygen icon theme" },
   { name = "p11-kit", version = "0.4.8-2", summary = "PKCS#11 module loading library" },
