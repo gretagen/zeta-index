@@ -911,6 +911,7 @@ return {
   { name = "power-profiles-daemon", version = "0.30-2", summary = "Makes power profiles management available over D-Bus (laptops)" },
   { name = "prison", version = "6.13.0", summary = "KDE: prison is a barcode api currently offering a nice Qt api to produce QRCode barcodes and Da" },
   { name = "procps-ng", version = "4.0.7rc1", summary = "libproc2 process information library" },
+  { name = "protobuf", version = "6.31.1", summary = "Protocol Buffers runtime and compiler (protoc)" },
   { name = "pugixml", version = "1.15", summary = "Lightweight C++ XML processing library" },
   { name = "pulseaudio", version = "17.0-3", summary = "Network-capable sound server and client library" },
   { name = "pulseplayer", version = "0.1.0", summary = "Terminal music player TUI (Textual, mpv, CAVA visualizer)" },
