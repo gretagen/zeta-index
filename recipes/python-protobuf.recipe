@@ -1,0 +1,21 @@
+-- python-protobuf — 7.36.2: the Google protobuf Python runtime,
+-- needed at BUILD time by chiaki-ng's bundled nanopb generator
+-- (third-party/nanopb/generator/nanopb_generator.py imports
+-- google.protobuf; neither existed on the host or in the index).
+-- Source = the single pure wheel tarball (sha-pinned), installed
+-- offline like python-textual. The wheel ships a native _upb
+-- extension (cp310-abi3), hence the gcc edge.
+
+return {
+  name         = "python-protobuf",
+  version      = "7.36.2",
+  summary      = "Google protobuf Python runtime (build tool for nanopb codegen)",
+  url          = "python-protobuf-wheels.tar.gz",
+  sha256       = "91495840fba9275c8bf727444189401936aa2b9538677d688f79e5e00fd1b867",
+  deps         = { "glibc", "python", "gcc" },
+  build_system = "custom",
+  build_script = "build-python-protobuf.sh",
+  test         = "test -d ${DESTDIR}/usr/lib/python3.14/site-packages/google/protobuf"
+    .. " && PYTHONPATH=${DESTDIR}/usr/lib/python3.14/site-packages"
+    .. " python3 -c \"import google.protobuf; print('pb ok')\"",
+}
