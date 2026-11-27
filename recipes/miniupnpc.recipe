@@ -1,0 +1,23 @@
+-- miniupnpc.recipe — 2.3.5: UPnP IGD client library (github.com/
+-- miniupnp/miniupnp tag miniupnpc_2_3_5 — underscore naming). Ported
+-- on demand: chiaki-ng's RUDP (remote play over internet) configure
+-- requires miniupnpc via pkg-config, and it existed in neither the
+-- index nor on the host. The CMakeLists sits in the repo's miniupnpc/
+-- subdirectory, hence a custom build script. Ships lib + headers +
+-- miniupnpc.pc (the FindPkgConfig requirement chiaki checks).
+
+return {
+  name         = "miniupnpc",
+  version      = "2.3.5",
+  summary      = "UPnP IGD client library (port forwarding helper)",
+  url          = "https://github.com/miniupnp/miniupnp/archive/refs/tags/miniupnpc_2_3_5.tar.gz",
+  sha256       = "62858cfe25077481f53c54de51006f0e4eeb4528ddc81396d5fd37d5b664c9e2",
+  deps         = { "glibc" },
+  build_system = "custom",
+  build_script = "build-miniupnpc.sh",
+  test         = "ls ${DESTDIR}/usr/lib/libminiupnpc.so* | grep -q libminiupnpc"
+    .. " && test -f ${DESTDIR}/usr/lib/pkgconfig/miniupnpc.pc"
+    .. " && test -d ${DESTDIR}/usr/include/miniupnpc"
+    .. " && PKG_CONFIG_PATH=${DESTDIR}/usr/lib/pkgconfig"
+    .. " pkg-config --modversion miniupnpc | grep -q 2.3",
+}
