@@ -1,0 +1,38 @@
+-- chiaki-ng.recipe — 1.10.1: open-source PlayStation Remote Play
+-- client (github.com/chiaki-ng/chiaki-ng, tag v1.10.1 = internal
+-- CHIAKI_VERSION). Source is a LOCAL combined tarball: github tag
+-- archives ship the eight git submodules EMPTY, so the tree was
+-- cloned with the feature-relevant ones initialized (third-party/
+-- nanopb, jerasure, gf-complete, curl + test/munit; android/switch/
+-- steam-tools skipped — features off) and tarred — the bare-filename
+-- precedent, sha-pinned. Bundled websocket-curl stays default
+-- (CHIAKI_USE_SYSTEM_CURL=OFF), dodging the system-curl websocket
+-- question entirely. Tests + Steam shortcut off (munit/cpp-steam-tools
+-- not needed); RUDP (internet play) stays AUTO/ON with bundled
+-- jerasure/gf-complete and system libevent. Qt WebEngine is
+-- conditional upstream and simply won't be enabled (no qtwebengine
+-- here); GuiPrivate only applies to Qt >= 6.10 (host is 6.8).
+
+return {
+  name         = "chiaki-ng",
+  version      = "1.10.1",
+  summary      = "PlayStation Remote Play client (Qt GUI + CLI)",
+  url          = "chiaki-ng-1.10.1.tar.gz",
+  sha256       = "a00fd3e2e50d57454c2dfc6b33da9a9bc0a37238bffdff2790dcbad057fab472",
+  deps         = { "glibc", "gcc", "openssl", "opus", "ffmpeg",
+                   "qtbase", "qtsvg", "qtdeclarative", "SDL2",
+                   "libnotify", "libplacebo", "json-c", "speex",
+                   "libevent", "hidapi", "miniupnpc", "libpsl",
+                   "libssh2" },
+  build_system = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DCHIAKI_ENABLE_TESTS=OFF",
+                     "-DCHIAKI_ENABLE_STEAM_SHORTCUT=OFF" },
+  test         = "test -x ${DESTDIR}/usr/bin/chiaki"
+    .. " && test -x ${DESTDIR}/usr/bin/chiaki-cli"
+    .. " && test -f ${DESTDIR}/usr/share/applications/chiaking.desktop"
+    .. " && test -f ${DESTDIR}/usr/share/icons/hicolor/512x512/apps/chiaking.png"
+    -- CLI runs headless: any usage/version output proves it links and
+    -- starts (GUI needs a display, so it stays a static assert)
+    .. " && ${DESTDIR}/usr/bin/chiaki-cli --help 2>&1 | grep -qiE 'usage|chiaki'",
+}
