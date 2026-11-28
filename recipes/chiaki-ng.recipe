@@ -20,7 +20,7 @@ return {
   url          = "chiaki-ng-1.10.1.tar.gz",
   sha256       = "a00fd3e2e50d57454c2dfc6b33da9a9bc0a37238bffdff2790dcbad057fab472",
   deps         = { "glibc", "gcc", "openssl", "opus", "ffmpeg",
-                   "qtbase", "qtsvg", "qtdeclarative", "SDL2",
+                   "qtbase", "qtsvg", "qtdeclarative", "sdl2",
                    "libnotify", "libplacebo", "json-c", "speex",
                    "libevent", "hidapi", "miniupnpc", "libpsl",
                    "libssh2" },
