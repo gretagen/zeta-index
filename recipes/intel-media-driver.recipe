@@ -16,11 +16,7 @@ return {
   deps         = { "glibc", "gcc", "libva", "libdrm", "libpciaccess",
                    "intel-gmmlib", "libX11", "libXext", "libXfixes",
                    "libxcb", "wayland" },
-  build_system = "cmake",
-  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
-                     "-DCMAKE_INSTALL_LIBDIR=lib",
-                     "-DENABLE_NONFREE_KERNELS=ON",
-                     "-DENABLE_KERNELS=ON",
-                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" },
+  build_system = "custom",
+  build_script = "build-intel-media-driver.sh",
   test         = "test -f ${DESTDIR}/usr/lib/dri/iHD_drv_video.so",
 }
