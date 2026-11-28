@@ -1,0 +1,29 @@
+-- qtdeclarative recipe — 6.8.2-2: Qt 6 QML/Quick libraries.
+-- RECONSTRUCTED recipe (like qtbase: none ever existed). Rebuilt for
+-- the same reason: the shipped 6.8.2 predates vulkan-headers, so
+-- Qt6Quick lacked its Vulkan entry points (QQuickRenderTarget::
+-- fromVulkanImage / QQuickGraphicsDevice::fromDeviceObjects) and
+-- chiaki-ng's QML GUI failed to link. With qtbase 6.8.2-4's
+-- QT_FEATURE_vulkan=ON, Quick's Vulkan glue compiles automatically.
+-- Deps copied verbatim from the proven 6.8.2 manifest. The single
+-- git submodule is a test262 test fixture (tests are off).
+
+return {
+  name         = "qtdeclarative",
+  version      = "6.8.2-2",
+  summary      = "Qt 6 declarative (QML) libraries",
+  url          = "https://github.com/qt/qtdeclarative/archive/refs/tags/v6.8.2.tar.gz",
+  sha256       = "1c29e98fac88f6d3b8a790248f4e6ad80439fe6e791116339d080e064ad8ae91",
+  deps         = { "glibc", "qtbase", "qtshadertools", "qtsvg",
+                   "xkbcommon", "krb5", "keyutils" },
+  build_system = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DQT_BUILD_TESTS=OFF",
+                     "-DQT_BUILD_EXAMPLES=OFF",
+                     "-DQT_BUILD_BENCHMARKS=OFF",
+                     "-DQT_BUILD_DOCS=OFF" },
+  test         = "test -e ${DESTDIR}/usr/lib/libQt6Qml.so.6"
+    .. " && test -e ${DESTDIR}/usr/lib/libQt6Quick.so.6"
+    -- the rebuild's whole point: Quick's Vulkan entry points exist
+    .. " && strings ${DESTDIR}/usr/lib/libQt6Quick.so.6 | grep -q fromVulkanImage",
+}

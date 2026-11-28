@@ -939,7 +939,7 @@ return {
   { name = "qt5", version = "5.15.19", summary = "Qt 5 runtime libraries (Core/Gui/Widgets/Svg/X11Extras/XcbQpa + plugins)" },
   { name = "qt5compat", version = "6.8.2", summary = "Qt 5 compatibility libraries for Qt 6" },
   { name = "qtbase", version = "6.8.2-4", summary = "Qt 6 base libraries (Core, Gui, Widgets, Network, …)" },
-  { name = "qtdeclarative", version = "6.8.2", summary = "Qt 6 declarative (QML) libraries" },
+  { name = "qtdeclarative", version = "6.8.2-2", summary = "Qt 6 declarative (QML) libraries" },
   { name = "qterminal", version = "2.1.0", summary = "LXQt terminal emulator (Qt6, QTermWidget)" },
   { name = "qtermwidget", version = "2.1.0", summary = "QTermWidget terminal emulator widget library (Qt6)" },
   { name = "qtmultimedia", version = "6.8.2", summary = "Qt 6 multimedia (audio/video) module" },
