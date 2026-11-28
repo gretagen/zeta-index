@@ -1,0 +1,42 @@
+-- qtbase.recipe — 6.8.2-4: Qt 6 base (Core/Gui/Widgets/Network…).
+-- RECONSTRUCTED recipe: qtbase never had one in either recipes dir or
+-- git history (qt came in as a recipe-less batch payload), so flags
+-- are the canonical conservative set (tests/examples/docs off) plus
+-- the reason for this rebuild: -DFEATURE_vulkan=ON. The shipped
+-- 6.8.2-3 was built before vulkan-headers existed on this host, so
+-- QT_FEATURE_vulkan=0 hid QVulkanInstance behind #if QT_CONFIG(vulkan)
+-- and chiaki-ng's QML GUI failed to compile against it. Feature
+-- addition is binary-compatible — no consumer cascade. Deps copied
+-- verbatim from the proven 6.8.2-3 manifest; vulkan-loader joins as
+-- the semantic edge for QVulkanInstance's runtime loader (dlopen'd,
+-- invisible to closure). Source: official qt/qtbase v6.8.2 tag.
+
+return {
+  name         = "qtbase",
+  version      = "6.8.2-4",
+  summary      = "Qt 6 base libraries (Core, Gui, Widgets, Network, …)",
+  url          = "https://github.com/qt/qtbase/archive/refs/tags/v6.8.2.tar.gz",
+  sha256       = "9dddbb2ea3c107e20a99b816c1c6ba1483915325918936dda2c762bd73836ad9",
+  deps         = { "glibc", "at-spi2-core", "brotli", "cairo", "dbus",
+                   "double-conversion", "egl", "fontconfig", "freetype",
+                   "gdk-pixbuf", "gcc", "glib", "gtk3", "icu", "krb5",
+                   "libICE", "libSM", "libcups", "libb2", "libdrm",
+                   "libinput", "libmd", "libmtdev", "libpng", "libz",
+                   "libzstd", "md4c", "mesa-drivers", "openssl", "pango",
+                   "pcre2", "tslib", "xcb-util-cursor", "xcb-util-image",
+                   "xcb-util-keysyms", "xcb-util-renderutil",
+                   "xcb-util-wm", "xkbcommon", "zstd", "vulkan-loader" },
+  build_system = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DQT_BUILD_TESTS=OFF",
+                     "-DQT_BUILD_EXAMPLES=OFF",
+                     "-DQT_BUILD_BENCHMARKS=OFF",
+                     "-DQT_BUILD_DOCS=OFF",
+                     "-DFEATURE_vulkan=ON" },
+  test         = "test -e ${DESTDIR}/usr/lib/libQt6Core.so.6"
+    .. " && test -e ${DESTDIR}/usr/lib/libQt6Gui.so.6"
+    -- the whole point of the rebuild: the vulkan feature must be on
+    -- (Gui features live in QtGui/qtgui-config.h, not QtCore's qconfig)
+    .. " && grep -q 'QT_FEATURE_vulkan 1' ${DESTDIR}/usr/include/QtGui/qtgui-config.h"
+    .. " && test -f ${DESTDIR}/usr/include/QtGui/QVulkanInstance",
+}
