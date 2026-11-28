@@ -20,3 +20,9 @@ cmake -B build -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 cmake --build build -j"$(nproc 2>/dev/null || echo 4)"
 DESTDIR="$DESTDIR" cmake --install build
+
+# upstream's compile flags leave debug info in even for Release builds:
+# the driver lands at 602MB unstripped (46MB after), and GitHub caps
+# construct payloads at 100MB. --strip-unneeded keeps only what's
+# actually needed at load time.
+find "$DESTDIR" -type f -name "*.so*" -exec strip --strip-unneeded {} +
