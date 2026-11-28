@@ -1,0 +1,21 @@
+-- intel-gmmlib recipe — 22.10.1: Intel Graphics Memory Management
+-- Library. CONSTRUCT REPACK: the manifest shipped a build() function
+-- (source-at-provide class — never actually run, no toolchain on
+-- target machines), now a proper binary package. Flags verbatim from
+-- the original build function plus CMAKE_INSTALL_LIBDIR=lib (the
+-- GNUInstallDirs lib64 trap). C++ hence the gcc edge; needed by
+-- intel-media-driver (iHD VA-API driver — fixing chiaki-ng's
+-- "VAAPI connection -1" on the Kaby Lake iGPU).
+
+return {
+  name         = "intel-gmmlib",
+  version      = "22.10.1",
+  summary      = "Intel Graphics Memory Management Library",
+  url          = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/intel-gmmlib/intel-gmmlib-22.10.1.tar.gz",
+  sha256       = "33ebb6e65a2617c59f95a9e70ce0cbeca098316cd265345a0f4db5b381f1024c",
+  deps         = { "glibc", "gcc" },
+  build_system = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DCMAKE_INSTALL_LIBDIR=lib" },
+  test         = "test -f ${DESTDIR}/usr/lib/libigdgmm.so.12",
+}

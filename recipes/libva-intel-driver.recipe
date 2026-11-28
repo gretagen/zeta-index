@@ -1,0 +1,18 @@
+-- libva-intel-driver recipe — 2.4.1: Intel VA-API i965 driver
+-- (legacy, pre-Broadwell — kept as fallback alongside iHD). CONSTRUCT
+-- REPACK of the source-at-provide manifest; meson flags verbatim from
+-- its build() plus libdir=lib (driver must land in /usr/lib/dri).
+
+return {
+  name         = "libva-intel-driver",
+  version      = "2.4.1",
+  summary      = "Intel VA-API driver for i965 (legacy)",
+  url          = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/libva-intel-driver/libva-intel-driver-2.4.1.tar.gz",
+  sha256       = "03cd7e16acc94f828b6e7f3087863d8ca06e99ffa3385588005b1984bdd56157",
+  deps         = { "glibc", "libva", "libdrm", "wayland", "libX11",
+                   "libXext", "libxcb" },
+  build_system = "meson",
+  configure_args = { "-Dwith_x11=yes", "-Dwith_wayland=yes",
+                     "-Dlibdir=lib" },
+  test         = "test -f ${DESTDIR}/usr/lib/dri/i965_drv_video.so",
+}

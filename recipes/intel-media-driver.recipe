@@ -1,0 +1,26 @@
+-- intel-media-driver recipe — 26.2.4: Intel VA-API iHD driver
+-- (decode/encode for Gen8+ — Kaby Lake and newer). CONSTRUCT REPACK of
+-- the source-at-provide manifest: flags verbatim from its build()
+-- (ENABLE_NONFREE_KERNELS + ENABLE_KERNELS are what makes the actual
+-- kernels compile) plus CMAKE_INSTALL_LIBDIR=lib so the driver lands
+-- in /usr/lib/dri where libva looks. THE fix for chiaki-ng's
+-- "Failed to initialise VAAPI connection: -1" (no *.drv_video.so on
+-- this host). Deps copied from the original manifest; C++ hence gcc.
+
+return {
+  name         = "intel-media-driver",
+  version      = "26.2.4",
+  summary      = "Intel Media Driver for VA-API (iHD video decode)",
+  url          = "https://raw.githubusercontent.com/gretagen/zeta-constructs/refs/heads/main/packages/intel-media-driver/intel-media-driver-26.2.4.tar.gz",
+  sha256       = "a23185fca05c8fa8bdec09ea9ee8a20361163c87035ec978de4e2bb048a55534",
+  deps         = { "glibc", "gcc", "libva", "libdrm", "libpciaccess",
+                   "intel-gmmlib", "libX11", "libXext", "libXfixes",
+                   "libxcb", "wayland" },
+  build_system = "cmake",
+  configure_args = { "-DCMAKE_BUILD_TYPE=Release",
+                     "-DCMAKE_INSTALL_LIBDIR=lib",
+                     "-DENABLE_NONFREE_KERNELS=ON",
+                     "-DENABLE_KERNELS=ON",
+                     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" },
+  test         = "test -f ${DESTDIR}/usr/lib/dri/iHD_drv_video.so",
+}

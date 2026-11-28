@@ -659,7 +659,7 @@ return {
   { name = "libutempter", version = "1.2.3", summary = "Library for recording utmp entries (Arch binary)" },
   { name = "libuuid", version = "2.42.1", summary = "UUID library (from util-linux)" },
   { name = "libva", version = "2.2300.0-2", summary = "Video Acceleration API (VA-API) library" },
-  { name = "libva-intel-driver", version = "2.4.1", summary = "Intel VA-API driver for i965 (pre-Broadwell legacy driver)" },
+  { name = "libva-intel-driver", version = "2.4.1", summary = "Intel VA-API driver for i965 (legacy)" },
   { name = "libva-utils", version = "2.24.0-1-x86_64", summary = "VA-API utilities (vainfo and encode demos)" },
   { name = "libvdpau", version = "1.5", summary = "VDPAU library" },
   { name = "libverto-module-base", version = "0.3.2", summary = "Event loop abstraction (optional, base module)" },
